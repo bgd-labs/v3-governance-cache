@@ -3,7 +3,7 @@ import { strategicGetLogs } from "@bgd-labs/js-utils";
 import type { ExtractAbiEvent } from "abitype";
 import { type Address, type Client, getAbiItem } from "viem";
 import { getBlock } from "viem/actions";
-import type { LogWithTimestamp } from "./types";
+import type { LogWithTimestamp } from "../types";
 
 export type ProposalCreatedEvent = LogWithTimestamp<ExtractAbiEvent<typeof IGovernanceCore_ABI, "ProposalCreated">>;
 export type ProposalQueuedEvent = LogWithTimestamp<ExtractAbiEvent<typeof IGovernanceCore_ABI, "ProposalQueued">>;

@@ -4,7 +4,7 @@ import type { ExtractAbiEvent } from "abitype";
 import { type Address, type Client, getAbiItem } from "viem";
 import { getBlock } from "viem/actions";
 import { PayloadState } from "@bgd-labs/aave-cli";
-import type { LogWithTimestamp } from "./types";
+import type { LogWithTimestamp } from "../types";
 
 export type PayloadCreatedEvent = LogWithTimestamp<
   ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, "PayloadCreated">

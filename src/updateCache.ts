@@ -3,8 +3,8 @@ import { type ProposalMetadata, getProposalMetadata, CHAIN_ID_CLIENT_MAP, getBlo
 import { type AbiStateMutability, type Address, type Client, type ContractFunctionReturnType, getContract } from "viem";
 import { getBlockNumber } from "viem/actions";
 import { isProposalFinal } from "@bgd-labs/aave-cli";
-import { getGovernanceEvents } from "./modules/governance";
-import { getPayloadsControllerEvents, isPayloadFinal } from "./modules/payloadsController";
+import { getGovernanceEvents } from "./cache-modules/governance";
+import { getPayloadsControllerEvents, isPayloadFinal } from "./cache-modules/payloadsController";
 
 /**
  * Slim caching layer on top of ipfs fetcher to speed up fetching of ipfs data
