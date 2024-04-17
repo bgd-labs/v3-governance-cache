@@ -1,10 +1,21 @@
 import { IGovernanceCore_ABI, IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book";
-import { CHAIN_ID_CLIENT_MAP, getBlockAtTimestamp, readJSONCache, writeJSONCache } from "@bgd-labs/js-utils";
+import { type ProposalMetadata, getProposalMetadata, CHAIN_ID_CLIENT_MAP, getBlockAtTimestamp, readJSONCache, writeJSONCache } from "@bgd-labs/js-utils";
 import { type AbiStateMutability, type Address, type Client, type ContractFunctionReturnType, getContract } from "viem";
 import { getBlockNumber } from "viem/actions";
 import { isProposalFinal } from "@bgd-labs/aave-cli";
 import { getGovernanceEvents } from "./modules/governance";
 import { getPayloadsControllerEvents, isPayloadFinal } from "./modules/payloadsController";
+
+/**
+ * Slim caching layer on top of ipfs fetcher to speed up fetching of ipfs data
+ */
+export async function getCachedIpfs(hash: string) {
+  const cache = readJSONCache<ProposalMetadata>("ipfs", hash);
+  if (cache) return cache;
+  const content = await getProposalMetadata(hash);
+  writeJSONCache("ipfs", hash, content);
+  return content;
+}
 
 export async function cacheGovernance(
   client: Client,
@@ -43,6 +54,7 @@ export async function cacheGovernance(
     if (!proposalsCache[i] || !isProposalFinal(proposalsCache[i].state)) {
       proposalsCache[i] = await contract.read.getProposal([BigInt(i)]);
     }
+    getCachedIpfs(proposalsCache[i].ipfsHash)
   }
   writeJSONCache(proposalsPath, governanceAddress, proposalsCache);
 
