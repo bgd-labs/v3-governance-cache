@@ -1,0 +1,61 @@
+name: Update library
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    paths-ignore:
+      - "src/**"
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check-proposals:
+    name: Check if library is up to date
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+      - name: Update
+        run: bun index.ts
+        env:
+          RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
+          RPC_POLYGON: ${{ secrets.RPC_POLYGON }}
+          RPC_AVALANCHE: ${{ secrets.RPC_AVALANCHE }}
+          RPC_OPTIMISM: ${{ secrets.RPC_OPTIMISM }}
+          RPC_ARBITRUM: ${{ secrets.RPC_ARBITRUM }}
+          RPC_BASE: ${{ secrets.RPC_BASE }}
+          RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
+          RPC_BNB: ${{ secrets.RPC_BNB }}
+          RPC_METIS: ${{ secrets.RPC_METIS }}
+      - name: check diff
+        run: |
+          if [[ -z $(git status -s) ]]
+          then
+            echo "tree is clean"
+          else
+            git config --global user.name 'Cache bot'
+            git config --global user.email 'cache-bot@bgdlabs.com'
+            git config --global pull.rebase true
+            git add .
+            git commit -am "fix(cache): automatic cache update :robot:"
+            git pull --rebase --autostash
+            git push
+          exit
+          fi
+
+
+     
