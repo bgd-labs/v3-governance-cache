@@ -12,5 +12,9 @@ Object.keys(cache.proposalsCache).map(key => {
 })
 // 2. cache each unique controller ever touched by governance
 for (const [,{chainId,controller}] of payloadsController) {
-    await cachePayloadsController(CHAIN_ID_CLIENT_MAP[chainId], controller);
+    try {
+      await cachePayloadsController(CHAIN_ID_CLIENT_MAP[chainId], controller);
+    }catch(e) {
+      console.log("error fetching", chainId, controller)
+    }
 }

@@ -132,14 +132,16 @@ export async function cachePayloadsController(client: Client, payloadsController
           maxDelta: BigInt(60 * 60), // 1h
         })
       ).number;
+  const maxBlock = currentBlockOnPayloadsControllerChain;
+  console.log(maxBlock, client.chain?.name)
   const logs = await getPayloadsControllerEvents(
     payloadsControllerAddress,
     client,
     BigInt(lastSeenBlock) + BigInt(1),
-    currentBlockOnPayloadsControllerChain,
+    maxBlock,
   );
   const updatedEventsCache = [...eventsCache, ...logs];
-  cachedBlock.lastSeenBlock = currentBlockOnPayloadsControllerChain.toString();
+  cachedBlock.lastSeenBlock = maxBlock.toString();
   writeJSONCache(eventsPath, payloadsControllerAddress, updatedEventsCache);
   writeJSONCache(payloadsPath, "lastSeenBlock", cachedBlock);
   return { eventsCache: updatedEventsCache };
