@@ -133,7 +133,6 @@ export async function cachePayloadsController(client: Client, payloadsController
         })
       ).number;
   const maxBlock = currentBlockOnPayloadsControllerChain;
-  console.log(maxBlock, client.chain?.name)
   const logs = await getPayloadsControllerEvents(
     payloadsControllerAddress,
     client,
