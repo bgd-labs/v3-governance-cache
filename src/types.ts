@@ -2,6 +2,7 @@ import {type Address, type GetLogsReturnType} from 'viem';
 import type {AbiEvent} from 'abitype';
 import type {Payload, PayloadEvent, PayloadLogs} from './common/payloadsController';
 import type {Proposal, ProposalEvent, ProposalLogs} from './common/governance';
+import type {ProposalMetadata} from '@bgd-labs/js-utils';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -18,6 +19,7 @@ export type LogWithTimestamp<
 
 export type ProposalCacheRaw = {
   events: ProposalEvent[];
+  ipfs?: ProposalMetadata;
   proposal?: Proposal;
 };
 

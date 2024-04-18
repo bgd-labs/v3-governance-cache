@@ -3,7 +3,7 @@
  */
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
-import {CHAIN_ID_CLIENT_MAP} from '@bgd-labs/js-utils';
+import {CHAIN_ID_CLIENT_MAP, getProposalMetadata} from '@bgd-labs/js-utils';
 import {IGovernanceCore_ABI, IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book';
 import {getContract} from 'viem';
 import packageJson from '../../package.json';
@@ -86,6 +86,7 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
       proposalId.toString(),
     ) || {events: []};
     cache.proposal = await contract.read.getProposal([proposalId]);
+    cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
     writeJSONCache(proposalsPath, proposalId.toString(), cache);
   }
   // store lastSeenBlock
