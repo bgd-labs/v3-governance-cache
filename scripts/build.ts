@@ -1,5 +1,5 @@
 await Bun.build({
-    entrypoints: ["src/index.ts"],
+    entrypoints: ["src/adapter/localCache.ts"],
     outdir: './dist',
     target: 'node',
     format: 'esm',

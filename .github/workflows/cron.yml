@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: bun install
       - name: Update
-        run: bun index.ts
+        run: bun run cache
         env:
           RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
           RPC_POLYGON: ${{ secrets.RPC_POLYGON }}
