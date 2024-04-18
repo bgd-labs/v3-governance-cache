@@ -1,7 +1,7 @@
 import {type Address, type GetLogsReturnType} from 'viem';
 import type {AbiEvent} from 'abitype';
-import type {Payload, PayloadLogs} from './common/payloadsController';
-import type {Proposal, ProposalLogs} from './common/governance';
+import type {Payload, PayloadEvent, PayloadLogs} from './common/payloadsController';
+import type {Proposal, ProposalEvent, ProposalLogs} from './common/governance';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
@@ -14,6 +14,16 @@ export type LogWithTimestamp<
     | undefined = TAbiEvent extends AbiEvent ? [TAbiEvent] : undefined,
 > = ArrayElement<GetLogsReturnType<TAbiEvent, TAbiEvents>> & {
   timestamp: number;
+};
+
+export type ProposalCacheRaw = {
+  events: ProposalEvent[];
+  proposal?: Proposal;
+};
+
+export type PayloadCacheRaw = {
+  events: PayloadEvent[];
+  payload?: Payload;
 };
 
 export interface GetPayloadReturnType {
@@ -33,10 +43,10 @@ export interface GovernanceCacheAdapter {
     chainId: number;
     payloadsController: Address;
     payloadId: number;
-  }) => GetPayloadReturnType;
+  }) => GetPayloadReturnType | Promise<GetPayloadReturnType>;
   getProposal: (args: {
     chainId: number;
     governance: Address;
     proposalId: number;
-  }) => GetProposalReturnType;
+  }) => GetProposalReturnType | Promise<GetProposalReturnType>;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "sideEffects": false,
   "files": [
     "cache",
@@ -19,6 +19,10 @@
     "./localCache": {
       "types": "./dist/localCache.d.ts",
       "default": "./dist/adapter/localCache.js"
+    },
+    "./githubHybrid": {
+      "types": "./dist/githubHybrid.d.ts",
+      "default": "./dist/adapter/githubHybrid.js"
     },
     "./refreshCache": {
       "types": "./dist/refreshCache.d.ts",
