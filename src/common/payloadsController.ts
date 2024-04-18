@@ -1,9 +1,16 @@
-import { type Client, type Address, getContract, getAbiItem } from "viem";
-import { getBlockNumber, getBlock } from "viem/actions";
-import { getBlockAtTimestamp, strategicGetLogs } from "@bgd-labs/js-utils";
-import { IPayloadsControllerCore_ABI } from "@bgd-labs/aave-address-book";
-import type { ExtractAbiEvent } from "abitype";
-import type { LogWithTimestamp } from "../../types";
+import {
+  type ContractFunctionReturnType,
+  type AbiStateMutability,
+  type Client,
+  type Address,
+  getContract,
+  getAbiItem,
+} from 'viem';
+import {getBlockNumber, getBlock} from 'viem/actions';
+import {getBlockAtTimestamp, strategicGetLogs} from '@bgd-labs/js-utils';
+import {IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book';
+import type {ExtractAbiEvent} from 'abitype';
+import type {LogWithTimestamp} from '../types';
 
 export enum PayloadState {
   None = 0,
@@ -15,18 +22,21 @@ export enum PayloadState {
 }
 
 export type PayloadCreatedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, "PayloadCreated">
+  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, 'PayloadCreated'>
 >;
 export type PayloadQueuedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, "PayloadQueued">
+  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, 'PayloadQueued'>
 >;
 export type PayloadExecutedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, "PayloadExecuted">
+  ExtractAbiEvent<typeof IPayloadsControllerCore_ABI, 'PayloadExecuted'>
 >;
-export type PayloadEvent =
-  | PayloadCreatedEvent
-  | PayloadQueuedEvent
-  | PayloadExecutedEvent;
+export type PayloadEvent = PayloadCreatedEvent | PayloadQueuedEvent | PayloadExecutedEvent;
+
+export type Payload = ContractFunctionReturnType<
+  typeof IPayloadsControllerCore_ABI,
+  AbiStateMutability,
+  'getPayloadById'
+>;
 
 export function isPayloadFinal(state: number) {
   return [
@@ -51,9 +61,9 @@ export async function getPayloadsControllerEvents({
   const logs = await strategicGetLogs({
     client,
     events: [
-      getAbiItem({ abi: IPayloadsControllerCore_ABI, name: "PayloadCreated" }),
-      getAbiItem({ abi: IPayloadsControllerCore_ABI, name: "PayloadQueued" }),
-      getAbiItem({ abi: IPayloadsControllerCore_ABI, name: "PayloadExecuted" }),
+      getAbiItem({abi: IPayloadsControllerCore_ABI, name: 'PayloadCreated'}),
+      getAbiItem({abi: IPayloadsControllerCore_ABI, name: 'PayloadQueued'}),
+      getAbiItem({abi: IPayloadsControllerCore_ABI, name: 'PayloadExecuted'}),
     ],
     address: payloadsController,
     fromBlock: fromBlockNumber,
@@ -62,12 +72,8 @@ export async function getPayloadsControllerEvents({
   return await Promise.all(
     logs.map(async (l) => ({
       ...l,
-      timestamp: Number(
-        (
-          await getBlock(client, { blockNumber: l.blockNumber as bigint })
-        ).timestamp
-      ),
-    }))
+      timestamp: Number((await getBlock(client, {blockNumber: l.blockNumber as bigint})).timestamp),
+    })),
   );
 }
 
@@ -79,7 +85,7 @@ export async function syncPayloadsControllerEvents({
   client: Client;
   payloadsController: Address;
   lastSeenBlock: bigint;
-}): Promise<{ lastSeenBlock: bigint; events: PayloadEvent[] }> {
+}): Promise<{lastSeenBlock: bigint; events: PayloadEvent[]}> {
   const currentBlock = await getBlockNumber(client);
   const contract = getContract({
     abi: IPayloadsControllerCore_ABI,
@@ -88,7 +94,7 @@ export async function syncPayloadsControllerEvents({
   });
   const payloadsCount = await contract.read.getPayloadsCount();
   if (payloadsCount === 0) {
-    return { lastSeenBlock: currentBlock, events: [] };
+    return {lastSeenBlock: currentBlock, events: []};
   }
   if (lastSeenBlock === 0n) {
     const firstPayload = await contract.read.getPayloadById([0]);
@@ -109,5 +115,19 @@ export async function syncPayloadsControllerEvents({
       fromBlockNumber: lastSeenBlock,
       toBlockNumber: currentBlock,
     }),
+  };
+}
+
+export interface PayloadLogs {
+  createdLog: PayloadCreatedEvent;
+  queuedLog?: PayloadQueuedEvent;
+  executedLog?: PayloadExecutedEvent;
+}
+
+export function formatPayloadLogs(logs: PayloadEvent[]): PayloadLogs {
+  return {
+    createdLog: logs.find((log) => log.eventName === 'PayloadCreated') as PayloadCreatedEvent,
+    queuedLog: logs.find((log) => log.eventName === 'PayloadQueued') as PayloadQueuedEvent,
+    executedLog: logs.find((log) => log.eventName === 'PayloadExecuted') as PayloadExecutedEvent,
   };
 }

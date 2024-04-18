@@ -1,23 +1,40 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "sideEffects": false,
   "files": [
-    "cache"
+    "cache",
+    "dist"
   ],
   "private": false,
   "publishConfig": {
     "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
+    "./localCache": {
+      "types": "./dist/localCache.d.ts",
+      "default": "./dist/adapter/localCache.js"
+    },
+    "./refreshCache": {
+      "types": "./dist/refreshCache.d.ts",
+      "default": "./dist/common/refreshCache.js"
+    }
   },
   "scripts": {
     "build": "bun run scripts/build.ts",
     "cache": "bun ./scripts/refreshCache.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.0",
     "@bgd-labs/aave-address-book": "^2.25.1",
     "@bgd-labs/js-utils": "^1.3.0",
     "@types/bun": "latest",
+    "bun-plugin-dts": "^0.2.3",
+    "prettier": "^3.2.5",
     "typescript": "^5.0.0",
     "viem": "^2.9.20"
   },
