@@ -165,7 +165,7 @@ export const localCacheAdapter: GovernanceCacheAdapter = {
       cache = readJSONCache<ProposalCacheRaw>(path, proposalId);
       if (!cache) throw new Error(`Payload ${proposalId} not found on ${chainId}:${governance}`);
     }
-    return {proposal: cache.proposal!, logs: formatProposalLogs(cache.events)};
+    return {proposal: cache.proposal!, logs: formatProposalLogs(cache.events), ipfs: cache.ipfs!};
   },
   syncPayloadsCache,
   syncProposalCache,

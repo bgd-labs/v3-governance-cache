@@ -36,6 +36,7 @@ export interface GetPayloadReturnType {
 export interface GetProposalReturnType {
   logs: ProposalLogs;
   proposal: Proposal;
+  ipfs: ProposalMetadata;
 }
 
 export interface GovernanceCacheAdapter {
