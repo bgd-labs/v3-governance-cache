@@ -1,0 +1,56 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "85",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xc3933570aa757db7e941c51b9bf486f0cf17bcb38c1b95a9293fde7f5118259c"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000055",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xc3933570aa757db7e941c51b9bf486f0cf17bcb38c1b95a9293fde7f5118259c",
+      "blockNumber": "19712203",
+      "transactionHash": "0xea0c8287c0d4b824aaa550c1ee4a5d0ad52dafde7c542270a684c5c29afdfa0e",
+      "transactionIndex": 6,
+      "blockHash": "0xe30662ea1ad5c8fa165b4c4d628a09989e24e9ad39767bc66604f10530ffb297",
+      "logIndex": 33,
+      "removed": false,
+      "timestamp": 1713804155
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1713804155,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xc3933570aa757db7e941c51b9bf486f0cf17bcb38c1b95a9293fde7f5118259c",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 109
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmbW6QKACcwfouvNmzT1NzjQ1mynK6mDRXpeiUskbftSyH",
+    "description": ""
+  }
+}
