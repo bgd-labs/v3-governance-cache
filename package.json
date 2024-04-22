@@ -1,6 +1,6 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "sideEffects": false,
   "files": [
     "cache",
