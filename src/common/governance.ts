@@ -1,48 +1,18 @@
-import {
-  type ContractFunctionReturnType,
-  type AbiStateMutability,
-  type Client,
-  type Address,
-  getContract,
-  getAbiItem,
-} from 'viem';
+import {type Client, type Address, getContract, getAbiItem} from 'viem';
 import {getBlockNumber, getBlock} from 'viem/actions';
-import {getBlockAtTimestamp, strategicGetLogs} from '@bgd-labs/js-utils';
+import {CHAIN_ID_CLIENT_MAP, getBlockAtTimestamp, strategicGetLogs} from '@bgd-labs/js-utils';
 import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book';
-import type {ExtractAbiEvent} from 'abitype';
-import type {LogWithTimestamp} from '../types';
-
-export type ProposalCreatedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'ProposalCreated'>
->;
-export type ProposalQueuedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'ProposalQueued'>
->;
-export type ProposalCanceledEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'ProposalCanceled'>
->;
-export type ProposalExecutedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'ProposalExecuted'>
->;
-export type ProposalPayloadSentEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'PayloadSent'>
->;
-export type ProposalVotingActivatedEvent = LogWithTimestamp<
-  ExtractAbiEvent<typeof IGovernanceCore_ABI, 'VotingActivated'>
->;
-export type ProposalEvent =
-  | ProposalCreatedEvent
-  | ProposalQueuedEvent
-  | ProposalCanceledEvent
-  | ProposalExecutedEvent
-  | ProposalPayloadSentEvent
-  | ProposalVotingActivatedEvent;
-
-export type Proposal = ContractFunctionReturnType<
-  typeof IGovernanceCore_ABI,
-  AbiStateMutability,
-  'getProposal'
->;
+import type {
+  GovernanceCacheAdapter,
+  ProposalCanceledEvent,
+  ProposalCreatedEvent,
+  ProposalEvent,
+  ProposalExecutedEvent,
+  ProposalLogs,
+  ProposalPayloadSentEvent,
+  ProposalQueuedEvent,
+  ProposalVotingActivatedEvent,
+} from '..';
 
 async function getGovernanceEvents({
   governance,
@@ -118,15 +88,6 @@ export async function syncGovernanceEvents({
   };
 }
 
-export interface ProposalLogs {
-  createdLog: ProposalCreatedEvent;
-  queuedLog?: ProposalQueuedEvent;
-  executedLog?: ProposalExecutedEvent;
-  votingActivatedLog?: ProposalVotingActivatedEvent;
-  canceledLog?: ProposalCanceledEvent;
-  payloadSentLog: ProposalPayloadSentEvent[];
-}
-
 export function formatProposalLogs(logs: ProposalEvent[]): ProposalLogs {
   return {
     createdLog: logs.find((log) => log.eventName === 'ProposalCreated') as ProposalCreatedEvent,
@@ -140,4 +101,21 @@ export function formatProposalLogs(logs: ProposalEvent[]): ProposalLogs {
     ) as ProposalPayloadSentEvent[],
     canceledLog: logs.find((log) => log.eventName === 'ProposalCanceled') as ProposalCanceledEvent,
   };
+}
+
+export function getProposal({
+  client,
+  governance,
+  proposalId,
+}: {
+  governance: Address;
+  client: Client;
+  proposalId: bigint;
+}) {
+  const contract = getContract({
+    abi: IGovernanceCore_ABI,
+    address: governance,
+    client,
+  });
+  return contract.read.getProposal([proposalId]);
 }

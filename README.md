@@ -50,5 +50,4 @@ bun install @bgd-labs/aave-v3-governance-cache
 ## Follow up work
 
 - [ ] generate a sitemap with all the data directly reachable from this page
-- [ ] create no-storage adapter for browser environments that cannot write to fs
 - [ ] create postgres adapter for systems that can rely on a centralized db somewhere

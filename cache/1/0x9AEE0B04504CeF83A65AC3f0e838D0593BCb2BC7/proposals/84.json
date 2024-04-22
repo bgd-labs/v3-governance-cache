@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "84",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x0f8510f9117fbe8129a35eb4a72232ed483cb75a4650b7f81fedeafe17a24912"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000054",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x0f8510f9117fbe8129a35eb4a72232ed483cb75a4650b7f81fedeafe17a24912",
+      "blockNumber": "19691795",
+      "transactionHash": "0x01bedd4f795efc6fb2c0b266214a5a60bff4c5c531fdd7db78bd5b9566fef5b0",
+      "transactionIndex": 3,
+      "blockHash": "0x7864ff79dad3d2dd3164ce199ddc29e4399de604322f96c6813a7db9d09acfab",
+      "logIndex": 24,
+      "removed": false,
+      "timestamp": 1713557699
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "84",
+        "snapshotBlockHash": "0x6eb112a0ff02b924564dd5f6a33bfd35a4cc53cbdfb0bbfb32c8579b152b1ca6",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x0000000000000000000000000000000000000000000000000000000000000054",
+        "0x6eb112a0ff02b924564dd5f6a33bfd35a4cc53cbdfb0bbfb32c8579b152b1ca6"
+      ],
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "blockNumber": "19698947",
+      "transactionHash": "0x8057d2b1bb956af7465b51cf3fe770ce380f53428d7d4148bef6ca51a2bb3130",
+      "transactionIndex": 85,
+      "blockHash": "0xeae2e842244c684fefca76722be5f7f66a773cd5145f40e60f3c7608b66dde5e",
+      "logIndex": 198,
+      "removed": false,
+      "timestamp": 1713644123
+    }
+  ],
+  "proposal": {
+    "state": 2,
+    "accessLevel": 1,
+    "creationTime": 1713557699,
+    "votingDuration": 259200,
+    "votingActivationTime": 1713644123,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x6eb112a0ff02b924564dd5f6a33bfd35a4cc53cbdfb0bbfb32c8579b152b1ca6",
+    "ipfsHash": "0x0f8510f9117fbe8129a35eb4a72232ed483cb75a4650b7f81fedeafe17a24912",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 26
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPPEWWG8V79mrd5BETqvQSdjbbJAD3xiP6mbCs1h3LHWh",
+    "description": "\n## Simple Summary\n\nA proposal to increase OP’s liquidation threshold and LTV on Aave V3 Optimism.\n\n## Motivation\n\nOP is currently configured with a liquidation threshold (LT) of 40% and max loan-to-value (LTV) of 30%. These parameters were intentionally set conservatively and in isolation mode, when the asset was first listed to ensure mechanisms were working as intended. In October 2023, OP was removed from isolation mode. Following our observations, we believe it prudent to increase the LT and LTV for OP.\n\nOP’s average market cap over the past 180 days is $1.78BN, and its daily average volume is $192M.\nIt has registered a daily annualized volatility of 98.53%, a 30-day annualized volatility of 92.6%, and its largest single-day price drop was 17.7%.\n3.7M of the 7.4M OP supplied is supplied by a single user, who also maintains large positions on Arbitrum and Ethereum. Their last deposit on Optimism was 252K OP on March 12; they repaid $1M USDT on April 6 and currently hold a health score of 2.02.\nIn general, supply has been trending steadily upwards.\nThe majority of assets borrowed against OP collateral are stablecoins. That puts these positions at risk of liquidation in the event OP’s price moves falls.\nHowever, collateral at risk does not exceed $100K until OP’s price falls to $2.13, a 35% drop from current levels.\n\nGiven these observations, we recommend first aligning OP’s parameters with ARB’s on Arbitrum (50% LTV and 60% LT), an asset with a similar supply distribution and liquidity profile. Following observations at these levels and utilizing our simulation platform, these parameters may be further optimized.\n\n## Specification\n\n| Chain    | Asset | Current LTV | Recommended LTV | Current LT | Recommended LT |\n| -------- | ----- | ----------- | --------------- | ---------- | -------------- |\n| Optimism | OP    | 30.00%      | 50.00%          | 40.00%     | 60.00%         |\n\n## References\n\n- Implementation: [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/main/src/20240415_AaveV3Optimism_RiskParameterUpdatesOPOnV3Optimism/AaveV3Optimism_RiskParameterUpdatesOPOnV3Optimism_20240415.sol)\n- Tests: [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/main/src/20240415_AaveV3Optimism_RiskParameterUpdatesOPOnV3Optimism/AaveV3Optimism_RiskParameterUpdatesOPOnV3Optimism_20240415.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0xbaaf99c1e738da5755166fc6b1429265243507fdb9638a31ca177dd81a8b7313)\n- [Discussion](https://governance.aave.com/t/arfc-chaos-labs-risk-parameter-updates-op-on-v3-optimism/17326)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Risk Parameter Updates - OP on V3 Optimism",
+    "author": "Chaos Labs",
+    "discussions": "https://governance.aave.com/t/arfc-chaos-labs-risk-parameter-updates-op-on-v3-optimism/17326",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0xbaaf99c1e738da5755166fc6b1429265243507fdb9638a31ca177dd81a8b7313"
+  }
+}

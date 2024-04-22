@@ -4,12 +4,20 @@
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
 import {CHAIN_ID_CLIENT_MAP, getProposalMetadata} from '@bgd-labs/js-utils';
-import {IGovernanceCore_ABI, IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book';
-import {getContract} from 'viem';
 import packageJson from '../../package.json';
-import type {GovernanceCacheAdapter, PayloadCacheRaw, ProposalCacheRaw} from '../types';
-import {formatProposalLogs, syncGovernanceEvents} from '../common/governance';
-import {formatPayloadLogs, syncPayloadsControllerEvents} from '../common/payloadsController';
+import {
+  isPayloadFinal,
+  isProposalFinal,
+  type GovernanceCacheAdapter,
+  type PayloadCacheRaw,
+  type ProposalCacheRaw,
+} from '..';
+import {formatProposalLogs, getProposal, syncGovernanceEvents} from '../common/governance';
+import {
+  formatPayloadLogs,
+  getPayload,
+  syncPayloadsControllerEvents,
+} from '../common/payloadsController';
 
 function getPath() {
   const installPath = path.join(process.cwd(), 'node_modules', packageJson.name);
@@ -17,14 +25,21 @@ function getPath() {
   return path.join(isInstalled ? installPath : process.cwd(), 'cache');
 }
 
-export function readJSONCache<T = any>(filePath: string, filename: string | number): T | undefined {
+export function readJSONCache<T = any>(
+  filePath: string,
+  filename: string | number | bigint,
+): T | undefined {
   const joinedPath = path.join(getPath(), filePath, `${filename}.json`);
   if (existsSync(joinedPath)) {
     return JSON.parse(readFileSync(joinedPath, 'utf8'));
   }
 }
 
-export function writeJSONCache<T extends {}>(filePath: string, filename: string | number, json: T) {
+export function writeJSONCache<T extends {}>(
+  filePath: string,
+  filename: string | number | bigint,
+  json: T,
+) {
   const joinedFolderPath = path.join(getPath(), filePath);
   if (!existsSync(joinedFolderPath)) {
     mkdirSync(joinedFolderPath, {recursive: true});
@@ -41,7 +56,7 @@ export function writeJSONCache<T extends {}>(filePath: string, filename: string 
   );
 }
 
-export type TrackingCache = {lastSeenBlock: string | bigint};
+export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record<string, boolean>};
 
 /**
  * Simple cache that:
@@ -53,22 +68,26 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
   governance,
 }) => {
   const client = CHAIN_ID_CLIENT_MAP[chainId];
-  const contract = getContract({
-    abi: IGovernanceCore_ABI,
-    address: governance,
-    client,
-  });
   const proposalsPath = `${chainId.toString()}/${governance}/proposals`;
-  const cachedBlock = readJSONCache<TrackingCache>(proposalsPath, 'lastSeenBlock') || {
-    lastSeenBlock: 0,
+  const trackingCache: TrackingCache = readJSONCache<TrackingCache>(
+    proposalsPath,
+    'trackingCache',
+  ) || {
+    lastSeenBlock: 0n,
+    isFinal: {},
   };
   const newData = await syncGovernanceEvents({
     client,
     governance,
-    lastSeenBlock: BigInt(cachedBlock.lastSeenBlock),
+    lastSeenBlock: BigInt(trackingCache.lastSeenBlock),
   });
+  trackingCache.lastSeenBlock = newData.lastSeenBlock;
   // store events
-  const uniqueProposals = new Set<bigint>();
+  const uniqueProposals = new Set<bigint>(
+    Object.keys(trackingCache.isFinal)
+      .filter((id) => trackingCache.isFinal[id])
+      .map((id) => BigInt(id)) || [],
+  );
   for (const event of newData.events) {
     const proposalId = event.args.proposalId!;
     uniqueProposals.add(proposalId);
@@ -85,14 +104,17 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
       proposalsPath,
       proposalId.toString(),
     ) || {events: []};
-    cache.proposal = await contract.read.getProposal([proposalId]);
-    cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
+    cache.proposal = await getProposal({client, governance, proposalId});
+    try {
+      cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
+    } catch (e) {
+      console.log(e);
+    }
+    trackingCache.isFinal[String(proposalId)] = isProposalFinal(cache.proposal.state);
     writeJSONCache(proposalsPath, proposalId.toString(), cache);
   }
   // store lastSeenBlock
-  writeJSONCache(proposalsPath, 'lastSeenBlock', {
-    lastSeenBlock: newData.lastSeenBlock,
-  });
+  writeJSONCache(proposalsPath, 'trackingCache', trackingCache);
   return newData;
 };
 /**
@@ -105,22 +127,23 @@ const syncPayloadsCache: GovernanceCacheAdapter['syncPayloadsCache'] = async ({
   payloadsController,
 }) => {
   const client = CHAIN_ID_CLIENT_MAP[chainId];
-  const contract = getContract({
-    abi: IPayloadsControllerCore_ABI,
-    client,
-    address: payloadsController,
-  });
   const path = `${chainId.toString()}/${payloadsController}/payloads`;
-  const cachedBlock = readJSONCache<TrackingCache>(path, 'lastSeenBlock') || {
-    lastSeenBlock: '0',
+  const trackingCache: TrackingCache = readJSONCache<TrackingCache>(path, 'trackingCache') || {
+    lastSeenBlock: 0n,
+    isFinal: {},
   };
   const newData = await syncPayloadsControllerEvents({
     client,
     payloadsController,
-    lastSeenBlock: BigInt(cachedBlock.lastSeenBlock),
+    lastSeenBlock: BigInt(trackingCache.lastSeenBlock),
   });
+  trackingCache.lastSeenBlock = newData.lastSeenBlock;
   // store events
-  const uniquePayloads = new Set<number>();
+  const uniquePayloads = new Set<number>(
+    Object.keys(trackingCache.isFinal)
+      .filter((id) => trackingCache.isFinal[id])
+      .map((id) => Number(id)) || [],
+  );
   for (const event of newData.events) {
     const payloadId = event.args.payloadId!;
     uniquePayloads.add(payloadId);
@@ -135,13 +158,12 @@ const syncPayloadsCache: GovernanceCacheAdapter['syncPayloadsCache'] = async ({
     const cache: PayloadCacheRaw = readJSONCache<PayloadCacheRaw>(path, payloadId) || {
       events: [],
     };
-    cache.payload = await contract.read.getPayloadById([payloadId]);
+    cache.payload = await getPayload({client, payloadsController, payloadId});
     writeJSONCache(path, payloadId, cache);
+    trackingCache.isFinal[String(payloadId)] = isPayloadFinal(cache.payload.state);
   }
   // store lastSeenBlock
-  writeJSONCache(path, 'lastSeenBlock', {
-    lastSeenBlock: newData.lastSeenBlock,
-  });
+  writeJSONCache(path, 'trackingCache', trackingCache);
   return newData;
 };
 

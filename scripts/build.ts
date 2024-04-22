@@ -4,6 +4,7 @@ await Bun.build({
   entrypoints: [
     'src/types.ts',
     'src/adapter/localCache.ts',
+    'src/adapter/noCache.ts',
     'src/adapter/githubHybrid.ts',
     'src/common/refreshCache.ts',
   ],

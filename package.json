@@ -1,6 +1,6 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "sideEffects": false,
   "files": [
     "cache",
@@ -13,8 +13,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/types.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./localCache": {
       "types": "./dist/localCache.d.ts",

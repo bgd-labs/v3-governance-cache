@@ -2,7 +2,7 @@
  * Hybrid adapter that tries to fetch via github pages
  * If github pages doesn't contain the desired data it will fallback to the supplied adapter
  */
-import type {GovernanceCacheAdapter, PayloadCacheRaw, ProposalCacheRaw} from '../types';
+import type {GovernanceCacheAdapter, PayloadCacheRaw, ProposalCacheRaw} from '..';
 import {formatPayloadLogs} from '../common/payloadsController';
 import {formatProposalLogs} from '../common/governance';
 
