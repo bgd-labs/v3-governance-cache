@@ -2,7 +2,7 @@ import dts from 'bun-plugin-dts';
 
 await Bun.build({
   entrypoints: [
-    'src/types.ts',
+    'src/index.ts',
     'src/adapter/localCache.ts',
     'src/adapter/noCache.ts',
     'src/adapter/githubHybrid.ts',
