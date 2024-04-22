@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "lastSeenBlock": "119093303",
+=======
+  "lastSeenBlock": "119094202",
+>>>>>>> 9032d50 (fix: update ipfs cache only when necessary)
   "isFinal": {
     "0": true,
     "1": true,
