@@ -85,7 +85,7 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
   // store events
   const uniqueProposals = new Set<bigint>(
     Object.keys(trackingCache.isFinal)
-      .filter((id) => trackingCache.isFinal[id])
+      .filter((id) => !trackingCache.isFinal[id])
       .map((id) => BigInt(id)) || [],
   );
   for (const event of newData.events) {
@@ -105,10 +105,12 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
       proposalId.toString(),
     ) || {events: []};
     cache.proposal = await getProposal({client, governance, proposalId});
-    try {
-      cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
-    } catch (e) {
-      console.log(e);
+    if (!cache.ipfs) {
+      try {
+        cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
+      } catch (e) {
+        console.log(e);
+      }
     }
     trackingCache.isFinal[String(proposalId)] = isProposalFinal(cache.proposal.state);
     writeJSONCache(proposalsPath, proposalId.toString(), cache);
@@ -141,7 +143,7 @@ const syncPayloadsCache: GovernanceCacheAdapter['syncPayloadsCache'] = async ({
   // store events
   const uniquePayloads = new Set<number>(
     Object.keys(trackingCache.isFinal)
-      .filter((id) => trackingCache.isFinal[id])
+      .filter((id) => !trackingCache.isFinal[id])
       .map((id) => Number(id)) || [],
   );
   for (const event of newData.events) {
