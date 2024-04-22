@@ -5,7 +5,6 @@ import {
   type GetLogsReturnType,
 } from 'viem';
 import type {AbiEvent} from 'abitype';
-import type {PayloadLogs} from './common/payloadsController';
 import type {ProposalMetadata} from '@bgd-labs/js-utils';
 import type {IGovernanceCore_ABI, IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book';
 import type {ExtractAbiEvent} from 'abitype';
