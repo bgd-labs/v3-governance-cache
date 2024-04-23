@@ -1,0 +1,56 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "86",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0xe8e62cf3cb3fc0fc5686ce63c64f16e14d4bfb58053d74189540f66a607bbea5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000056",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xe8e62cf3cb3fc0fc5686ce63c64f16e14d4bfb58053d74189540f66a607bbea5",
+      "blockNumber": "19718296",
+      "transactionHash": "0x5cf938378ba3c7449504578d32e62a0612bfc237b152ed560da223f587b6410c",
+      "transactionIndex": 10,
+      "blockHash": "0xd2ab07c3c0c331e989b6eac72cc8a88ac70fae1036aa46d40b29c4b16c94addc",
+      "logIndex": 73,
+      "removed": false,
+      "timestamp": 1713877739
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1713877739,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xe8e62cf3cb3fc0fc5686ce63c64f16e14d4bfb58053d74189540f66a607bbea5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 111
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qme1ns4MJ6jJEguKLaNXS82w5Fe7XqawL2DiTNQjZTgN9i",
+    "description": ""
+  }
+}
