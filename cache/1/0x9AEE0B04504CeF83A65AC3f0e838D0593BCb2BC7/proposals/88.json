@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "88",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xc2ad821ca730c8e92d1c83412d94fb4b6daf1482662eafc88b055659a10ac52a"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000058",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xc2ad821ca730c8e92d1c83412d94fb4b6daf1482662eafc88b055659a10ac52a",
+      "blockNumber": "19733094",
+      "transactionHash": "0x858421581832f1d1dc3b64e9a9a4f7fe86381cf955ad145ddb4b5a3a22555f14",
+      "transactionIndex": 28,
+      "blockHash": "0x8c967572e31e2b72ef3e8fb0f2fffc37b48d7d48de1c5ff596c91ecc85a76681",
+      "logIndex": 172,
+      "removed": false,
+      "timestamp": 1714056719
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1714056719,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xc2ad821ca730c8e92d1c83412d94fb4b6daf1482662eafc88b055659a10ac52a",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 16
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmbSbFiKadFF1Uo9SRsZjVdWDz29fqj3nVmZbAmzcq4YdF",
+    "description": "\n## Simple Summary\n\nA proposal to update GNO’s liquidation threshold, LTV, and debt ceiling on V3 Gnosis.\n\n## Motivation\n\nGNO has an average market cap of $445M and a daily trading volume of $3M over the last 180 days. Over this same timeframe, the largest single-day drop was 9.11%, with a daily annualized volatility of 63.75% and a 30-day daily annualized volatility of 94.46%.\n\nGNO is currently listed with relatively conservative parameters: 36% LT and 31% LTV. We recommend an increase to 50% and 45%, respectively. Following observations at these levels and utilizing our simulation platform, these parameters may be further optimized.\nGiven current market conditions and utilizing our Isolation Mode Methodology we recommend doubling the debt ceiling to $2M.\n\n## Specification\n\n| Asset | Parameter    | Current    | Recommended |\n| ----- | ------------ | ---------- | ----------- |\n| GNO   | LT           | 36.00%     | 50.00%      |\n| GNO   | LTV          | 31.00%     | 45.00%      |\n| GNO   | Debt Ceiling | $1,000,000 | $2,000,000  |\n\n## References\n\n- Implementation: [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/e3390f066abde30c4ea3c547e48b3f647d12e644/src/20240415_AaveV3Gnosis_RiskParameterUpdatesGNOOnV3Gnosis/AaveV3Gnosis_RiskParameterUpdatesGNOOnV3Gnosis_20240415.sol)\n- Tests: [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/e3390f066abde30c4ea3c547e48b3f647d12e644/src/20240415_AaveV3Gnosis_RiskParameterUpdatesGNOOnV3Gnosis/AaveV3Gnosis_RiskParameterUpdatesGNOOnV3Gnosis_20240415.t.sol)\n- [Discussion](https://governance.aave.com/t/arfc-chaos-labs-risk-parameter-updates-gno-on-v3-gnosis/17340)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Risk Parameter Updates GNO on V3 Gnosis",
+    "author": "Chaos Labs",
+    "discussions": "https://governance.aave.com/t/arfc-chaos-labs-risk-parameter-updates-gno-on-v3-gnosis/17340"
+  }
+}
