@@ -115,13 +115,15 @@ export enum ProposalState {
   Expired = 7,
 }
 
+export const FINAL_PROPOSAL_STATES = [
+  ProposalState.Executed,
+  ProposalState.Failed,
+  ProposalState.Cancelled,
+  ProposalState.Expired,
+];
+
 export function isProposalFinal(state: ProposalState) {
-  return [
-    ProposalState.Executed,
-    ProposalState.Failed,
-    ProposalState.Cancelled,
-    ProposalState.Expired,
-  ].includes(state);
+  return FINAL_PROPOSAL_STATES.includes(state);
 }
 
 /**
@@ -159,11 +161,13 @@ export type Payload = ContractFunctionReturnType<
   'getPayloadById'
 >;
 
+export const FINAL_PAYLOAD_STATES = [
+  PayloadState.Cancelled,
+  PayloadState.Executed,
+  PayloadState.Expired,
+  // -1, // error
+];
+
 export function isPayloadFinal(state: number) {
-  return [
-    PayloadState.Cancelled,
-    PayloadState.Executed,
-    PayloadState.Expired,
-    // -1, // error
-  ].includes(state);
+  return FINAL_PAYLOAD_STATES.includes(state);
 }
