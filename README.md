@@ -9,13 +9,13 @@ Therefore applications usually go either:
 - "fully centralized"
 
 Applications around aave governance exist on both sides of the spectrum, but there's currently no agnostic solution that fits both needs.
-To close this gap `@bgd-labs/aave-v3-governance-cache`(temporary name) offers a common interface and a variety of adapters for interfaces to go their own way.
+To close this gap `@bgd-labs/aave-v3-governance-cache`(temporary name) offers a common interface and a variety of provider for interfaces to go their own way.
 
-## Adapters
+## Providers
 
 ### Local Cache
 
-The `localCache` is a simple file based cache that fetches "new" data based on the last seen block and stores them in json files per proposal.
+The `customStorageProvider` is a simple file based cache that fetches "new" data based on the last seen block and stores them in json files per proposal.
 If no cache is found the cache will try to refresh automatically.
 
 ```

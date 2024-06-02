@@ -1,5 +1,7 @@
-import {githubHybridCacheAdapter} from '../src/adapter/githubHybrid';
-import {localCacheAdapter} from '../src/adapter/localCache';
+import {customStorageProvider} from '../src/providers/customStorageProvider';
 import {refreshCache} from '../src/common/refreshCache';
+import {fileSystemStorage} from '../dist/fileSystem';
 
-refreshCache(githubHybridCacheAdapter(localCacheAdapter));
+const provider = customStorageProvider(fileSystemStorage);
+
+refreshCache(provider);

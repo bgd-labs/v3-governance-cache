@@ -46,8 +46,6 @@ export interface GetProposalReturnType {
 }
 
 export interface GovernanceCacheAdapter {
-  syncPayloadsCache: (args: {chainId: number; payloadsController: Address}) => any;
-  syncProposalCache: (args: {chainId: number; governance: Address}) => any;
   getPayload: (args: {
     chainId: number;
     payloadsController: Address;
@@ -58,6 +56,11 @@ export interface GovernanceCacheAdapter {
     governance: Address;
     proposalId: bigint;
   }) => GetProposalReturnType | Promise<GetProposalReturnType>;
+}
+
+export interface GovernanceCacheAdapterWithSync extends GovernanceCacheAdapter {
+  syncPayloadsCache: (args: {chainId: number; payloadsController: Address}) => any;
+  syncProposalCache: (args: {chainId: number; governance: Address}) => any;
 }
 
 /**

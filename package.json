@@ -1,6 +1,6 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "sideEffects": false,
   "files": [
     "cache",
@@ -17,12 +17,16 @@
       "default": "./dist/index.js"
     },
     "./localCache": {
-      "types": "./dist/localCache.d.ts",
-      "default": "./dist/adapter/localCache.js"
+      "types": "./dist/customStorageProvider.d.ts",
+      "default": "./dist/providers/customStorageProvider.js"
     },
-    "./githubHybrid": {
-      "types": "./dist/githubHybrid.d.ts",
-      "default": "./dist/adapter/githubHybrid.js"
+    "./github": {
+      "types": "./dist/githubPagesProvider.d.ts",
+      "default": "./dist/providers/githubPagesProvider.js"
+    },
+    "./fallbackProvider": {
+      "types": "./dist/fallbackProvider.d.ts",
+      "default": "./dist/providers/fallbackProvider.js"
     },
     "./refreshCache": {
       "types": "./dist/refreshCache.d.ts",

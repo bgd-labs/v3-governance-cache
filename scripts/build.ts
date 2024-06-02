@@ -3,9 +3,11 @@ import dts from 'bun-plugin-dts';
 await Bun.build({
   entrypoints: [
     'src/index.ts',
-    'src/adapter/localCache.ts',
-    'src/adapter/noCache.ts',
-    'src/adapter/githubHybrid.ts',
+    'src/providers/customStorageProvider.ts',
+    'src/providers/storage/fileSystem.ts',
+    'src/providers/rpcProvider.ts',
+    'src/providers/fallbackProvider.ts',
+    'src/providers/githubPagesProvider.ts',
     'src/common/refreshCache.ts',
   ],
   outdir: './dist',

@@ -7,7 +7,7 @@ import type {GovernanceCacheAdapter} from '..';
 import {getPayload} from '../common/payloadsController';
 import {getProposal} from '../common/governance';
 
-export const noCacheAdapter: GovernanceCacheAdapter = {
+export const rpcProvider: GovernanceCacheAdapter = {
   async getPayload({chainId, payloadsController, payloadId}) {
     const client = CHAIN_ID_CLIENT_MAP[chainId];
     return {payload: await getPayload({client, payloadsController, payloadId}), logs: {} as any};
@@ -17,11 +17,5 @@ export const noCacheAdapter: GovernanceCacheAdapter = {
 
     const proposal = await getProposal({client, proposalId, governance});
     return {proposal, logs: {} as any, ipfs: await getProposalMetadata(proposal.ipfsHash)};
-  },
-  syncPayloadsCache() {
-    throw new Error('syncing is not available on the "no-cache" adapter');
-  },
-  syncProposalCache() {
-    throw new Error('syncing is not available on the "no-cache" adapter');
   },
 };

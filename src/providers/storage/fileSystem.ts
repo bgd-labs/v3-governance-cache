@@ -1,23 +1,21 @@
-/**
- * Cache adapter which simply stores the ache in a local cache directory
- */
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
-import {CHAIN_ID_CLIENT_MAP, getProposalMetadata} from '@bgd-labs/js-utils';
-import packageJson from '../../package.json';
+import packageJson from '../../../package.json';
 import {
   isPayloadFinal,
   isProposalFinal,
-  type GovernanceCacheAdapter,
+  type GovernanceCacheAdapterWithSync,
   type PayloadCacheRaw,
   type ProposalCacheRaw,
-} from '..';
-import {formatProposalLogs, getProposal, syncGovernanceEvents} from '../common/governance';
+} from '../..';
+import {ISSUES_FETCHING_PAYLOAD, ISSUES_FETCHING_PROPOSAL} from '../../errors';
 import {
   formatPayloadLogs,
   getPayload,
   syncPayloadsControllerEvents,
-} from '../common/payloadsController';
+} from '../../common/payloadsController';
+import {formatProposalLogs, syncGovernanceEvents, getProposal} from '../../common/governance';
+import {CHAIN_ID_CLIENT_MAP, getProposalMetadata} from '@bgd-labs/js-utils';
 
 function getPath() {
   const installPath = path.join(process.cwd(), 'node_modules', packageJson.name);
@@ -63,7 +61,7 @@ export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record<str
  * 1. fetches new events
  * 2. re-fetches the proposal for ever proposalId encountered in the events
  */
-const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
+const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = async ({
   chainId,
   governance,
 }) => {
@@ -124,7 +122,7 @@ const syncProposalCache: GovernanceCacheAdapter['syncProposalCache'] = async ({
  * 1. fetch new events
  * 2. fetch all payloads encountered in the events
  */
-const syncPayloadsCache: GovernanceCacheAdapter['syncPayloadsCache'] = async ({
+const syncPayloadsCache: GovernanceCacheAdapterWithSync['syncPayloadsCache'] = async ({
   chainId,
   payloadsController,
 }) => {
@@ -169,26 +167,17 @@ const syncPayloadsCache: GovernanceCacheAdapter['syncPayloadsCache'] = async ({
   return newData;
 };
 
-export const localCacheAdapter: GovernanceCacheAdapter = {
+export const fileSystemStorage: GovernanceCacheAdapterWithSync = {
   async getPayload({chainId, payloadsController, payloadId}) {
     const path = `${chainId.toString()}/${payloadsController}/payloads`;
-    let cache = readJSONCache<PayloadCacheRaw>(path, payloadId);
-    if (!cache) {
-      await syncPayloadsCache({chainId, payloadsController});
-      cache = readJSONCache<PayloadCacheRaw>(path, payloadId);
-      if (!cache)
-        throw new Error(`Payload ${payloadId} not found on ${chainId}:${payloadsController}`);
-    }
+    const cache = readJSONCache<PayloadCacheRaw>(path, payloadId);
+    if (!cache) throw new Error(ISSUES_FETCHING_PAYLOAD);
     return {payload: cache.payload!, logs: formatPayloadLogs(cache.events)};
   },
   async getProposal({chainId, governance, proposalId}) {
     const path = `${chainId.toString()}/${governance}/proposals`;
-    let cache = readJSONCache<ProposalCacheRaw>(path, proposalId);
-    if (!cache) {
-      await syncProposalCache({chainId, governance});
-      cache = readJSONCache<ProposalCacheRaw>(path, proposalId);
-      if (!cache) throw new Error(`Payload ${proposalId} not found on ${chainId}:${governance}`);
-    }
+    const cache = readJSONCache<ProposalCacheRaw>(path, proposalId);
+    if (!cache) throw new Error(ISSUES_FETCHING_PROPOSAL);
     return {proposal: cache.proposal!, logs: formatProposalLogs(cache.events), ipfs: cache.ipfs!};
   },
   syncPayloadsCache,

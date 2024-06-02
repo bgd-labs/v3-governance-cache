@@ -11,9 +11,9 @@ import {
   GovernanceV3Scroll,
   GovernanceV3Base,
 } from '@bgd-labs/aave-address-book';
-import type {GovernanceCacheAdapter} from '..';
+import type {GovernanceCacheAdapterWithSync} from '..';
 
-export async function refreshCache(adapter: GovernanceCacheAdapter) {
+export async function refreshCache(adapter: GovernanceCacheAdapterWithSync) {
   await adapter.syncProposalCache({
     chainId: 1,
     governance: GovernanceV3Ethereum.GOVERNANCE,
