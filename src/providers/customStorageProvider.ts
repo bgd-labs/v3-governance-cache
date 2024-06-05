@@ -1,26 +1,25 @@
 import {type GovernanceCacheAdapterWithSync} from '..';
-import {ISSUES_FETCHING_PAYLOAD, ISSUES_FETCHING_PROPOSAL} from '../errors';
 
 export const customStorageProvider = (
   adapter: GovernanceCacheAdapterWithSync,
 ): GovernanceCacheAdapterWithSync => ({
   async getPayload(args) {
-    let cache = await adapter.getPayload(args);
-    if (!cache) {
+    try {
+      const cache = await adapter.getPayload(args);
+      return cache;
+    } catch (e) {
       await adapter.syncPayloadsCache(args);
-      cache = await adapter.getPayload(args);
-      if (!cache) throw new Error(ISSUES_FETCHING_PAYLOAD);
+      return await adapter.getPayload(args);
     }
-    return cache;
   },
   async getProposal(args) {
-    let cache = await adapter.getProposal(args);
-    if (!cache) {
+    try {
+      const cache = await adapter.getProposal(args);
+      return cache;
+    } catch (e) {
       await adapter.syncProposalCache(args);
-      cache = await adapter.getProposal(args);
-      if (!cache) throw new Error(ISSUES_FETCHING_PROPOSAL);
+      return await adapter.getProposal(args);
     }
-    return cache;
   },
   syncPayloadsCache(args) {
     return adapter.syncPayloadsCache(args);

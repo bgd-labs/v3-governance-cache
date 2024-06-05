@@ -10,6 +10,7 @@ export const fallbackProvider = <T extends GovernanceCacheAdapter>(
         const response = await providers[i].getPayload(args);
         return response;
       } catch (e) {
+        console.log(e);
         console.log('falling back to next provider');
       }
     }
@@ -21,6 +22,7 @@ export const fallbackProvider = <T extends GovernanceCacheAdapter>(
         const response = await providers[i].getProposal(args);
         return response;
       } catch (e) {
+        console.log(e);
         console.log('falling back to next provider');
       }
     }
