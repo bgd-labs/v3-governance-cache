@@ -7,7 +7,7 @@ export const fallbackProvider = <T extends GovernanceCacheAdapter>(
   async getPayload(args) {
     for (let i = 0; i < providers.length; i++) {
       try {
-        const response = providers[i].getPayload(args);
+        const response = await providers[i].getPayload(args);
         return response;
       } catch (e) {
         console.log('falling back to next provider');

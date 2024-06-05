@@ -19,9 +19,11 @@ The `customStorageProvider` is a simple file based cache that fetches "new" data
 If no cache is found the cache will try to refresh automatically.
 
 ```
-import {localCacheAdapter} from '@bgd-labs/aave-v3-governance-cache/localCache';
+import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/localCache';
+import {customStorageProvider} from '@bgd-labs/aave-v3-governance-cache/fileSystem';
 
-const cachingLayer = localCacheAdapter;
+
+const cachingLayer = customStorageProvider();
 
 const payload = cachingLayer.getPayload({chainId, payloadsController, payloadId});
 const proposal = cachingLayer.getProposal({chainId, governance, proposalId});

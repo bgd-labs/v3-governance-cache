@@ -167,7 +167,7 @@ const syncPayloadsCache: GovernanceCacheAdapterWithSync['syncPayloadsCache'] = a
   return newData;
 };
 
-export const fileSystemStorage: GovernanceCacheAdapterWithSync = {
+export const fileSystemStorageAdapter: GovernanceCacheAdapterWithSync = {
   async getPayload({chainId, payloadsController, payloadId}) {
     const path = `${chainId.toString()}/${payloadsController}/payloads`;
     const cache = readJSONCache<PayloadCacheRaw>(path, payloadId);

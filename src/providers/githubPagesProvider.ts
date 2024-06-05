@@ -10,7 +10,7 @@ function getPath() {
   return 'https://bgd-labs.github.io/v3-governance-cache/cache/';
 }
 
-export const githubPagesCacheAdapter: GovernanceCacheAdapter = {
+export const githubPagesProvider: GovernanceCacheAdapter = {
   async getPayload({chainId, payloadsController, payloadId}) {
     const path = `${chainId.toString()}/${payloadsController}/payloads/${payloadId}.json`;
     const cache = (await (await fetch(getPath() + path)).json()) as PayloadCacheRaw;
