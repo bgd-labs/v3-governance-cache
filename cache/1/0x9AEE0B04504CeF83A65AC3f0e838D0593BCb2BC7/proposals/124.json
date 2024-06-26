@@ -91,6 +91,314 @@
       "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
       "transactionIndex": 8,
       "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
+    },
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "124",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf1981dfdb2e9cd89813e77918c6737cd85d34604d45e50201a5f5f4171d1f982",
+      "blockNumber": "20148645",
+      "data": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+      "logIndex": 309,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2f2a58561e1c52e197e713ff0b969a26184528b4528d2c61fdd306eea8595848",
+      "transactionIndex": 70,
+      "timestamp": 1719076235
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "124",
+        "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xefe49e4a9c3ffacf3812d92a37fb1abaa4cbc38872e510be13f11eba159b7b7d",
+      "blockNumber": "20155794",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 88,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x000000000000000000000000000000000000000000000000000000000000007c",
+        "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786"
+      ],
+      "transactionHash": "0xa55cf34501a0f68017216a4abb84be59bf9c04330ca66482ae8f40a2df623499",
+      "transactionIndex": 8,
+      "timestamp": 1719162659
     }
-  ]
+  ],
+  "proposal": {
+    "state": 2,
+    "accessLevel": 1,
+    "creationTime": 1719076235,
+    "votingDuration": 259200,
+    "votingActivationTime": 1719162659,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x8ce83c5372d91172e68e05a525a6c139c05c2052cbc93568b002ec3bb910e786",
+    "ipfsHash": "0x7a9bcb55c0be36e9cd5c7d4122380aedbf5ea6834c9838770f81439a0a502283",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 140
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWbGEX8w5bBUwRWKh4GsL2aC11ZHHnZY4eRMYJZMFWGTU",
+    "description": "\n## Simple Summary\n\nThis is an ARFC to seek approval for the addition of sUSDe to Aave V3 on Ethereum, following the consensus reached in the [TEMP CHECK](https://snapshot.org/#/aave.eth/proposal/0x3263dbee34f5afe513a1a6c5bcd5207684cee03473e1b3d7616993dbd87ab881) and [ARFC](https://snapshot.org/#/aave.eth/proposal/0x9c6dcf2af7d79467f34e52b505c25d5e4c89af77f00396307d42fc4816797cd9) stage.\n\n## Motivation\n\nAs discussed in the TEMP CHECK, Ethena's synthetic dollar, USDe, provides a stable crypto-native solution for a cash and carry structured product. The staked version of USDe, sUSDe, earns yield from the protocol and has high potential for strong collateral demand.\n\n## Specification\n\nAmendment: opposed to the initial snapshot the aip enables flashloaning to stay consistent with other assets on the network.\n\nThe table below illustrates the configured risk parameters for **sUSDe**\n\n| Parameter                          |                                      Value |\n| ---------------------------------- | -----------------------------------------: |\n| Isolation Mode                     |                                       true |\n| Borrowable                         |                                   DISABLED |\n| Collateral Enabled                 |                                       true |\n| Supply Cap (sUSDe)                 |                                 85,000,000 |\n| Borrow Cap (sUSDe)                 |                                          0 |\n| Debt Ceiling                       |                             USD 40,000,000 |\n| LTV                                |                                       72 % |\n| LT                                 |                                       75 % |\n| Liquidation Bonus                  |                                      8.5 % |\n| Liquidation Protocol Fee           |                                       10 % |\n| Reserve Factor                     |                                       20 % |\n| Base Variable Borrow Rate          |                                        0 % |\n| Variable Slope 1                   |                                        0 % |\n| Variable Slope 2                   |                                        0 % |\n| Uoptimal                           |                                       90 % |\n| Stable Borrowing                   |                                   DISABLED |\n| Stable Slope1                      |                                        0 % |\n| Stable Slope2                      |                                        0 % |\n| Base Stable Rate Offset            |                                        0 % |\n| Stable Rate Excess Offset          |                                        0 % |\n| Optimal Stable To Total Debt Ratio |                                        0 % |\n| Flashloanable                      |                                    ENABLED |\n| Siloed Borrowing                   |                                   DISABLED |\n| Borrowable in Isolation            |                                   DISABLED |\n| Oracle                             | 0xb37aE8aBa6C0C1Bf2c509fc06E11aa4AF29B665A |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3166c85ff34b56b61cf9019b1dce97bf0a2141b2/src/20240621_AaveV3Ethereum_OnboardSUSDeToAaveV3OnEthereum/AaveV3Ethereum_OnboardSUSDeToAaveV3OnEthereum_20240621.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3166c85ff34b56b61cf9019b1dce97bf0a2141b2/src/20240621_AaveV3Ethereum_OnboardSUSDeToAaveV3OnEthereum/AaveV3Ethereum_OnboardSUSDeToAaveV3OnEthereum_20240621.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x9c6dcf2af7d79467f34e52b505c25d5e4c89af77f00396307d42fc4816797cd9)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-susde-to-aave-v3-on-ethereum/17191)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard sUSDe to Aave V3 on Ethereum",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-susde-to-aave-v3-on-ethereum/17191",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x9c6dcf2af7d79467f34e52b505c25d5e4c89af77f00396307d42fc4816797cd9"
+  }
 }
