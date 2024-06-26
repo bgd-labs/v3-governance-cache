@@ -103,6 +103,7 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
       proposalId.toString(),
     ) || {events: []};
     cache.proposal = await getProposal({client, governance, proposalId});
+
     if (!cache.ipfs) {
       try {
         cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
@@ -113,6 +114,7 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
     trackingCache.isFinal[String(proposalId)] = isProposalFinal(cache.proposal.state);
     writeJSONCache(proposalsPath, proposalId.toString(), cache);
   }
+  console.log('wtf');
   // store lastSeenBlock
   writeJSONCache(proposalsPath, 'trackingCache', trackingCache);
   return newData;

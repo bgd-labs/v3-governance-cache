@@ -1,6 +1,6 @@
 {
   "name": "@bgd-labs/aave-v3-governance-cache",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "sideEffects": false,
   "files": [
     "cache",
@@ -31,6 +31,10 @@
     "./fallbackProvider": {
       "types": "./dist/fallbackProvider.d.ts",
       "default": "./dist/providers/fallbackProvider.js"
+    },
+    "./rpcProvider": {
+      "types": "./dist/rpcProvider.d.ts",
+      "default": "./dist/providers/rpcProvider.js"
     },
     "./refreshCache": {
       "types": "./dist/refreshCache.d.ts",
