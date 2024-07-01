@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.0...v1.0.1) (2024-06-26)
+
+
+### Bug Fixes
+
+* await reponse ([9140e74](https://github.com/bgd-labs/v3-governance-cache/commit/9140e747a4eb9e8ca9cc999e8e4a2a740c94f7d2))
+* patch filesystem cache ([4a751e3](https://github.com/bgd-labs/v3-governance-cache/commit/4a751e3752843e088f04e46bead68a20870e2be0))
+* patch github provider ([84d30a1](https://github.com/bgd-labs/v3-governance-cache/commit/84d30a1c6e35c937ca3391ddd53c0a13f03be762))
+* release patch ([1022e5c](https://github.com/bgd-labs/v3-governance-cache/commit/1022e5c93abef0f1281efe9e30f5feac427aaa9d))
+
 ## 1.0.0 (2024-05-29)
 
 
