@@ -1,0 +1,108 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "130",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x2e8cee15c55cf4031ba0bc234478cfb0a9ced14e6b7d3967c32a9fbe0626178e"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xb5b36b84759866c7d3db24126bb131bab5272cea7c7eb16655ac9fc5cead44a7",
+      "blockNumber": "20341574",
+      "data": "0x2e8cee15c55cf4031ba0bc234478cfb0a9ced14e6b7d3967c32a9fbe0626178e",
+      "logIndex": 135,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000082",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x7d25e9894dfc27f6443c8051aad2251368a787d436c3be74ef150ec70eb426d4",
+      "transactionIndex": 32,
+      "timestamp": 1721404091
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1721404091,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x2e8cee15c55cf4031ba0bc234478cfb0a9ced14e6b7d3967c32a9fbe0626178e",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 144
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 70
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 41
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 37
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 37
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 24
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 22
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 14
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 16
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmRUN6vGcXT5rK3RYrnE9r8eqbMdUFQy8H71TSTDz23AUm",
+    "description": "\n## Simple Summary\n\nA proposal to decrease stablecoin Interest Rate parameters across all Aave deployments.\n\n## Motivation\n\nFollowing the anticipated decrease in DSR — from 8% to 7% — we believe it is prudent to update Aave stablecoin interest rates to best align with the broader market. Previously, we [recommended](https://governance.aave.com/t/arfc-stablecoin-ir-curve-amendment-on-aave-v2-and-v3-04-22-2024/17450) reducing rates concurrent with the last DSR decrease from 13% to 10% in April.\n\nThe new parameters went into effect on May 6, 2024, and thus far have helped improve rate stability and utilization rates. As part of our ongoing monitoring of broader markets, we note that MakerDAO is in the process of reducing the DAI Savings Rate, which could impact stablecoin rates throughout DeFi.\n\nFollowing our methodology laid out in previous [recommendations](https://governance.aave.com/t/arfc-stablecoin-ir-curve-amendment-on-aave-v2-and-v3/16864/2), we recommend closely aligning Slope1 with the DSR to reduce the opportunity of rate arbitrage and ensure that Aave remains competitive. As a result, we propose decreasing Slope1 to 0.5% below the DSR, setting it at 6.5%.\n\nCaveats:\n\n1. We do not recommend an update to lower-cap stablecoins on Ethereum V2, as they are currently being deprecated.\n2. Similar to the previous proposals, we do not recommend a change on bridged USDC (USDC.e/USDbC) on all deployments. This way, they will have a higher Slope1 to motivate the borrowing of native USDC.\n\n## Specification\n\n| Market       | Asset  | Current Slope1 | Recommended Slope1 |\n| ------------ | ------ | -------------- | ------------------ |\n| Ethereum V2  | USDC   | 9%             | 6.5%               |\n| Ethereum V2  | USDT   | 9%             | 6.5%               |\n| Ethereum V2  | DAI    | 9%             | 6.5%               |\n| Ethereum V3  | USDC   | 9%             | 6.5%               |\n| Ethereum V3  | USDT   | 9%             | 6.5%               |\n| Ethereum V3  | FRAX   | 9%             | 6.5%               |\n| Ethereum V3  | DAI    | 9%             | 6.5%               |\n| Ethereum V3  | LUSD   | 9%             | 6.5%               |\n| Ethereum V3  | pyUSD  | 9%             | 6.5%               |\n| Ethereum V3  | crvUSD | 9%             | 6.5%               |\n| Avalanche V3 | USDC   | 9%             | 6.5%               |\n| Avalanche V3 | USDT   | 9%             | 6.5%               |\n| Avalanche V3 | DAI    | 9%             | 6.5%               |\n| Avalanche V3 | FRAX   | 9%             | 6.5%               |\n| Polygon V3   | USDC   | 9%             | 6.5%               |\n| Polygon V3   | USDT   | 9%             | 6.5%               |\n| Polygon V3   | DAI    | 9%             | 6.5%               |\n| Polygon V3   | EURA   | 9%             | 6.5%               |\n| Polygon V3   | EURS   | 9%             | 6.5%               |\n| Polygon V3   | jEUR   | 9%             | 6.5%               |\n| Optimism V3  | USDC   | 9%             | 6.5%               |\n| Optimism V3  | USDT   | 9%             | 6.5%               |\n| Optimism V3  | DAI    | 9%             | 6.5%               |\n| Optimism V3  | sUSD   | 9%             | 6.5%               |\n| Optimism V3  | LUSD   | 9%             | 6.5%               |\n| Optimism V3  | MAI    | 9%             | 6.5%               |\n| Arbitrum V3  | USDC   | 9%             | 6.5%               |\n| Arbitrum V3  | USDT   | 9%             | 6.5%               |\n| Arbitrum V3  | DAI    | 9%             | 6.5%               |\n| Arbitrum V3  | LUSD   | 9%             | 6.5%               |\n| Arbitrum V3  | FRAX   | 9%             | 6.5%               |\n| Arbitrum V3  | EURS   | 9%             | 6.5%               |\n| Base V3      | USDC   | 9%             | 6.5%               |\n| Metis V3     | m.USDC | 6%             | No Change          |\n| Metis V3     | m.USDT | 6%             | No Change          |\n| Metis V3     | m.DAI  | 6%             | No Change          |\n| BNB Chain V3 | USDT   | 9%             | 6.5%               |\n| BNB Chain V3 | USDC   | 9%             | 6.5%               |\n| BNB Chain V3 | FDUSD  | 9%             | 6.5%               |\n| Scroll V3    | USDC   | 9%             | 6.5%               |\n| Gnosis V3    | WXDAI  | 9%             | 6.5%               |\n| Gnosis V3    | USDC   | 9%             | 6.5%               |\n| Gnosis V3    | EURe   | 9%             | 6.5%               |\n\n## References\n\n- Implementation: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV2Ethereum_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Ethereum_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Polygon_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Avalanche_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Optimism_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Arbitrum_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Base_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Gnosis_StablecoinIRCurveAmendment_20240714.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Scroll_StablecoinIRCurveAmendment_20240714.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3BNB_StablecoinIRCurveAmendment_20240714.sol)\n- Tests: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV2Ethereum_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Ethereum_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Polygon_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Avalanche_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Optimism_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Arbitrum_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Base_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Gnosis_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3Scroll_StablecoinIRCurveAmendment_20240714.t.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/87be85f78fb5c0eefff01d5d413b5830ce850f0e/src/20240714_Multi_StablecoinIRCurveAmendment/AaveV3BNB_StablecoinIRCurveAmendment_20240714.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-stablecoin-ir-curve-amendment-on-aave-v2-and-v3-07-14-24/18252)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Stablecoin IR Curve Amendment",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-stablecoin-ir-curve-amendment-on-aave-v2-and-v3-07-14-24/18252",
+    "snapshot": "Direct-to-AIP"
+  }
+}
