@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "140",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x653f4431fde3b935da775bcc2f0820d051c8f8342ee0cc707c1910c312d2bc66"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xcfa9743f583dc604c3c78c454c9ec8df5bed03114b628cac9f4239e334212876",
+      "blockNumber": "20434901",
+      "data": "0x653f4431fde3b935da775bcc2f0820d051c8f8342ee0cc707c1910c312d2bc66",
+      "logIndex": 655,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000008c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x8aaaa755d0d2c27889af5fcd5a643af1d8e54e73464cdd4c60003ac6ba34f31d",
+      "transactionIndex": 344,
+      "timestamp": 1722529811
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1722529811,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x653f4431fde3b935da775bcc2f0820d051c8f8342ee0cc707c1910c312d2bc66",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 16
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmV9sqgSGyicSj8B6bjvQCN6cq2pyCVsL7oa56mEdMj61b",
+    "description": "\n## Simple Summary\n\nThis ARFC seeks to add [Ether.fi](http://ether.fi/) Liquid Restaking Token weETH to Aave V3 on Scroll.\n\nAfter the successful onboarding of weETH to [Aave v3 Ethereum ](https://vote.onaave.com/proposal/?proposalId=74&ipfsHash=0x227ef8b0f49775f64100ec697bc4e67b0739bd1ff08788b1f6b48a66e1d57bf7), [Arbitrum ](https://vote.onaave.com/proposal/?proposalId=76&ipfsHash=0x78778591515790b337fcdcc2a02d49dc58e98cad614c33d61e1173bc6194729d), and [Base ](https://governance.aave.com/t/arfc-onboarding-of-weeth-to-aave-v3-on-base/17691), alongside recent Supply and Borrow Cap increases for weETH due to significant demand, this proposal will further increase the ability for Aave to service weETH demand from users.\n\n## Motivation\n\nweETH is an LRT that allows users to stake their ETH, accrue staking rewards, and receive additional rewards through native restaking on EigenLayer.\n\n[Ether.fi](http://ether.fi/) has also launched weETH on Arbitrum and Base allowing L2 users to get exposure to LRT yield and points. As weETH has already been approved for onboarding to Aave V3 on Ethereum, Arbitrum, and Base by the DAO, this proposal extends the onboarding of weETH to Aave v3 on Scroll.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **weETH**\n\n| Parameter                 |                                      Value |\n| ------------------------- | -----------------------------------------: |\n| Isolation Mode            |                                      false |\n| Borrowable                |                                    ENABLED |\n| Collateral Enabled        |                                       true |\n| Supply Cap (weETH)        |                                      2,000 |\n| Borrow Cap (weETH)        |                                        400 |\n| Debt Ceiling              |                                      USD 0 |\n| LTV                       |                                     72.5 % |\n| LT                        |                                       75 % |\n| Liquidation Bonus         |                                      7.5 % |\n| Liquidation Protocol Fee  |                                       10 % |\n| Reserve Factor            |                                       15 % |\n| Base Variable Borrow Rate |                                        0 % |\n| Variable Slope 1          |                                        7 % |\n| Variable Slope 2          |                                      300 % |\n| Uoptimal                  |                                       45 % |\n| Stable Borrowing          |                                   DISABLED |\n| Flashloanable             |                                    ENABLED |\n| Siloed Borrowing          |                                   DISABLED |\n| Borrowable in Isolation   |                                   DISABLED |\n| Oracle                    | 0x32f924C0e0F1Abf5D1ff35B05eBc5E844dEdD2A9 |\n| E-Mode Category           |                             ETH-correlated |\n\n## References\n\n- Implementation: [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/443541cf27fddd1e4c2ac409c2acfbbd0137ac2e/src/20240731_AaveV3Scroll_OnboardingWeETHToAaveV3OnScroll/AaveV3Scroll_OnboardingWeETHToAaveV3OnScroll_20240731.sol)\n- Tests: [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/443541cf27fddd1e4c2ac409c2acfbbd0137ac2e/src/20240731_AaveV3Scroll_OnboardingWeETHToAaveV3OnScroll/AaveV3Scroll_OnboardingWeETHToAaveV3OnScroll_20240731.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x252bafcf8ead0bf1869b7ba9fef430caf3977dfd1e1f84e2e4bc1842e83520b4)\n- [Discussion](https://governance.aave.com/t/arfc-onboarding-weeth-to-aave-v3-on-scroll/18301)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboarding weETH to Aave V3 on Scroll",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboarding-weeth-to-aave-v3-on-scroll/18301",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x252bafcf8ead0bf1869b7ba9fef430caf3977dfd1e1f84e2e4bc1842e83520b4"
+  }
+}
