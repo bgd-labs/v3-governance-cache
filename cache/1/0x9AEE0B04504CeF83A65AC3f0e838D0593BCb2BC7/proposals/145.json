@@ -1,0 +1,96 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "145",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x6985386cb307aa45146c8e2e1ab70a8807267646fb45791184af1a64dc15e8a8"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x1213c08ad01e784c52e732cffb3099dca9808127d4d6d51cbea1d6ed865ef3b3",
+      "blockNumber": "20476064",
+      "data": "0x6985386cb307aa45146c8e2e1ab70a8807267646fb45791184af1a64dc15e8a8",
+      "logIndex": 42,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000091",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xe7430927138f4cd1aacbb29779fefa01766b3ad4bf4a100203d34355bd051ac3",
+      "transactionIndex": 8,
+      "timestamp": 1723026095
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1723026095,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x6985386cb307aa45146c8e2e1ab70a8807267646fb45791184af1a64dc15e8a8",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 157
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 75
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 42
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 44
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 28
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 27
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 19
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmVSZLbL2oSJJ5ArPF7DDL5LjQKxmq6oPZ6RZKzocRHUP1",
+    "description": "\n## Simple Summary\n\nFor further alignment with the upcoming Lido Alliance proposals, this proposal will reduce the reserve factor for wstETH to 5%.\n\n## Motivation\n\nAave and Lido have historically seen symbiotic growth, with stETH being one of the premier collaterals on Aave and leveraged staking being one of the most profitable use cases for both Aave DAO and Lido users.\n\nAs part of the recently passed [TEMP CHECK proposal ](https://governance.aave.com/t/temp-check-deploy-a-lido-aave-v3-instance/17930) to create an isolated instance for wstETH borrowers, a number of other parameter changes were proposed to align Lido and Aave.\n\nThis proposal implements the agreed reserve factor change for wstETH to 5%.\n\n## Specification\n\nOn all networks, change wstETH Reserve Factor to 5%.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Ethereum_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Polygon_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Optimism_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Arbitrum_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Base_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Gnosis_ReduceReserveFactorOnWstETH_20240716.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Scroll_ReduceReserveFactorOnWstETH_20240716.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Ethereum_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Polygon_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Optimism_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Arbitrum_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Base_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Gnosis_ReduceReserveFactorOnWstETH_20240716.t.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/25cb42a47112ccc946bf44d94820ff62c2b77f5e/src/20240716_Multi_ReduceReserveFactorOnWstETH/AaveV3Scroll_ReduceReserveFactorOnWstETH_20240716.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x7ef3a8d68fa8a1b69d298aceddfafe9d2a24eefb19365d995c839b1cd1b0b97d)\n- [Discussion](https://governance.aave.com/t/arfc-reduce-reserve-factor-on-wsteth/18044/1)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Reduce Reserve Factor on wstETH",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-reduce-reserve-factor-on-wsteth/18044/1",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x7ef3a8d68fa8a1b69d298aceddfafe9d2a24eefb19365d995c839b1cd1b0b97d"
+  }
+}
