@@ -1,0 +1,90 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "154",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x48eab28aa5a7cd08dfe029558f73df291c874e854620f8fef9a1be67fde48df4"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xa256206e134f970580b204c3c5739b752287e5238a59e1424d2625913493226d",
+      "blockNumber": "20543106",
+      "data": "0x48eab28aa5a7cd08dfe029558f73df291c874e854620f8fef9a1be67fde48df4",
+      "logIndex": 50,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000009a",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xa3bb7af1cb9e4aef15d09e21b69e08eb1b41d13c2cc1667caa5b24130019b3b0",
+      "transactionIndex": 15,
+      "timestamp": 1723834379
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1723834379,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x48eab28aa5a7cd08dfe029558f73df291c874e854620f8fef9a1be67fde48df4",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 163
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 78
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 49
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 45
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 47
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 31
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTFHdaBs4eYdCzX3FNJTqWsh3ZK8XEKXnC4aaJzZYKbjh",
+    "description": "\n## Simple Summary\n\nThis AIP shall implement the following parameter adjustments:\n\n- Increase Slope1 across Polygon v2 by 75bps;\n- Increase Reserve Factor (RF) on Ethereum v2 and Avalanche v2 by 5.00%; and,\n- Increase USDC.e and USDbC RF by 5.00% on Arbitrum, Optimism, Polygon, and Base.\n\n## Motivation\n\nThis AIP will reduce deposit yield for assets on Ethereum v2 and Avalanche v2 instances of Aave Protocol by increasing the RF by 5.00%. By increasing the RF a greater portion of the interest paid by borrowers is directed to the Aave DAO's treasury.\n\nThis results in a lower deposit rate for users and encourages migration from v2 instances of the Aave Protocol to v3. User's funds are not at risk of liquidation and the borrowing rate remains unchanged.\n\nThe RF across all USDC.e and USDbC reserves will be increased by 5.00% to encourage migration from bridged USDC to native USDC on each respective network.\n\nBy increasing the Slope1 parameter by 75bps on Polygon v2, the cost of capital to users increases and further encourages migration to Polygon v3.\n\n## Specification\n\nSlope1 Parameter 75bps Increases:\n\n| Asset  |   Market   | Current Slope1 | Proposed Slope1 |\n| :----: | :--------: | :------------: | :-------------: |\n|  DAI   | Polygon v2 |      12%       |     12.75%      |\n|  USDT  | Polygon v2 |      12%       |     12.75%      |\n|  wBTC  | Polygon v2 |       7%       |      7.75%      |\n|  wETH  | Polygon v2 |       7%       |      7.75%      |\n|  USDC  | Polygon v2 |      12%       |     12.75%      |\n| wMATIC | Polygon v2 |       9%       |      9.75%      |\n\nReserve Factor 5.00% Increases:\n\n| Asset  |    Market    | Current RF | Proposed RF |\n| ------ | :----------: | :--------: | :---------: |\n| DAI.e  | Avalanche v2 |   60.00%   |   65.00%    |\n| USDC.e | Avalanche v2 |   60.00%   |   65.00%    |\n| USDT.e | Avalanche v2 |   60.00%   |   65.00%    |\n| wAVAX  | Avalanche v2 |   60.00%   |   65.00%    |\n| WBTC.e | Avalanche v2 |   65.00%   |   70.00%    |\n| WETH.e | Avalanche v2 |   60.00%   |   65.00%    |\n| DAI    | Ethereum v2  |   65.00%   |   70.00%    |\n| LINK   | Ethereum v2  |   70.00%   |   75.00%    |\n| USDC   | Ethereum v2  |   65.00%   |   70.00%    |\n| USDT   | Ethereum v2  |   65.00%   |   70.00%    |\n| wBTC   | Ethereum v2  |   70.00%   |   75.00%    |\n| wETH   | Ethereum v2  |   65.00%   |   70.00%    |\n| USDC.e |   Arbitrum   |   30.00%   |   35.00%    |\n| USDC.e |   Optimism   |   30.00%   |   35.00%    |\n| USDC.e |   Polygon    |   30.00%   |   35.00%    |\n| USDbC  |     Base     |   30.00%   |   35.00%    |\n\n## References\n\n- Implementation: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Ethereum_ReserveFactorUpdatesAugust_20240726.sol), [AaveV2Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Polygon_ReserveFactorUpdatesAugust_20240726.sol), [AaveV2Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Avalanche_ReserveFactorUpdatesAugust_20240726.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Polygon_ReserveFactorUpdatesAugust_20240726.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Optimism_ReserveFactorUpdatesAugust_20240726.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Arbitrum_ReserveFactorUpdatesAugust_20240726.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Base_ReserveFactorUpdatesAugust_20240726.sol)\n- Tests: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Ethereum_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV2Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Polygon_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV2Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV2Avalanche_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Polygon_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Optimism_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Arbitrum_ReserveFactorUpdatesAugust_20240726.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/3eb72bf4ca74ab04137b7650030c620e98519325/src/20240726_Multi_ReserveFactorUpdatesAugust/AaveV3Base_ReserveFactorUpdatesAugust_20240726.t.sol)\n- [Snapshot for USDCe updates](https://snapshot.org/#/aave.eth/proposal/0x9cc7906f04f45cebeaa48a05ed281f49da00d89c4dd988a968272fa179f14d06)\n- [Discussion for USDCe updates](https://governance.aave.com/t/arfc-increase-bridged-usdc-reserve-factor-across-all-deployments/17787/6)\n- [Discussion for Ethereum V2 Reserve Factor Updates](https://governance.aave.com/t/arfc-ethereum-v2-reserve-factor-adjustment/16764/15)\n- [Snapshot for Ethereum V2 Reserve Factor Updates](https://snapshot.org/#/aave.eth/proposal/0x26a03c08359c340f63b78b0c3e96d37aa0adeda65814643b0886d4719048ea7e)\n- [Discussion for Avalanche V2 Reserve Factor Updates](https://governance.aave.com/t/arfc-avalanche-v2-reserve-factor-adjustment/17040/10)\n- [Snapshot for Avalanche V2 Reserve Factor Updates](https://snapshot.org/#/aave.eth/proposal/0x770ff4e02634c77aaa09952345551168920f7878b32ab03fcef92763a5fb70ab)\n- [Discussion for Polygon V2 Borrow Rate Updates](https://governance.aave.com/t/arfc-polygon-v2-borrow-rate-adjustments/17252/10)\n- [Snapshot for Polygon V2 Borrow Rate Updates](https://snapshot.org/#/aave.eth/proposal/0x95643085ee16eb0eaa4110a9f0ea8223009f9521e596e1a958303705a5001363)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Reserve Factor Updates August",
+    "author": "karpatkey_TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-increase-bridged-usdc-reserve-factor-across-all-deployments/17787",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x9cc7906f04f45cebeaa48a05ed281f49da00d89c4dd988a968272fa179f14d06"
+  }
+}
