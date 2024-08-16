@@ -114,7 +114,6 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
     trackingCache.isFinal[String(proposalId)] = isProposalFinal(cache.proposal.state);
     writeJSONCache(proposalsPath, proposalId.toString(), cache);
   }
-  console.log('wtf');
   // store lastSeenBlock
   writeJSONCache(proposalsPath, 'trackingCache', trackingCache);
   return newData;

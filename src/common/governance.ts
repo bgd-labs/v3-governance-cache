@@ -1,9 +1,8 @@
 import {type Client, type Address, getContract, getAbiItem} from 'viem';
 import {getBlockNumber, getBlock} from 'viem/actions';
-import {CHAIN_ID_CLIENT_MAP, getBlockAtTimestamp, strategicGetLogs} from '@bgd-labs/js-utils';
+import {getBlockAtTimestamp, strategicGetLogs} from '@bgd-labs/js-utils';
 import {IGovernanceCore_ABI} from '@bgd-labs/aave-address-book';
 import type {
-  GovernanceCacheAdapter,
   ProposalCanceledEvent,
   ProposalCreatedEvent,
   ProposalEvent,

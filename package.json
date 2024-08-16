@@ -46,8 +46,8 @@
     "cache": "bun ./scripts/refreshCache.ts"
   },
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^2.25.1",
-    "@bgd-labs/js-utils": "^1.3.0",
+    "@bgd-labs/aave-address-book": "^3.1.1",
+    "@bgd-labs/js-utils": "^1.4.2",
     "@types/bun": "latest",
     "bun-plugin-dts": "^0.2.3",
     "prettier": "^3.2.5",
@@ -56,6 +56,6 @@
   },
   "peerDependencies": {
     "viem": "^2.9.20",
-    "@bgd-labs/aave-address-book": "^2.25.1"
+    "@bgd-labs/aave-address-book": "^3.1.1"
   }
 }
