@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "152",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xcdd44ece79347739c5bd2c69e16f9ddd462f073aa4e0533342a3a3ec7c71d136"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000098",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xcdd44ece79347739c5bd2c69e16f9ddd462f073aa4e0533342a3a3ec7c71d136",
+      "blockNumber": "20540152",
+      "transactionHash": "0x1ee8e13e5af3426a2dea4e4b3be56c1e8041af88083fd64053cf64812f2debae",
+      "transactionIndex": 9,
+      "blockHash": "0x89c8629fce92fad40e543c3075d5e052259bb08947cb9c095eecd079a3682d65",
+      "logIndex": 68,
+      "removed": false,
+      "timestamp": 1723798763
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1723798763,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xcdd44ece79347739c5bd2c69e16f9ddd462f073aa4e0533342a3a3ec7c71d136",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 23
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmcC844vYq3mXvc9DNibbS2ki2o39KWy2t6S3zv23ueFFB",
+    "description": "\n## Simple Summary\n\nThis proposal recommends enabling Metis token as collateral on Aave V3 within the Metis Chain\n\n## Motivation\n\nIntegrating Metis as collateral positions Aave as a key player in the Metis ecosystem, alongside upcoming incentives for builders and new projects. This move is anticipated to bolster Aave’s prominence as the leading lending platform on Metis Chain.\n\n## Specification\n\nThe proposed risk parameters for incorporating Metis as collateral are outlined below following @ChaosLabs TEMP CHECK recommendation:\n\n| Parameter                  | Value  |\n| -------------------------- | ------ |\n| Isolation Mode             | Yes    |\n| Borrowable                 | Yes    |\n| Collateral Enabled         | Yes    |\n| Debt Ceiling               | $1M    |\n| Loan to Value (LTV)        | 30.00% |\n| Liquidation Threshold (LT) | 40.00% |\n| Liquidation Bonus          | 10.00% |\n| Liquidation Protocol Fee   | 10.00% |\n\n## References\n\n- Implementation: [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/7e9aaa019afed78f36b3f87c3c8c1bbc069053a5/src/20240814_AaveV3Metis_EnableMetisAsCollateralOnMetisChain/AaveV3Metis_EnableMetisAsCollateralOnMetisChain_20240814.sol)\n- Tests: [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/7e9aaa019afed78f36b3f87c3c8c1bbc069053a5/src/20240814_AaveV3Metis_EnableMetisAsCollateralOnMetisChain/AaveV3Metis_EnableMetisAsCollateralOnMetisChain_20240814.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x2e15c7011a6696de1be8fb3476db30395225eb533f849b63bdbff2b33a605ffd)\n- [Discussion](https://governance.aave.com/t/arfc-enable-metis-as-collateral-on-metis-chain/16658)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Enable Metis as Collateral on Metis Chain",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-enable-metis-as-collateral-on-metis-chain/16658",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x2e15c7011a6696de1be8fb3476db30395225eb533f849b63bdbff2b33a605ffd"
+  }
+}
