@@ -106,7 +106,7 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
 
     if (!cache.ipfs) {
       try {
-        cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash);
+        cache.ipfs = await getProposalMetadata(cache.proposal.ipfsHash, 'https://ipfs.io/ipfs');
       } catch (e) {
         console.log(e);
       }

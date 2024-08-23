@@ -16,6 +16,10 @@ export const rpcProvider: GovernanceCacheAdapter = {
     const client = CHAIN_ID_CLIENT_MAP[chainId];
 
     const proposal = await getProposal({client, proposalId, governance});
-    return {proposal, logs: {} as any, ipfs: await getProposalMetadata(proposal.ipfsHash)};
+    return {
+      proposal,
+      logs: {} as any,
+      ipfs: await getProposalMetadata(proposal.ipfsHash, 'https://ipfs.io/ipfs'),
+    };
   },
 };
