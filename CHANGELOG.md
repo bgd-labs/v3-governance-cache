@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.1...v1.0.2) (2024-08-23)
+
+
+### Bug Fixes
+
+* use ipfs.io ([a7e303c](https://github.com/bgd-labs/v3-governance-cache/commit/a7e303ccc10d18ab0ff7b5def8b6c6edc6878081))
+
 ## [1.0.1](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.0...v1.0.1) (2024-06-26)
 
 
