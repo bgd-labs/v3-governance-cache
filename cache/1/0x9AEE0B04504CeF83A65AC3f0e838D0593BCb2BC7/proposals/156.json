@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "156",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xd46124e556c224e5e9a5b4d202548931ea58f9dee5bb517929166ce0f068813c"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x047607447428430572c721ed6d62400fdccb50132cebceb21f5b25bcf2bf055c",
+      "blockNumber": "20635040",
+      "data": "0xd46124e556c224e5e9a5b4d202548931ea58f9dee5bb517929166ce0f068813c",
+      "logIndex": 166,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000009c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x40cd88631889d5c209fa6963a2e9426b11e6f0b3842b261ca5548cbe94587160",
+      "transactionIndex": 46,
+      "timestamp": 1724944175
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1724944175,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd46124e556c224e5e9a5b4d202548931ea58f9dee5bb517929166ce0f068813c",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 164
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qmcdh4DNiFzHoyjKD5SLHsNGdXCCHXDLosNPnCgGQiCDWK",
+    "description": "\n## Simple Summary\n\nThis publication proposes swapping assets held in the Treasury for GHO and funding Phase III of the Merit and Ahab programs.\n\n## Motivation\n\nWith Phase III of the Merit and Ahab program about to start, August 9th, this publication proposes creating two new Allowances to fund the @ACI led growth programs.\n\nThe budget for these programs is the same as the Phase II, 645 ETH, and 3M GHO. The ETH is expected to be claimed and deposited into the Lido's instance of Aave v3 and the GHO claimed periodically ahead of each subsequent Merit rewards round.\n\nIn addition, this proposal also swaps approximately 640k of Stablecoin assets held in the Treasury to GHO. In combination with the May Funding Part A and Part B, these swaps are enough to offset the GHO spend of the Merit program.\n\n## Specification\n\n### Merit + Ahab Programs\n\nCreate allowances to the Merit and Ahab, 3M GHO and 645 ETH from Aave v3 Ethereum:\n\nSAFE: `0xdeadD8aB03075b7FBA81864202a2f59EE25B312b`\n\n### Runway Updates\n\nSwap the following asset for GHO via the Aave Swapper.\n\n| Withdraw & Swap to GHO |\n| :--------------------: |\n|    aEthUSDe (All-1)    |\n|      aUSDT (0.5M)      |\n|     aFRAX (All-1)      |\n|    aEthFRAX (All-1)    |\n|      aDPI (All-1)      |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/fce3898d3aefb9c7e965177381c393f03877dd13/src/20240729_AaveV3Ethereum_JulyFundingUpdate/AaveV3Ethereum_JulyFundingUpdate_20240729.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/fce3898d3aefb9c7e965177381c393f03877dd13/src/20240729_AaveV3Ethereum_JulyFundingUpdate/AaveV3Ethereum_JulyFundingUpdate_20240729.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-july-funding-update/18447)\n\n# Disclosure\n\nTokenLogic and karpatkey receive no payment for this proposal. TokenLogic and karpatkey are both delegates within the Aave community.\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "July Funding Update",
+    "author": "karpatkey_TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-july-funding-update/18447",
+    "snapshot": "Direct-to-AIP"
+  }
+}
