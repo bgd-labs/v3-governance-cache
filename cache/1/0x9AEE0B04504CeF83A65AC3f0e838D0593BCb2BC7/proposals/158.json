@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "158",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x4d73cb1489c07aabc0c173ea556658910d965d10cb97796937510dcd2250fdc5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x82f479bbb0341fb5e6f49ba511438c81fab7c2363cfd52b9e38544e3df54ad56",
+      "blockNumber": "20683290",
+      "data": "0x4d73cb1489c07aabc0c173ea556658910d965d10cb97796937510dcd2250fdc5",
+      "logIndex": 24,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000009e",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x5ec2be31f5422f9295863e837c3d71ff8f1fceefa7a200a251e585d3c1c630c0",
+      "transactionIndex": 9,
+      "timestamp": 1725526115
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1725526115,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x4d73cb1489c07aabc0c173ea556658910d965d10cb97796937510dcd2250fdc5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 165
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTYzWZLtmRnMK94QkCJ1Sax8N8czrbY9WzZ8BBsDHBjBA",
+    "description": "\n## Simple Summary\n\nThis AIP aims to decrease the GHO borrow rate from its current level to 5% to enhance its competitiveness in the current market conditions.\n\n## Motivation\n\nThe DeFi landscape is constantly evolving, and stablecoin protocols must adapt to remain competitive. Recent market analysis indicates:\n\n1. A general decrease in borrowing demand for stablecoins across DeFi platforms.\n2. Competing stablecoins offering more attractive rates, potentially drawing users away from GHO.\n3. An opportunity to increase GHO's market share by offering more competitive rates.\n\nBy reducing the borrow rate, we aim to:\n\n- Increase the attractiveness of GHO for borrowers\n- Stimulate the growth of GHO's total supply\n- Enhance GHO's position in the stablecoin market\n\n## Specification\n\n`BaseVariableBorrowRate` of GHO is decreased to 5%\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/db37727bbc89deedeb3792227ecbecca9172eb6e/src/20240831_AaveV3Ethereum_GhoBorrowRateUpdateAugust2024/AaveV3Ethereum_GhoBorrowRateUpdateAugust2024_20240831.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/db37727bbc89deedeb3792227ecbecca9172eb6e/src/20240831_AaveV3Ethereum_GhoBorrowRateUpdateAugust2024/AaveV3Ethereum_GhoBorrowRateUpdateAugust2024_20240831.t.sol)\n- [Discussion](https://governance.aave.com/t/arfc-gho-stewards-gho-parameter-adjustments/17289/29)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Gho Borrow Rate Update August 2024",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-gho-stewards-gho-parameter-adjustments/17289/29"
+  }
+}
