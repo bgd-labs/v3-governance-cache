@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "164",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xb3c587d4f09e9f879cf2b793b127c927522a4cb3eeb04623241916ea9ff5dae5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xe90b92d004a9c22c32c50c628bbd93f22e3468ec4ffc62422d68cf6370f59f1d",
+      "blockNumber": "20742350",
+      "data": "0xb3c587d4f09e9f879cf2b793b127c927522a4cb3eeb04623241916ea9ff5dae5",
+      "logIndex": 83,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000a4",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x1afbb368e2ed70b1a819495e93c072db95a3bd9b6e867cd6f8279e0376548745",
+      "transactionIndex": 13,
+      "timestamp": 1726238423
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1726238423,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xb3c587d4f09e9f879cf2b793b127c927522a4cb3eeb04623241916ea9ff5dae5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 172
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmaSQPFhD41c5NMHiNqeuqQZAMXVYuaHFokdU3roZeCHac",
+    "description": "\n## Simple Summary\n\nReduce wstETH Borrow Cap from 12,000 to 100 in preparation for wstETH deposit incentives.\n\n## Motivation\n\nWith the upcoming implementation of wstETH deposit liquidity mining rewards, this proposal suggests reducing the wstETH Borrow Cap to prevent recursive looping of wstETH deposits.\n\nIf liquidity mining rewards are added to wstETH deposits, we may see users looping wstETH/wstETH to farm the rewards. This could lead to the dilution of wstETH deposit rewards, and with low utilization of the wstETH reserve, the strategy will be less effective in encouraging users to engage in the wstETH/wETH yield-maximizing strategy.\n\nTo mitigate this risk, we propose reducing the wstETH Borrow Cap to levels near current utilization.\n\nWhen the first Liquid Restaking Token (LRT) is added to the Lido instance, the Borrow Cap will be increased, and wstETH deposit rewards will taper off or stop. We expect this to coincide with external teams providing deposit incentives for their respective LRTs.\n\nA separate proposal will outline changes to the wstETH Borrow Rate to encourage wstETH as the preferred debt asset for yield strategies utilizing LRTs as collateral.\n\n## Specification\n\nReduce Borrow Cap for wstETH reserve from 12,000 to 100 wstETH.\n\nWhen the first LRT is onboarded, the wstETH Borrow Cap will be increased to 12,000 as part of the asset onboarding AIP submission.\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/96388eed7be2ddcd287cf2abf08bc221e63a56bc/src/20240913_AaveV3EthereumLido_WstETHBorrowCapReduction/AaveV3EthereumLido_WstETHBorrowCapReduction_20240913.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/96388eed7be2ddcd287cf2abf08bc221e63a56bc/src/20240913_AaveV3EthereumLido_WstETHBorrowCapReduction/AaveV3EthereumLido_WstETHBorrowCapReduction_20240913.t.sol)\n- [Discussion](https://governance.aave.com/t/arfc-lido-instance-reduce-wsteth-borrow-cap/19016)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "wstETH Borrow Cap Reduction",
+    "author": "Tokenlogic",
+    "discussions": "https://governance.aave.com/t/arfc-lido-instance-reduce-wsteth-borrow-cap/19016",
+    "snapshot": "Direct-To-Aip"
+  }
+}
