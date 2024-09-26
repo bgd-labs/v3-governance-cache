@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "171",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x243c4732500e528f9bd74a2f0a761c4b5ace944f6036e352634c7e2ba3e0fa25"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000ab",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x243c4732500e528f9bd74a2f0a761c4b5ace944f6036e352634c7e2ba3e0fa25",
+      "blockNumber": "20833832",
+      "transactionHash": "0x121628b466a0b184587977432ac9021e4aef8036d22da892ced40372cb8fe0e6",
+      "transactionIndex": 21,
+      "blockHash": "0xa25ffb8ba011fd421e73304cb699c1df2b11ce1b2c12606f804fe9da6c678e0e",
+      "logIndex": 94,
+      "removed": false,
+      "timestamp": 1727342183
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1727342183,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x243c4732500e528f9bd74a2f0a761c4b5ace944f6036e352634c7e2ba3e0fa25",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 179
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmQn6hNhzmHbtyJ7DiAH3CroNLVDYx688shAikTvV6rRgx",
+    "description": "\n## Simple Summary\n\nThis AIP proposes to appoint the Aave-Chan Initiative (ACI) as the Emission Manager for wstETH & tBTC.\n\n## Motivation\n\nLiquidity mining programs are essential for attracting liquidity providers by offering rewards for their participation. Effective management of these programs is crucial for the sustained growth of the Aave Ecosystem. Therefore, with its extensive experience and strategic partnerships, ACI is well-positioned to manage these emissions effectively.\n\nTo extend Lido Instance growth, the ACI proposes setting its multisig as the emission manager for wstETH on the Lido instance. This is meant to kickstart a wstETH supply incentives program to prepare the ground for Liquid e-mode with LRTs on this instance.\n\nThis AIP also seeks to whitelist the ACI for tBTC on the Aave V3 Ethereum main instance to kickstart this asset growth.\n\n## Specification\n\nThe ACI multisig address will be set as the emission manager via the setEmissionAdmin() method in the relevant emission manager contracts for wstETH & tBTC.\n\nACI multisig address: 0xac140648435d03f784879cd789130F22Ef588Fcd\nwstETH: [0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0](https://etherscan.io/address/0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0)\ntBTC: [0x18084fbA666a33d37592fA2633fD49a74DD93a88](https://etherscan.io/address/0x18084fbA666a33d37592fA2633fD49a74DD93a88)\nAave Emission Manager contract on Ethereum: [0x223d844fc4B006D67c0cDbd39371A9F73f69d974](https://etherscan.io/address/0x223d844fc4B006D67c0cDbd39371A9F73f69d974)\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/d77ec22e0aadf12d411dab19852bf090f2f2c868/src/20240923_AaveV3EthereumLido_SetACIAsEmissionManagerForWstETH/AaveV3EthereumLido_SetACIAsEmissionManagerForWstETH_20240923.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/d77ec22e0aadf12d411dab19852bf090f2f2c868/src/20240923_AaveV3EthereumLido_SetACIAsEmissionManagerForWstETH/AaveV3EthereumLido_SetACIAsEmissionManagerForWstETH_20240923.t.sol)\n- [Discussion](https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/16)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Set ACI as Emission Manager for wstETH & tBTC",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-set-aci-as-emission-manager-for-liquidity-mining-programs/17898/16"
+  }
+}
