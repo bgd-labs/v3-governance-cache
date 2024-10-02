@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "177",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xdad5b7e0e98c8e85323902f8da177b99dd595302bebf9a69d40bbf0770072274"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x2fe824074e665eeb7bb92cd7bb1b3be736a6a023c157b6b2080e227e3fa2ee2f",
+      "blockNumber": "20878770",
+      "data": "0xdad5b7e0e98c8e85323902f8da177b99dd595302bebf9a69d40bbf0770072274",
+      "logIndex": 129,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000b1",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x8eb1c3210ffc31bd9be8deff674a7c901a4260ee644f1fa139d1bb191fd7f956",
+      "transactionIndex": 21,
+      "timestamp": 1727883599
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1727883599,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xdad5b7e0e98c8e85323902f8da177b99dd595302bebf9a69d40bbf0770072274",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 186
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qmd4tbpcLJEXpTs7AN5oTQxYiJQCB1zfMqRbcDSAL8gh8P",
+    "description": "\n## Simple Summary\n\nThis proposal aims to onboard USDC to the Aave v3 Lido Instance.\n\n## Motivation\n\nThe integration of USDC into the Aave v3 Lido Instance is driven by the following factors:\n\n- Liquidity Enhancement: The inclusion of this widely-used stablecoin is expected to boost liquidity in the Lido Instance, potentially attracting more users and increasing overall platform activity.\n\n- Strategic Alignment: This move aligns with Aave’s goal of offering a comprehensive suite of high-quality assets, keeping the protocol at the forefront of DeFi liquidity.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **USDC**\n\n| Parameter                 |                                                                                                                 Value |\n| ------------------------- | --------------------------------------------------------------------------------------------------------------------: |\n| Isolation Mode            |                                                                                                                 false |\n| Borrowable                |                                                                                                               ENABLED |\n| Collateral Enabled        |                                                                                                                 false |\n| Supply Cap (USDC)         |                                                                                                            30,000,000 |\n| Borrow Cap (USDC)         |                                                                                                            27,600,000 |\n| Debt Ceiling              |                                                                                                                 USD 0 |\n| LTV                       |                                                                                                                   0 % |\n| LT                        |                                                                                                                   0 % |\n| Liquidation Bonus         |                                                                                                                   0 % |\n| Liquidation Protocol Fee  |                                                                                                                  10 % |\n| Reserve Factor            |                                                                                                                  10 % |\n| Base Variable Borrow Rate |                                                                                                                   0 % |\n| Variable Slope 1          |                                                                                                                 5.5 % |\n| Variable Slope 2          |                                                                                                                  60 % |\n| Uoptimal                  |                                                                                                                  92 % |\n| Stable Borrowing          |                                                                                                              DISABLED |\n| Flashloanable             |                                                                                                               ENABLED |\n| Siloed Borrowing          |                                                                                                              DISABLED |\n| Borrowable in Isolation   |                                                                                                               ENABLED |\n| Oracle                    | [0x736bF902680e68989886e9807CD7Db4B3E015d3C](https://etherscan.io/address/0x736bF902680e68989886e9807CD7Db4B3E015d3C) |\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/5e1fb9724df8c6724f88c2fcecb59f1fc2f8b795/src/20241002_AaveV3EthereumLido_OnboardUSDCToAaveV3LidoInstance/AaveV3EthereumLido_OnboardUSDCToAaveV3LidoInstance_20241002.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/5e1fb9724df8c6724f88c2fcecb59f1fc2f8b795/src/20241002_AaveV3EthereumLido_OnboardUSDCToAaveV3LidoInstance/AaveV3EthereumLido_OnboardUSDCToAaveV3LidoInstance_20241002.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x6146daa40066e4000333f628f94263101ae03731ccd9a64303013a26172c9eef)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-usdc-to-aave-v3-lido-instance/19201)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard USDC to Aave V3 Lido Instance",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-usdc-to-aave-v3-lido-instance/19201",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x6146daa40066e4000333f628f94263101ae03731ccd9a64303013a26172c9eef"
+  }
+}
