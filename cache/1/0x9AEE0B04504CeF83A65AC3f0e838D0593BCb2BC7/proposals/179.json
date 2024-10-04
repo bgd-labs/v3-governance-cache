@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "179",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x533f3e36e9407910de9501e672099ca132cf37410ac6f475f940b2c0536687aa"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xe8f9dd390d4bf0232378f2602f64836ea70c5f295c2e476fc4c00cd31601654e",
+      "blockNumber": "20892977",
+      "data": "0x533f3e36e9407910de9501e672099ca132cf37410ac6f475f940b2c0536687aa",
+      "logIndex": 58,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000b3",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xad7b5f9b4e882c89e84302b9413f9fc0126012a6465ac03cd1e6f63f6f8e29ef",
+      "transactionIndex": 13,
+      "timestamp": 1728054743
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1728054743,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x533f3e36e9407910de9501e672099ca132cf37410ac6f475f940b2c0536687aa",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 187
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTwcUr1qdyAEdWU5PTFxY2Le2pUpahfS2vP6pV15WRqNR",
+    "description": "\n## Simple Summary\n\nUpon implementation, this AIP will make available 950,000 GHO to the Aave Liquidity Committee (ALC).\n\n## Motivation\n\nPhase IV of the ALC focuses on sustaining and improving GHO liquidity across the Ethereum and Arbitrum networks, while also encouraging broader adoption of GHO through various integrations with other protocols.\n\nIn the near future, we expect GHO to be listed on InstadApp, with several curated vaults providing additional utility and yield opportunities for GHO.\n\nGHO is also expected to feature in the upcoming Royco launch, aimed at driving flows into several yield strategies across Ethereum and Arbitrum.\n\nWe anticipate achieving the first perpetual market integration for GHO with a strataGHO listing on Synthetix on Arbitrum.\n\nEach integration is expected to provide a use case that strengthens GHO's on-chain liquidity.\n\nThe table below presents the performance metrics for the ALC.\n\n| Description                                |                                   Ethereum Value                                   |                                   Arbitrum Value                                   |\n| ------------------------------------------ | :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |\n| TVL DEX Liquidity Pools                    |                                        50M                                         |                                        30M                                         |\n| TVL Utility Liquidity Pools (Excl. stkGHO) |                                        15M                                         |                                        10M                                         |\n| DEX Liquidity Composition                  |                            < 50% GHO (< 33% for 3pools)                            |                            < 50% GHO (< 33% for 3pools)                            |\n| Swap Price Impact $5M Swap (GHO to USDC)   |                                      < 0.10%                                       |                                      < 0.25%                                       |\n| Annualised Peg Volatility                  |                                      < 5.00%                                       |                                      < 5.00%                                       |\n| Price level for >90% time                  | $0.995 using [Redstone Medium Price](https://app.redstone.finance/#/app/token/GHO) | $0.995 using [Redstone Medium Price](https://app.redstone.finance/#/app/token/GHO) |\n\nAchieving 50M of DEX liquidity on Ethereum across various integrations remains a key focus. Whilst we are yet to acheive this target, we are currently very well positioned for current market conditions.\n\n## Specification\n\nCreate an Allowance for GHO on Ethereum for a total of 950,000 GHO.\n\nALC Ethereum SAFE: [`0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b`](https://etherscan.io/address/0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b)\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d106ddb468be80c563f76f14256e2f57bd187f5f/src/20240930_AaveV3Ethereum_AaveLiquidityCommitteeFundingPhaseIV/AaveV3Ethereum_AaveLiquidityCommitteeFundingPhaseIV_20240930.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d106ddb468be80c563f76f14256e2f57bd187f5f/src/20240930_AaveV3Ethereum_AaveLiquidityCommitteeFundingPhaseIV/AaveV3Ethereum_AaveLiquidityCommitteeFundingPhaseIV_20240930.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x7b59c555f5a51a3377b1aee0f5f21fc205958f1388926efb94172644bacfa1d6)\n- [Discussion](https://governance.aave.com/t/arfc-aave-liquidity-committee-funding-phase-iv/19188)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Aave Liquidity Committee Funding Phase IV",
+    "author": "@karpatkey_TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-aave-liquidity-committee-funding-phase-iv/19188"
+  }
+}
