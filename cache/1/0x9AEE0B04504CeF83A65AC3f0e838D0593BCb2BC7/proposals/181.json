@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "181",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x06d6d7686462a0dbd65c8e167cef8507412ebae762b3aef313568113a7766543"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xbdada983460dff12398ac401c662e68edefe064d9002df1aa2004b3ab8ba7489",
+      "blockNumber": "20936110",
+      "data": "0x06d6d7686462a0dbd65c8e167cef8507412ebae762b3aef313568113a7766543",
+      "logIndex": 30,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000b5",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xd500394c26caa3eca1f4586ff5c69d33c8c89d6f4e9bf448fef6c93c1839ef81",
+      "transactionIndex": 18,
+      "timestamp": 1728574139
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1728574139,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x06d6d7686462a0dbd65c8e167cef8507412ebae762b3aef313568113a7766543",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 190
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 41
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmNoMAPAyLfS2Gd6g9XuyMxRtxk54QWhV9doHueSK2QjMk",
+    "description": "\n## Simple Summary\n\nThis proposal aims to increase the supply caps for cbBTC on both the Aave V3 Ethereum Market and BASE. The increase in supply caps will allow for greater utilization of cbBTC within the Aave ecosystem, potentially improving liquidity and capital efficiency.\n\n## Motivation\n\nThe current supply caps for cbBTC on Aave V3 Ethereum and BASE markets may be limiting the potential growth and utilization of this asset, as we’ve seen demand and current Supply Caps not being enough to allocate it.\n\nBy increasing these caps, we can:\n\n1. Enhance liquidity for cbBTC within the Aave protocol.\n2. Provide more opportunities for users to supply and borrow cbBTC.\n3. Potentially attract more users and capital to the Aave ecosystem.\n\n## Specification\n\nTicker: cbBTC (cbBTC)\n\nMainnet: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf\n\nBase: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf\n\nWe propose to Increase Supply Caps on Mainnet to 10000 cbBTC and to Increase Supply Caps on Base to 5000 cbBTC.\n\n| cbBTC                | Ethereum V3 | Base       |\n| -------------------- | ----------- | ---------- |\n| Increase Supply Caps | 10000 cbBTC | 5000 cbBTC |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/e4cad4615ad125404aa6cf2b43325f2cd4f1d167/src/20241004_Multi_IncreaseCbBTCSupplyCaps/AaveV3Ethereum_IncreaseCbBTCSupplyCaps_20241004.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/e4cad4615ad125404aa6cf2b43325f2cd4f1d167/src/20241004_Multi_IncreaseCbBTCSupplyCaps/AaveV3Base_IncreaseCbBTCSupplyCaps_20241004.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/e4cad4615ad125404aa6cf2b43325f2cd4f1d167/src/20241004_Multi_IncreaseCbBTCSupplyCaps/AaveV3Ethereum_IncreaseCbBTCSupplyCaps_20241004.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/e4cad4615ad125404aa6cf2b43325f2cd4f1d167/src/20241004_Multi_IncreaseCbBTCSupplyCaps/AaveV3Base_IncreaseCbBTCSupplyCaps_20241004.t.sol)\n- Snapshot: Direct AIP\n- [Discussion](https://governance.aave.com/t/arfc-increase-cbbtc-supply-caps-on-aave-v3-ethereum-market-and-base/19304)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Increase cbBTC Supply Caps",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-increase-cbbtc-supply-caps-on-aave-v3-ethereum-market-and-base/19304"
+  }
+}
