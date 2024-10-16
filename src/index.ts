@@ -6,7 +6,10 @@ import {
 } from 'viem';
 import type {AbiEvent} from 'abitype';
 import type {ProposalMetadata} from '@bgd-labs/js-utils';
-import type {IGovernanceCore_ABI, IPayloadsControllerCore_ABI} from '@bgd-labs/aave-address-book';
+import type {
+  IGovernanceCore_ABI,
+  IPayloadsControllerCore_ABI,
+} from '@bgd-labs/aave-address-book/abis';
 import type {ExtractAbiEvent} from 'abitype';
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
