@@ -43,7 +43,8 @@
   },
   "scripts": {
     "build": "bun run scripts/build.ts",
-    "cache": "bun ./scripts/refreshCache.ts"
+    "cache": "bun ./scripts/refreshCache.ts",
+    "ci:publish": "npm run build && npm publish --access=public"
   },
   "devDependencies": {
     "@bgd-labs/aave-address-book": "^4.0.1-02c70ec5f8a433b38372b81d27ed44b79aa52f65.0",
