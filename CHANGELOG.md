@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.5...v1.0.6) (2024-10-17)
+
+
+### Bug Fixes
+
+* create tag ([61fc0d1](https://github.com/bgd-labs/v3-governance-cache/commit/61fc0d18f86673bf2d395a4ccc1199d7f4cac4da))
+
 ## [1.0.5](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.4...v1.0.5) (2024-10-17)
 
 
