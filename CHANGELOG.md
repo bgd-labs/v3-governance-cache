@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.3...v1.0.4) (2024-10-17)
+
+
+### Bug Fixes
+
+* add publish script ([c2a2d30](https://github.com/bgd-labs/v3-governance-cache/commit/c2a2d30aa2c25feaf283a931bb3d8c3969b6d829))
+
 ## [1.0.3](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.2...v1.0.3) (2024-10-17)
 
 
