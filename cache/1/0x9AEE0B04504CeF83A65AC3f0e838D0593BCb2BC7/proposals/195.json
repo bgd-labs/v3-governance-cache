@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "195",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xee18ffb7b418b0c4d36d9ffb0d5d8280c65e2d69df615af8c6aec49687e42716"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x3a0d0e8109997486790b313fdac37e95cc180d741f4ec10dc0b5635bb4f0bc07",
+      "blockNumber": "21086259",
+      "data": "0xee18ffb7b418b0c4d36d9ffb0d5d8280c65e2d69df615af8c6aec49687e42716",
+      "logIndex": 117,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000c3",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x3a393f0e74ef2049b1f81902905a1107cca2c39483e310c3c4f5031438986459",
+      "transactionIndex": 18,
+      "timestamp": 1730385407
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1730385407,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xee18ffb7b418b0c4d36d9ffb0d5d8280c65e2d69df615af8c6aec49687e42716",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 26
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmeN5rJCNYdPaJ2vP5McbAbLEQcVsgTzUFTw7D9o749wHo",
+    "description": "\n## Simple Summary\n\nThis AIP proposes the onboard of wstETH (wrapped staked ETH) to Aave V3 on BNB Chain to improve Aave’s reach across alternative chains and provide increased choice for Aave users on BNB Chain.\n\n## Motivation\n\nwstETH is one of the most popular collateral and borrow tokens on Aave, with over $4 billion in deposits and $100m in borrows across Aave deployments. The onboarding of wstETH to the Aave V3 on BNB Chain will give Aave users more options for generating staking yield on their collateral and increase dominance of Aave on BNB Chain.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **wstETH**\n\n| Parameter                 |                                      Value |\n| ------------------------- | -----------------------------------------: |\n| Isolation Mode            |                                      false |\n| Borrowable                |                                    ENABLED |\n| Collateral Enabled        |                                       true |\n| Supply Cap (wstETH)       |                                      1,900 |\n| Borrow Cap (wstETH)       |                                        190 |\n| Debt Ceiling              |                                      USD 0 |\n| LTV                       |                                       72 % |\n| LT                        |                                       75 % |\n| Liquidation Bonus         |                                      7.5 % |\n| Liquidation Protocol Fee  |                                       10 % |\n| Reserve Factor            |                                       15 % |\n| Base Variable Borrow Rate |                                        0 % |\n| Variable Slope 1          |                                        7 % |\n| Variable Slope 2          |                                      300 % |\n| Uoptimal                  |                                       45 % |\n| Flashloanable             |                                    ENABLED |\n| Siloed Borrowing          |                                   DISABLED |\n| Borrowable in Isolation   |                                   DISABLED |\n| Oracle                    | 0xc1377B4cdF9116bf7b3d7F72A4f8A7Be8506cE80 |\n\nThe table below illustrate the configured \"ETH-Correlated\" E-mode\n\n| Parameter             | wstETH | WETH  |\n| --------------------- | ------ | ----- |\n| Collateral            | Yes    | No    |\n| Borrowable            | No     | Yes   |\n| Max LTV               | 93%    | 93%   |\n| Liquidation Threshold | 95%    | 95%   |\n| Liquidation Penalty   | 1.00%  | 1.00% |\n\nAdditionaly [0xac140648435d03f784879cd789130F22Ef588Fcd](https://bscscan.com/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for wstETH and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/4d2ca786411ef6f1207f81498ee298142721ddfd/src/20241030_AaveV3BNB_OnboardWstETHToAaveV3OnBNBChain/AaveV3BNB_OnboardWstETHToAaveV3OnBNBChain_20241030.sol)\n- Tests: [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/4d2ca786411ef6f1207f81498ee298142721ddfd/src/20241030_AaveV3BNB_OnboardWstETHToAaveV3OnBNBChain/AaveV3BNB_OnboardWstETHToAaveV3OnBNBChain_20241030.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x752c396a86f1f9b60d3e43b7ed223d9d2f66014e03b6b3eb7ac59e8a169d1fe5)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-wsteth-to-aave-v3-on-bnb-chain/18501)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard wstETH to Aave V3 on BNB Chain",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-wsteth-to-aave-v3-on-bnb-chain/18501",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x752c396a86f1f9b60d3e43b7ed223d9d2f66014e03b6b3eb7ac59e8a169d1fe5"
+  }
+}
