@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "203",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x26c178817d369782b4c7076cce3c4517265e104846a38c8ebd546d1474cd5c75"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x031afa40193db03f2260f78493a1681e6d8cef9432d5ba71d21103726ccae8cb",
+      "blockNumber": "21177848",
+      "data": "0x26c178817d369782b4c7076cce3c4517265e104846a38c8ebd546d1474cd5c75",
+      "logIndex": 72,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000cb",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xfffc83e3b62b88a7a09a7fc77443372b68b56c7bd2324f499df72f39ff9953d0",
+      "transactionIndex": 12,
+      "timestamp": 1731489779
+    },
+    {
+      "eventName": "ProposalCanceled",
+      "args": {
+        "proposalId": "203"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x0627c87dd947e6179212b947dbc986bc23f46bedc09c6e4aff50c815f3bfccf6",
+      "blockNumber": "21177888",
+      "data": "0x",
+      "logIndex": 297,
+      "removed": false,
+      "topics": [
+        "0x789cf55be980739dad1d0699b93b58e806b51c9d96619bfa8fe0a28abaa7b30c",
+        "0x00000000000000000000000000000000000000000000000000000000000000cb"
+      ],
+      "transactionHash": "0xdcb95fba3a6383139961425af8679447a4189654deda799ac9ce47fa55a6566b",
+      "transactionIndex": 134,
+      "timestamp": 1731490259
+    }
+  ],
+  "proposal": {
+    "state": 6,
+    "accessLevel": 1,
+    "creationTime": 1731489779,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 1731490259,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x26c178817d369782b4c7076cce3c4517265e104846a38c8ebd546d1474cd5c75",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 208
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmQwwJrCBUku6mV67QyxV1qAjeigWeM3UHnFpRUdA37M7S",
+    "description": "\n## Simple Summary\n\nThis publication proposes reducing wstETH Slope1 parameter on the Main instance of Aave v3 on Ethereum.\n\n## Motivation\n\nWith the goal of encouraging user to borrow wstETH on the Main instance of Aave v3, the wstETH borrow rate will be lowered.\n\nThe anticipated rsETH collateral and wETH debt eMode category is expected to create demand for wstETH debt. Given the size of the wstETH reserve the Uoptimal is not being increased by this proposal.\n\nAfter monitoring how the market responds, future borrow rate adjustments across the Aave v3 instances on Ethereum will be assessed and any change presented for discussion.\n\n## Specification\n\nThe Main instance the wstETH Slope1 and base parameter is to be revised as follows:\n\n| Asset  | Parameter | Current | Proposed | Change |\n| :----: | :-------: | :-----: | :------: | :----: |\n| wstETH |   Base    |  0.25%  |  0.00%   | -0.25% |\n| wstETH |  Slope1   |  4.50%  |  2.00%   | -2.50% |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3a0085b8e9db515f846ee6fd54f7801e47b64d90/src/20241024_AaveV3Ethereum_WstETHReserveBorrowRateUpdateMainInstance/AaveV3Ethereum_WstETHReserveBorrowRateUpdateMainInstance_20241024.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3a0085b8e9db515f846ee6fd54f7801e47b64d90/src/20241024_AaveV3Ethereum_WstETHReserveBorrowRateUpdateMainInstance/AaveV3Ethereum_WstETHReserveBorrowRateUpdateMainInstance_20241024.t.sol)\n- [Snapshot](Direct-to-AIP)\n- [Discussion](https://governance.aave.com/t/arfc-weth-wsteth-borrow-rate-updates/19550)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "wstETH Reserve Borrow Rate Update - Main Instance",
+    "author": "karpatkey_TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-weth-wsteth-borrow-rate-updates/19550",
+    "snapshot": "Direct-to-AIP"
+  }
+}
