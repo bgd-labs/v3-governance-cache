@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "213",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x141a3189c70b282415870d2c3ea6f7c05d256c8033b41895293ae74989c2b1b9"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000d5",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x141a3189c70b282415870d2c3ea6f7c05d256c8033b41895293ae74989c2b1b9",
+      "blockNumber": "21331401",
+      "transactionHash": "0x4bbcd8cb66d5292e04e9c0d013ce46c4ca66851052a3b247d1a6346c98459e5e",
+      "transactionIndex": 136,
+      "blockHash": "0x4a1fa38d1f1938245797f02cd87bc22c41e1a1146d253c40346d7f93a70a9a58",
+      "logIndex": 529,
+      "removed": false,
+      "timestamp": 1733342615
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1733342615,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x141a3189c70b282415870d2c3ea6f7c05d256c8033b41895293ae74989c2b1b9",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 217
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPh82eN43AwXVh1mPZGkrRWFdYT7qNYGCSVtLzPk2JFPn",
+    "description": "\n## Simple Summary\n\nThis is an AIP to remove FRAX from isolation mode. This is a reboot with minor changes of a [previous ARFC](https://governance.aave.com/t/arfc-remove-frax-from-isolation-mode-and-onboard-sfrax-to-aave-v3-mainnet/18506) which passed Snapshot but has not yet been implemented.\n\n## Motivation\n\nFRAX and Aave DAO have found more synergies over the last months. The FRAX team has responded with major updates to security on sfrxETH in response to BGD Labs feedback. FRAX has also initated governance proposals to add GHO to Frax Lend. There are ongoing conversations to have a FRAX AMO included into Aave v3. sFRAX was [previously accepted](https://governance.aave.com/t/arfc-add-sfrax-on-ethereum-v3/16303) for onboarding in a previous [ARFC vote](https://snapshot.org/#/aave.eth/proposal/0xdba99e9c8da24424447d7c7b70eff93ad5b6055714b5f34cf9859c923fb3a38a) before the introduction of CAPO feeds.\n\nThis proposal suggests removing FRAX from isolation mode to facilitate further AMO deployments.\n\n## Specification\n\n- FRAX will be removed from Isolation Mode on Aave v3 instances.\n\n| **Parameter**  | FRAX |\n| -------------- | ---- |\n| Isolation Mode | No   |\n| Debt Ceiling   | 0    |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b81d0fbc70b75e3fc601d8ca3f0ad1df87c84a44/src/20241105_AaveV3Ethereum_RemoveFraxFromIsolationModeOnAaveV3Mainnet/AaveV3Ethereum_RemoveFraxFromIsolationModeOnAaveV3Mainnet_20241105.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b81d0fbc70b75e3fc601d8ca3f0ad1df87c84a44/src/20241105_AaveV3Ethereum_RemoveFraxFromIsolationModeOnAaveV3Mainnet/AaveV3Ethereum_RemoveFraxFromIsolationModeOnAaveV3Mainnet_20241105.t.sol)\n- [Snapshot](https://snapshot.org/#/aave.eth/proposal/0x9bc3f3d8e38d70f55887f2f2498e1b39f59467489158923488aceab73cd4f144)\n- [Discussion](https://governance.aave.com/t/arfc-remove-frax-from-isolation-mode-on-aave-v3-mainnet/19337)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Remove Frax from Isolation Mode on Aave v3 Mainnet",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-remove-frax-from-isolation-mode-on-aave-v3-mainnet/19337",
+    "snapshot": "https://snapshot.org/#/aave.eth/proposal/0x9bc3f3d8e38d70f55887f2f2498e1b39f59467489158923488aceab73cd4f144"
+  }
+}

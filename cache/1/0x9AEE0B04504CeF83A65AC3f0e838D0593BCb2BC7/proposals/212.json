@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "212",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x6a920a300a657492ff4dd7bdf16ac369e95db677c3139977803c75ca0f8489d1"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000d4",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x6a920a300a657492ff4dd7bdf16ac369e95db677c3139977803c75ca0f8489d1",
+      "blockNumber": "21331385",
+      "transactionHash": "0xdd70436b624b077595c9912551698b991b15e90ba745f207a8ae89e84e139f9d",
+      "transactionIndex": 179,
+      "blockHash": "0xc2a9e5b4abf32b35b1b28e7ba0916865a661c025c0eec05b7be346c1b9c9b4f0",
+      "logIndex": 377,
+      "removed": false,
+      "timestamp": 1733342423
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1733342423,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x6a920a300a657492ff4dd7bdf16ac369e95db677c3139977803c75ca0f8489d1",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 216
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmVWf5pH4btroiMwANmwH5WKn4xXW6xY6URAKyJdS3hboW",
+    "description": "\n## Simple Summary\n\nThe publication using the Direct-to-AIP process, proposes increasing the capital efficiency of the wstETH Reserve on both Prime and Core instances of Aave v3. This is a Direct to AIP proposal.\n\n## Motivation\n\n### Prime Instance\n\nThe addition of ezETH has resulted in over $620M in direct deposits and approximately $520M in wstETH debt. With yield from EIGEN decreasing and Renzo’s Season 3 rewards nearing expiration, this publication proposes amending the wstETH Reserve parameters to enhance capital efficiency and support user retention.\n\nWe have engaged with several builders and investors with significant capital deployed on the Prime instance. Currently, leveraged ezETH/wstETH users are primarily sustained by Renzo’s Season 3 rewards, which are set to expire soon. While an additional $100M of USDS is expected in the coming days, this alone will not be sufficient to retain existing users.\n\n### Core Instance\n\nBased on strong demand for wstETH following the rsETH onboarding, this proposal, when implemented, will make a larger portion of wstETH liquidity available.\n\nDiscussions with the Kelp team and various investors indicate significant demand wstETH deb by rsETH holders. To accelerate Aave’s growth, the Uoptimal on the wstETH Reserve is be adjusted higher to make available a greater portion of the wstETH liquidity.\n\n## Specification\n\n### Prime Instance\n\n**wstETH Reserve**\n\n| Parameter | Current Value | Proposed Value |\n| --------- | ------------- | -------------- |\n| Uoptimal  | 80.00%        | 90.00%         |\n| Base      | 0.00%         | 0.00%          |\n| Slope1    | 2.25%         | 1.75%          |\n| Slope2    | 85.00%        | 85.00%         |\n\n### Core Instance\n\n**wstETH Reserve**\n\n| Parameter | Current Value | Proposed Value |\n| --------- | ------------- | -------------- |\n| Uoptimal  | 45.00%        | 80.00%         |\n| Base      | 0.00%         | 0.00%          |\n| Slope1    | 2.00%         | 1.75%          |\n| Slope2    | 85.00%        | 85.00%         |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b8f760271a3e490729bd63b21964778e90288478/src/20241203_Multi_WstETHReserveUpdate/AaveV3Ethereum_WstETHReserveUpdate_20241203.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/b8f760271a3e490729bd63b21964778e90288478/src/20241203_Multi_WstETHReserveUpdate/AaveV3EthereumLido_WstETHReserveUpdate_20241203.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b8f760271a3e490729bd63b21964778e90288478/src/20241203_Multi_WstETHReserveUpdate/AaveV3Ethereum_WstETHReserveUpdate_20241203.t.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/b8f760271a3e490729bd63b21964778e90288478/src/20241203_Multi_WstETHReserveUpdate/AaveV3EthereumLido_WstETHReserveUpdate_20241203.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-prime-core-instance-wsteth-reserve-update/19973)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "wstETH Reserve Update",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-prime-core-instance-wsteth-reserve-update/19973",
+    "snapshot": "Direct-to-AIP"
+  }
+}
