@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "220",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xa65981356b7309a6b13687ecc05aa4a3d973771c3c61e6ebf908759f2403bd23"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x64b80a1618aaed64d9c88f1294176775b009c43d3035fe970874eaeff07ce301",
+      "blockNumber": "21424403",
+      "data": "0xa65981356b7309a6b13687ecc05aa4a3d973771c3c61e6ebf908759f2403bd23",
+      "logIndex": 511,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000dc",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x24525b9d552e1e6e76096b1f1f9368f864c2726c26d497434768ec0732b4c589",
+      "transactionIndex": 297,
+      "timestamp": 1734464387
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1734464387,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa65981356b7309a6b13687ecc05aa4a3d973771c3c61e6ebf908759f2403bd23",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 223
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZY1YcJuDBq8oYQg36JUSHcs9kPac5ipaWhygNc5stLGz",
+    "description": "\n## Simple Summary\n\nProposing the renewal of the Orbit program for recognized delegates, compensating them with GHO, associated with their governance activity during Q4 2024 ( From 2024-08-31 to 2024-12-14).\n\n## Motivation\n\nOrbit recognizes the added value of the Delegates in the decentralization & diversity of the Aave DAO. This compensation allows them to focus on Aave and keep their contribution efforts to our governance. The ACI proposes the extension of Orbit for a new quarter, Q4 2024, from 2024-08-31 to 2024-12-14.\n\n## Specification\n\n- **Period Coverage:** Q4 2024 from August 31th 2024 to December 14th 2024\n- **Eligible Platforms:**\n  - EzR3al: [0x8659d0bb123da6d16d9394c7838ba286c2207d0e](https://etherscan.io/address/0x8659d0bb123da6d16d9394c7838ba286c2207d0e)\n  - areta: [0x8b37a5af68d315cf5a64097d96621f64b5502a22](https://etherscan.io/address/0x8b37a5af68d315cf5a64097d96621f64b5502a22)\n  - stablelabs: [0xecc2a9240268bc7a26386ecb49e1befca2706ac9](https://etherscan.io/address/0xecc2a9240268bc7a26386ecb49e1befca2706ac9)\n  - IgnasDefi: [0x3DDC7d25c7a1dc381443e491Bbf1Caa8928A05B0](https://etherscan.io/address/0x3DDC7d25c7a1dc381443e491Bbf1Caa8928A05B0)\n- **Budget:** 60,000 GHO (aEthLidoGHO)\n  - 15k total budget per platform\n  - 1667 aGHO transfer ((15000/90)\\*10)\n  - 13333 aGHO stream through 80 days\n- **Relevant Links:**\n  - [ACI’s Orbit tracker](https://dapps.aavechan.com/orbit-tracker)\n\n**Additional considerations:**\n\nAs a reminder, Service Providers will not be considered elegible to Orbit Program.\n\nA new vote rate will apply, starting next Orbit Renewal, where a minimum of 20k voting power and 85% vote ratio on all Snapshots and AIP will be considered in order to be elegible to Orbit Program.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3740774ff40cb11fda29f882b86197d902f7e16f/src/20241210_AaveV3Ethereum_OrbitProgramRenewal/AaveV3Ethereum_OrbitProgramRenewal_20241210.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/3740774ff40cb11fda29f882b86197d902f7e16f/src/20241210_AaveV3Ethereum_OrbitProgramRenewal/AaveV3Ethereum_OrbitProgramRenewal_20241210.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0x60613deb2c662057cc8028b431df84fe6e763d38f48f70594a7cb7fd91a8cb93)\n- [Discussion](https://governance.aave.com/t/arfc-orbit-program-renewal-q4-2024/20084)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Orbit Program Renewal - Q4 2024",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-orbit-program-renewal-q4-2024/20084",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0x60613deb2c662057cc8028b431df84fe6e763d38f48f70594a7cb7fd91a8cb93"
+  }
+}
