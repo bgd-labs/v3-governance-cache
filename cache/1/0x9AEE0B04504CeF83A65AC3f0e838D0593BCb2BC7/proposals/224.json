@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "224",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xa4da1c686491e35541aa7e2659d55d0b93e395a89d1b268981aec3b8b2227bc1"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xa18fd201effa4f1b8bc0047304d343baad4a011fab58983648c1219fc3acd50b",
+      "blockNumber": "21472620",
+      "data": "0xa4da1c686491e35541aa7e2659d55d0b93e395a89d1b268981aec3b8b2227bc1",
+      "logIndex": 493,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000e0",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xf0ff5a3663e33f583ec0c8733d1b9a1b92bba654113b512377300880138f9636",
+      "transactionIndex": 170,
+      "timestamp": 1735046831
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1735046831,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa4da1c686491e35541aa7e2659d55d0b93e395a89d1b268981aec3b8b2227bc1",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 227
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZSAUEjXauyqzJtufM3DQqnA3ntUe5hMYyWxSrx43nfYU",
+    "description": "\n## Simple Summary\n\nA proposal to adjust weETH’s LTV, LT, and LB on the Ethereum Core instance.\n\n## Motivation\n\nweETH’s collateral parameters are currently set to 72.5%, 75%, and 7.5% for LTV, LT, and LB, respectively, on Ethereum — Core. Following observations of user behavior and on-chain liquidity, we are able to recommend adjusting these parameters to make the asset more efficient as collateral. The vast majority of debt against weETH is WETH, making these positions low-risk due to weETH’s utilization of the ETH/USD oracle augmented with its exchange rate.\n\nAdditionally, as displayed above, 96% of borrowing is done in E-Mode, relying on different collateral values.\n\nweETH has remained highly liquid against USDT, the top uncorrelated debt asset on Ethereum, indicating that liquidations of uncorrelated positions could be efficiently liquidated.\n\nOur simulations, which take into account on-chain liquidity and user behavior and distribution, indicate that the protocol can increase LTV and LT for weETH, along with decreasing its LB. We recommend maintaining the 2.5 percentage point buffer between LTV and LT.\n\nWhen reducing LB, it is also critical to note that the asset has not experienced significant depegs from its exchange rate value relative to ETH; its average discount over the last three months was just 5.6 bps. Large discounts can reduce the effective LB and prevent liquidations from being processed.\n\n## Specification\n\n| Asset | Network  | Instance | Current LTV | Recommended LTV | Current LT | Recommended LT | Current LB | Recommended LB |\n| ----- | -------- | -------- | ----------- | --------------- | ---------- | -------------- | ---------- | -------------- |\n| weETH | Ethereum | Core     | 72.5%       | 77.5%           | 75%        | 80%            | 7.5%       | 7%             |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/18db65171fa37d4e0de8bcb7c3477cfde4f4ba36/src/20241223_AaveV3Ethereum_WeETHRiskParameterAdjustment/AaveV3Ethereum_WeETHRiskParameterAdjustment_20241223.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/18db65171fa37d4e0de8bcb7c3477cfde4f4ba36/src/20241223_AaveV3Ethereum_WeETHRiskParameterAdjustment/AaveV3Ethereum_WeETHRiskParameterAdjustment_20241223.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-weeth-risk-parameter-adjustment/20167)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "weETH Risk Parameter Adjustment",
+    "author": "ChaosLabs",
+    "discussions": "https://governance.aave.com/t/arfc-weeth-risk-parameter-adjustment/20167"
+  }
+}
