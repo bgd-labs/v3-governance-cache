@@ -58,15 +58,33 @@
       "transactionHash": "0x04b9701b524b9e6228811d15fa2f15f5bd9f5ae958fb8b17004d17d30fd5c02e",
       "transactionIndex": 12,
       "timestamp": 1735394927
+    },
+    {
+      "eventName": "PayloadExecuted",
+      "args": {
+        "payloadId": 226
+      },
+      "address": "0xdabad81af85554e9ae636395611c58f7ec1aaec5",
+      "blockHash": "0xa6d3fa1e30f5caf82d6fc16340a40ea22214a3a5eb2a56aad00b3cfd68e52e23",
+      "blockNumber": "21508628",
+      "data": "0x00000000000000000000000000000000000000000000000000000000000000e2",
+      "logIndex": 170,
+      "removed": false,
+      "topics": [
+        "0xda6084bb0aa902a7f6da10ba185d4aa129414651c90772417eff02a52112af2a"
+      ],
+      "transactionHash": "0x45c7683f380ff874c22494a84fadb66320fbf55dd9da2541f1a8c73564c0a14f",
+      "transactionIndex": 76,
+      "timestamp": 1735481351
     }
   ],
   "payload": {
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "maximumAccessLevelRequired": 1,
-    "state": 2,
+    "state": 3,
     "createdAt": 1735046531,
     "queuedAt": 1735394927,
-    "executedAt": 0,
+    "executedAt": 1735481351,
     "cancelledAt": 0,
     "expirationTime": 1738070531,
     "delay": 86400,
