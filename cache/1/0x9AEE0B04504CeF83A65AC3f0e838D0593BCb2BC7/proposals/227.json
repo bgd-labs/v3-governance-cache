@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "227",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x04c9882cee6c4dc847234ee6eef6bf81e75c1ded63ab00db2745012c602c2820"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000e3",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x04c9882cee6c4dc847234ee6eef6bf81e75c1ded63ab00db2745012c602c2820",
+      "blockNumber": "21573958",
+      "transactionHash": "0x312eaf4ea70b4c2ae22b082832a71e689c00f3829b222026e43a22c746893074",
+      "transactionIndex": 90,
+      "blockHash": "0xa366d523fea4ff7a950d655fbf113f3c0d518c7bab2ca598e615c0c7cef7ebdf",
+      "logIndex": 220,
+      "removed": false,
+      "timestamp": 1736269379
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1736269379,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x04c9882cee6c4dc847234ee6eef6bf81e75c1ded63ab00db2745012c602c2820",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 229
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmNfLaNa5fYwUveuTG7NZsRUVcneTvRjpsXPcDXJgpFLb1",
+    "description": "\n## Simple Summary\n\nFollowing the addition of GHO to the Lido instance of Aave v3 on Ethereum, this publication proposes supporting GHO liquidity by minting 10M units of GHO and depositing into Aave Lido.\n\n## Motivation\n\nBy providing liquidity on the Lido instance, the Aave DAO shall provide the initial bootstrapping liquidity in a very cost efficient manner and, in doing so, enhance the DAO's revenue generated from the Lido instance. GHO holders will be able to deposit GHO to earn the deposit yield whilst benefit from small than otherwise concentration risk within the reserve due to the DAO providing the bootstrapping liquidity.\n\nWith strong demand for GHO using wstETH as collateral resulting in 23.7% of GHO supply sourced from the Main market being backed by wstETH, this demonstrates that users actively seek to benefit from the capital efficiency of using an LST as collateral. Deploying additional GHO into the Lido instance is expected to further encourage this positive behavior, reinforcing the appeal of wstETH as a reliable, yield-bearing collateral for GHO.\n\n## Specification\n\n- Prior to proposal, GhoDirectMinter contract was deployed [here](https://etherscan.io/address/0x2cE01c87Fec1b71A9041c52CaED46Fc5f4807285)\n- Grant RISK_ADMIN_ROLE to GhoDirectMinter referenced above\n- Add GhoDirectMinter as a GHO token facilitator\n- Mint 10M GHO and supply into Aave Lido\n- Allow GhoBucketSteward to control GhoDirectMinter\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/308146dc34181b49d22282ac967de30ed28a3296/src/20241229_AaveV3EthereumLido_Deploy10MGHOIntoAaveV3LidoInstance/AaveV3EthereumLido_Deploy10MGHOIntoAaveV3LidoInstance_20241229.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/308146dc34181b49d22282ac967de30ed28a3296/src/20241229_AaveV3EthereumLido_Deploy10MGHOIntoAaveV3LidoInstance/AaveV3EthereumLido_Deploy10MGHOIntoAaveV3LidoInstance_20241229.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0x4af37d6b4a1c9029c7693c4bdfb646931a9815c4a56d9066ac1fbdbef7cd15e5)\n- [Discussion](https://governance.aave.com/t/arfc-mint-deploy-10m-gho-into-aave-v3-lido-instance/19700)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Deploy 10M GHO into Aave v3 Lido Instance",
+    "author": "karpatkey_TokenLogic & BGD Labs",
+    "discussions": "https://governance.aave.com/t/arfc-mint-deploy-10m-gho-into-aave-v3-lido-instance/19700",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0x4af37d6b4a1c9029c7693c4bdfb646931a9815c4a56d9066ac1fbdbef7cd15e5"
+  }
+}
