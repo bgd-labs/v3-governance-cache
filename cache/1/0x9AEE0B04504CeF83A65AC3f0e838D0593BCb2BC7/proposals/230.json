@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "230",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x5fcc204c8e20a3eccd431a9d84f28910d233c1d65cc2e1d88b062e9daaf28522"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000e6",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x5fcc204c8e20a3eccd431a9d84f28910d233c1d65cc2e1d88b062e9daaf28522",
+      "blockNumber": "21595148",
+      "transactionHash": "0x9948f6f57ff804c0633ab0654cfb226c96b5af21be026fe87f32d594a431baa7",
+      "transactionIndex": 99,
+      "blockHash": "0x0b64cb7b45beba2c8266be8969c370cdf8c6eb9356f61db93f5a1ff19e35f172",
+      "logIndex": 209,
+      "removed": false,
+      "timestamp": 1736525039
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1736525039,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x5fcc204c8e20a3eccd431a9d84f28910d233c1d65cc2e1d88b062e9daaf28522",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 67
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 49
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmUnbyGqoDyJsnfKScgLWPAoxFr1XEUqge9dcUYuv7iF4M",
+    "description": "\n## Simple Summary\n\nThis is an AIP for adding borrow/lend support for Renzo Protocol and its Liquid Restaking Token (LRT) ezETH on AAVE V3 Base and Arbitrum.\n\n## Motivation\n\nAs productive assets, staking tokens are high quality collateral to borrow against. ezETH is one of the largest liquid restaking tokens. With strong demand for ezETH on mainnet this proposal seeks to provide the opportunity for Aave users to make use of ezETH on leading Layer 2 networks: Base and Arbitrum.\n\nThe onboarding of ezETH on these L2s will create increased ezETH demand and increased revenues for both Aave and Renzo Protocol, whilst also bolstering the liquidity and peg stability of ezETH.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **ezETH** on Arbitrum and Base instances\n\n| Parameter                   |                                      Value |\n| --------------------------- | -----------------------------------------: |\n| Isolation Mode              |                                      false |\n| Borrowable                  |                                   DISABLED |\n| Collateral Enabled          |                                       true |\n| Supply Cap (ezETH) Arbitrum |                                      1,750 |\n| Supply Cap (ezETH) Base     |                                      1,200 |\n| Borrow Cap (ezETH)          |                                          1 |\n| Debt Ceiling                |                                      USD 0 |\n| LTV                         |                                     0.05 % |\n| LT                          |                                     0.10 % |\n| Liquidation Bonus           |                                      7.5 % |\n| Liquidation Protocol Fee    |                                       10 % |\n| Reserve Factor              |                                       15 % |\n| Base Variable Borrow Rate   |                                        0 % |\n| Variable Slope 1            |                                        7 % |\n| Variable Slope 2            |                                      300 % |\n| Uoptimal                    |                                       45 % |\n| Flashloanable               |                                    ENABLED |\n| Siloed Borrowing            |                                   DISABLED |\n| Borrowable in Isolation     |                                   DISABLED |\n| Oracle (Arbitrum)           | 0x8Ed37B72300683c0482A595bfa80fFb793874b15 |\n| Oracle (Base)               | 0x438e24f5FCDC1A66ecb25D19B5543e0Cb91A44D4 |\n\nThe following CAPO and E-Mode parameters are applied to both instances\n\n### CAPO\n\n| **maxYearlyRatioGrowthPercent** | **ratioReferenceTime** | **MINIMUM_SNAPSHOT_DELAY** |\n| ------------------------------- | ---------------------- | -------------------------- |\n| 10.89%                          | monthly                | 14 days                    |\n\n### E-mode: ezETH / wstETH\n\n| Parameter             | Value | Value  |\n| --------------------- | ----- | ------ |\n| Asset                 | ezETH | wstETH |\n| Collateral            | Yes   | No     |\n| Borrowable            | No    | Yes    |\n| Max LTV               | 93%   | 93%    |\n| Liquidation Threshold | 95%   | 95%    |\n| Liquidation Penalty   | 1.00% | 1.00%  |\n\n### E-mode: ezETH / stablecoin\n\n| Parameter             | Value | Value | Value (only on Arbitrum) |\n| --------------------- | ----- | ----- | ------------------------ |\n| Asset                 | ezETH | USDC  | USDT                     |\n| Collateral            | Yes   | No    | No                       |\n| Borrowable            | No    | Yes   | Yes                      |\n| Max LTV               | 72%   | 72%   | 72%                      |\n| Liquidation Threshold | 75%   | 75%   | 75%                      |\n| Liquidation Penalty   | 7.50% | 7.50% | 7.50%                    |\n\nAdditionaly [0xac140648435d03f784879cd789130F22Ef588Fcd](https://debank.com/profile/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for ezETH and the corresponding aToken on both instances.\n\n## References\n\n- Implementation: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/612e087e1b3fff317fd444905d17bbf0e0abcb37/src/20241221_Multi_OnboardEzETHToArbitrumAndBaseInstances/AaveV3Arbitrum_OnboardEzETHToArbitrumAndBaseInstances_20241221.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/612e087e1b3fff317fd444905d17bbf0e0abcb37/src/20241221_Multi_OnboardEzETHToArbitrumAndBaseInstances/AaveV3Base_OnboardEzETHToArbitrumAndBaseInstances_20241221.sol)\n- Tests: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/612e087e1b3fff317fd444905d17bbf0e0abcb37/src/20241221_Multi_OnboardEzETHToArbitrumAndBaseInstances/AaveV3Arbitrum_OnboardEzETHToArbitrumAndBaseInstances_20241221.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/612e087e1b3fff317fd444905d17bbf0e0abcb37/src/20241221_Multi_OnboardEzETHToArbitrumAndBaseInstances/AaveV3Base_OnboardEzETHToArbitrumAndBaseInstances_20241221.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0xf9fa710414237636cba11187111773fac04f74eb1a562d2b50fca86cb72a778e)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-ezeth-to-arbitrum-and-base-instances/19622)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard ezETH to Arbitrum and Base Instances",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-ezeth-to-arbitrum-and-base-instances/19622",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0xf9fa710414237636cba11187111773fac04f74eb1a562d2b50fca86cb72a778e"
+  }
+}
