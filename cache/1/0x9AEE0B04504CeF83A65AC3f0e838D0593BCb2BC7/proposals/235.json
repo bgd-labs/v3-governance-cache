@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "235",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x9049e32e552aa49a718e0cd0b8a876f6d601919e978fd6c77848217f62dca5f6"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x57909e31defc0fc2aac28ba237ba307015ff283a5b77e874345d2a36bed6f211",
+      "blockNumber": "21679103",
+      "data": "0x9049e32e552aa49a718e0cd0b8a876f6d601919e978fd6c77848217f62dca5f6",
+      "logIndex": 303,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000eb",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xee7b08008724981ff846542928f02180ffa56eabde257dd8db7e9be15a68afdf",
+      "transactionIndex": 121,
+      "timestamp": 1737537767
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1737537767,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9049e32e552aa49a718e0cd0b8a876f6d601919e978fd6c77848217f62dca5f6",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 236
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmY3tmHnywsTyz6UA6mVgVDeMB8ES6rJdwEDoyPHoABtDs",
+    "description": "\n## Simple Summary\n\nThis proposal enables ACI to distribute REZ, KERNEL and rsETH rewards across several instances of Aave v3.\n\n## Motivation\n\nThe Kelp team proposes distributing rsETH and KERNEL rewards on Core and Prime instances of Aave v3 to incentivize rsETH deposits and drive adoption. Similarly, the Renzo team seeks to distribute REZ rewards across Prime instance of Aave v3 to support the growth of ezETH deposits.\n\nBoth teams aim to leverage these rewards to foster the continued adoption and expansion of rsETH and ezETH within the Aave ecosystem. The ACI team will manage the distribution of rewards on behalf of Kelp and Renzo.\n\n## Specification\n\n### Aave Core & Prime:\n\nThe emission admin role for [KERNEL](https://etherscan.io/address/0x3f80B1c54Ae920Be41a77f8B902259D48cf24cCf), [REZ](https://etherscan.io/address/0x3B50805453023a91a8bf641e279401a0b23FA6F9) and [rsETH](https://etherscan.io/address/0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7) is granted to [0xdef1FA4CEfe67365ba046a7C630D6B885298E210](https://etherscan.io/address/0xdef1FA4CEfe67365ba046a7C630D6B885298E210).\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/7c4fd17673768bf1748ffbdfd740f10d2c038176/src/20250117_AaveV3Ethereum_SetREZKERNELAndRsETHEmissionAdminToACI/AaveV3Ethereum_SetREZKERNELAndRsETHEmissionAdminToACI_20250117.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/7c4fd17673768bf1748ffbdfd740f10d2c038176/src/20250117_AaveV3Ethereum_SetREZKERNELAndRsETHEmissionAdminToACI/AaveV3Ethereum_SetREZKERNELAndRsETHEmissionAdminToACI_20250117.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-set-rez-kernel-and-rseth-emission-admin-to-aci/20599)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Set REZ, KERNEL and rsETH Emission Admin to ACI",
+    "author": "Aave-chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-set-rez-kernel-and-rseth-emission-admin-to-aci/20599"
+  }
+}

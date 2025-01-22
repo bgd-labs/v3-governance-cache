@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "234",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7c96588d84f5188e19ccbe659c40030e238e76e0fa1785af02d77ce733f4c917"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x08136c7f7af0e182495788e4cf9c7ec521deb8bf0052f9dc6c0a03a4f698c5ed",
+      "blockNumber": "21679089",
+      "data": "0x7c96588d84f5188e19ccbe659c40030e238e76e0fa1785af02d77ce733f4c917",
+      "logIndex": 210,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000ea",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xadd1dd527b9d11e2ef2d6b0e4533cb94ef55e45b6c8cb0bcafdfce8a58c4d749",
+      "transactionIndex": 88,
+      "timestamp": 1737537599
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1737537599,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7c96588d84f5188e19ccbe659c40030e238e76e0fa1785af02d77ce733f4c917",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 235
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWizELUheWN7gsBoPbDvXJn3pPKCv3P9KqoB9WLXeZZdY",
+    "description": "\n## Simple Summary\n\nThis publication proposes reducing the base borrow rate Parameter for the GHO Reserve on Prime instance by 2.00%.\n\n## Motivation\n\nAt launch, the GHO Borrow Rate was configured to suit the more buoyant market conditions of the time. Since then, market conditions have cooled and to date, the GHO reserve on Prime has experienced limited borrowing activity. Utilization is 2.30% with less than 120k GHO borrowed.\n\nThe Borrow Rate for USDS on Prime is trending slightly above 10% which is slightly lower than USDT on Core instance after recent deposits has reduced utilization.\n\nStaked USDe is currently at capacity on Prime and is shown to be generating 12.50% on the Ethena dashboard. When the sUSDe supply cap is lifted, we expect demand for GHO debt to emerge, and if not initially, then when perpetual funding rates improve.\n\nAdditionally, the GHO Stewards lowered the Borrow Rate on the Core instance to 12.50% which is 1% less than the GHO Borrow Rate on Prime at the Uoptimal. Amending the GHO Borrow Rate at the Uoptimal on Prime to be less than the GHO Borrow Rate on Core encourages users to borrow GHO from Prime.\n\nWhen demand for GHO on Prime emerges, providing the peg permits, the Borrow Cap shall be increased improving the overall efficiency of the GHO reserve, resulting in a higher deposit rate.\n\n## Specification\n\nThe GHO base borrow rate Parameter on Prime instance of Aave v3 is to be revised as follows:\n\n| Description | Current | Proposed | Change |\n| ----------- | ------- | -------- | ------ |\n| Borrow Rate | 10.50%  | 8.50%    | -2.00% |\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/051dd6743951609879d6358022e6521528046b7d/src/20250121_AaveV3EthereumLido_UpdateLidoGHOBaseBorrowRate/AaveV3EthereumLido_UpdateLidoGHOBaseBorrowRate_20250121.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/051dd6743951609879d6358022e6521528046b7d/src/20250121_AaveV3EthereumLido_UpdateLidoGHOBaseBorrowRate/AaveV3EthereumLido_UpdateLidoGHOBaseBorrowRate_20250121.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-risk-stewards-reduce-gho-borrow-rate-prime-instance/20501)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Update Lido GHO base borrow rate",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-risk-stewards-reduce-gho-borrow-rate-prime-instance/20501",
+    "snapshot": "Direct-to-AIP"
+  }
+}
