@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2025-01-28)
+
+
+### Bug Fixes
+
+* create linea release ([6e58629](https://github.com/bgd-labs/v3-governance-cache/commit/6e586299e5547bba7f8521052676cdb20147e0e0))
+
 ## [1.0.8](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.7...v1.0.8) (2024-10-17)
 
 
