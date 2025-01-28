@@ -47,16 +47,19 @@
     "ci:publish": "npm run build && npm publish --access=public"
   },
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^4.0.1-02c70ec5f8a433b38372b81d27ed44b79aa52f65.0",
-    "@bgd-labs/js-utils": "^1.4.2",
+    "@bgd-labs/aave-address-book": "^4.8.1",
+    "@bgd-labs/js-utils": "^1.4.6",
     "@types/bun": "latest",
     "bun-plugin-dts": "^0.2.3",
     "prettier": "^3.2.5",
     "typescript": "^5.0.0",
-    "viem": "^2.9.20"
+    "viem": "^2.22.16"
   },
   "peerDependencies": {
-    "viem": "^2.9.20",
-    "@bgd-labs/aave-address-book": "^4.0.1-02c70ec5f8a433b38372b81d27ed44b79aa52f65.0"
+    "viem": "^2.22.16",
+    "@bgd-labs/aave-address-book": "^4.8.1"
+  },
+  "dependencies": {
+    "@bgd-labs/rpc-env": "^2.3.1"
   }
 }
