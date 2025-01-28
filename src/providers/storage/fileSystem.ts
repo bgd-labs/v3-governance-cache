@@ -1,5 +1,7 @@
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
+import {getProposalMetadata} from '@bgd-labs/js-utils';
+import {getClient} from '@bgd-labs/rpc-env';
 import packageJson from '../../../package.json';
 import {
   isPayloadFinal,
@@ -15,7 +17,6 @@ import {
   syncPayloadsControllerEvents,
 } from '../../common/payloadsController';
 import {formatProposalLogs, syncGovernanceEvents, getProposal} from '../../common/governance';
-import {CHAIN_ID_CLIENT_MAP, getProposalMetadata} from '@bgd-labs/js-utils';
 
 function getPath() {
   const installPath = path.join(process.cwd(), 'node_modules', packageJson.name);
@@ -65,7 +66,7 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
   chainId,
   governance,
 }) => {
-  const client = CHAIN_ID_CLIENT_MAP[chainId];
+  const client = getClient(chainId, {});
   const proposalsPath = `${chainId.toString()}/${governance}/proposals`;
   const trackingCache: TrackingCache = readJSONCache<TrackingCache>(
     proposalsPath,
@@ -127,7 +128,7 @@ const syncPayloadsCache: GovernanceCacheAdapterWithSync['syncPayloadsCache'] = a
   chainId,
   payloadsController,
 }) => {
-  const client = CHAIN_ID_CLIENT_MAP[chainId];
+  const client = getClient(chainId, {});
   const path = `${chainId.toString()}/${payloadsController}/payloads`;
   const trackingCache: TrackingCache = readJSONCache<TrackingCache>(path, 'trackingCache') || {
     lastSeenBlock: 0n,

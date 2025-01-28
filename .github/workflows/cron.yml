@@ -26,21 +26,13 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - uses: oven-sh/setup-bun@v1
-      - name: Install dependencies
-        run: bun install
-      - name: Update
-        run: bun run cache
-        env:
-          RPC_MAINNET: ${{ secrets.RPC_MAINNET }}
-          RPC_POLYGON: ${{ secrets.RPC_POLYGON }}
-          RPC_AVALANCHE: ${{ secrets.RPC_AVALANCHE }}
-          RPC_OPTIMISM: ${{ secrets.RPC_OPTIMISM }}
-          RPC_ARBITRUM: ${{ secrets.RPC_ARBITRUM }}
-          RPC_BASE: ${{ secrets.RPC_BASE }}
-          RPC_GNOSIS: ${{ secrets.RPC_GNOSIS }}
-          RPC_BNB: ${{ secrets.RPC_BNB }}
-          RPC_METIS: ${{ secrets.RPC_METIS }}
+
+      - uses: bgd-labs/github-workflows/.github/actions/setup-node@main
+
+      - uses: bgd-labs/action-rpc-env@main
+        with:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+
       - name: check diff
         run: |
           if [[ -z $(git status -s) ]]
