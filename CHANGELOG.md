@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.10...v1.0.11) (2025-02-05)
+
+
+### Bug Fixes
+
+* update cache ([977b7eb](https://github.com/bgd-labs/v3-governance-cache/commit/977b7ebe75c7495718c1b98d7f2839b2b5b3be17))
+
 ## [1.0.10](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.9...v1.0.10) (2025-01-28)
 
 
