@@ -33,6 +33,9 @@ jobs:
         with:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
 
+      - name: Update
+        run: bun run cache
+
       - name: check diff
         run: |
           if [[ -z $(git status -s) ]]

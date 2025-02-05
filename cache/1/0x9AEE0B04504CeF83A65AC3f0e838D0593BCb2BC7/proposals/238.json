@@ -1,0 +1,148 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "238",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x2479e1a8a5b3e4d8023d061ade4a187ee9da5e17d7c91b8ed0a3e71522dd33d0"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xbf2f24c7278e482d962304097e8b41568622708b5fa79f923782bee7ba8f6672",
+      "blockNumber": "21729991",
+      "data": "0x2479e1a8a5b3e4d8023d061ade4a187ee9da5e17d7c91b8ed0a3e71522dd33d0",
+      "logIndex": 181,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000ee",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x3ee3719fda3c7ba17b35e9f02a9eeb3c54f09480c732e15e1e0dc520bba7a1ba",
+      "transactionIndex": 95,
+      "timestamp": 1738151351
+    },
+    {
+      "eventName": "VotingActivated",
+      "args": {
+        "proposalId": "238",
+        "snapshotBlockHash": "0x8ac9a75770afbf1d50ab0074cea1b164097c8598444b4804af17d6cdb58cbf2d",
+        "votingDuration": 259200
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x9e816b76598562287e7ae76419b988ab102dc21dbcc679fb611949661ffff0ba",
+      "blockNumber": "21737160",
+      "data": "0x000000000000000000000000000000000000000000000000000000000003f480",
+      "logIndex": 58,
+      "removed": false,
+      "topics": [
+        "0x45f1db29750f423920a6edede3a80ea19ceb9de3eabc072078eb539ca348dca0",
+        "0x00000000000000000000000000000000000000000000000000000000000000ee",
+        "0x8ac9a75770afbf1d50ab0074cea1b164097c8598444b4804af17d6cdb58cbf2d"
+      ],
+      "transactionHash": "0xbbe73b13810773a7483ef9fa4aafa901d7c69eb88fcb059abe1acb8d3b35423a",
+      "transactionIndex": 8,
+      "timestamp": 1738237799
+    },
+    {
+      "eventName": "ProposalQueued",
+      "args": {
+        "proposalId": "238",
+        "votesFor": "437014020443110651812107",
+        "votesAgainst": "0"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x45fcce13df51ca33e8eb1a2bf3352c59117da33e0833b1074d4d002ee80cd485",
+      "blockNumber": "21758842",
+      "data": "0x000000000000000000000000000000000000000000005c8a93d8417ecb19590b0000000000000000000000000000000000000000000000000000000000000000",
+      "logIndex": 656,
+      "removed": false,
+      "topics": [
+        "0xe39e7fc9f2013b8ab01110f66610f9fb8675d3126e69b3752f0084afc72be19a",
+        "0x00000000000000000000000000000000000000000000000000000000000000ee"
+      ],
+      "transactionHash": "0xd82203f87d9fe3b81c050decafe3f14b378c473c70021bbcfdc4012d25c7be34",
+      "transactionIndex": 160,
+      "timestamp": 1738499495
+    },
+    {
+      "eventName": "PayloadSent",
+      "args": {
+        "proposalId": "238",
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "chainId": "1",
+        "payloadId": 238,
+        "payloadNumberOnProposal": "0",
+        "numberOfPayloadsOnProposal": "1"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x78c5685b57a0794eed440345ab5d2ae117b0cd7091b03fc86e13b58aa76e49fc",
+      "blockNumber": "21758843",
+      "data": "0x00000000000000000000000000000000000000000000000000000000000000ee00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "logIndex": 103,
+      "removed": false,
+      "topics": [
+        "0x9c687134d572ff69f3e23f40470562650574c5c7cab9f535268763b2d00da65b",
+        "0x00000000000000000000000000000000000000000000000000000000000000ee",
+        "0x000000000000000000000000dabad81af85554e9ae636395611c58f7ec1aaec5",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x14d60312879c872069b31ab73e85d6aa719ceb0425ededd0aac039953c61e74d",
+      "transactionIndex": 15,
+      "timestamp": 1738499507
+    },
+    {
+      "eventName": "ProposalExecuted",
+      "args": {
+        "proposalId": "238"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x78c5685b57a0794eed440345ab5d2ae117b0cd7091b03fc86e13b58aa76e49fc",
+      "blockNumber": "21758843",
+      "data": "0x",
+      "logIndex": 104,
+      "removed": false,
+      "topics": [
+        "0x712ae1383f79ac853f8d882153778e0260ef8f03b504e2866e0593e04d2b291f",
+        "0x00000000000000000000000000000000000000000000000000000000000000ee"
+      ],
+      "transactionHash": "0x14d60312879c872069b31ab73e85d6aa719ceb0425ededd0aac039953c61e74d",
+      "transactionIndex": 15,
+      "timestamp": 1738499507
+    }
+  ],
+  "proposal": {
+    "state": 4,
+    "accessLevel": 1,
+    "creationTime": 1738151351,
+    "votingDuration": 259200,
+    "votingActivationTime": 1738237799,
+    "queuingTime": 1738499495,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x8ac9a75770afbf1d50ab0074cea1b164097c8598444b4804af17d6cdb58cbf2d",
+    "ipfsHash": "0x2479e1a8a5b3e4d8023d061ade4a187ee9da5e17d7c91b8ed0a3e71522dd33d0",
+    "forVotes": "437014020443110651812107",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 238
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmQo3BMGaTF8VxJNaETPQaMGbGgBkNuTuuvdgYHwkKYnU7",
+    "description": "\n## Simple Summary\n\nThis publication proposes reducing the wstETH Slope1 and increasing the rsETH Supply Cap.\n\n## Motivation\n\nThe Prime instance of Aave v3 on Ethereum has experienced significant growth since its launch in Q3 2024, attracting over $2 billion in user deposits.\n\nTo support continued growth, this proposal suggests lowering the wstETH Slope1 parameter to align the borrow rate with market conditions. Based on feedback from the Renzo and Kelp teams, this adjustment is expected to drive an additional $300 million in user deposits to the Prime instance.\n\nExpected Benefits of Reducing the Slope1 Parameter:\n\n- ~72% increase in LRT deposits.\n- ~50% increase in the wstETH Deposit Rate to 60 bps.\n- ~50% increase in wstETH Borrow Rate fee generation.\n- ~35% increase in the native wETH Deposit Rate.\n\nLowering the Slope1 parameter will encourage new LRT deposits, boosting the LRT/LST yield-generating strategy, which is projected to outperform the LST/wETH strategy. With LRT deposit incentives, this strategy further enhances Prime’s appeal.\n\nAs utilisation of wETH reserves across Core, Spark, and Prime approaches Uoptimal, the Prime instance of Aave v3 offers the highest native yield for LST/wETH yield strategies. The improved wstETH deposit rate solidifies Prime’s competitive position in the market.\n\n### rsETH Supply Cap\n\nrsETH has shown strong growth on the Core instance of Aave v3, while the Prime market has yet to attract rsETH deposits due to the lower wstETH Borrow Rate on Core and a small supply cap.\n\nLowering the wstETH Borrow Rate on Prime would make borrowing wstETH more attractive. Feedback from the Kelp team suggests strong demand for rsETH beyond the current supply cap’s capacity.\n\nTo support leveraged LRT/LST yield strategies, this proposal recommends a significant increase to the rsETH supply cap, enabling larger deposits to scale effectively, optimize returns, and reduce reliance on incentives.\n\n## Specification\n\n#### wstETH Reserve\n\n| Parameter | Current Value | Proposed Value |\n| --------- | ------------- | -------------- |\n| Uoptimal  | 90.00%        | 90.00%         |\n| Base      | 0.00%         | 0.00%          |\n| Slope1    | 1.75%         | 0.75%          |\n| Slope2    | 85.00%        | 85.00%         |\n\n#### rsETH Supply Cap\n\n| Parameter  | Current Value | Proposed Value |\n| ---------- | ------------- | -------------- |\n| Supply Cap | 10,000        | 65,000         |\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/ad47735f95ca24d2b65d7ffaca0b0a05f7397121/src/20250122_AaveV3EthereumLido_PrimeInstanceWstETHBorrowRateRsETHSupplyCapUpdate/AaveV3EthereumLido_PrimeInstanceWstETHBorrowRateRsETHSupplyCapUpdate_20250122.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/ad47735f95ca24d2b65d7ffaca0b0a05f7397121/src/20250122_AaveV3EthereumLido_PrimeInstanceWstETHBorrowRateRsETHSupplyCapUpdate/AaveV3EthereumLido_PrimeInstanceWstETHBorrowRateRsETHSupplyCapUpdate_20250122.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aave.eth/proposal/0xfc21203137ea8753ab8903fe4edd568bcaa7ea084586a7acb2c3b361d3dae9c8)\n- [Discussion](https://governance.aave.com/t/arfc-prime-instance-wsteth-borrow-rate-rseth-supply-cap-update/20644)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Prime Instance - wstETH Borrow Rate + rsETH Supply Cap Update",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-prime-instance-wsteth-borrow-rate-rseth-supply-cap-update/20644",
+    "snapshot": "https://snapshot.org/#/s:aave.eth/proposal/0xfc21203137ea8753ab8903fe4edd568bcaa7ea084586a7acb2c3b361d3dae9c8"
+  }
+}
