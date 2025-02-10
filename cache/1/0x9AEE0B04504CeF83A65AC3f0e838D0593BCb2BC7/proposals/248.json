@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "248",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x1b4eb9f586cbb44071b16526737d779953b1a53b057db65987aa9f084674a953"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x6dde252b36b1ac1a673b65ca1767c0ac91884a611c7180548288bade38a36ac2",
+      "blockNumber": "21817547",
+      "data": "0x1b4eb9f586cbb44071b16526737d779953b1a53b057db65987aa9f084674a953",
+      "logIndex": 258,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000f8",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x735793d7c90912bc69db047219583392ae496e533642bda1aa29db30597c021f",
+      "transactionIndex": 113,
+      "timestamp": 1739207735
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1739207735,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x1b4eb9f586cbb44071b16526737d779953b1a53b057db65987aa9f084674a953",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 245
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmQBFLsUUcFbCHXKxj46NJuwUkvh4K4gEc69Co9NUEhLx2",
+    "description": "\n## Simple Summary\n\nProposal to release a total of $61’000 as bounty for four outstanding Aave <> Immunefi valid submissions, together with $6’100 as the fee to the Immunefi platform; amounting to a grand total of $67’100.\n\nThe asset of payment will be GHO.\n\n## Motivation\n\nAfter the previous Request for Bounty Payout on September 2024, there have been only four valid bug submissions on the Aave <> Immunefi program, which should be paid now with the month finished, cleaning up the pipeline.\n\n## Specification\n\nThis proposal will release the following funds to white-hat addresses and the Immunefi platform:\n\n- 10’000 GHO to 0x75a1151D38885461CfA27f8f66927D4fCAD25b55\n- 50’000 GHO to 0x0Dca0FDC170baA4CA9c1dCd37Ffe01f97bCfD504 (one bounty of 10'000 GHO and another of 40'000)\n- 1’000 GHO to 0x299e532172cce5230192d413D47C6739DB9338fE\n- 6’100 GHO to 0x7119f398b6C06095c6E8964C1f58e7C1BAa79E18 (immunefi.eth). This is the fee corresponding to the 10% of the previous bounties.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/f95d9e0be2bdcbcbcd124a290a1196f459076b08/src/20250203_AaveV3Ethereum_RequestForBountyPayoutFeb2025/AaveV3Ethereum_RequestForBountyPayoutFeb2025_20250203.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/f95d9e0be2bdcbcbcd124a290a1196f459076b08/src/20250203_AaveV3Ethereum_RequestForBountyPayoutFeb2025/AaveV3Ethereum_RequestForBountyPayoutFeb2025_20250203.t.sol)\n- [Discussion](https://governance.aave.com/t/bgd-request-for-bounty-payout-january-2025/20947)\n- Snapshot: Direct To AIP\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Request for Bounty Payout - Feb 2025",
+    "author": "BGD Labs (@bgdlabs)",
+    "discussions": "https://governance.aave.com/t/bgd-request-for-bounty-payout-january-2025/20947",
+    "snapshot": "Direct To AIP"
+  }
+}
