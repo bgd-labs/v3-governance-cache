@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "251",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x0ae88db3b5a56cab72ad7bfded4baa1e46848e9fa4335cce2104c8c7876f6136"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x14296e0dacd4ecffc303aab1292cbd27a96074469b9f04bce37f3b7ac2126ddb",
+      "blockNumber": "21865907",
+      "data": "0x0ae88db3b5a56cab72ad7bfded4baa1e46848e9fa4335cce2104c8c7876f6136",
+      "logIndex": 383,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000000fb",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xf533c7fb3bb2c13efd7c50800270880a70e480ef3a2d9eac656fdaa0afbef476",
+      "transactionIndex": 99,
+      "timestamp": 1739792999
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1739792999,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x0ae88db3b5a56cab72ad7bfded4baa1e46848e9fa4335cce2104c8c7876f6136",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 248
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmP5ETX4t8zmjUSuDvrUcMeYyZF7h3Xn6HJjadjWaySs4y",
+    "description": "\n## Simple Summary\n\nThis publication proposes restoring ETH’s LTV to 82% on the Prime instance of Aave v3.\n\n## Motivation\n\nWith the introduction of liquidity mining rewards for ETH deposits on Prime, some users exploited wETH/wETH leverage to farm rewards. In response, ETH’s LTV was set to 0, preventing new ETH collateral positions while preserving existing user positions.\n\nTransitioning from direct liquidity mining emissions to a periodic Merkl distribution ensures that users leveraging wETH/wETH can be disqualified from rewards. By introducing a qualification criteria, incentives are directed towards users who engage with the protocol as intended.\n\nThis proposal focuses on re-enabling ETH collateral positions by restoring the LTV to 82%.\n\n## Specification\n\nThe LTV for ETH on Prime is to be amended as outlined below:\n\n| Parameter | Current | Proposed |\n| :-------: | :-----: | :------: |\n|    LTV    |  0.00%  |  82.00%  |\n\nThe ETH Correlated eMode category is to be amended as outlined below:\n\n|      Parameter      | Value  | Value  |\n| :-----------------: | :----: | :----: |\n|        Asset        |  wETH  | wstETH |\n|     Collateral      |   No   |  Yes   |\n|     Borrowable      |  Yes   |   No   |\n|         LTV         | 93.50% | 93.50% |\n|         LT          | 95.50% | 95.50% |\n| Liquidation Penalty | 1.00%  | 1.00%  |\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/f22d1d68c4e0c3f0bc8fc5370fd15e9c36947673/src/20250210_AaveV3EthereumLido_PrimeInstanceRestoreETHLTV/AaveV3EthereumLido_PrimeInstanceRestoreETHLTV_20250210.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/f22d1d68c4e0c3f0bc8fc5370fd15e9c36947673/src/20250210_AaveV3EthereumLido_PrimeInstanceRestoreETHLTV/AaveV3EthereumLido_PrimeInstanceRestoreETHLTV_20250210.t.sol)\n  [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0xe7251459edae302517bc471776d82069afb13441b058c9fc989e0c878f13c873)\n- [Discussion](https://governance.aave.com/t/arfc-prime-instance-restore-eth-ltv/20933)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Prime Instance - Restore ETH LTV",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-prime-instance-restore-eth-ltv/20933",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0xe7251459edae302517bc471776d82069afb13441b058c9fc989e0c878f13c873"
+  }
+}
