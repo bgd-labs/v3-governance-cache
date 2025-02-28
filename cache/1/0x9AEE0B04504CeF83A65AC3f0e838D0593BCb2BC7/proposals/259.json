@@ -1,0 +1,77 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "259",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x9adc1828386ca02dba7c1a492c4448348addde4551e5bc81968bf49920517b3b"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xf2c619eee5e866d3906330a0262d64e184162650e633b30626a960f497ba0c43",
+      "blockNumber": "21944467",
+      "data": "0x9adc1828386ca02dba7c1a492c4448348addde4551e5bc81968bf49920517b3b",
+      "logIndex": 691,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000103",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x92d545d45a52efcae4425097a6b6dd03f93ad9a56f40f0ac7f109a7f9ecfcc5d",
+      "transactionIndex": 157,
+      "timestamp": 1740741155
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1740741155,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9adc1828386ca02dba7c1a492c4448348addde4551e5bc81968bf49920517b3b",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 252
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 101
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 68
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 77
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYmA9WfAkESmzqE4231ujPFUYRi8iNAkBkMjGhEUkXYiN",
+    "description": "\n## Simple Summary\n\nThis publication presents the February Funding Update - Part B, which consists of performing the following key activities:\n\n- Bridging funds to Ethereum;\n- Create Merit & Ahab Allowances;\n- Deposit previously swapped assets on [Part A](https://github.com/bgd-labs/aave-proposals-v3/pull/595)\n\n## Motivation\n\nThis proposal is a continuation of [February Funding Update Part A](https://github.com/bgd-labs/aave-proposals-v3/pull/595) and as part of our ongoing Treasury asset rebalancing strategy, this proposal when implemented will continue to:\n\n- Bridging assets from Polygon, Arbitrum and Optimism to Ethereum;\n  - Continue reducing bridged USDC exposure in support of Native USDC adoption;\n  - Convert DAI to USDS;\n  - Prepare to unstake wstMATIC;\n  - Transfer BAL and CRV to ALC.\n\n## Specification\n\n### Bridge Assets to Ethereum Mainnet\n\nWithdraw from respective Aave Protocol and bridge the following assets to Ethereum mainnet.\n\n| Polygon v2 & Passive |      Polygon v3      |    Arbitrum v3     |    Optimism v3     |\n| :------------------: | :------------------: | :----------------: | :----------------: |\n|  amUSDC.e (All-100)  |   aPolDAI (All-1)    |  aArbLUSD (All-1)  |  aOptLUSD (All-1)  |\n|    amBAL (All-1)     |   aPolWETH (All-1)   | aArbUSDC (All-100) | aOptUSDC (All-100) |\n|      BAL (All)       |   aPolBAL (All-1)    |   aEthDai(All-1)   |                    |\n|     USDC.e (All)     | aPolUSDC.e (All-100) |      Dai(All)      |                    |\n|      AAVE (All)      |   aPolAAVE (All-1)   |                    |                    |\n|    amWETH (All-1)    | aPolstMATIC (All-1)  |                    |                    |\n|    amDAI (All-1)     |   aPolDPI (All-1)    |                    |                    |\n|      wETH (All)      |  aPolwstETH (All-1)  |                    |                    |\n|      CRV (All)       |   aPolCRV (All-1)    |                    |                    |\n|     wstETH (All)     |                      |                    |                    |\n\n### Deposit into Aave V3\n\n|      Instance       | Asset | Amount |\n| :-----------------: | :---: | :----: |\n| AaveV3EthereumCore  |  ETH  |  All   |\n| AaveV3EthereumPrime |  GHO  |   3M   |\n| AaveV3EthereumCore  | USDS  |  All   |\n\n### Withdraw and burn 3M GHO on Prime instance\n\nAs per Chaos Labs' recommendation, withdraw and burn 3 Million GHO from Prime instance that had been previously been minted and supplied via the GhoDirectMinter Facilitator. Read more [here](https://governance.aave.com/t/arfc-update-usds-gho-borrow-rate/20892/5).\n\n### Merit + Ahab Programs\n\nCreate allowances to the Merit_Ahab Safe, 3M GHO aEthLidoGHO and 800 aEthWETH from Aave v3 Prime and Core instances respectively:\n\nSAFE: `0xdeadD8aB03075b7FBA81864202a2f59EE25B312b`\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Ethereum_FebruaryFundingUpdatePartB_20250207.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Polygon_FebruaryFundingUpdatePartB_20250207.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Optimism_FebruaryFundingUpdatePartB_20250207.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Arbitrum_FebruaryFundingUpdatePartB_20250207.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Ethereum_FebruaryFundingUpdatePartB_20250207.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Polygon_FebruaryFundingUpdatePartB_20250207.t.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Optimism_FebruaryFundingUpdatePartB_20250207.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/8aaeab3030190b8b8f89bdb907883af4fa7308f3/src/20250207_Multi_FebruaryFundingUpdatePartB/AaveV3Arbitrum_FebruaryFundingUpdatePartB_20250207.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-february-funding-update/20712)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "February Funding Update - Part B",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-february-funding-update/20712"
+  }
+}
