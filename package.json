@@ -47,8 +47,8 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^4.8.1",
-    "@bgd-labs/js-utils": "^1.4.6",
+    "@bgd-labs/aave-address-book": "^4.15.1",
+    "@bgd-labs/js-utils": "^1.4.8",
     "@types/bun": "latest",
     "bun-plugin-dts": "^0.2.3",
     "prettier": "^3.2.5",
@@ -57,9 +57,9 @@
   },
   "peerDependencies": {
     "viem": "^2.22.16",
-    "@bgd-labs/aave-address-book": "^4.8.1"
+    "@bgd-labs/aave-address-book": "^4.15.1"
   },
   "dependencies": {
-    "@bgd-labs/rpc-env": "^2.3.1"
+    "@bgd-labs/rpc-env": "^2.3.2"
   }
 }
