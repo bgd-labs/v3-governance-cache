@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "268",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0xa04d3af3553db0dbc63ed3222f861663c121236b3ab279d8f75daba42bc0703b"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x1a0bac053422a2e2b2a10b237f950264688574286cc6096ee39b751b7b250cb7",
+      "blockNumber": "22030860",
+      "data": "0xa04d3af3553db0dbc63ed3222f861663c121236b3ab279d8f75daba42bc0703b",
+      "logIndex": 295,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000010c",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x621b636e86c96bcb232cad8513dc75e2af155f67dbd77f5e9ef3fb1d508929e8",
+      "transactionIndex": 85,
+      "timestamp": 1741783391
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1741783391,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa04d3af3553db0dbc63ed3222f861663c121236b3ab279d8f75daba42bc0703b",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 61
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZ8QF7ACNeTjHcXsBbWoK8GAe1CEtQtw6M4FtSqaJ3iup",
+    "description": "\n## Simple Summary\n\nCreate a new eMode for wrsETH/wstETH and unfreeze wrsETH & LBTC.\n\n## Motivation\n\nBoth proposal [263](https://vote.onaave.com/proposal/?proposalId=263&ipfsHash=0x6fba0be9251581b6628c378a8cfef6bba51a0a902528bfc4b0eff92ed14635b8) and [264](https://vote.onaave.com/proposal/?proposalId=264&ipfsHash=0xe8cf37c4fe2b24cbbf6296ff230af6e84185d3749bb8af9c056243bfa1c7188d) proposed listing new assets in combination with creating new eModes.\nAs Emodes on Aave are accessed via a static id, both proposals specified `eMode 4` which ultimately lead to 264 overwriting part of the 263 config.\nIn response to that the guardian coordinated an immediate freeze of `LBTC` and `wrsETH`, which prevents unintended usage (e.g. borrowing wstETH against LBTC).\nThis proposal aims to restore the configuration as it was originally intended by the proposal authors.\n\n## Specification\n\nThe proposal will:\n\n- remove wstETH from the borrowable assets on `LBTC_cbBTC` eMode\n- remove wrsETH from the collateral assets on `LBTC_cbBTC` eMode\n- create a new `rsETH/wstETH` eMode with the following configuration:\n  - ltv 92.5 %\n  - lt 94.5 %\n  - lb 1%\n  - borrowable: wstETH\n  - collaterals: wrsETH\n- unfreeze LBTC and wrsETH\n\n## References\n\n- Implementation: [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/e4e94f4b2908df422b49361096c7b0b65952552e/src/20250311_AaveV3Base_RecreateWrstETHEModeOnBase/AaveV3Base_RecreateWrstETHEModeOnBase_20250311.sol)\n- Tests: [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/e4e94f4b2908df422b49361096c7b0b65952552e/src/20250311_AaveV3Base_RecreateWrstETHEModeOnBase/AaveV3Base_RecreateWrstETHEModeOnBase_20250311.t.sol)\n- [Discussion](TODO)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Recreate wrstETH eMode on Base",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "TODO"
+  }
+}
