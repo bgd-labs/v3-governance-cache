@@ -1,0 +1,113 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "271",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xd1c8efdc310bd2fdd2d4f00fdeb9c01758078f56d24218c778d58132f11f1104"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x7e1a05ce0beb34f517c454c306873f4386473e6152cbb7b9221b551fe9313f59",
+      "blockNumber": "22045779",
+      "data": "0xd1c8efdc310bd2fdd2d4f00fdeb9c01758078f56d24218c778d58132f11f1104",
+      "logIndex": 254,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000010f",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xebbd35661fa3324b49b42c0ba937c15afddd6e4b98600fd63cd3786177aa1c10",
+      "transactionIndex": 121,
+      "timestamp": 1741963331
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1741963331,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd1c8efdc310bd2fdd2d4f00fdeb9c01758078f56d24218c778d58132f11f1104",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 259
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 72
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 70
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 80
+      },
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 36
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 62
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 47
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 37
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 35
+      },
+      {
+        "chain": "324",
+        "accessLevel": 1,
+        "payloadsController": "0x2E79349c3F5e4751E87b966812C9E65E805996F1",
+        "payloadId": 19
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmcTZdNwuBJUGVvnmnpKLWUKSkrG2D1udUUUtwvmSkB3s9",
+    "description": "\n## Simple Summary\n\nIn light of recent market changes, Chaos Labs recommends setting the target borrow rate for most stablecoins to 6.50%. These changes would be implemented via the direct-to-AIP process.\n\n## Motivation\n\nThe utilization for stablecoins across Aave has resumed falling after a brief improvement following the last IR curve adjustment, calling for a further reduction in target rates to better align with the market-priced interest rate.\n\nA closer look at the largest stablecoin markets indicates that borrow rates have stabilized between 6% and 8%.\n\nAs a result, we recommend setting the target rate for all stablecoins to 6.5%;\n\nPlease note that GHO, USDS, and pyUSD are managed separately and, thus, are not included in these recommendations.\n\n## Specification\n\n| Protocol | Instance         | Asset  | **Current Slope1** | **Rec. Slope1** |\n| -------- | ---------------- | ------ | ------------------ | --------------- |\n| Aave V3  | Ethereum Core    | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | DAI    | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | USDT   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | LUSD   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | FRAX   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | crvUSD | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Core    | USDe   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum Prime   | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum EtherFi | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | Ethereum EtherFi | FRAX   | 8.50%              | 6.50%           |\n| Aave V3  | Arbitrum         | DAI    | 9%                 | 6.50%           |\n| Aave V3  | Arbitrum         | USDT   | 9%                 | 6.50%           |\n| Aave V3  | Arbitrum         | LUSD   | 9%                 | 6.50%           |\n| Aave V3  | Arbitrum         | USDC   | 9%                 | 6.50%           |\n| Aave V3  | Arbitrum         | FRAX   | 9%                 | 6.50%           |\n| Aave V3  | Optimism         | DAI    | 9%                 | 6.50%           |\n| Aave V3  | Optimism         | USDT   | 9%                 | 6.50%           |\n| Aave V3  | Optimism         | sUSD   | 9%                 | 6.50%           |\n| Aave V3  | Optimism         | LUSD   | 9%                 | 6.50%           |\n| Aave V3  | Optimism         | USDC   | 9%                 | 6.50%           |\n| Aave V3  | Base             | USDC   | 9%                 | 6.50%           |\n| Aave V3  | Metis            | m.DAI  | 9.50%              | 6.50%           |\n| Aave V3  | Metis            | m.USDC | 9.50%              | 6.50%           |\n| Aave V3  | Metis            | m.USDT | 9.50%              | 6.50%           |\n| Aave V3  | Avalanche        | DAI.e  | 8.50%              | 6.50%           |\n| Aave V3  | Avalanche        | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | Avalanche        | USDt   | 8.50%              | 6.50%           |\n| Aave V3  | Avalanche        | FRAX   | 8.50%              | 6.50%           |\n| Aave V3  | Avalanche        | AUSD   | 8.50%              | 6.50%           |\n| Aave V3  | Gnosis           | WXDAI  | 9%                 | 6.50%           |\n| Aave V3  | Gnosis           | EURe   | 9%                 | 6.50%           |\n| Aave V3  | Gnosis           | USDC.e | 9%                 | 6.50%           |\n| Aave V3  | BNB              | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | BNB              | USDT   | 8.50%              | 6.50%           |\n| Aave V3  | BNB              | FDUSD  | 8.50%              | 6.50%           |\n| Aave V3  | Scroll           | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | ZkSync           | USDC   | 8.50%              | 6.50%           |\n| Aave V3  | ZkSync           | USDT   | 8.50%              | 6.50%           |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Ethereum_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3EthereumLido_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3EthereumEtherFi](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3EthereumEtherFi_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Polygon_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Avalanche_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Optimism_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Arbitrum_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Metis_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Base_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Gnosis_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Scroll_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3BNB_StablecoinsInterestRateCurveUpdate_20250312.sol), [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/zksync/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3ZkSync_StablecoinsInterestRateCurveUpdate_20250312.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Ethereum_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3EthereumLido_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3EthereumEtherFi](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3EthereumEtherFi_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Polygon_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Avalanche_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Optimism_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Arbitrum_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Metis_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Base_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Gnosis_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3Scroll_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3BNB_StablecoinsInterestRateCurveUpdate_20250312.t.sol), [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/78b4d81bddc1978b7807d39859b806883e087d15/zksync/src/20250312_Multi_StablecoinsInterestRateCurveUpdate/AaveV3ZkSync_StablecoinsInterestRateCurveUpdate_20250312.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-stablecoin-interest-rate-curve-update-03-04-2025/21269)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Stablecoins Interest Rate Curve Update",
+    "author": "Aave Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-stablecoin-interest-rate-curve-update-03-04-2025/21269"
+  }
+}
