@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "277",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7824ef23dfa3dafbc74744a92d482ba61a72ebeec7a941a70134d63809755a92"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x3f4b35433e455b8bf84381b652bdbe76628905e043869ce7db47f44cbc0efb4e",
+      "blockNumber": "22140775",
+      "data": "0x7824ef23dfa3dafbc74744a92d482ba61a72ebeec7a941a70134d63809755a92",
+      "logIndex": 41,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000115",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x0216d8f9c228773d327b7a4b058448cb7cbc19310dcee6642035ba49b26f2270",
+      "transactionIndex": 52,
+      "timestamp": 1743108959
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1743108959,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7824ef23dfa3dafbc74744a92d482ba61a72ebeec7a941a70134d63809755a92",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 82
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWReJEm8vSgwPzjtJAbJ3mckPqwiVpMbCHjU9w1ViddkM",
+    "description": "\n## Simple Summary\n\nThis is an ARFC to onboard rsETH to the Aave V3 Arbitrum.\n\n## Motivation\n\nrsETH has seen continued growth across networks, and is currently the only of the onboarded LRT not available on Arbitrum. We expect further growth of this asset with onboarding to this networks. Arbitrum has one of the largest wstETH reserves of any Aave instance. We suggest to onboard rsETH with similar parameters to ezETH and corresponding E-Modes for rsETH / wstETH and rsETH / stablecoins.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **rsETH**\n\n| Parameter                 |                                      Value |\n| ------------------------- | -----------------------------------------: |\n| Isolation Mode            |                                      false |\n| Borrowable                |                                   DISABLED |\n| Collateral Enabled        |                                       true |\n| Supply Cap (rsETH)        |                                        900 |\n| Borrow Cap (rsETH)        |                                          1 |\n| Debt Ceiling              |                                      USD 0 |\n| LTV                       |                                     0.05 % |\n| LT                        |                                      0.1 % |\n| Liquidation Bonus         |                                      7.5 % |\n| Liquidation Protocol Fee  |                                       10 % |\n| Reserve Factor            |                                       20 % |\n| Base Variable Borrow Rate |                                        0 % |\n| Variable Slope 1          |                                       10 % |\n| Variable Slope 2          |                                      300 % |\n| Uoptimal                  |                                       45 % |\n| Flashloanable             |                                    ENABLED |\n| Siloed Borrowing          |                                   DISABLED |\n| Borrowable in Isolation   |                                   DISABLED |\n| Oracle                    | 0xb4B0cbcA864c2Eb0C0342608D92490C034aC1089 |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://arbiscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for rsETH and the corresponding aToken.\n\n### rsETH/wstETH E-Mode on Arbitrum & Base\n\n| Parameter           | Value  | Value  |\n| ------------------- | ------ | ------ |\n| Asset               | rsETH  | wstETH |\n| Collateral          | Yes    | No     |\n| Borrowable          | No     | Yes    |\n| LTV                 | 92.50% | -      |\n| LT                  | 94.50% | -      |\n| Liquidation Penalty | 1.00%  | -      |\n\n## References\n\n- Implementation: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/7141371049e4fff65c91e768e881d93ed0265f64/src/20250326_AaveV3Arbitrum_OnboardRsETHToArbitrum/AaveV3Arbitrum_OnboardRsETHToArbitrum_20250326.sol)\n- Tests: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/7141371049e4fff65c91e768e881d93ed0265f64/src/20250326_AaveV3Arbitrum_OnboardRsETHToArbitrum/AaveV3Arbitrum_OnboardRsETHToArbitrum_20250326.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0x598f7057f445813d75404fae68f3501d76c90064f52ca4b9afb6f20859fa2658)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-rseth-to-arbitrum-and-base-v3-instances/20741)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": " Onboard rsETH to Arbitrum",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-rseth-to-arbitrum-and-base-v3-instances/20741",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0x598f7057f445813d75404fae68f3501d76c90064f52ca4b9afb6f20859fa2658"
+  }
+}
