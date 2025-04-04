@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "285",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x842e291fcdf10a54e43af6d356bf4ed54ef5b33c284f2693f201b6c7875e7633"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x927c1a6719deadce89be30318473a283f1540b0feceb01c322b6668e318f704b",
+      "blockNumber": "22193974",
+      "data": "0x842e291fcdf10a54e43af6d356bf4ed54ef5b33c284f2693f201b6c7875e7633",
+      "logIndex": 480,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000011d",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x47d46d7847864b20127aa3843bdc5d826cc426d0394a5a5369b62fd42f0af8ce",
+      "transactionIndex": 117,
+      "timestamp": 1743750647
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1743750647,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9b24C168d6A76b5459B1d47071a54962a4df36c3",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x842e291fcdf10a54e43af6d356bf4ed54ef5b33c284f2693f201b6c7875e7633",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 50
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXEdMGpguPRmX97yTejjimdqYfkJuFvJjEwE11dETNzKL",
+    "description": "\n## Simple Summary\n\nThis publication proposes changes in the Gnosis Chain instance to improve the capital efficiency of USDC.e and sDAI assets by promoting changes on its parametrisation.\n\n## Motivation\n\nThe Gnosis Chain’s DeFi landscape has evolved considerably since these assets were first introduced. With a vibrant ecosystem now in place, it’s time to enhance capital efficiency, reduce capital fragmentation, and create useful debt vs no risk looping within the Aave GC instance to attract more capital and increase utilisation.\n\n**USDC to USDC.e Transition:**\n\nGnosis Chain is committed to making USDC.e (the version that aligns with Circle’s standards) the defacto version of this stablecoin within its ecosystem, by accelerating the transition from USDC and making it the major market within Aave’s GC instance (replacing xDAI). To incentivise this migration and accommodate increased capital inflows, we propose the following adjustments for USDC.e:\n\n- Supply and Borrowing Cap Increase: Enacted via the Risk Steward.\n- Emode Creation: Establish an Emode pairing between USDC.e and sDAI, similar to the existing sDAI/EURe Emode.\n\nThose changes will incentivise looping strategies with USDC.e similar to those with EURe/xDAI.\n\nTo further promote the transition to USDC.e, we propose reducing the LTV factor for USDC. This measure will prevent the initiation of new borrowings using USDC, thus encouraging users to adopt USDC.e.\n\n**sDAI Borrowability**\n\nThis proposal also asks to make sDAI a borrowable asset. There is little justification for depositing xDAI into Aave on Gnosis, as sDAI offers the same risk profile. The optimal configuration, then, would be to phase out xDAI in favour of sDAI (this will be presented in a future proposal). sDAI becoming borrowable ensures a more efficient and market-driven borrowing system on the platform.\n\n## Specification\n\nThe tables below show the current and proposed parameters for each asset. A subsequent AIP will be submitted to implement these changes upon implementing this proposal.\n\n- USDC.e\n\n| Parameters               | Current | Proposed |\n| ------------------------ | ------- | -------- |\n| Isolation Mode           | No      | -        |\n| Borrowable in Isolation  | Yes     | -        |\n| Enable Borrow            | Yes     | -        |\n| Enable Collateral        | Yes     | -        |\n| Loan To Value (LTV)      | 75%     | -        |\n| Liquidation Threshold    | 78%     | -        |\n| Liquidation Bonus        | 5%      | -        |\n| Reserve Factor           | 10%     | -        |\n| Liquidation Protocol Fee | 10%     | -        |\n| Supply Cap               | 10M     | -        |\n| Borrow Cap               | 9M      | -        |\n| Debt Ceiling             | N/A     | -        |\n| Optimal                  | 90%     | -        |\n| Base                     | 0%      | -        |\n| Slope1                   | 9.5%    | -        |\n| Slope2                   | 40%     | -        |\n| Emode                    | No      | Yes      |\n\n- Create sDAI/USDC.e E-mode\n\n| Parameters            | Value | Value  |\n| --------------------- | ----- | ------ |\n| Asset                 | sDAI  | USDC.e |\n| Collateral            | Yes   | No     |\n| Borrowable            | No    | Yes    |\n| Max LTV               | 90%   | -      |\n| Liquidation Threshold | 92%   | -      |\n| Liquidation Bonus     | 4%    | -      |\n\n- USDC\n\n| Parameters     | Current | Proposed |\n| -------------- | ------- | -------- |\n| Supply Cap     | 11m     | 2.5m     |\n| Borrow Cap     | 11m     | 2m       |\n| Reserve Factor | 25%     | 40%      |\n| LTV            | 75%     | 65%      |\n\n- sDAI\n\n| Parameters               | Current | Proposed |\n| ------------------------ | ------- | -------- |\n| Isolation Mode           | No      | -        |\n| Borrowable in Isolation  | No      | -        |\n| Enable Borrow            | No      | -        |\n| Enable Collateral        | Yes     | -        |\n| Loan To Value (LTV)      | 75%     | -        |\n| Liquidation Threshold    | 78%     | -        |\n| Liquidation Bonus        | 5%      | -        |\n| Reserve Factor           | 10%     | -        |\n| Liquidation Protocol Fee | 20%     | -        |\n| Supply Cap               | 48M     | -        |\n| Borrow Cap               | 0       | -        |\n| Debt Ceiling             | N/A     | -        |\n| Optimal                  | 90%     | -        |\n| Base                     | 0%      | -        |\n| Slope1                   | 4%      | -        |\n| Slope2                   | 75%     | -        |\n| Emode                    | No      | Yes      |\n\n## References\n\n- Implementation: [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/1df64075d9de756315cb85fc35b7b9f0d03c83ee/src/20250311_AaveV3Gnosis_EnhancementsInAaveV3GnosisChainInstance/AaveV3Gnosis_EnhancementsInAaveV3GnosisChainInstance_20250311.sol)\n- Tests: [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/1df64075d9de756315cb85fc35b7b9f0d03c83ee/src/20250311_AaveV3Gnosis_EnhancementsInAaveV3GnosisChainInstance/AaveV3Gnosis_EnhancementsInAaveV3GnosisChainInstance_20250311.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0x27b21aa2cd21d5e94eb9b9e0232fe875ad45719588ada4b059f67a8834d7408e)\n- [Discussion](https://governance.aave.com/t/arfc-enhancements-in-aave-v3-gnosis-chain-instance/21214)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Enhancements in Aave v3 Gnosis Chain Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-enhancements-in-aave-v3-gnosis-chain-instance/21214",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0x27b21aa2cd21d5e94eb9b9e0232fe875ad45719588ada4b059f67a8834d7408e"
+  }
+}
