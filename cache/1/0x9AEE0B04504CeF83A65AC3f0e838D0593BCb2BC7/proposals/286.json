@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "286",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7b3631f33440766118f881b34797f01d87602887d1204ec83883778a947f7154"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xff8ab9bc5832acbe2739f644eee9b31fa78da034229fb7c98c56084319544072",
+      "blockNumber": "22196955",
+      "data": "0x7b3631f33440766118f881b34797f01d87602887d1204ec83883778a947f7154",
+      "logIndex": 468,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000011e",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x29e5f525f3453b32d94f5596518fc1c7832b78894fa688d75de9a273e41b9aa1",
+      "transactionIndex": 101,
+      "timestamp": 1743786575
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1743786575,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7b3631f33440766118f881b34797f01d87602887d1204ec83883778a947f7154",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 267
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWdcnb3Z3rE711cYNpfNmZUDuxfHgq6yGVnbBecxu8Prj",
+    "description": "\n## Simple Summary\n\nThis proposal approves a specific allowance of **aEthUSDT** from the Aave Collector contract to the **Aave Finance Committee (AFC)**, enabling the committee to initiate AAVE buybacks as part of the Aavenomics implementation.\n\n## Motivation\n\nAs outlined in the [Aavenomics Part One proposal](https://governance.aave.com/t/arfc-aavenomics-implementation-part-one/21248), the Aave DAO is launching a structured AAVE Buy and Distribute program. The goal is to sustainably increase AAVE acquisition from the open market and distribute it to the Ecosystem Reserve.\n\nThis initial proposal enables the AFC to begin executing the first phase of the buyback program by approving $4M in aEthUSDT, allowing for approximately one month of AAVE buybacks. While the full program targets up to $1M/week over six months, this limited approval serves as a first step. It also gives us time to finalize and deploy the updated Aave Swapper contract, which will be used for future buybacks.\n\nThis allowance mechanism ensures:\n\n- Treasury operations remain secure, with no direct token transfer.\n- The AFC can operate within clearly defined, governance-approved budgets.\n- Buyback operations can begin without delay, supporting protocol alignment and tokenomics upgrades.\n\n## Specification\n\n- **Asset**: aEthUSDT: 0x23878914EFE38d27C4D67Ab83ed1b93A74D4086a\n- **Amount**: 4M\n- **Spender**: [Aave Finance Committee (AFC)](https://etherscan.io/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa): 0x22740deBa78d5a0c24C58C740e3715ec29de1bFa\n- **Method**: `approve()` aEthUSDT on the Aave Collector contract to the AFC address\n\nOnce approved, the AFC will be able to pull USDT from the Collector contract to perform AAVE purchases on secondary markets or via market makers.\n\nThis operation does **not** transfer any tokens at execution, and the allowance can be adjusted or revoked at any time through a new governance vote.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/5bf5796951820701d82d50530c71fcf1edd0d091/src/20250403_AaveV3Ethereum_AAVEBuybacksAllocation/AaveV3Ethereum_AAVEBuybacksAllocation_20250403.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/5bf5796951820701d82d50530c71fcf1edd0d091/src/20250403_AaveV3Ethereum_AAVEBuybacksAllocation/AaveV3Ethereum_AAVEBuybacksAllocation_20250403.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aave.eth/proposal/0xf0591fe8e54900da9929fe25c466c2b4a0fac6e8f7a3a000087797363847fb65)\n- [Discussion](https://governance.aave.com/t/arfc-aavenomics-implementation-part-one/21248)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "AAVE Buybacks allocation",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-aavenomics-implementation-part-one/21248",
+    "snapshot": "https://snapshot.box/#/s:aave.eth/proposal/0xf0591fe8e54900da9929fe25c466c2b4a0fac6e8f7a3a000087797363847fb65"
+  }
+}
