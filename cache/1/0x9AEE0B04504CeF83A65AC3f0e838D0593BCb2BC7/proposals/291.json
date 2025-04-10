@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "291",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x2976c79737ef0a16930cab6eea90bf53c157fe01d9a3a904f435f266a4dddcf5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x9135d95d1ea3bda9cfd9474526c7d79e3ed9cbef3543aaf20bfda2a6d4ac2ad6",
+      "blockNumber": "22236493",
+      "data": "0x2976c79737ef0a16930cab6eea90bf53c157fe01d9a3a904f435f266a4dddcf5",
+      "logIndex": 161,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000123",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0xec6704638e704b24144ba95e7ee64f2127405f668e49f3c16110b423a5a032dc",
+      "transactionIndex": 96,
+      "timestamp": 1744263611
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1744263611,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x2976c79737ef0a16930cab6eea90bf53c157fe01d9a3a904f435f266a4dddcf5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 269
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmR8WUUNmDtZ6syGyYwXwyyEWLpzjzGwnpCogACsw4giKN",
+    "description": "\n## Simple Summary\n\nProposal to remove the deprecated `VotingPortals` from the Aave Governance.\n\n## Motivation\n\n[Proposal 273](https://vote.onaave.com/proposal/?proposalId=273) enabled new VotingPortal contracts on the Aave Governance, but without removing the previous ones to be sure no issues during the transition would happen.\n\nAs the new `VotingPortals` have already been proven to be working by using them for voting on at least 4 new proposals (279 - 282), it is time to remove the old ones, so that there is no confusion or possibility of using the old `VotingPortals` on new proposals.\n\n## Specification\n\nThe payload calls `removeVotingPortals()` on the Aave Governance contract, with the list of old VotingPortals.\n\nVotingPortals to remove:\n\n| Network  | Path       | Address                                                                                                               |\n| -------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |\n| Ethereum | Eth - Eth  | [0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f](https://etherscan.io/address/0xf23f7De3AC42F22eBDA17e64DC4f51FB66b8E21f) |\n| Ethereum | Eth - Avax | [0x33aCEf7365809218485873B7d0d67FeE411B5D79](https://etherscan.io/address/0x33aCEf7365809218485873B7d0d67FeE411B5D79) |\n| Ethereum | Eth - Pol  | [0x9b24C168d6A76b5459B1d47071a54962a4df36c3](https://etherscan.io/address/0x9b24C168d6A76b5459B1d47071a54962a4df36c3) |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/2275c79af1b114017e2305ca31e88b238154ccc3/src/20250405_AaveV3Ethereum_RemoveOldVotingPortalsFromAaveGovernance/AaveV3Ethereum_RemoveOldVotingPortalsFromAaveGovernance_20250405.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/2275c79af1b114017e2305ca31e88b238154ccc3/src/20250405_AaveV3Ethereum_RemoveOldVotingPortalsFromAaveGovernance/AaveV3Ethereum_RemoveOldVotingPortalsFromAaveGovernance_20250405.t.sol)\n- [Discussion](https://governance.aave.com/t/technical-maintenance-proposals/15274/77)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Removal of legacy VotingPortals from Governance v3",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/technical-maintenance-proposals/15274/77"
+  }
+}
