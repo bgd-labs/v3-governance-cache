@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "293",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x87a8aaaa34d0fbe1b588b7560fbf28d5bcff95417037e20f3529b79a3ae412ad"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0xd15446ac03ee07913fcd32c84379118297fdae7ab0f7a86229fcbaaaa6547fb1",
+      "blockNumber": "22244650",
+      "data": "0x87a8aaaa34d0fbe1b588b7560fbf28d5bcff95417037e20f3529b79a3ae412ad",
+      "logIndex": 446,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000125",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x2cac2bd922ab31bc721112508dfa486b31559aeece2bb9ebb4a863949d0a4131",
+      "transactionIndex": 171,
+      "timestamp": 1744361855
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1744361855,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x87a8aaaa34d0fbe1b588b7560fbf28d5bcff95417037e20f3529b79a3ae412ad",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 270
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 109
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXUCvDhU8Zri5iv2CF368jksqx2EnSDLstvgUPZgutAbW",
+    "description": "\n## Simple Summary\n\nThis publication presents the April Funding Update, consisting of the following key activities:\n\n- Bridge funds to Ethereum;\n- Fund Sonic incentive campaign;\n- Acquire GHO for Operations; and,\n- Transfer FLUID to Aave Protocol Embassy.\n- Fund to [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1)\n- Update stataUSDT GSM Exposure Cap as it has successfully drawn swaps from aggregators\n\n## Motivation\n\nThis publication combines near term operational needs and migrating assets held on Polygon in preparation for funding future incentive campaigns. The below outlines the three objectives of this publication:\n\n- Consolidating funds to Ethereum;\n- Fulfilling near term operation requirements; and,\n\n### Bridge Funds to Ethereum\n\nEach month the DAO’s funds held on Polygon are to be bridged to Ethereum where they will be used to support various incentive and buyback programs. With the pending Umbrella, Horizon and AAVE buybacks to start in the near future, consolidating assets on Ethereum ensures sufficient capital is readily available if required.\n\n### Acquire GHO\n\nIn the near term we expect several initiatives to request funding from the DAO. This proposal when implemented will acquire sufficient GHO to sustain the DAO until the Finance Steward is deployed ensuring the DAO is well capitalised at all times.\n\nExamples of near term expenses include:\n\n- Service Provider renewal;\n- Merit and ALC; and,\n- Incentive campaign(s).\n\n## Specification\n\nThis proposal shall be submitted as several AIPs that align with operational readiness timelines and ease of review given the volume of funds being moved.\n\n### Polygon - Bridge Assets to Ethereum\n\nBridge the following assets to Ethereum.\n\n| Polygon |\n| :-----: |\n| USDC.e  |\n|  USDT   |\n|  WETH   |\n|   DAI   |\n\n### Ethereum - Acquire GHO\n\nSwap to GHO and deposit into Aave v3 Prime instance.\n\n| Ethereum v2 | Amount |\n| :---------: | :----: |\n|    aUSDT    | 2.00M  |\n|    aUSDC    | 2.00M  |\n\nThis GHO will provide sufficient runway to cover the next few months of Merit and Service Provider expenses being paid from Aave v3 Prime instance.\n\n### Ethereum - Aave Protocol Embassy & Sonic Incentives\n\nTransfer FLUID held in the Treasury to Aave Protocol Embassy SAFE on Ethereum:\n\nSAFE: `0xa9e777D56C0Ad861f6a03967E080e767ad8D39b6`\n\nCreate an Allowance to fund Sonic Incentive Campaign, 0.8M aEthUSDC, from Aave v3 Core instance to Merit address:\n\nSAFE: `0xdeadD8aB03075b7FBA81864202a2f59EE25B312b`\n\n### Fund to [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1)\n\nFunding to [CrossChainController](https://etherscan.io/address/0xEd42a7D8559a463722Ca4beD50E0Cc05a386b0e1) on mainnet with 50 LINK and 1 native ETH\n\n### Update stataUSDT GSM Exposure Cap\n\nSet the stataUSDT GSM exposure cap to 25M units.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/a80115e1f957060534c1a4237eb0c50b42279ce6/src/20250328_Multi_AprilFundingUpdate/AaveV3Ethereum_AprilFundingUpdate_20250328.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/a80115e1f957060534c1a4237eb0c50b42279ce6/src/20250328_Multi_AprilFundingUpdate/AaveV3Polygon_AprilFundingUpdate_20250328.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/a80115e1f957060534c1a4237eb0c50b42279ce6/src/20250328_Multi_AprilFundingUpdate/AaveV3Ethereum_AprilFundingUpdate_20250328.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/a80115e1f957060534c1a4237eb0c50b42279ce6/src/20250328_Multi_AprilFundingUpdate/AaveV3Polygon_AprilFundingUpdate_20250328.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-april-funding-update/21590)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "April Funding update",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-april-funding-update/21590"
+  }
+}
