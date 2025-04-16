@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "295",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7bf5753a0e909b4256fc406e6e6897cafebfcb8e0179e2e9696650ac0c6f7226"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x61280e568d0cb56302d8077a2f522cdf910b2047e17ca2113ddea132553e5d18",
+      "blockNumber": "22283320",
+      "data": "0x7bf5753a0e909b4256fc406e6e6897cafebfcb8e0179e2e9696650ac0c6f7226",
+      "logIndex": 397,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000127",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x3a546dcb56a771b2fe2d2449b0291a23cda9137a232357674aa9171b241e0bf8",
+      "transactionIndex": 174,
+      "timestamp": 1744827755
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1744827755,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7bf5753a0e909b4256fc406e6e6897cafebfcb8e0179e2e9696650ac0c6f7226",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 272
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWgXwWPnf4aCuGA2S8Kuz3wCUVwTGZqubYQCb1k6aasTb",
+    "description": "\n## Simple Summary\n\nThis AIP seeks governance approval to onboard Ripple’s rlUSD stablecoin to the Core instance of Aave v3 on Ethereum.\n\n## Motivation\n\nrlUSD is Ripple's stablecoin it's onboarding in the Aave ecosystem is a strategic growth opportunity to reach new audiences.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **RLUSD**\n\n| Parameter                 |                                      Value |\n| ------------------------- | -----------------------------------------: |\n| Isolation Mode            |                                      false |\n| Borrowable                |                                    ENABLED |\n| Collateral Enabled        |                                       true |\n| Supply Cap (RLUSD)        |                                 50,000,000 |\n| Borrow Cap (RLUSD)        |                                  5,000,000 |\n| Debt Ceiling              |                                      USD 0 |\n| LTV                       |                                        0 % |\n| LT                        |                                        0 % |\n| Liquidation Bonus         |                                        0 % |\n| Liquidation Protocol Fee  |                                        0 % |\n| Reserve Factor            |                                       10 % |\n| Base Variable Borrow Rate |                                        0 % |\n| Variable Slope 1          |                                      6.5 % |\n| Variable Slope 2          |                                       50 % |\n| Uoptimal                  |                                       80 % |\n| Flashloanable             |                                    ENABLED |\n| Siloed Borrowing          |                                   DISABLED |\n| Borrowable in Isolation   |                                   DISABLED |\n| Oracle                    | 0xf0eaC18E908B34770FDEe46d069c846bDa866759 |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://etherscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for RLUSD and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/0a32d800b0425cdbf163787daf34c4b72fd2e69d/src/20250409_AaveV3Ethereum_AddRlUSDToCoreInstance/AaveV3Ethereum_AddRlUSDToCoreInstance_20250409.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/0a32d800b0425cdbf163787daf34c4b72fd2e69d/src/20250409_AaveV3Ethereum_AddRlUSDToCoreInstance/AaveV3Ethereum_AddRlUSDToCoreInstance_20250409.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x539ad30f3d3d531702bb7619fc0a9a44dc2da6a8e022eff7ffdc678032e0a8b9)\n- [Discussion](https://governance.aave.com/t/arfc-add-rlusd-to-core-instance/20214)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add rlUSD to Core Instance",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/arfc-add-rlusd-to-core-instance/20214",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x539ad30f3d3d531702bb7619fc0a9a44dc2da6a8e022eff7ffdc678032e0a8b9"
+  }
+}
