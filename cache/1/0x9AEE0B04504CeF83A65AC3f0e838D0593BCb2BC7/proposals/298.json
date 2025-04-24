@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "298",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x806c9d92b382f5668422f150a8d11c8347d3e0e6419b7e73185784f75d3e7d55"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "blockHash": "0x1296a4ec5ec534ba5ee5ec4dc9bbfdf16fa317dee1da58d810d713e7ab21da6f",
+      "blockNumber": "22340006",
+      "data": "0x806c9d92b382f5668422f150a8d11c8347d3e0e6419b7e73185784f75d3e7d55",
+      "logIndex": 287,
+      "removed": false,
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000012a",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "transactionHash": "0x9888e683241899729fc6fb3446046cbc134bc6b683a9a92e109f520aedd9fde5",
+      "transactionIndex": 153,
+      "timestamp": 1745511503
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1745511503,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x806c9d92b382f5668422f150a8d11c8347d3e0e6419b7e73185784f75d3e7d55",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 278
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWyxxLmGnf82LA6BkNRqiJApsek6GXuiQGuQbxbsuVv9r",
+    "description": "\n## Simple Summary\n\nThis publication proposes reducing AAVE emissions to the stkABPT Safety Module category.\n\n## Motivation\n\nDuring 2025, AAVE liquidity is expected to transition away from stkABPT to a more diversified liquidity base.\n\nThe below outlines an overview of what to expect during 2025:\n\n- Reduction stkABPT emissions, eventually to 0;\n- Support AAVE liquidity across several networks;\n- Improved liquidity distribution amongst LPs; and,\n- Introduce Aave DAO liquidity provisions.\n\nThanks to a coordinated effort between Service Providers, AAVE token holders and Aerodrome, there is now AAVE liquidity on the Base network. The liquidity on Aerodrome was key to supporting the onboarding of AAVE to Aave Protocol on Base.\n\nThis publication focuses on implementing the first significant AAVE emission reduction to stkABPT holders.\n\n![Screenshot 2025-04-03 at 21.55.51](https://hackmd.io/_uploads/SJ8k8uhaJg.png)\nSource: https://aave.tokenlogic.xyz/stkbpt\n\n### stkABPT Emissions\n\nThe Aave DAO currently emitting 360 AAVE per day to stkBPT holders. Assuming a spot price of $150/AAVE, this is equivalent to $19.71M a year.\n\nThe yield from holding stkABPT relative to the underlying, 18.21%, compares favorable to holding stkAAVE at 4.72%. Given the slashing risk is 30% for both stkAAVE and stkBPT, the delta of 13.49% represents compensation for the additional Balancer exposure.\n\nThis publication proposes reducing AAVE emissions by one-third, to 240 AAVE/day. The resulting AAVE yield on stkBPT is estimated to reduce by 4.67%, to 11.96% at current rates whilst still comparing favorably to stkAAVE at a time when swap fees and the Lido Index rate is below historical averages.\n\nBased upon the swap size distribution routing through the pool, an overall reduction in TVL would not adversely affect users seeking to acquire AAVE. However, earning near 12% for providing liquidity in the current market is also an attractive investment option for LPs to consider.\n\n## Specification\n\nThis AIP reduces the AAVE emission rate to the following:\n\n| SM Category | Current | Proposed |\n| :---------- | :-----: | :------: |\n| stkABPT     | 360/day | 240/day  |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/8ab49d57df2c1d8a49e2da72a59a4921a1203ccc/src/20250423_AaveV3Ethereum_LowerStkABPTEmissions/AaveV3Ethereum_LowerStkABPTEmissions_20250423.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/8ab49d57df2c1d8a49e2da72a59a4921a1203ccc/src/20250423_AaveV3Ethereum_LowerStkABPTEmissions/AaveV3Ethereum_LowerStkABPTEmissions_20250423.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x8dbeee9b489266cfefb8cb3c75fb0791d364975eed48cee951ff04fd17ee57c1)\n- [Discussion](https://governance.aave.com/t/arfc-stkabpt-emissions-update/21683)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Lower stkABPT Emissions",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-stkabpt-emissions-update/21683",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x8dbeee9b489266cfefb8cb3c75fb0791d364975eed48cee951ff04fd17ee57c1"
+  }
+}
