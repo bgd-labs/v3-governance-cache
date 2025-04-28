@@ -37,11 +37,11 @@
   "payload": {
     "creator": "0xe3FD707583932a99513a5c65c8463De769f5DAdF",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 4,
     "createdAt": 1745504075,
     "queuedAt": 0,
     "executedAt": 0,
-    "cancelledAt": 0,
+    "cancelledAt": 1745854679,
     "expirationTime": 1748528075,
     "delay": 86400,
     "gracePeriod": 604800,
