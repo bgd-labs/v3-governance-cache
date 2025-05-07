@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "308",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x03c2b1edc00d815c2ab96d2072d73620c011f691b028660f83e1cf969fef258f"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000134",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x03c2b1edc00d815c2ab96d2072d73620c011f691b028660f83e1cf969fef258f",
+      "blockHash": "0x3ab068d422191d248478f50a4c651bed300440bfcfb4c4d2c3f94741d4777b50",
+      "blockNumber": "22431698",
+      "blockTimestamp": "0x681b4ee7",
+      "transactionHash": "0xce5d2aeb4df11b8462313f6e4a7fbb54b0b43e93baf57d0550c8b72b24f0e114",
+      "transactionIndex": 152,
+      "logIndex": 680,
+      "removed": false,
+      "timestamp": 1746620135
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1746620135,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x03c2b1edc00d815c2ab96d2072d73620c011f691b028660f83e1cf969fef258f",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 283
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmNbL82M1SrmFXQ3a5qEoHMHoJwPwNMwy2LvzAknG4HZYz",
+    "description": "\n## Simple Summary\n\nEnable SVR feeds on the following assets:\n\n- `eBTC`, `cbBTC` and `WBTC` on the Aave V3 Core instance\n- `USDC`, `WETH`, `rsETH`, `ezETH` and `wstETH` on the Aave V3 Prime instance\n\n## Motivation\n\nIn [proposal 274](https://vote.onaave.com/proposal/?proposalId=274) a fist set of SVR feeds was enabled.\nOver the recent weeks, the oracles were monitored and as expected no relevant deviations were monitored and SVR updates arrived in time. Therefore, in order to make integrating with SVR more attractive, this proposal aims to enable the next set of SVR feeds on ethereum mainnet.\n\n## Specification\n\nGiven the new introduction of SVR feeds on the prime instance, this proposal will perform the activation through a dedicated instance of the previously introduced SVR_STEWARD steward.\nThe SVR_STEWARD, ensures there is minimal derivation between the current price feed and the svr price feed at activation.\nAlso the SVR_STEWARD allows for the Protocol guardian to revert to the previous oracle in case any unforeseen issue arises.\n\n- grant the \"ASSET LISTING ADMIN\" role to the [Prime SVR_STEWARD](https://etherscan.io/address/0x84f2C90f2D66E700baA4CF3cbF66bE7D8f21Bd87)\n- call the `SVR_STEWARD.enableSvrOracles`, replacing the oracle of\n  - `eBTC`, `cbBTC` and `WBTC` on the Aave V3 Core instance\n  - `USDC`, `WETH`, `rsETH`, `ezETH` and `wstETH` on the Aave V3 Prime instance\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/7dfaeee8e64d904f3350186e0e6159dccb944f41/src/20250429_Multi_ExtendSVRV1ToMoreReserves/AaveV3Ethereum_ExtendSVRV1ToMoreReserves_20250429.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/7dfaeee8e64d904f3350186e0e6159dccb944f41/src/20250429_Multi_ExtendSVRV1ToMoreReserves/AaveV3EthereumLido_ExtendSVRV1ToMoreReserves_20250429.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/7dfaeee8e64d904f3350186e0e6159dccb944f41/src/20250429_Multi_ExtendSVRV1ToMoreReserves/AaveV3Ethereum_ExtendSVRV1ToMoreReserves_20250429.t.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/7dfaeee8e64d904f3350186e0e6159dccb944f41/src/20250429_Multi_ExtendSVRV1ToMoreReserves/AaveV3EthereumLido_ExtendSVRV1ToMoreReserves_20250429.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-aave-chainlink-svr-v1-activation-phase-2/21940)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Extend SVR V1 to more reserves",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-aave-chainlink-svr-v1-activation-phase-2/21940"
+  }
+}
