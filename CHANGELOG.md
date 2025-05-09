@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2025-03-10)
+
+
+### Bug Fixes
+
+* update caching system ([64a5cd0](https://github.com/bgd-labs/v3-governance-cache/commit/64a5cd086c21454fe6f45dcf1e6c59c097039e38))
+
 ## [1.0.10](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.9...v1.0.10) (2025-01-28)
 
 
