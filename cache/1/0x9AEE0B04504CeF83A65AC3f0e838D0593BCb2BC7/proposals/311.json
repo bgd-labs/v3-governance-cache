@@ -1,0 +1,72 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "311",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x14eb1427fd0569fe42cbc068c05e5d01593d956a5e74184b278de555865dabc3"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000137",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x14eb1427fd0569fe42cbc068c05e5d01593d956a5e74184b278de555865dabc3",
+      "blockHash": "0xd8ef8b9d59b555084ec9929527c26f2a8715467f921c785da8dc8f3a4e0efde0",
+      "blockNumber": "22480323",
+      "blockTimestamp": "0x682458fb",
+      "transactionHash": "0xa164689bc928a0b6679cd60306bc6ab0fd1d1cbb18ea7fa30719684b35f8c7db",
+      "transactionIndex": 66,
+      "logIndex": 90,
+      "removed": false,
+      "timestamp": 1747212539
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1747212539,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x14eb1427fd0569fe42cbc068c05e5d01593d956a5e74184b278de555865dabc3",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 288
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 87
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 69
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPkJmWsjjBdDhhar58XYRWbWcix6bCnaF1idnt3V9bKDt",
+    "description": "\n## Simple Summary\n\nThis publication presents a comprehensive overview of proposed LRT and LST risk parameters updates across Ethereum, Prime, Base and Arbitrum instances of Aave v3.\n\n## Motivation\n\nThis publication incorporates the feedback and recent discussions into a single holistic publication. For ease of reference, those publications are referenced below:\n\n- [[ARFC] wstETH and weETH E-Modes and LT/LTV Adjustments on Ethereum, Arbitrum, Base - 03.12.25](https://governance.aave.com/t/arfc-wsteth-and-weeth-e-modes-and-lt-ltv-adjustments-on-ethereum-arbitrum-base-03-12-25/21370)\n- [[ARFC] rsETH LTV & LT Update](https://governance.aave.com/t/arfc-rseth-ltv-lt-update/21305)\n- [[ARFC] Core Instance - Add ezETH and update rsETH eMode Parameters](https://governance.aave.com/t/arfc-core-instance-add-ezeth-and-update-rseth-emode-parameters/21505)\n- [[Risk Stewards]wstETH/wETH eMode Update - Ethereum, Arbitrum & Base Instances](https://governance.aave.com/t/risk-stewards-wsteth-weth-emode-update-ethereum-arbitrum-base-instances/21333)\n\nEach of the following sub-sections presents insights into how each parameter is to be adjusted.\n\n### Prime Instance - wstETH and WETH eMode\n\nThe Prime instance, previously Lido instance, presents a tailored wstETH eMode configuration that offers enhanced capital efficiency relative to other instances of Aave v3. With a Liquidation Threshold (LT) of 96.50% for wstETH on Prime relative to 95.00% elsewhere, a position with a Health Factor of 1.01 can support a leverage ratio of 22.44 on Prime relative to 16.83 on other instances of Aave Protocol.\n\nWith all other variables held constant, a small difference in the wstETH deposit yield on Prime relative to the Core instance, has a meaningful impact on the overall return of the wstETH/WETH yield strategy. With a strong focus on sustaining a wstETH deposit yield derived from LRT/wstETH leverage, the wstETH/WETH yield strategy is expected to outperform on Prime relative to other venues supporting the same wstETH/WETH strategy.\n\n### rsETH LTV & LT Update\n\nTo promote a level playing field between LRTs, a proposal was submitted and approved by Risk Service Providers to align the LTV and LT parameters of rsETH with other LRTs, ezETH and weETH.\n\nThe following is proposed for rsETH Core, Prime and Base instances:\n\n- Update rsETH/wstETH eMode: LTV 93%, LT 95% and Liquidation Penalty 1%.\n\n### EModes\n\nThe introduction of Liquid eModes in Aave v3.2 enables more granular and targeted risk configurations between correlated assets such as LSTs and LRTs. Creating isolated eModes for each pair enhances capital efficiency relative to the current ETH-correlated eModes on the Base instance.\n\n## Specification\n\nThe following adjustments are to be implemented on all instances within the same AIP.\n\n### Prime - Ethereum\n\nUpdate the current wstETH/wETH eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        |  95.0  |\n| Liquidation Threshold |  96.5  |\n|  Liquidation Penalty  | 1.00%  |\n|      Collaterals      | wstETH |\n|      Borrowable       |  WETH  |\n\nCreate new rsETH/Stablecoins eMode\n\n|       Parameter       |      Value      |\n| :-------------------: | :-------------: |\n|        Max LTV        |     72.00%      |\n| Liquidation Threshold |     75.00%      |\n|  Liquidation Penalty  |      7.50%      |\n|      Collaterals      |      rsETH      |\n|      Borrowable       | USDS, USDC, GHO |\n\n### Core - Ethereum\n\nUpdate the current rsETH/wstETH\n\n|       Parameter       |    Value     |\n| :-------------------: | :----------: |\n|        Max LTV        |    93.00%    |\n| Liquidation Threshold |    95.00%    |\n|  Liquidation Penalty  |    1.00%     |\n|      Collaterals      |    rsETH     |\n|      Borrowable       | wstETH, ETHx |\n\n### Arbitrum\n\nUpdate the current rsETH/wstETH\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 93.00% |\n| Liquidation Threshold | 95.00% |\n|  Liquidation Penalty  | 1.00%  |\n|      Collaterals      | rsETH  |\n|      Borrowable       | wstETH |\n\nCreate new rsETH/Stablecoins eMode\n\n|       Parameter       |   Value    |\n| :-------------------: | :--------: |\n|        Max LTV        |   72.00%   |\n| Liquidation Threshold |   75.00%   |\n|  Liquidation Penalty  |   7.50%    |\n|      Collaterals      |   rsETH    |\n|      Borrowable       | USDC, USDT |\n\n### Base\n\nUpdate the current rsETH/wstETH eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 93.00% |\n| Liquidation Threshold | 95.00% |\n|  Liquidation Penalty  | 1.00%  |\n|      Collaterals      | rsETH  |\n|      Borrowable       | wstETH |\n\nCreate new rsETH/USDC eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 72.00% |\n| Liquidation Threshold | 75.00% |\n|  Liquidation Penalty  | 7.50%  |\n|      Collaterals      | rsETH  |\n|      Borrowable       |  USDC  |\n\nCreate new weETH/wETH eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 93.00% |\n| Liquidation Threshold | 95.00% |\n|  Liquidation Penalty  | 1.25%  |\n|      Collaterals      | weETH  |\n|      Borrowable       |  wETH  |\n\nCreate new wstETH/wETH eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 93.00% |\n| Liquidation Threshold | 95.00% |\n|  Liquidation Penalty  | 1.00%  |\n|      Collaterals      | wstETH |\n|      Borrowable       |  wETH  |\n\nCreate new cbETH/WETH eMode\n\n|       Parameter       | Value  |\n| :-------------------: | :----: |\n|        Max LTV        | 93.00% |\n| Liquidation Threshold | 95.00% |\n|  Liquidation Penalty  | 2.00%  |\n|      Collaterals      | cbETH  |\n|      Borrowable       |  wETH  |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Ethereum_LRTAndWstETHUnification_20250430.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3EthereumLido_LRTAndWstETHUnification_20250430.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Arbitrum_LRTAndWstETHUnification_20250430.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Base_LRTAndWstETHUnification_20250430.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Ethereum_LRTAndWstETHUnification_20250430.t.sol), [AaveV3EthereumLido](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3EthereumLido_LRTAndWstETHUnification_20250430.t.sol), [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Arbitrum_LRTAndWstETHUnification_20250430.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/6558c100cabdf233a35aea1b7524a9b83c7cfdb6/src/20250430_Multi_LRTAndWstETHUnification/AaveV3Base_LRTAndWstETHUnification_20250430.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-lrt-and-wsteth-unification/21739)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "LRT and wstETH Unification",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-lrt-and-wsteth-unification/21739"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "310",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x7a072a9287642a0b0bd61b39e196534a9c0feaa8382aaeba67ef6bac9e872318"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000136",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x7a072a9287642a0b0bd61b39e196534a9c0feaa8382aaeba67ef6bac9e872318",
+      "blockHash": "0x5cf246ac8612f2f7c1616736b6f106d8f939a8ee3ad07c88f5ba35f125a8d091",
+      "blockNumber": "22480276",
+      "blockTimestamp": "0x682456c7",
+      "transactionHash": "0x1fbfd6ddc789bcb2018ac2da5a9804bb87135cc43083485edafb972325143763",
+      "transactionIndex": 154,
+      "logIndex": 316,
+      "removed": false,
+      "timestamp": 1747211975
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1747211975,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7a072a9287642a0b0bd61b39e196534a9c0feaa8382aaeba67ef6bac9e872318",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 68
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWYznaHvfzRXET2oNQLjX7D2yVNRsonm3pxcEBABfRCT9",
+    "description": "\n## Simple Summary\n\nThis publication presents the community an opportunity to expand AAVE governance token integration on the AAVE platform by adding AAVE collateral option to Base.\n\nAAVE token has wide integrations into all other major AAVE instances including ETH Mainnet, Arbitrum, Optimism, Polygon, and Avalanche. Adding AAVE to the Base instance is the next logical step in AAVE token integration within the AAVE lending platform.\n\n## Motivation\n\n- AAVE token is a versatile governance token which is already accepted collateral on all major AAVE instances.\n- The Base Market is growing in TVL, the addition of collateral options already found on other AAVE instances will increase Base Market growth.\n- There is deep liquidity on Base chain for the AAVE token already. Price impact of just **0.77%** for $1m ETH/AAVE trades using jumper.exchange on Base.\n- Aerodrome (Base DEX) has $10m TVL in WETH/AAVE concentrated liquidity.\n\nBase has seen expansion in its TVL now surpassing Arbitrum by ~15%. Base chain is a small but significant part of total Defi TVL (all chains) of 3%.\nSource: https://defillama.com/chains\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **AAVE**\n\n| Parameter                 |                                                                                         Value |\n| ------------------------- | --------------------------------------------------------------------------------------------: |\n| Isolation Mode            |                                                                                         false |\n| Borrowable                |                                                                                      DISABLED |\n| Collateral Enabled        |                                                                                          true |\n| Supply Cap (AAVE)         |                                                                                        30,000 |\n| Borrow Cap (AAVE)         |                                                                                             1 |\n| Debt Ceiling              |                                                                                         USD 0 |\n| LTV                       |                                                                                          60 % |\n| LT                        |                                                                                          65 % |\n| Liquidation Bonus         |                                                                                          10 % |\n| Liquidation Protocol Fee  |                                                                                          10 % |\n| Reserve Factor            |                                                                                          20 % |\n| Base Variable Borrow Rate |                                                                                           0 % |\n| Variable Slope 1          |                                                                                          10 % |\n| Variable Slope 2          |                                                                                         300 % |\n| Uoptimal                  |                                                                                          45 % |\n| Flashloanable             |                                                                                       ENABLED |\n| Siloed Borrowing          |                                                                                      DISABLED |\n| Borrowable in Isolation   |                                                                                      DISABLED |\n| Oracle                    | [Chainlink AAVE/USD](https://basescan.org/address/0x3d6774EF702A10b20FCa8Ed40FC022f7E4938e07) |\n| Oracle Latest Answer      |                                                                 (2025-05-07) USD 169.65627000 |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://basescan.org/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for AAVE and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/d469f07acb3dbec77ecfe0a9ac6d03d819b5ab43/src/20250507_AaveV3Base_AddAAVETokenToAaveV3BaseInstance/AaveV3Base_AddAAVETokenToAaveV3BaseInstance_20250507.sol)\n- Tests: [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/d469f07acb3dbec77ecfe0a9ac6d03d819b5ab43/src/20250507_AaveV3Base_AddAAVETokenToAaveV3BaseInstance/AaveV3Base_AddAAVETokenToAaveV3BaseInstance_20250507.t.sol)\n- [Snapshot](snapshot.box/#/s:aavedao.eth/proposal/0x54efdfaaccf429320071c7e56dd8f14759f2027c8f1c1fb4ef0596374c7558d8)\n- [Discussion](https://governance.aave.com/t/arfc-add-aave-token-to-aave-v3-base-instance/21105)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add AAVE token to Aave V3 Base Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-add-aave-token-to-aave-v3-base-instance/21105",
+    "snapshot": "snapshot.box/#/s:aavedao.eth/proposal/0x54efdfaaccf429320071c7e56dd8f14759f2027c8f1c1fb4ef0596374c7558d8"
+  }
+}
