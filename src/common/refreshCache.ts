@@ -7,11 +7,14 @@ import {
   GovernanceV3Gnosis,
   GovernanceV3BNB,
   GovernanceV3Polygon,
-  GovernanceV3PolygonZkEvm,
   GovernanceV3Scroll,
   GovernanceV3Base,
   GovernanceV3ZkSync,
   GovernanceV3Linea,
+  GovernanceV3Sonic,
+  GovernanceV3Celo,
+  GovernanceV3Mantle,
+  GovernanceV3Soneium,
 } from '@bgd-labs/aave-address-book';
 import type {GovernanceCacheAdapterWithSync} from '..';
 
@@ -30,11 +33,14 @@ export async function refreshCache(adapter: GovernanceCacheAdapterWithSync) {
     GovernanceV3Gnosis,
     GovernanceV3BNB,
     GovernanceV3Polygon,
-    GovernanceV3PolygonZkEvm,
     GovernanceV3Scroll,
     GovernanceV3Base,
     GovernanceV3ZkSync,
     GovernanceV3Linea,
+    GovernanceV3Sonic,
+    GovernanceV3Celo,
+    GovernanceV3Mantle,
+    GovernanceV3Soneium,
   ].map(({PAYLOADS_CONTROLLER, CHAIN_ID}) => {
     return adapter.syncPayloadsCache({
       chainId: CHAIN_ID,

@@ -47,7 +47,8 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@bgd-labs/aave-address-book": "^4.15.1",
+    "@bgd-labs/aave-address-book": "^4.21.0",
+    "@bgd-labs/toolbox": "^0.0.15",
     "@bgd-labs/js-utils": "^1.4.8",
     "@types/bun": "latest",
     "bun-plugin-dts": "^0.2.3",
@@ -58,8 +59,5 @@
   "peerDependencies": {
     "@bgd-labs/aave-address-book": "^4.21.0",
     "viem": "^2.30.0"
-  },
-  "dependencies": {
-    "@bgd-labs/toolbox": "^0.0.15"
   }
 }
