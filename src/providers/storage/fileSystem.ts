@@ -55,7 +55,7 @@ export function writeJSONCache<T extends {}>(
   );
 }
 
-export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record};
+export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record<string, boolean>};
 
 /**
  * Simple cache that:
