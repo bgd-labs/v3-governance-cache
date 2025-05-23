@@ -1,7 +1,7 @@
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
 import {getProposalMetadata} from '@bgd-labs/js-utils';
-import {getClient} from '@bgd-labs/rpc-env';
+import {getClient} from '@bgd-labs/toolbox';
 import packageJson from '../../../package.json';
 import {
   isPayloadFinal,
@@ -55,7 +55,7 @@ export function writeJSONCache<T extends {}>(
   );
 }
 
-export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record<string, boolean>};
+export type TrackingCache = {lastSeenBlock: string | bigint; isFinal: Record};
 
 /**
  * Simple cache that:
@@ -66,7 +66,7 @@ const syncProposalCache: GovernanceCacheAdapterWithSync['syncProposalCache'] = a
   chainId,
   governance,
 }) => {
-  const client = getClient(chainId, {});
+  const client = getClient(chainId, {providerConfig: {alchemyKey: process.env.ALCHEMY_API_KEY}});
   const proposalsPath = `${chainId.toString()}/${governance}/proposals`;
   const trackingCache: TrackingCache = readJSONCache<TrackingCache>(
     proposalsPath,
@@ -128,7 +128,7 @@ const syncPayloadsCache: GovernanceCacheAdapterWithSync['syncPayloadsCache'] = a
   chainId,
   payloadsController,
 }) => {
-  const client = getClient(chainId, {});
+  const client = getClient(chainId, {providerConfig: {alchemyKey: process.env.ALCHEMY_API_KEY}});
   const path = `${chainId.toString()}/${payloadsController}/payloads`;
   const trackingCache: TrackingCache = readJSONCache<TrackingCache>(path, 'trackingCache') || {
     lastSeenBlock: 0n,

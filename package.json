@@ -53,13 +53,13 @@
     "bun-plugin-dts": "^0.2.3",
     "prettier": "^3.2.5",
     "typescript": "^5.0.0",
-    "viem": "^2.22.16"
+    "viem": "^2.30.0"
   },
   "peerDependencies": {
-    "viem": "^2.22.16",
-    "@bgd-labs/aave-address-book": "^4.15.1"
+    "@bgd-labs/aave-address-book": "^4.21.0",
+    "viem": "^2.30.0"
   },
   "dependencies": {
-    "@bgd-labs/rpc-env": "^2.3.2"
+    "@bgd-labs/toolbox": "^0.0.15"
   }
 }
