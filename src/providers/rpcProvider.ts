@@ -3,7 +3,7 @@
  * This adapter will not return any logs
  */
 import {getProposalMetadata} from '@bgd-labs/js-utils';
-import {getClient} from '@bgd-labs/rpc-env';
+import {getClient} from '@bgd-labs/toolbox';
 import type {GovernanceCacheAdapter} from '..';
 import {getPayload} from '../common/payloadsController';
 import {getProposal} from '../common/governance';

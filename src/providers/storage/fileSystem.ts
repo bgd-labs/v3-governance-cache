@@ -1,7 +1,7 @@
 import {existsSync, readFileSync, mkdirSync, writeFileSync} from 'fs';
 import path from 'path';
 import {getProposalMetadata} from '@bgd-labs/js-utils';
-import {getClient} from '@bgd-labs/rpc-env';
+import {getClient} from '@bgd-labs/toolbox';
 import packageJson from '../../../package.json';
 import {
   isPayloadFinal,
