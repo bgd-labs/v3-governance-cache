@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "317",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xa8dccd16ebf9dd7ba9d427b27b58961efeeab04d0f3bdcb61a4ff1d33a1b6c56"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000013d",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xa8dccd16ebf9dd7ba9d427b27b58961efeeab04d0f3bdcb61a4ff1d33a1b6c56",
+      "blockHash": "0xa26cb984126b23488740ea499042ccd81cdbd7efdf320d002ac1f4182c17cac6",
+      "blockNumber": "22581436",
+      "blockTimestamp": "0x683709d7",
+      "transactionHash": "0x318bdd93e50d6e092a704848cc880ed99d94cdd687a78190350c3247646a287e",
+      "transactionIndex": 92,
+      "logIndex": 208,
+      "removed": false,
+      "timestamp": 1748437463
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1748437463,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa8dccd16ebf9dd7ba9d427b27b58961efeeab04d0f3bdcb61a4ff1d33a1b6c56",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 4
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZhpUpKhz83y8Snf4PXmTo2e8zMr24QWLH7WwGhTuVcER",
+    "description": "\n## Simple Summary\n\nThis AIP proposes the onboarding of Wrapped Ether (wETH) as a supported asset on the Aave V3 Celo Instance. The integration aims to expand the protocol’s utility and provide users with additional opportunities for lending and borrowing.\n\n## Motivation\n\nThe addition of wETH to Aave V3 on Celo would:\n\n- Increase TVL and protocol revenue\n- Provide users with a major DeFi asset for lending/borrowing\n- Enable cross-chain strategies involving ETH\n- Enhance the protocol’s competitive position in the Celo ecosystem\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **WETH**\n\n| Parameter                 |                                                                                       Value |\n| ------------------------- | ------------------------------------------------------------------------------------------: |\n| Isolation Mode            |                                                                                       false |\n| Borrowable                |                                                                                     ENABLED |\n| Collateral Enabled        |                                                                                        true |\n| Supply Cap (WETH)         |                                                                                         500 |\n| Borrow Cap (WETH)         |                                                                                         450 |\n| Debt Ceiling              |                                                                                       USD 0 |\n| LTV                       |                                                                                        78 % |\n| LT                        |                                                                                        80 % |\n| Liquidation Bonus         |                                                                                       7.5 % |\n| Liquidation Protocol Fee  |                                                                                        10 % |\n| Reserve Factor            |                                                                                        15 % |\n| Base Variable Borrow Rate |                                                                                         0 % |\n| Variable Slope 1          |                                                                                       2.7 % |\n| Variable Slope 2          |                                                                                        80 % |\n| Uoptimal                  |                                                                                        90 % |\n| Flashloanable             |                                                                                     ENABLED |\n| Siloed Borrowing          |                                                                                    DISABLED |\n| Borrowable in Isolation   |                                                                                    DISABLED |\n| Oracle                    | [Chainlink ETH/USD](https://celoscan.io/address/0x1FcD30A73D67639c1cD89ff5746E7585731c083B) |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://celoscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for WETH and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/c0799d67effe7821ec97fefc8d61ffb703280eba/src/20250515_AaveV3Celo_OnboardingWETHToAaveV3CeloInstance/AaveV3Celo_OnboardingWETHToAaveV3CeloInstance_20250515.sol)\n- Tests: [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/c0799d67effe7821ec97fefc8d61ffb703280eba/src/20250515_AaveV3Celo_OnboardingWETHToAaveV3CeloInstance/AaveV3Celo_OnboardingWETHToAaveV3CeloInstance_20250515.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0xcf4e56350b6dc4615f4206a02d41c8f5958bc9a71594bed975e2657c9bc0b9b8)\n- [Discussion](https://governance.aave.com/t/arfc-onboarding-weth-to-aave-v3-celo-instance/21750)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": " Onboarding wETH to Aave V3 Celo Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboarding-weth-to-aave-v3-celo-instance/21750",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0xcf4e56350b6dc4615f4206a02d41c8f5958bc9a71594bed975e2657c9bc0b9b8"
+  }
+}
