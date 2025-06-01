@@ -1,0 +1,67 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "321",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x3620c2aad3bf4e7dc5d9fda5c27592c60f78125b90b79535f4371b69645cdbcb"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000141",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x3620c2aad3bf4e7dc5d9fda5c27592c60f78125b90b79535f4371b69645cdbcb",
+      "blockHash": "0x3f0634fbf31168196a732f3dc8211aa0b74861a2bc62f494dd113231e30b2b21",
+      "blockNumber": "22609253",
+      "blockTimestamp": "0x683c2b17",
+      "transactionHash": "0x1996dd476995cc7f8870dede52a7ce43bf19c0f0b1ed3b4e4050e869f56e70b5",
+      "transactionIndex": 66,
+      "logIndex": 105,
+      "removed": false,
+      "timestamp": 1748773655
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1748773655,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x3620c2aad3bf4e7dc5d9fda5c27592c60f78125b90b79535f4371b69645cdbcb",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 296
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 72
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmRywhUfwycZQDD6WRucGyqXDVY7peJKjfCBuWZEcq6PkE",
+    "description": "\n## Simple Summary\n\nThis publication finalizes the May Funding Update and provides the funding required to support the upcoming Base Incentive Campaign, which includes the following key components:\n\n- Allocation for Base Incentive Campaign allowances;\n- Allowances for Merit and Ahab contributors; and,\n- Consolidation of funds from the Collector.\n\n## Motivation\n\nThis publication outlines several near-term operational actions required to support both ongoing and upcoming initiatives. Specifically, it includes the following components:\n\n**Base Incentive Campaign**\nUpon execution, this AIP will establish the necessary allowances on both Ethereum and Base networks, enabling the Aave Finance Committee (AFC) to transfer funds from the Collector to the AFC SAFE. From there, the AFC will periodically disburse funds to the ACI team for the implementation of the Base Incentive Campaign.\n\n**Asset Consolidation**\nConsistent with previous AIPs, this proposal facilitates the conversion of DAI, aDAI, and aEthDAI balances held in the Collector into USDS. The converted USDS will be deposited into Aave v3 to generate yield on idle assets.\n\n**Ahab and Merit Incentive Programs**\nThe current budgets for the Merit and Ahab programs are due for renewal. Upon execution, this AIP will extend funding for both programs through May, June, and July to ensure continued operation and alignment with ACI’s incentive framework.\n\n## Specification\n\nBase:\n\nThe payload creates the following allowances.\n\n| Token      | Amount                | Recipient                                                                                                             |\n| ---------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |\n| aBaseUSDC  | ALL Collector Balance | [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://basescan.org/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) |\n| aBaseCbBTC | ALL Collector Balance | [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://basescan.org/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) |\n| aBaseUSDbC | ALL Collector Balance | [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://basescan.org/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) |\n\nEthereum:\n\nThe payload creates the following allowances.\n\n| Token       | Amount                | Recipient                                                                                                             |\n| ----------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |\n| aEthLidoGHO | 3,000,000             | [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://etherscan.io/address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b) |\n| aEthWETH    | 800                   | [0xdeadD8aB03075b7FBA81864202a2f59EE25B312b](https://etherscan.io/address/0xdeadD8aB03075b7FBA81864202a2f59EE25B312b) |\n| aEthUSDC    | 2,400,000             | [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://etherscan.io/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) |\n| RAI         | ALL Collector Balance | [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://etherscan.io/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) |\n| CRV         | ALL Collector Balance | [0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b](https://etherscan.io/address/0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b) |\n| BAL         | ALL Collector Balance | [0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b](https://etherscan.io/address/0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b) |\n\nMigrates TokenLogic stream to new SAFE: [`0xAA088dfF3dcF619664094945028d44E779F19894`](https://etherscan.io/address/0xAA088dfF3dcF619664094945028d44E779F19894)\n\nWithdraws all aDAI, aEthDAI and couples with the collector's DAI to migrate all to USDS via the Spark migration contract.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/195c48496edb707a402990f31202f0b280fe28ac/src/20250524_Multi_MayFundingPartB/AaveV3Ethereum_MayFundingPartB_20250524.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/195c48496edb707a402990f31202f0b280fe28ac/src/20250524_Multi_MayFundingPartB/AaveV3Base_MayFundingPartB_20250524.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/195c48496edb707a402990f31202f0b280fe28ac/src/20250524_Multi_MayFundingPartB/AaveV3Ethereum_MayFundingPartB_20250524.t.sol), [AaveV3Base](https://github.com/bgd-labs/aave-proposals-v3/blob/195c48496edb707a402990f31202f0b280fe28ac/src/20250524_Multi_MayFundingPartB/AaveV3Base_MayFundingPartB_20250524.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x4dfc398fabb63305900572dff38b2ff8e104b0710077f6b7e48049de173d186b)\n- [Discussion](https://governance.aave.com/t/arfc-may-2025-funding-update/21906/5)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "May Funding Part B",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-may-2025-funding-update/21906/5",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x4dfc398fabb63305900572dff38b2ff8e104b0710077f6b7e48049de173d186b"
+  }
+}
