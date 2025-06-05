@@ -1,0 +1,72 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "322",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xd88fe280b6079d50ab9a283cc4c5ae52c90fdb3d50b8bec4d3cbb65b350d687f"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000142",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xd88fe280b6079d50ab9a283cc4c5ae52c90fdb3d50b8bec4d3cbb65b350d687f",
+      "blockHash": "0x1f9b977a12554ad12b683cc15d25f82f7ccad6524397b6d4d0978e831ca27985",
+      "blockNumber": "22640845",
+      "blockTimestamp": "0x6842006f",
+      "transactionHash": "0xdb7d34479cd1e99327c3a9fd806b1df4fe420eb07e2a820e07669b319555f5b3",
+      "transactionIndex": 132,
+      "logIndex": 530,
+      "removed": false,
+      "timestamp": 1749155951
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1749155951,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd88fe280b6079d50ab9a283cc4c5ae52c90fdb3d50b8bec4d3cbb65b350d687f",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 297
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 113
+      },
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 5
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qmcv22PH1QAUi3miXELFSnKtHns11pwkuTY2HkaUXuJnAz",
+    "description": "\n## Simple Summary\n\nThis proposal aims to optimize parameters of certain assets across networks where it is supported.\n\n## Motivation\n\nThis proposal aims to optimize the Reserver Factor of various stables and also optimize the Optimal Utilization of various assets to better reflect the market mechanisms.\n\nThe key changes include:\n\n- **Adjusting Reserve Factor (RF)** of various stables from 10% to 20%: increasing the RF routes a larger portion of the interest paid by users to Aave DAO’s Treasury. This does not impact users’ health factor directly while providing better cushion for assets at low utilization.\n- **Adjusting Optimal Utilization (Uoptimal)** of various assets to 45%: We recommend to decrease Uoptimal of CRV, BAL and SNX to 45%, to better reflect the borrow and supply dynamism for these assets.\n\n## Specification\n\n| **Market**    | **Asset** | **Current RF** | **Rec. RF** |\n| ------------- | --------- | -------------- | ----------- |\n| Ethereum Core | crvUSD    | 10%            | 20%         |\n| Ethereum Core | RLUSD     | 10%            | 20%         |\n| Ethereum Core | USDtb     | 10%            | 20%         |\n| Celo          | USDT      | 10%            | 20%         |\n\n| Deployment    | Asset | Current UOptimal | Rec. UOptimal | Current Base | Rec. Base | Current Slope 1 | Rec. Slope 1 | Current Slope 2 | Rec. Slope 2 |\n| ------------- | ----- | ---------------- | ------------- | ------------ | --------- | --------------- | ------------ | --------------- | ------------ |\n| Ethereum Core | CRV   | 70%              | 45%           | 3%           | -         | 14%             | 10%          | 300%            | 150%         |\n| Ethereum Core | SNX   | 80%              | 45%           | 3%           | -         | 15%             | -            | 100%            | 150%         |\n| Ethereum Core | BAL   | 80%              | 45%           | 5%           | -         | 22%             | 15%          | 150%            | -            |\n| Ethereum Core | RLUSD | 80%              | -             | 0%           | 4%        | 6.5%            | 2.5%         | 50%             | -            |\n| Polygon       | CRV   | 70%              | 45%           | 3%           | -         | 14%             | 10%          | 300%            | 150%         |\n| Polygon       | BAL   | 80%              | 45%           | 5%           | -         | 22%             | 15%          | 150%            | -            |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Ethereum_AssetParametersOptimization_20250527.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Polygon_AssetParametersOptimization_20250527.sol), [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Celo_AssetParametersOptimization_20250527.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Ethereum_AssetParametersOptimization_20250527.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Polygon_AssetParametersOptimization_20250527.t.sol), [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/dd08d7de4c2b6b2fe3c81e67e450decd2ee6ea8f/src/20250527_Multi_AssetParametersOptimization/AaveV3Celo_AssetParametersOptimization_20250527.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-asset-parameters-optimization/22178)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Asset Parameters Optimization",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-asset-parameters-optimization/22178"
+  }
+}
