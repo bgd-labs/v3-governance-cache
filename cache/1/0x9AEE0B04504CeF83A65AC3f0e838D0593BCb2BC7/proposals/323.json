@@ -1,0 +1,67 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "323",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x9638f94b66a2364fea5fd11606328a1994720255a0aaa54d90746b332947b41b"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000143",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x9638f94b66a2364fea5fd11606328a1994720255a0aaa54d90746b332947b41b",
+      "blockHash": "0x009d28518933f6a6d6696f060158d29861d34f5615edb3acead34966a84e7ab2",
+      "blockNumber": "22647063",
+      "blockTimestamp": "0x6843267b",
+      "transactionHash": "0xfeff64c3ea24cb64311a88cec8e6d67b8114397cb9dff941e3b03edbb8e02a6b",
+      "transactionIndex": 90,
+      "logIndex": 394,
+      "removed": false,
+      "timestamp": 1749231227
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1749231227,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9638f94b66a2364fea5fd11606328a1994720255a0aaa54d90746b332947b41b",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "324",
+        "accessLevel": 1,
+        "payloadsController": "0x2E79349c3F5e4751E87b966812C9E65E805996F1",
+        "payloadId": 27
+      },
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 298
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYT4FaQNJaEAU8soRdoUGzcS2RwDuvLgc9mWUJA9nRUzN",
+    "description": "\n## Simple Summary\n\nThis is a proposal to onboard wrsETH to the Aave V3 ZKsync Instance allowing Aave users to supply wrsETH as collateral. This proposal will be under Direct to AIP, as there are already on other Aave Instances.\n\nAdditionally, this AIP will update the rsETH LST E-Mode of the Prime instance.\n\n## Motivation\n\nIn order to benefit from the ongoing ZKsync Ignite incentives program, we propose onboarding assets which have proven popular on other Aave instances and are either whitelisted for Ignite incentives, or are good candidates for future whitelisting.\n\nwrsETH is currently the only whitelisted liquid restaking token on ZKsync and has proven popular on the Aave Prime instance, therefore we believe should be onboarded to the Aave Instance on ZKsync too.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **wrsETH**\n\n| Parameter                 |                                      Value |\n| ------------------------- | -----------------------------------------: |\n| Isolation Mode            |                                      false |\n| Borrowable                |                                   DISABLED |\n| Collateral Enabled        |                                       true |\n| Supply Cap (wrsETH)       |                                        700 |\n| Borrow Cap (wrsETH)       |                                          1 |\n| Debt Ceiling              |                                      USD 0 |\n| LTV                       |                                     0.05 % |\n| LT                        |                                      0.1 % |\n| Liquidation Bonus         |                                      7.5 % |\n| Liquidation Protocol Fee  |                                       10 % |\n| Reserve Factor            |                                       10 % |\n| Base Variable Borrow Rate |                                        0 % |\n| Variable Slope 1          |                                       10 % |\n| Variable Slope 2          |                                      300 % |\n| Uoptimal                  |                                       45 % |\n| Flashloanable             |                                    ENABLED |\n| Siloed Borrowing          |                                   DISABLED |\n| Borrowable in Isolation   |                                   DISABLED |\n| Oracle                    | 0x8d25c9de6DBAd9a9eadfB2CA4706034F6721d555 |\n\n**Pricefeed details**\n\n| Parameter            |                                                                                                      Value |\n| -------------------- | ---------------------------------------------------------------------------------------------------------: |\n| Oracle               | [Capped rsETH / ETH / USD ](https://era.zksync.network/address/0x8d25c9de6DBAd9a9eadfB2CA4706034F6721d555) |\n| BASE/USD Oracle      |         [Chainlink ETH/USD](https://era.zksync.network/address/0x6D41d1dc818112880b40e26BD6FD347E41008eDA) |\n| Ratio Provider       |                     [rsETH](https://era.zksync.network/address/0x7024c64Ad30Ebf224e417CfDE4438606d2b9B690) |\n| Oracle Latest Answer |                                                                             (2025-05-27) USD 2726.41712463 |\n| min snapshot         |                                                                                                    14 days |\n| max yearly growth    |                                                                                                      9.83% |\n\n### wrsETH/wstETH E-Mode\n\n| Parameter           | Value  | Value  |\n| ------------------- | ------ | ------ |\n| Asset               | wrsETH | wstETH |\n| Collateral          | Yes    | No     |\n| Borrowable          | No     | Yes    |\n| LTV                 | 92.50% | -      |\n| LT                  | 94.50% | -      |\n| Liquidation Penalty | 1.00%  | -      |\n\nAdditionally [0x95Cbff6e45C499d45dd8627f3ce179057B5Fbfcc](https://era.zksync.network/address/0x95Cbff6e45C499d45dd8627f3ce179057B5Fbfcc) has been set as the emission admin for wrsETH and the corresponding aToken.\n\n### Prime rsETH LST E-Mode Update\n\n| Parameter           | Value          | Value  |\n| ------------------- | -------------- | ------ |\n| Asset               | rsETH          | wstETH |\n| Collateral          | Yes            | No     |\n| Borrowable          | No             | Yes    |\n| LTV                 | ~~92.50%~~ 93% | -      |\n| LT                  | ~~94.50%~~ 95% | -      |\n| Liquidation Penalty | 1.00%          | -      |\n\nThis E-Mode update come from this [AIP](https://governance.aave.com/t/arfc-lrt-and-wsteth-unification/21739#p-55276-rseth-ltv-lt-update-4). It wasn’t included in the AIP itself because it could be executed via the Risk Steward. However, since the new version of the Risk Steward has not yet been deployed on the Ethereum Prime instance, we’re currently unable to update the E-mode through it. As a result, we are proposing to bundle this change into the current rsETH ZkSync onboarding AIP.\n\n## References\n\n- Implementation: [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/1adee2dd31ea242f53628752df3184646e931ab7/zksync/src/20250408_AaveV3ZkSync_OnboardWrsETHToZKsyncV3Instance/AaveV3ZkSync_OnboardWrsETHToZKsyncV3Instance_20250408.sol)\n- Tests: [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/1adee2dd31ea242f53628752df3184646e931ab7/zksync/src/20250408_AaveV3ZkSync_OnboardWrsETHToZKsyncV3Instance/AaveV3ZkSync_OnboardWrsETHToZKsyncV3Instance_20250408.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-onboard-wrseth-to-zksync-v3-instance/20727)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard wrsETH to ZKsync V3 Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-wrseth-to-zksync-v3-instance/20727",
+    "snapshot": "Direct-to-AIP"
+  }
+}
