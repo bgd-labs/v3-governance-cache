@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "324",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x49ad36f79f5aa2fc047c56cc9015552b9083fdc79cc5ed355d1a16b0296fd1c9"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000144",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x49ad36f79f5aa2fc047c56cc9015552b9083fdc79cc5ed355d1a16b0296fd1c9",
+      "blockHash": "0x7d9e7f075dc849e7063084115e6ecf0575191428a084f05d2a99e81c0e6ff357",
+      "blockNumber": "22704719",
+      "blockTimestamp": "0x684dc59b",
+      "transactionHash": "0x19f3eddc8cdea0ed262893370cebc36014353d31d6d29b6a9adee9ad8e2edca6",
+      "transactionIndex": 236,
+      "logIndex": 613,
+      "removed": false,
+      "timestamp": 1749927323
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1749927323,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x49ad36f79f5aa2fc047c56cc9015552b9083fdc79cc5ed355d1a16b0296fd1c9",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 299
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTJFfS6AfScXb3LaNg9LPh5yPHEVvynWmzzVm3SNVxiFa",
+    "description": "\n## Simple Summary\n\nThis publication presents the Part 1 of the June Funding Update, consisting of the following key activities:\n\n- Continue AAVE buybacks for 2 weeks.\n\n## Motivation\n\nThis publication focuses on supporting near term operational funding requirements.\nSpecifically, this proposal funds the next 2 weeks of AAVE buybacks, while part 2 will focus on acquiring GHO and funding Merit and Ahab.\n\n## Specification\n\n##### AAVE Buybacks\n\nCreate a 2M aEthUSDT allowance for the Aave Finance Committee to perform AAVE buybacks over the next two out of the eight weeks.\n\nAsset: aEthUSDT `0x23878914EFE38d27C4D67Ab83ed1b93A74D4086a`\nAmount: 2M\n\nSpender: AFC [0x22740deBa78d5a0c24C58C740e3715ec29de1bFa](https://etherscan.io/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa)\n\nMethod: approve() aEthUSDT on the Aave Collector contract to the AFC address.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/ab39663b4c22c386429c97b4243dd9d6d1a19510/src/20250613_AaveV3Ethereum_JuneFundingUpdate/AaveV3Ethereum_JuneFundingUpdate_20250613.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/ab39663b4c22c386429c97b4243dd9d6d1a19510/src/20250613_AaveV3Ethereum_JuneFundingUpdate/AaveV3Ethereum_JuneFundingUpdate_20250613.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-june-2025-funding-update/22352/2)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "June Funding Update - Part I",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-june-2025-funding-update/22352/2"
+  }
+}
