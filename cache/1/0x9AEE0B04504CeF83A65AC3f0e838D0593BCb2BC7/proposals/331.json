@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "331",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xf93eb58ea5cf5aaf82c5e3c799ac717bed7c1879c6a4ae1525087df7a873e5b6"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000014b",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xf93eb58ea5cf5aaf82c5e3c799ac717bed7c1879c6a4ae1525087df7a873e5b6",
+      "blockHash": "0xc80ec89fe6dc0c6b8363dbff95ee31b539257615650ac6be44e17eda73a505b3",
+      "blockNumber": "22787342",
+      "blockTimestamp": "0x685d00e7",
+      "transactionHash": "0x7fe131b7409f14e748885e2bda08f2fd23f35ebbf7417bfd105568dc0c7ce329",
+      "transactionIndex": 139,
+      "logIndex": 232,
+      "removed": false,
+      "timestamp": 1750925543
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1750925543,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xf93eb58ea5cf5aaf82c5e3c799ac717bed7c1879c6a4ae1525087df7a873e5b6",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 310
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qmf7bgn3nXu6gPXjhGRXMnRfNUgQnPQFD47Uz12C7o8mxR",
+    "description": "\n## Simple Summary\n\nThe current AIP proposes to add EURC on Aave V3 Core Instance.\n\nEURC is Circle’s EUR-backed stablecoin, enhancing liquidity and expanding the platform’s appeal to Euro denominated users.\n\n## Motivation\n\nEURC is a fully backed stablecoin pegged to the Euro, issued by Circle, the same entity behind USDC. It is a reliable and transparent Euro-denominated asset gaining adoption across DeFi protocols.\n\n- **Utility and Role:** EURC facilitates Euro-based transactions in DeFi, allowing for a stable store of value and an efficient medium of exchange within the ecosystem.\n- **Backers:** Circle is a trusted issuer with a track record of regulatory compliance, providing confidence in EURC’s stability.\n- **Performance:** EURC has demonstrated consistent performance and adoption within the broader DeFi space such as Morpho (3M), Alien(4M) and Aerodome (3M).\n- **Euro Liquidity:** EURC will offer Aave users access to Euro-denominated liquidity, appealing to the European market.\n- **Broader User Base:** Listing EURC could attract new users from Europe, diversifying Aave’s stablecoin offerings.\n- **Increased Liquidity:** The addition of EURC can enhance liquidity across Aave’s markets, improving lending, borrowing, and trading experiences.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **EURC**\n\n| Parameter                 |     Value |\n| ------------------------- | --------: |\n| Isolation Mode            |     false |\n| Borrowable                |   ENABLED |\n| Collateral Enabled        |      true |\n| Supply Cap (EURC)         | 7,000,000 |\n| Borrow Cap (EURC)         | 6,500,000 |\n| Debt Ceiling              |     USD 0 |\n| LTV                       |      75 % |\n| LT                        |      78 % |\n| Liquidation Bonus         |       5 % |\n| Liquidation Protocol Fee  |      10 % |\n| Reserve Factor            |      10 % |\n| Base Variable Borrow Rate |       0 % |\n| Variable Slope 1          |       6 % |\n| Variable Slope 2          |      50 % |\n| Uoptimal                  |      90 % |\n| Flashloanable             |   ENABLED |\n| Siloed Borrowing          |  DISABLED |\n| Borrowable in Isolation   |  DISABLED |\n\n### Pricefeed details\n\n| Parameter            |                                                                                         Value |\n| -------------------- | --------------------------------------------------------------------------------------------: |\n| Oracle               |    [Capped EURC/USD](https://etherscan.io/address/0xa6aB031A4d189B24628EC9Eb155F0a0f1A0E55a3) |\n| Asset to USD Oracle  | [Chainlink EURC/USD](https://etherscan.io/address/0x04F84020Fdf10d9ee64D1dcC2986EDF2F556DA11) |\n| Base to USD Oracle   |  [Chainlink EUR/USD](https://etherscan.io/address/0xb49f677943BC038e9857d61E7d053CaA2C1734C1) |\n| Price Cap Ratio      |                                                                                            4% |\n| Oracle Latest Answer |                                                                   (2025-06-22) USD 1.15156086 |\n\nAdditionally [lm.aci.eth](https://etherscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for EURC and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/ebdb3a433f4618ae6be51ab5d8b333058cef473b/src/20250622_AaveV3Ethereum_AddEURCToAaveV3CoreInstance/AaveV3Ethereum_AddEURCToAaveV3CoreInstance_20250622.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/ebdb3a433f4618ae6be51ab5d8b333058cef473b/src/20250622_AaveV3Ethereum_AddEURCToAaveV3CoreInstance/AaveV3Ethereum_AddEURCToAaveV3CoreInstance_20250622.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-add-eurc-to-aave-v3-core-instance/21837)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add EURC to Aave V3 Core Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-add-eurc-to-aave-v3-core-instance/21837"
+  }
+}
