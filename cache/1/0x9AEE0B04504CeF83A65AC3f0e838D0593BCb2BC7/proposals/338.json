@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "338",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x5b14be276f0ef509cfb725d201e64d1a8d46c811b23a56e8e19117ba97f4fd27"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000152",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x5b14be276f0ef509cfb725d201e64d1a8d46c811b23a56e8e19117ba97f4fd27",
+      "blockHash": "0x8eb47fc96c642fd614159c0056a962528a5cf5046e80630f5eeb238993f72cdd",
+      "blockNumber": "22939722",
+      "blockTimestamp": "0x6879120b",
+      "transactionHash": "0x072f1ad8da3cdb7e306aa95ee74a2d571f5cf852105bf7a0c91337349d86f35c",
+      "transactionIndex": 194,
+      "logIndex": 431,
+      "removed": false,
+      "timestamp": 1752764939
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1752764939,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x5b14be276f0ef509cfb725d201e64d1a8d46c811b23a56e8e19117ba97f4fd27",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "146",
+        "accessLevel": 1,
+        "payloadsController": "0x0846C28Dd54DEA4Fd7Fb31bcc5EB81673D68c695",
+        "payloadId": 6
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmUUC9wt7QkVkMBrcC9vo9vjjweVw7fRskArxj5CUE7gFY",
+    "description": "\n## Simple Summary\n\nThis ARFC proposes the launch of a 3-month stS loop incentive program on Aave. The goal is to deepen stS liquidity on Aave, align incentives with Beets, and ensure Aave remains the exclusive lending market for stS.\n\n## Motivation\n\nBeets has committed to Aave as the exclusive home for stS liquidity and will not incentivize or market any external stS lending market. This commitment aligns with the broader “Just Use Aave” strategy and presents a strong opportunity to consolidate stS liquidity on Aave v3.\n\nTo support this integration and unlock meaningful TVL, this ARFC outlines a clear path forward to bootstrap stS<>wS loop participation via:\n\n- Cashback incentives based on stS collector revenue.\n- Clarity around exclusivity boundaries regarding Beets’ Boosted Pools.\n\n## Specification\n\nAn allowance from the Aave Collector will be requested to fund the 40,000 wS budget via a single transaction to the designated MASiv Nested SAFE.\n\nThe initial Allowance is for 40,000 wS from Sonic instance.\n\nAsset: aSonwS `0x6C5E14A212c1C3e4Baf6f871ac9B1a969918c131`[https://sonicscan.org/address/0x6C5E14A212c1C3e4Baf6f871ac9B1a969918c131]\nAmount: 40,000\nSpender: Masiv nested safe `0x565B80842eCEDad88A2564Ea375CE875Ed3bAdeC`[https://sonicscan.org/address/0x565B80842eCEDad88A2564Ea375CE875Ed3bAdeC]\nMethod: `approve()` aSonwS on the Aave Collector contract to the Masiv address.\n\n## References\n\n- Implementation: [AaveV3Sonic](https://github.com/bgd-labs/aave-proposals-v3/blob/809b310d755b72dcf0802d8110efeae83d381ded/src/20250711_AaveV3Sonic_StSLoopIncentiveProgram/AaveV3Sonic_StSLoopIncentiveProgram_20250711.sol)\n- Tests: [AaveV3Sonic](https://github.com/bgd-labs/aave-proposals-v3/blob/809b310d755b72dcf0802d8110efeae83d381ded/src/20250711_AaveV3Sonic_StSLoopIncentiveProgram/AaveV3Sonic_StSLoopIncentiveProgram_20250711.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x65e12ce7784f12fbed9731d4cdbc826a8a5d4804439dc6d55d6e31c0b069a048)\n- [Discussion](https://governance.aave.com/t/arfc-sts-loop-incentive-program/22368)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "stS Loop Incentive Program",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-sts-loop-incentive-program/22368",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x65e12ce7784f12fbed9731d4cdbc826a8a5d4804439dc6d55d6e31c0b069a048"
+  }
+}
