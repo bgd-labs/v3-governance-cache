@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "343",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x8e7a70da64e3a8c4f485779aaaa48b9976fff80129aa29815807c8549068354b"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000157",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x8e7a70da64e3a8c4f485779aaaa48b9976fff80129aa29815807c8549068354b",
+      "blockHash": "0x97cab84782654f68b08fc602ccb6afeabf97eb0bee86d4402dfcaee5c8249be2",
+      "blockNumber": "22988943",
+      "blockTimestamp": "0x68822387",
+      "transactionHash": "0x7861841322dbaf3ae90539c57b12031c9925f77aab160f65f51ccafba60e3cea",
+      "transactionIndex": 253,
+      "logIndex": 752,
+      "removed": false,
+      "timestamp": 1753359239
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1753359239,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x8e7a70da64e3a8c4f485779aaaa48b9976fff80129aa29815807c8549068354b",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 320
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXvptZvKSpbXu4gKfuTiRMUtF7xcvRWjADYbJVcx1r5c6",
+    "description": "\n## Simple Summary\n\nThis proposal aims to add USDe as collateral to the existing sUSDe/Stablecoins emode category to improve capital efficiency and provide a more cohesive borrowing experience for users of Ethena assets on Aave.\n\n## Motivation\n\nCurrently, the sUSDe (Ethena Synthetic USD) has its own e-mode category in Aave, allowing for optimized borrowing for this specific asset. However, USDe, the native stablecoin from Ethena, is not included in this same e-mode category despite being the underlying asset for sUSDe.\n\n### Rationale\n\n- USDe and sUSDe are intrinsically linked, with sUSDe being the staked version of USDe\n- Both assets have similar risk profiles and high correlation\n- Adding USDe as collateral to the same e-mode category would allow users to add USDe exposure while maintaining their leverage.\n- This change would allow borrowers to use either asset as collateral more effectively\n\n## Specification\n\nUSDe will be added as collateral to the sUSDe stablecoin emode (id:2)\n\n| Asset | Current    | Proposed   |\n| ----- | ---------- | ---------- |\n| sUSDe | Collateral | Collateral |\n| USDe  | None       | Collateral |\n| USDC  | Borrowable | Borrowable |\n| USDT  | Borrowable | Borrowable |\n| USDS  | Borrowable | Borrowable |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/19c0d37a685dbd81c220d3e2a2f13501f53e6d45/src/20250723_AaveV3Ethereum_AddUSDeToTheSUSDeEmodeCategory/AaveV3Ethereum_AddUSDeToTheSUSDeEmodeCategory_20250723.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/19c0d37a685dbd81c220d3e2a2f13501f53e6d45/src/20250723_AaveV3Ethereum_AddUSDeToTheSUSDeEmodeCategory/AaveV3Ethereum_AddUSDeToTheSUSDeEmodeCategory_20250723.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-add-usde-to-the-susde-emode-category/22657)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add USDe to the sUSDe emode Category",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-add-usde-to-the-susde-emode-category/22657"
+  }
+}
