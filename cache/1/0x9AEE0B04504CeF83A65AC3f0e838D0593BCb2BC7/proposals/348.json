@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "348",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x70764c71c536a84acb96dd6e6e612eca166c29a0982fadd2ecb9d8cd6dca6c02"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000015c",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x70764c71c536a84acb96dd6e6e612eca166c29a0982fadd2ecb9d8cd6dca6c02",
+      "blockHash": "0x8d487b5d0c43c63b022af0c4c94866c746335634925f13a2dde68f58a8f3266f",
+      "blockNumber": "23025517",
+      "blockTimestamp": "0x6888e093",
+      "transactionHash": "0xfddc79ff5f9334da1a2673066a2a60d3e00003d956718bc54099e8af88ae9a8f",
+      "transactionIndex": 98,
+      "logIndex": 260,
+      "removed": false,
+      "timestamp": 1753800851
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1753800851,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x70764c71c536a84acb96dd6e6e612eca166c29a0982fadd2ecb9d8cd6dca6c02",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 91
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmVuezhNvzcqatKjq1j6pD5xY9xGKfA5QMW3ekEnfXuoER",
+    "description": "\n## Simple Summary\n\nDo a fire drill voting flow with a mock governance proposal using Avalanche as the voting network instead of Polygon as usual, to test that all peripheral systems are properly functioning.\n\n## Motivation\n\nFollowing the same rationale as [the previous proposed fire drill using Ethereum as voting network](https://governance.aave.com/t/technical-maintenance-proposals/15274/91), we think it is beneficial to do the same with Avalanche, the other available network in production, but that has never been used, given that Polygon has worked properly.\n\n## Specification\n\nThe governance proposal will be created using the [Ethereum → Avalanche Voting Portal](https://etherscan.io/address/0x9Ded9406f088C10621BE628EEFf40c1DF396c172) so that voting will happen on the Avalanche network.\n\nThe payload executed will just contain an empty `execute()` function, as the purpose of this fire drill is testing the full flow, and not any execution content.\n\n## References\n\n- Implementation: [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/12b567e8939bbd8297d73225fae9b5a6a4e0d5ec/src/20250530_AaveV3Avalanche_TestVoteOnAvalanche/AaveV3Avalanche_TestVoteOnAvalanche_20250530.sol)\n- Tests: [AaveV3Avalanche](https://github.com/bgd-labs/aave-proposals-v3/blob/12b567e8939bbd8297d73225fae9b5a6a4e0d5ec/src/20250530_AaveV3Avalanche_TestVoteOnAvalanche/AaveV3Avalanche_TestVoteOnAvalanche_20250530.t.sol)\n- [Discussion](https://governance.aave.com/t/technical-maintenance-proposals/15274/92)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Fire drill proposal Avalanche VotingMachine",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/technical-maintenance-proposals/15274/92"
+  }
+}
