@@ -1,0 +1,144 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "353",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x1c5a061ddf7d39473fd4fdc8fe6c4fc06285473f1db404335c1a5b392d1d9beb"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000161",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x1c5a061ddf7d39473fd4fdc8fe6c4fc06285473f1db404335c1a5b392d1d9beb",
+      "blockHash": "0x5abc4e7b8a2c40b56c3aed2c90ac8fd8b85037f8c8bc15850f261594255a2d5c",
+      "blockNumber": "23052280",
+      "blockTimestamp": "0x688dd0e3",
+      "transactionHash": "0x9c36b909d4de8458e0004d69e8916f6e362b6b320e2a2b24f89e867f512ce1dc",
+      "transactionIndex": 122,
+      "logIndex": 515,
+      "removed": false,
+      "timestamp": 1754124515
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1754124515,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x1c5a061ddf7d39473fd4fdc8fe6c4fc06285473f1db404335c1a5b392d1d9beb",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 317
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 123
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 89
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 83
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 97
+      },
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 42
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 81
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 56
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 45
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 47
+      },
+      {
+        "chain": "324",
+        "accessLevel": 1,
+        "payloadsController": "0x2E79349c3F5e4751E87b966812C9E65E805996F1",
+        "payloadId": 30
+      },
+      {
+        "chain": "59144",
+        "accessLevel": 1,
+        "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074",
+        "payloadId": 11
+      },
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 8
+      },
+      {
+        "chain": "146",
+        "accessLevel": 1,
+        "payloadsController": "0x0846C28Dd54DEA4Fd7Fb31bcc5EB81673D68c695",
+        "payloadId": 7
+      },
+      {
+        "chain": "1868",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 3
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmQFKk2a4joagRvmA8Ty5w1Anf2VxDnw8fMchVTVyi2uuU",
+    "description": "\n## Simple Summary\n\nUpgrade the Aave protocol instances from v3.4 to v3.5.\n\n## Motivation\n\nDue to aspects like using rebasing tokens (a/v Tokens) on the accounting layer, Aave v3 has had well-known inherent mathematical imprecision on the lowest order of magnitudes. But even if this imprecision is highly frequently unavoidable, in the case of Aave v3, it has a kind of “chaotic” direction. This is different from standards like 4626, where the rounding is directionally explicit, consequently simpler to understand and reason about.\n\nEven though this has not created major problems historically, we believe it is essential to enhance these mathematical mechanisms in a protocol as significant and widely adopted as Aave v3.\n\nWhile originally these changes were part of the Aave v3.4 upgrade, they have been isolated in a v3.5 upgrade to have a reduced scope on 3.4 while having additional audits for v3.5.\n\n## Specification\n\nThe upgrade payload updates the implementations of the Pool, AToken & VariableDebtToken on all networks.\n\nOn mainnet the payloads varies slightly to account for:\n\n- aAave which has a different implementation due to the governance delegation integration\n- vGHO which has a different implementation due to the deprecated discount mechanism on stkAAVE\n\nAn additional action is included on mainnet which transfers `96,050 $` as aUSDT to a BGD Labs address, to reimburse the cost of the audits.\n\n## Security procedures\n\n- The upgrade was extensively unit tested and fuzzed.\n- Certora adapted its formal properties to ensure the upgrade's correctness.\n\nIn addition 4 audits by Independent Auditors were conducted.\n\n- [Stermi](https://github.com/aave-dao/aave-v3-origin/blob/v3.5.0/audits/2025-07-17_StErMi_Aave-v3.5.md)\n- [Certora](https://github.com/aave-dao/aave-v3-origin/blob/v3.5.0/audits/2025-07-14_Certora_AaveV3.5.pdf)\n- [MixBytes](https://github.com/aave-dao/aave-v3-origin/blob/v3.5.0/audits/2025-07-18_MixBytes_AaveV3.5.pdf)\n- [ABDK](https://github.com/aave-dao/aave-v3-origin/blob/v3.5.0/audits/2025-07-17_ABDK_Aave-v3.5.pdf)\n\n## References\n\n- Implementation: [AaveV3EthereumCore](https://github.com/bgd-labs/protocol-v3.5-upgrade/blob/main/src/UpgradePayloadMainnetCore.sol), [AllOtherInstances](https://github.com/bgd-labs/protocol-v3.5-upgrade/blob/main/src/UpgradePayload.sol)\n- Tests: [AaveV3EthereumCore](https://github.com/bgd-labs/protocol-v3.5-upgrade/blob/main/test/MainnetCore.t.sol), [AllOtherInstances](https://github.com/bgd-labs/protocol-v3.5-upgrade/blob/main/test/UpgradeTest.t.sol)\n- Upgrade diff: [v3.4 - v3.5](https://github.com/aave-dao/aave-v3-origin/pull/133)\n- Onchain Diffs: [Per network diffs](https://github.com/bgd-labs/protocol-v3.5-upgrade/tree/main/diffs/code)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-bgd-aave-v3-5-v3-4-part-2/22639/1)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Upgrade Aave instances to v3.5",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-bgd-aave-v3-5-v3-4-part-2/22639/1"
+  }
+}
