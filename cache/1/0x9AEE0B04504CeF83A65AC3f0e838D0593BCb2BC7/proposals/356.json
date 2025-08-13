@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "356",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x361fd829d6100e5b21e9a4d13a8c507a765324d3b40ae20a7733109f840c7df3"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000164",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x361fd829d6100e5b21e9a4d13a8c507a765324d3b40ae20a7733109f840c7df3",
+      "blockHash": "0x89e7cae5216753099790656a7068b70197b13df1f323a7db05182a609b474b60",
+      "blockNumber": "23130588",
+      "blockTimestamp": "0x689c3c63",
+      "transactionHash": "0x8b2fac420625370fbe25f4793fc6bc1b17844901660e71e379de8f48fc71efc1",
+      "transactionIndex": 106,
+      "logIndex": 387,
+      "removed": false,
+      "timestamp": 1755069539
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1755069539,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x6ACe1Bf22D57a33863161bFDC851316Fb0442690",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x361fd829d6100e5b21e9a4d13a8c507a765324d3b40ae20a7733109f840c7df3",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 325
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmRyvtVMUcSyreJroibwH9qk5WAL1cquRL9J9PRnTjsNca",
+    "description": "\n## Simple Summary\n\nDo a fire drill voting flow with a mock governance proposal using Ethereum as the voting network instead of Polygon as usual, to test that all peripheral systems are properly functioning.\n\n## Motivation\n\nOne of the design principles of the currently running Aave Governance v3 system is to inherit Ethereum’s security at its core, delegating the voting stage to more cost-efficient networks (currently Polygon PoS and Avalanche C-Chain), while avoiding full dependency on them.\n\nPartially, this is achieved by replicating the same voting infrastructure on Ethereum itself: if, for any reason, all the more optimal voting networks would not be operative, a governance proposal can still be created and voted on (even if more expensive) directly on Ethereum itself.\n\nGiven that this flow is only to be used in some very edge emergency scenario, we think it is healthy to make a fire drill: creating a proposal executing a payload without any meaningful content, but using the Ethereum voting infrastructure.\n\n## Specification\n\nThe governance proposal will be created using the [Ethereum → Ethereum Voting Portal](https://etherscan.io/address/0x6ACe1Bf22D57a33863161bFDC851316Fb0442690) so that voting will happen on the Ethereum network.\n\nThe payload executed will just contain an empty execute() function, as the purpose of this fire drill is testing the full flow, and not any execution content.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/12b567e8939bbd8297d73225fae9b5a6a4e0d5ec/src/20250530_AaveV3Ethereum_TestVoteOnEthereum/AaveV3Ethereum_TestVoteOnEthereum_20250530.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/12b567e8939bbd8297d73225fae9b5a6a4e0d5ec/src/20250530_AaveV3Ethereum_TestVoteOnEthereum/AaveV3Ethereum_TestVoteOnEthereum_20250530.t.sol)\n- [Discussion](https://governance.aave.com/t/technical-maintenance-proposals/15274/91)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Fire drill proposal Ethereum VotingMachine",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/technical-maintenance-proposals/15274/91"
+  }
+}
