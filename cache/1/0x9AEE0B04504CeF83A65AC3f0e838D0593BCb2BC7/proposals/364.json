@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "364",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xbb022e52cdf9d2b65b5e8cfd7a350fa7b3bc8149f80db0edbc7e52d1eb1b8a24"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000016c",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xbb022e52cdf9d2b65b5e8cfd7a350fa7b3bc8149f80db0edbc7e52d1eb1b8a24",
+      "blockHash": "0x18ea3f269f0af544a4195ac87d73d489351a4f9a098afcec3f3c312c15c79bfa",
+      "blockNumber": "23224549",
+      "blockTimestamp": "0x68ad8593",
+      "transactionHash": "0x18e55bc3f88af95f90a35ed6db0e3776bbcdc27091990559a9eed876dfa722a5",
+      "transactionIndex": 128,
+      "logIndex": 570,
+      "removed": false,
+      "timestamp": 1756202387
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1756202387,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xbb022e52cdf9d2b65b5e8cfd7a350fa7b3bc8149f80db0edbc7e52d1eb1b8a24",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 333
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmavessPK3XT5a9mr66qpX9tHxVJxey6xHrL87nxAUVS8T",
+    "description": "\n## Simple Summary\n\nThe proposal aims to onboard Tether’s XAUt gold-denominated stablecoin, to the Aave v3 Core Instance.\n\n## Motivation\n\nXAUt is a gold backed digital currency offered by Tether.\n\nXAUt represents a unique opportunity to bring gold-backed assets into DeFi lending markets. Adding XAUt to Aave v3 would:\n\n1. Diversify the protocol’s offerings with a historically stable store of value\n2. Enable users to use gold-backed tokens as collateral or for lending, creating new DeFi use cases\n3. Allow users a hedge against market volatility through exposure to physical gold\n4. Attract traditional finance users who are familiar with gold as an asset class\n\nThe addition of XAUt aligns with Aave’s goal of expanding DeFi accessibility while maintaining strong risk management practices through the use of established, well-backed assets.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **XAUt**\n\n| Parameter                 |         Value |\n| ------------------------- | ------------: |\n| Isolation Mode            |          true |\n| Borrowable                |      DISABLED |\n| Collateral Enabled        |          true |\n| Supply Cap (XAUt)         |         5,000 |\n| Borrow Cap (XAUt)         |             1 |\n| Debt Ceiling              | USD 3,000,000 |\n| LTV                       |          70 % |\n| LT                        |          75 % |\n| Liquidation Bonus         |           6 % |\n| Liquidation Protocol Fee  |          10 % |\n| Reserve Factor            |          20 % |\n| Base Variable Borrow Rate |           0 % |\n| Variable Slope 1          |          10 % |\n| Variable Slope 2          |         300 % |\n| Uoptimal                  |          45 % |\n| Flashloanable             |       ENABLED |\n| Siloed Borrowing          |      DISABLED |\n| Borrowable in Isolation   |      DISABLED |\n\n### oracle details\n\n| Parameter |                                                                                        Value |\n| --------- | -------------------------------------------------------------------------------------------: |\n| Oracle    | [Chainlink XAU/USD](https://etherscan.io/address/0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6) |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://etherscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for XAUt and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b000da885d84c6d68ac34bc3de6ab2f798b9747f/src/20250818_AaveV3Ethereum_AddXAUtToAaveV3CoreInstance/AaveV3Ethereum_AddXAUtToAaveV3CoreInstance_20250818.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/b000da885d84c6d68ac34bc3de6ab2f798b9747f/src/20250818_AaveV3Ethereum_AddXAUtToAaveV3CoreInstance/AaveV3Ethereum_AddXAUtToAaveV3CoreInstance_20250818.t.sol)\n  [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x71290ec88466d70c071d0dcb93c230c298f69e8c7688af94cedcc1236bf14876)\n- [Discussion](https://governance.aave.com/t/arfc-add-xaut-to-aave-v3-core-instance/22385)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add XAUt to Aave v3 Core Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-add-xaut-to-aave-v3-core-instance/22385",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x71290ec88466d70c071d0dcb93c230c298f69e8c7688af94cedcc1236bf14876"
+  }
+}
