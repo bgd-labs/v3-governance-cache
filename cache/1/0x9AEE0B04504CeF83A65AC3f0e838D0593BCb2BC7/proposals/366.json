@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "366",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xfd750a03ca6407a4c5fc62d5751cf46560c40e926cd62bdb52fedbd2b889d577"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000016e",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xfd750a03ca6407a4c5fc62d5751cf46560c40e926cd62bdb52fedbd2b889d577",
+      "blockHash": "0xd51b96f9bf4957307744b385364025ab43cbeabe93e20277dc285d6b35bcba8d",
+      "blockNumber": "23254650",
+      "blockTimestamp": "0x68b30f37",
+      "transactionHash": "0xf0ce129e0a34d7afe1e1ef45cff6cd85ed6d806a69f1d23ded4a1cce7ebb9724",
+      "transactionIndex": 260,
+      "logIndex": 1123,
+      "removed": false,
+      "timestamp": 1756565303
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1756565303,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xfd750a03ca6407a4c5fc62d5751cf46560c40e926cd62bdb52fedbd2b889d577",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 101
+      },
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 335
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmfQ3NF3zsKtfmfMyi5MfZBYJdkfiRHQsy3hDoTJCHAfW6",
+    "description": "\n### Summary\n\nThis publication proposes updating the ezETH and rsETH eMode categories on Arbitrum, a new wstETH/wETH category on Arbitrum and the creation of weETH <> wstETH eMode on Core.\n\n### Motivation\n\nIn preparation for the upcoming DRIPs campaign on Arbitrum, this publication proposes enabling Kelp and Renzo Liquid Restaking Tokens (LRTs) access to ETH via existing v3.2 eModes.\n\nUpon implementing this proposal, the weETH e-Mode on Core and rsETH and ezETH e-Modes on Arbitrum will each have the same LTV and LT for borrowing wstETH and ETH.\n\nGiven the behavior of market participants and expected growth of borrowing demand for WETH market, we recommend including WETH into the E-Modes for rsETH and ezETH. Additionally, in order to align the risk profiles of LRTs and wstETH we recommend creating the wstETH/WETH E-Mode on Arbitrum and weETH/wstETH E-Mode on Core.\n\n### Specification\n\n#### Update rsETH/WETH eMode on Arbitrum\n\n| **Parameter**             | **Value**    |\n| ------------------------- | ------------ |\n| **Collateral**            | rsETH        |\n| **Borrowable**            | wstETH, wETH |\n| **Max LTV**               | 93.00%       |\n| **Liquidation Threshold** | 95.00%       |\n| **Liquidation Penalty**   | 1.00%        |\n\n#### Update ezETH/WETH eMode on Arbitrum\n\n| **Parameter**             | **Value**    |\n| ------------------------- | ------------ |\n| **Collateral**            | ezETH        |\n| **Borrowable**            | wstETH, wETH |\n| **Max LTV**               | 93.00%       |\n| **Liquidation Threshold** | 95.00%       |\n| **Liquidation Penalty**   | 1.00%        |\n\n#### Create wstETH/WETH eMode on Arbitrum\n\n| **Parameter**             | **Value** |\n| ------------------------- | --------- |\n| **Collateral**            | wstETH    |\n| **Borrowable**            | WETH      |\n| **Max LTV**               | 94.00%    |\n| **Liquidation Threshold** | 96.00%    |\n| **Liquidation Penalty**   | 1.00%     |\n\n#### Create weETH/wstETH eMode on Core\n\n| **Parameter**             | **Value**    |\n| ------------------------- | ------------ |\n| **Collateral**            | weETH        |\n| **Borrowable**            | wstETH, wETH |\n| **Max LTV**               | 93.00%       |\n| **Liquidation Threshold** | 95.00%       |\n| **Liquidation Penalty**   | 1.00%        |\n\n## References\n\n- Implementation: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/d8d5daa3cdbe7b8ec1f8a242fd0c3eea19e845cf/src/20250805_AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH/AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH_20250805.sol)[AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d8d5daa3cdbe7b8ec1f8a242fd0c3eea19e845cf/src/20250805_AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH/AaveV3Ethereum_ArbitrumEModeUpdateRsETHAndEzETH_20250805.sol)\n- Tests: [AaveV3Arbitrum](https://github.com/bgd-labs/aave-proposals-v3/blob/d8d5daa3cdbe7b8ec1f8a242fd0c3eea19e845cf/src/20250805_AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH/AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH_20250805.t.sol)[AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d8d5daa3cdbe7b8ec1f8a242fd0c3eea19e845cf/src/20250805_AaveV3Arbitrum_ArbitrumEModeUpdateRsETHAndEzETH/AaveV3Ethereum_ArbitrumEModeUpdateRsETHAndEzETH_20250805.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-arbitrum-emode-update-rseth-and-ezeth/22731/3)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Multi eMode Update and Creation - rsETH, ezETH, wstETH and weETH",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-arbitrum-emode-update-rseth-and-ezeth/22731/3"
+  }
+}
