@@ -1,0 +1,59 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "368",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xb7ce06bba8767b2dc12dde8ad1f6c31d4cb7b24136291548deca84a2228c09d8"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000170",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xb7ce06bba8767b2dc12dde8ad1f6c31d4cb7b24136291548deca84a2228c09d8",
+      "blockHash": "0xecebf709321b5e6cb5da3d2d1d70473654cca581951fda23df5a82034be9af9d",
+      "blockNumber": "23316996",
+      "blockTimestamp": "0x68be8afb",
+      "transactionHash": "0x1d796ee4bebc7b50b1f86d908bf9453a9f88de5a65cd8a8172ade2a717417c2a",
+      "transactionIndex": 165,
+      "logIndex": 418,
+      "removed": false,
+      "timestamp": 1757317883
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1757317883,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0xFe4683C18aaad791B6AFDF0a8e1Ed5C6e2c9ecD6",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xb7ce06bba8767b2dc12dde8ad1f6c31d4cb7b24136291548deca84a2228c09d8",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 126
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 93
+      }
+    ]
+  }
+}
