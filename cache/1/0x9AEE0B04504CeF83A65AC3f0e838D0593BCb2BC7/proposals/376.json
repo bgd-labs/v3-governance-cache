@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "376",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x126974bde627cbc93918a913845077a08ec78ae04bdf49d5da15b41478e157b4"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000178",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x126974bde627cbc93918a913845077a08ec78ae04bdf49d5da15b41478e157b4",
+      "blockHash": "0xc471ba683af58127ac11947adadf5c36044eb0317c247969ff6b6c3a5c2e8492",
+      "blockNumber": "23353627",
+      "blockTimestamp": "0x68c54aef",
+      "transactionHash": "0x1ca60c5ee8684b29d86ebb7d519ef72b4e9105a91a4d3e4ceaeed22630a8f553",
+      "transactionIndex": 152,
+      "logIndex": 719,
+      "removed": false,
+      "timestamp": 1757760239
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1757760239,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x126974bde627cbc93918a913845077a08ec78ae04bdf49d5da15b41478e157b4",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 341
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPaXKALpm5dCPCkHbQAhdPUBP3vgnhdWpncKRMjeYqzRq",
+    "description": "\n## Summary\n\nThis ARFC proposes to increase supply caps on sUSDe November expiry PT tokens on Aave V3 Core Instance in anticipation of the PT rollover in September.\n\n## Motivation\n\nThe previous sUSDe PT tokens that were onboarded have brought significant inflows to Aave, in preparation for the expiry and rollover we propose to onboard the next expiry of this PT token. We expect at a minimum that deposits will match those in the September expiry PT token, with sidelined demand. Current caps will not be able to allow for a full rollover of PT tokens in Aave to later the November expiry. This proposal suggests to raise caps accordingly to allow for a seamless transition for Aave users and mitigate capital flowing to Aave alternatives.\n\n## Specification\n\nPT-sUSDE-27NOV2025: [https://etherscan.io/address/0xe6a934089bbee34f832060ce98848359883749b3](https://etherscan.io/address/0xe6a934089bbee34f832060ce98848359883749b3)\nPT-USDe-27NOV2025\n[https://etherscan.io/address/0x62C6E813b9589C3631Ba0Cdb013acdB8544038B7](https://etherscan.io/address/0x62C6E813b9589C3631Ba0Cdb013acdB8544038B7)\n\n## Risk Parameters\n\nIncrease sUSDe November PT Supply Cap to $1.2b.\n\nIncrease USDe November PT Supply cap to $1b.\n\n## Useful Links\n\n[https://docs.pendle.finance/ProtocolMechanics/YieldTokenization/PT](https://docs.pendle.finance/ProtocolMechanics/YieldTokenization/PT)\n\n## Disclaimer\n\nACI is not directly affiliated with Pendle and did not receive compensation for the creation of this proposal. Some ACI employees may hold Pendle tokens.\n\n## Copyright\n\nCopyright and related rights waived under [CCO](https://creativecommons.org/publicdomain/zero/1.0/)\n",
+    "title": "Raise sUSDe and USDe November expiry PT tokens caps on Aave V3 Core Instance",
+    "author": "Aave-Chan Initiative",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-raise-susde-and-usde-november-expiry-pt-tokens-caps-on-aave-v3-core-instance/23117"
+  }
+}
