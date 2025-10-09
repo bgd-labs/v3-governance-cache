@@ -1,0 +1,72 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "388",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x8ba8d0d6d7f33a1f6bb82536e7d00a6ee30d8b60f5f0e04457c507b8056e6249"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000184",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x8ba8d0d6d7f33a1f6bb82536e7d00a6ee30d8b60f5f0e04457c507b8056e6249",
+      "blockHash": "0xd9a84c7cb0f0d742c48128ac47d3f782d355744be19423350dab3a69bb055400",
+      "blockNumber": "23540782",
+      "blockTimestamp": "0x68e7c6f3",
+      "transactionHash": "0x86f73be6007454b4339164184125b686bdab684a145e726338d4acbd485dc44b",
+      "transactionIndex": 94,
+      "logIndex": 427,
+      "removed": false,
+      "timestamp": 1760020211
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1760020211,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x8ba8d0d6d7f33a1f6bb82536e7d00a6ee30d8b60f5f0e04457c507b8056e6249",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 357
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 131
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 132
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXjpgTKzAL8Yr2H449KYSZPpjjRmstYPfBvgk3RgGxyLt",
+    "description": "\n## Simple Summary\n\nThis proposal outlines the final deprecation path for DPI (DeFi Pulse Index) across all Aave deployments where it remains listed: Ethereum v2, Polygon v2, and Polygon v3. DPI has been frozen across all instances for an extended period and now represents negligible exposure within the protocol.\n\nThe currently utilized DPI price feed has exhibited reduced stability and is scheduled for deprecation by Chainlink; it is thus timely for Aave to conclude DPI's lifecycle by adjusting its risk parameters and implementing a simplified valuation approach that maintains accurate accounting for the small number of remaining positions.\n\n## Motivation\n\nDPI has been frozen across all Aave instances for an extended period, with no new deposits or borrows permitted. Usage has steadily declined, and its residual exposure is now negligible across the protocol. Current positions are concentrated among a handful of users, with no material systemic or market risk implications.\n\nRecently, Chainlink has indicated its intention to deprecate the DPI price feed due to reduced stability and limited data availability. Given that DPI's trading activity and liquidity have declined significantly, maintaining this feed is no longer viable from an oracle operations standpoint. This development necessitates an internal Aave decision on how to handle valuation of the remaining DPI positions once the feed is sunset.\n\nTo address this, the following proposal outlines a minimal-risk approach to finalizing DPI's deprecation across all Aave deployments while ensuring continuity for existing users.\n\n## Specification\n\nTo finalize deprecation, the following adjustments are proposed:\n\n- Set Liquidation Threshold (LT) to 0.05% on Polygon v3 (note: triggers one minor liquidation, ~$2.5K notional)\n- Adjust Interest Rate Parameters (Polygon v3 and Ethereum v2):\n  - Base rate: 20% (to encourage baseline debt repayment)\n  - Slope 2: 40% (reduced from 300%) to avoid excessive reserve inflation on residual balances\n\n| Asset | Instance    | Current Liquidation Threshold | Recommended Liquidation Threshold | Current Base Interest Rate | Recommended Base Interest Rate | Current Slope2 | Recommended Slope2 |\n| ----- | ----------- | ----------------------------- | --------------------------------- | -------------------------- | ------------------------------ | -------------- | ------------------ |\n| DPI   | Ethereum v2 | -                             | -                                 | -                          | -                              | 300%           | 40%                |\n| DPI   | Polygon v3  | 45%                           | 0.05%                             | 0%                         | 20%                            | 300%           | 40%                |\n\nFollowing the deprecation of Chainlink DPI feeds, the price feeds for DPI will be updated to a fixed equivalent of $102 across all instances:\n\n| Asset | Instance    | Current Price Feed                                                                        | New Price Feed                                                                              | New Fixed Price Value |\n| ----- | ----------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------- |\n| DPI   | Ethereum v2 | [CL DPI/USD/ETH](https://etherscan.io/address/0x2fe9EcF3024B5A63f50Ec0eFC53b8fF2C09F2E93) | [Fixed DPI/ETH](https://etherscan.io/address/0x92A6A444f5b433235297d849d2F93B405657234a)    | `0.022767 ETH`        |\n| DPI   | Polygon v2  | [CL DPI/ETH](https://polygonscan.com/address/0xC70aAF9092De3a4E5000956E672cDf5E996B4610)  | [Fixed DPI/ETH](https://polygonscan.com/address/0xD550Bce1a506F48802C9A4464c64E14A3141cE73) | `0.022767 ETH`        |\n| DPI   | Polygon v3  | [CL DPI/USD](https://polygonscan.com/address/0x2e48b7924FBe04d575BA229A59b64547d9da16e9)  | [Fixed DPI/USD](https://polygonscan.com/address/0x105fe43207ce8331555c9be8c13718d6ded2fd97) | `102 USD`             |\n\n## References\n\n- Implementation: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV2Ethereum_FullDeprecationOfDPIAcrossAaveDeployments_20251008.sol), [AaveV2Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV2Polygon_FullDeprecationOfDPIAcrossAaveDeployments_20251008.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV3Polygon_FullDeprecationOfDPIAcrossAaveDeployments_20251008.sol)\n- Tests: [AaveV2Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV2Ethereum_FullDeprecationOfDPIAcrossAaveDeployments_20251008.t.sol), [AaveV2Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV2Polygon_FullDeprecationOfDPIAcrossAaveDeployments_20251008.t.sol), [AaveV3Polygon](https://github.com/bgd-labs/aave-proposals-v3/blob/0b7f233c4c8d93af5a3f8dfc0ef1419b485642d6/src/20251008_Multi_FullDeprecationOfDPIAcrossAaveDeployments/AaveV3Polygon_FullDeprecationOfDPIAcrossAaveDeployments_20251008.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-full-deprecation-of-dpi-across-aave-deployments/23212)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Full Deprecation of DPI Across Aave Deployments",
+    "author": "BGD Labs (@bgdlabs)",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-full-deprecation-of-dpi-across-aave-deployments/23212"
+  }
+}
