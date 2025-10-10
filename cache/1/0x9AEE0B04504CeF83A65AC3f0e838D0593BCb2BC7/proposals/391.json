@@ -1,0 +1,97 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "391",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x0dbe5772b9a4cba9cbff4ff607c8de2ceaa11f6af7522427f7a1119baeb3b9c5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000187",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x0dbe5772b9a4cba9cbff4ff607c8de2ceaa11f6af7522427f7a1119baeb3b9c5",
+      "blockHash": "0x9b9e707447a70794aae1819bafea0bc3dfc897d2396dfe225c1f9c1743c89f10",
+      "blockNumber": "23546925",
+      "blockTimestamp": "0x68e8e8bb",
+      "transactionHash": "0xb83c3c3590451256fbf3dae1aa655141e9967996ff6c2f3f53dcc17a842c3145",
+      "transactionIndex": 266,
+      "logIndex": 754,
+      "removed": false,
+      "timestamp": 1760094395
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1760094395,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x0dbe5772b9a4cba9cbff4ff607c8de2ceaa11f6af7522427f7a1119baeb3b9c5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 359
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 105
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 88
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 99
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 64
+      },
+      {
+        "chain": "57073",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 2
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 2
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPGJMBDEQo7K75bg1xBZDryRBwnoDeP14sABpVhBagqf2",
+    "description": "\n## Simple Summary\n\nThis AIP proposes deploying GHO on the Plasma blockchain. The goal is to establish GHO as a key stablecoin within Plasma’s ecosystem from inception, facilitating reward programs, liquidity incentives, and seamless integration with the Aave deployment on Plasma.\n\n## Motivation\n\nPlasma is a purpose-built, EVM-compatible Bitcoin sidechain designed specifically for stablecoin scalability, speed, and security—offering zero-fee USDT transfers, lightning-fast finality, and Bitcoin-anchored settlement.\n\nThe network is quickly approaching launch with substantial USDT liquidity and an institutional partnership with Aave, including active GHO support on the platform.\n\nDeploying GHO concurrently with the Aave instance on Plasma ensures that GHO becomes foundational to DeFi and payments infrastructure on a chain optimized for stablecoin utility.\n\n## Specification\n\nThis AIP includes a series of actions required to launch GHO on Plasma:\n\n1. Configure new Chainlink CCIP lanes between Plasma and the chains where GHO is launched with a rate limit of 1.5M GHO capacity and 300 GHO per second rate.\n2. Configure GhoCcipSteward.\n3. Configure GhoBucketSteward\n\nThe table below lists the address of the new **Plasma** deployments\n\n| Contract         | Address                                                                                                                |\n| :--------------- | :--------------------------------------------------------------------------------------------------------------------- |\n| GhoToken         | [0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3](https://plasmascan.to/address/0xb77E872A68C62CfC0dFb02C067Ecc3DA23B4bbf3) |\n| GhoTokenPool     | [0x360d8aa8F6b09B7BC57aF34db2Eb84dD87bf4d12](https://plasmascan.to/address/0x360d8aa8F6b09B7BC57aF34db2Eb84dD87bf4d12) |\n| GhoBucketSteward | [0x2Ce400703dAcc37b7edFA99D228b8E70a4d3831B](https://plasmascan.to/address/0x2Ce400703dAcc37b7edFA99D228b8E70a4d3831B) |\n| GhoCcipSteward   | [0x20fd5f3FCac8883a3A0A2bBcD658A2d2c6EFa6B6](https://plasmascan.to/address/0x20fd5f3FCac8883a3A0A2bBcD658A2d2c6EFa6B6) |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d443430284364cc940ab062f2423a016b3e8eb0a/src/20250921_AaveV3Ethereum_GhoPlasmaLaunch/AaveV3Ethereum_GhoPlasmaLaunch_20250921.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/d443430284364cc940ab062f2423a016b3e8eb0a/src/20250921_AaveV3Ethereum_GhoPlasmaLaunch/AaveV3Ethereum_GhoPlasmaLaunch_20250921.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0xeb3572580924976867073ad9c8012cb9e52093c76dafebd7d3aebf318f2576fb)\n- [Discussion](https://governance.aave.com/t/arfc-launch-gho-on-plasma-set-aci-as-emissions-manager-for-rewards/22994)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Gho Plasma Launch",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-launch-gho-on-plasma-set-aci-as-emissions-manager-for-rewards/22994",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0xeb3572580924976867073ad9c8012cb9e52093c76dafebd7d3aebf318f2576fb"
+  }
+}
