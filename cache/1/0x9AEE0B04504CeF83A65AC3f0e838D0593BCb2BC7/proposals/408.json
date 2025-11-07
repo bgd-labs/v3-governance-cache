@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "408",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xf17cd74c6709e5e976587a0db97b108b74e5a51a111220401143d57c64604a5f"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000198",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xf17cd74c6709e5e976587a0db97b108b74e5a51a111220401143d57c64604a5f",
+      "blockHash": "0xf3b07c083b13563cd4ddb20d7b6f9e98877b19e850c3004720c76231f1a24f8a",
+      "blockNumber": "23748322",
+      "blockTimestamp": "0x690e11c7",
+      "transactionHash": "0xd01f72eb045ede7f91989e85fc1769f603f2f023c919c100af08216955c2e049",
+      "transactionIndex": 119,
+      "logIndex": 346,
+      "removed": false,
+      "timestamp": 1762529735
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1762529735,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xf17cd74c6709e5e976587a0db97b108b74e5a51a111220401143d57c64604a5f",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 8
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmebKNgp21kS1MrRxZ7ZGJjaMVxFNKvWSGG8wJpPBWXNp6",
+    "description": "\n## Simple Summary\n\nThis AIP proposes to onboard XPL to Aave V3 Plasma Instance.\n\nThis proposal will be a Direct to AIP.\n\n## Motivation\n\nXPL is the native token of the Plasma blockchain. It was initially approved by governance for onboarding to the Plasma instance during the Plasma instance deployment yet was paused due to reservations of some service providers. Given there is now sufficient liquidity for the token we believe it is time to reconsider onboarding XPL to the Plasma instance.\n\n## Specification\n\n| **Parameter**            | **Value**  |\n| ------------------------ | ---------- |\n| Asset                    | WXPL       |\n| Isolation Mode           | No         |\n| Borrowable               | No         |\n| Collateral Enabled       | Yes        |\n| Supply Cap               | 14,000,000 |\n| Borrow Cap               | -          |\n| Debt Ceiling             | -          |\n| LTV                      | 0.05%      |\n| LT                       | 0.1%       |\n| Liquidation Bonus        | 10%        |\n| Liquidation Protocol Fee | 10%        |\n| Variable Base            | -          |\n| Variable Slope1          | -          |\n| Variable Slope2          | -          |\n| Uoptimal                 | -          |\n| Reserve Factor           | -          |\n\n### **E-Mode**\n\n| **Parameter**         | **Value** | **Value** |\n| --------------------- | --------- | --------- |\n| Asset                 | WXPL      | USDT0     |\n| Collateral            | Yes       | No        |\n| Borrowable            | No        | Yes       |\n| Max LTV               | 50%       | -         |\n| Liquidation Threshold | 55%       | -         |\n| Liquidation Bonus     | 10%       | -         |\n\nAdditionally add ACI LM (0xac140648435d03f784879cd789130F22Ef588Fcd](https://plasmascan.to/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has emission admin for XPL incentive.\n\n## References\n\n- Implementation: [AaveV3Plasma](https://github.com/bgd-labs/aave-proposals-v3/blob/4714955c7abb431abfd363b4cdde42f50892a8c9/src/20251031_AaveV3Plasma_XPLOnboarding/AaveV3Plasma_XPLOnboarding_20251031.sol)\n- Tests: [AaveV3Plasma](https://github.com/bgd-labs/aave-proposals-v3/blob/4714955c7abb431abfd363b4cdde42f50892a8c9/src/20251031_AaveV3Plasma_XPLOnboarding/AaveV3Plasma_XPLOnboarding_20251031.t.sol)\n  Snapshot: Direct to AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-xpl-on-aave-v3-plasma-instance/23197)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "XPL Onboarding",
+    "author": "ACI",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-xpl-on-aave-v3-plasma-instance/23197"
+  }
+}
