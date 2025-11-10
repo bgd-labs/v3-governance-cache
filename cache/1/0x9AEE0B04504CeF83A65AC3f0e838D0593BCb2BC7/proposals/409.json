@@ -1,0 +1,79 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "409",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x4cc9da7ec6a32cbd5571aedb4212b5d34af8888d2bfca14145362439a0b553cc"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000199",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x4cc9da7ec6a32cbd5571aedb4212b5d34af8888d2bfca14145362439a0b553cc",
+      "blockHash": "0x41d02acf128fdde47d1a18c9581bdf02576f12b86889e332c1a421d90ff01547",
+      "blockNumber": "23769248",
+      "blockTimestamp": "0x6911ec97",
+      "transactionHash": "0x4fb17d8bb80a38ef136f6aea42a972dd5e6f13e52ca93bbc0beb46351aa86e80",
+      "transactionIndex": 97,
+      "logIndex": 442,
+      "removed": false,
+      "timestamp": 1762782359
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1762782359,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x4cc9da7ec6a32cbd5571aedb4212b5d34af8888d2bfca14145362439a0b553cc",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 370
+      },
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 43
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 50
+      },
+      {
+        "chain": "324",
+        "accessLevel": 1,
+        "payloadsController": "0x2E79349c3F5e4751E87b966812C9E65E805996F1",
+        "payloadId": 32
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTWQDQvKZ5buYnc1cvzPeQVKLxgB7esWbghyQBBnNU1tP",
+    "description": "\n## Simple Summary\n\nThis AIP is the second part of the deprecation of low demand asset proposed by Chaos Labs. It sets the LTV of some of them to 0%.\n\n## Motivation\n\nA full run down of the motivation is available on the [governance forum](https://governance.aave.com/t/arfc-deprecation-of-low-demand-volatile-assets-on-aave-v3-instances/23261/1).\n\n## Specification\n\n| **Instance**  | **Asset** | **Current LTV** | **Recommended LTV** |\n| ------------- | --------- | --------------- | ------------------- |\n| ZkSync        | ZK        | 40%             | 0                   |\n| Ethereum Core | UNI       | 65%             | 0                   |\n| Ethereum Core | CRV       | 35%             | 0                   |\n| Ethereum Core | BAL       | 57%             | 0                   |\n| Ethereum Core | ENS       | 39%             | 0                   |\n| Ethereum Core | LDO       | 40%             | 0                   |\n| BNB           | Cake      | 55%             | 0                   |\n| Ethereum Core | 1INCH     | 57%             | 0                   |\n| Metis         | METIS     | 30%             | 0                   |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3Ethereum_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3Metis_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3BNB_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.sol), [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/zksync/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3ZkSync_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3Ethereum_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.t.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3Metis_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.t.sol), [AaveV3BNB](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3BNB_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.t.sol), [AaveV3ZkSync](https://github.com/bgd-labs/aave-proposals-v3/blob/f926ee63f67b3d1be858797063fafe9078eae67d/zksync/src/20251023_Multi_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances/AaveV3ZkSync_DeprecationOfLowDemandVolatileAssetsOnAaveV3Instances_20251023.t.sol)\n  Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-deprecation-of-low-demand-volatile-assets-on-aave-v3-instances/23261)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Deprecation of Low Demand Volatile Assets on Aave V3 Instances",
+    "author": "Aave-chan Initiative",
+    "discussions": "https://governance.aave.com/t/arfc-deprecation-of-low-demand-volatile-assets-on-aave-v3-instances/23261",
+    "snapshot": "Direct-to-AIP"
+  }
+}
