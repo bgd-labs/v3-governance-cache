@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "410",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x5be17287148bec343b39d20f7ab0b8cf25ed1cd33a05b1545b4a963333c32c13"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x000000000000000000000000000000000000000000000000000000000000019a",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x5be17287148bec343b39d20f7ab0b8cf25ed1cd33a05b1545b4a963333c32c13",
+      "blockHash": "0x3f3af411f0fed36a1f7f86a559a58f9325c3c97997089ea3d9eb2fcabffa98c3",
+      "blockNumber": "23797624",
+      "blockTimestamp": "0x691729a3",
+      "transactionHash": "0x926c4d3eb7547bbe0f39134d34a734ba0ff44540fbf6c3ed0621acb911e48984",
+      "transactionIndex": 244,
+      "logIndex": 476,
+      "removed": false,
+      "timestamp": 1763125667
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1763125667,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x5be17287148bec343b39d20f7ab0b8cf25ed1cd33a05b1545b4a963333c32c13",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 9
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmUXKCNQNUhvGpQcLX5UYEHnd4ctMyWU9upVrkwECg5WSe",
+    "description": "\n## Simple Summary\n\nFreeze wstETH on Plasma instance\n\n## Motivation\n\nLast week, Lido [announced](https://blog.lido.fi/announcing-partnership-with-chainlink-on-adopting-ccip-as-official-cross-chain-infrastructure-for-wsteth/) that Chainlink's CCIP will be the official cross-chain infrastructure for wstETH. While the wstETH representation on Plasma was already deployed through CCIP, it was unfortunately not set up in a fully future-proof manner.\n\nTogether with Chainlink, they have decided to redeploy the token contract to ensure the deployment is in line with the new cross-chain strategy. They ask us to deprecate the asset.\n\nRight now, there is about 0.044 wstETH on Aave Plasma instance / 0.12 wstETH on Plasma.\n\n## Specification\n\nIf passed, this AIP will freeze wstETH reserve on Plasma, preventing new deposits, borrows, or collateral enablement.\n\n### Copyright\n\nCopyright and related rights waived under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)\n\n## References\n\n- Implementation: [AaveV3Plasma](https://github.com/bgd-labs/aave-proposals-v3/blob/e0adf2f170cf1e7a896529ef75e9c138c785ef20/src/20251111_AaveV3Plasma_FreezeWstETHPlasma/AaveV3Plasma_FreezeWstETHPlasma_20251111.sol)\n- Tests: [AaveV3Plasma](https://github.com/bgd-labs/aave-proposals-v3/blob/e0adf2f170cf1e7a896529ef75e9c138c785ef20/src/20251111_AaveV3Plasma_FreezeWstETHPlasma/AaveV3Plasma_FreezeWstETHPlasma_20251111.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-freeze-wsteth-on-plasma/23400)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Freeze wstETH Plasma",
+    "author": "Lido (implemented by ACI via Skyward)",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-freeze-wsteth-on-plasma/23400",
+    "snapshot": "Direct to AIP"
+  }
+}
