@@ -24,16 +24,36 @@
       "logIndex": 405,
       "removed": false,
       "timestamp": 1763469287
+    },
+    {
+      "eventName": "ProposalCanceled",
+      "args": {
+        "proposalId": "411"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0x789cf55be980739dad1d0699b93b58e806b51c9d96619bfa8fe0a28abaa7b30c",
+        "0x000000000000000000000000000000000000000000000000000000000000019b"
+      ],
+      "data": "0x",
+      "blockHash": "0xe8c103db453b12c3a283f596a506624eff2ac5bdfcbada0f571eecb8bbd9e525",
+      "blockNumber": "23827496",
+      "blockTimestamp": "0x691cad23",
+      "transactionHash": "0x1f517628151f7fa3ce9840e73d59e2a7465ce89e00313464a1c9d5bd378afac4",
+      "transactionIndex": 485,
+      "logIndex": 880,
+      "removed": false,
+      "timestamp": 1763487011
     }
   ],
   "proposal": {
-    "state": 1,
+    "state": 6,
     "accessLevel": 1,
     "creationTime": 1763469287,
     "votingDuration": 0,
     "votingActivationTime": 0,
     "queuingTime": 0,
-    "cancelTimestamp": 0,
+    "cancelTimestamp": 1763487011,
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
     "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
