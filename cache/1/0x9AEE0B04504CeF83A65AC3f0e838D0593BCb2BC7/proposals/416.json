@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "416",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x48d70d4984cfef8f9b6c3901d6d19abc87e90ece33d206005b709424021a7628"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001a0",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x48d70d4984cfef8f9b6c3901d6d19abc87e90ece33d206005b709424021a7628",
+      "blockHash": "0xeb1095d0e1651f42afb34a425cf0537d1aec4ae979662b8cabf6727c64ddbbc9",
+      "blockNumber": "23894426",
+      "blockTimestamp": "0x69291353",
+      "transactionHash": "0x6776733a9ff0ed10a60a1a6c843e937aaf8d7ab9c7cb8d83482dacd1acafd5bb",
+      "transactionIndex": 151,
+      "logIndex": 1110,
+      "removed": false,
+      "timestamp": 1764299603
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1764299603,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x48d70d4984cfef8f9b6c3901d6d19abc87e90ece33d206005b709424021a7628",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 375
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTEzFr2Xs6Adr6uXMo6rCmsc67L3CLBVqqsK8m52vWPom",
+    "description": "\n## Simple Summary\n\nThis proposal seeks to onboard syrupUSDT to Aave V3 Core Instance.\n\n## Motivation\n\nWith the recent approval of syrupUSDC on the Core Instance following BGD Labs’ updated [technical review](https://governance.aave.com/t/arfc-onboard-syrupusdc-to-aave-v3-core-instance/22456/10) and syrupUSDT on the Plasma Instance, we propose to expand this asset to other networks beginning with the Core Instance. We propose this under the Direct to AIP framework.\n\nThere is significant demand for syrupUSDT to be used in Aave, and with the Core Instance having the deepest stablecoin liquidity we believe this is the logical next instance on which to onboard syrupUSDT.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **syrupUSDT**\n\n| Parameter                 |      Value |\n| ------------------------- | ---------: |\n| Isolation Mode            |      false |\n| Borrowable                |   DISABLED |\n| Collateral Enabled        |       true |\n| Supply Cap (syrupUSDT)    | 50,000,000 |\n| Borrow Cap (syrupUSDT)    |          1 |\n| Debt Ceiling              |      USD 0 |\n| LTV                       |     0.05 % |\n| LT                        |      0.1 % |\n| Liquidation Bonus         |        6 % |\n| Liquidation Protocol Fee  |       10 % |\n| Reserve Factor            |       50 % |\n| Base Variable Borrow Rate |        0 % |\n| Variable Slope 1          |       10 % |\n| Variable Slope 2          |      300 % |\n| Uoptimal                  |       45 % |\n| Flashloanable             |    ENABLED |\n| Siloed Borrowing          |   DISABLED |\n| Borrowable in Isolation   |   DISABLED |\n\n**Oracle details**\n\n| **Parameter**          | **Value**                                                                                                |\n| ---------------------- | -------------------------------------------------------------------------------------------------------- |\n| Oracle                 | [Capped SyrupUSDT / USDT / USD](https://etherscan.io/address/0x982ac260b5a4e5bcab6a437e79168390cfbde70d) |\n| Ratio Provider         | [syrupUSDT](https://etherscan.io/address/0x356B8d89c1e1239Cbbb9dE4815c39A1474d5BA7D)                     |\n| Underlying oracle      | [Capped USDT/USD](https://etherscan.io/address/0x260326c220E469358846b187eE53328303Efe19C)               |\n| Minimum Snapshot delay | 7 days                                                                                                   |\n| Max yearly growth      | 8.45%                                                                                                    |\n| Last Answer            | (2025-11-26) USD 1.10433014                                                                              |\n\n### E-mode\n\n| **Parameter**         | **Value** | **Value** | **Value** |\n| --------------------- | --------- | --------- | --------- |\n| Asset                 | syrupUSDT | USDT      | GHO       |\n| Collateral            | Yes       | No        | No        |\n| Borrowable            | No        | Yes       | Yes       |\n| Max LTV               | 90.00%    | -         | -         |\n| Liquidation Threshold | 92.00%    | -         | -         |\n| Liquidation Bonus     | 4.00%     | -         | -         |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://etherscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for syrupUSDT and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/eae60bd78e895dee088fb1039dc87f103030b35c/src/20251126_AaveV3Ethereum_OnboardSyrupUSDTToAaveV3CoreInstance/AaveV3Ethereum_OnboardSyrupUSDTToAaveV3CoreInstance_20251126.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/eae60bd78e895dee088fb1039dc87f103030b35c/src/20251126_AaveV3Ethereum_OnboardSyrupUSDTToAaveV3CoreInstance/AaveV3Ethereum_OnboardSyrupUSDTToAaveV3CoreInstance_20251126.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-syrupusdt-to-aave-v3-core-instance/23291)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard syrupUSDT to Aave V3 Core Instance",
+    "author": "Aave-chan Initiative",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-syrupusdt-to-aave-v3-core-instance/23291"
+  }
+}
