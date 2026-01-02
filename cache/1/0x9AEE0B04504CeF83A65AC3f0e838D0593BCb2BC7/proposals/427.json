@@ -1,0 +1,80 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "427",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x67acac178fa108114611d99c85b9efda1928ccec8d836a1dda54dbb809d042cf"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ab",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x67acac178fa108114611d99c85b9efda1928ccec8d836a1dda54dbb809d042cf",
+      "blockHash": "0x74fc915b8ecf7dcd2fe3b95a065d491d53bea6f2cc081730aef4db067d0c0a06",
+      "blockNumber": "24146578",
+      "blockTimestamp": "0x6957a86b",
+      "transactionHash": "0xe787a1443976c4a81f9e2796ef34cc474ac63e247e153421c165181c285f681d",
+      "transactionIndex": 246,
+      "logIndex": 1659,
+      "removed": false,
+      "timestamp": 1767352427
+    },
+    {
+      "eventName": "ProposalCanceled",
+      "args": {
+        "proposalId": "427"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0x789cf55be980739dad1d0699b93b58e806b51c9d96619bfa8fe0a28abaa7b30c",
+        "0x00000000000000000000000000000000000000000000000000000000000001ab"
+      ],
+      "data": "0x",
+      "blockHash": "0xb873a6a19dc937d65d6d7c55e0e9af02205e3fdf2965f2d673f43c4f98a439a0",
+      "blockNumber": "24146646",
+      "blockTimestamp": "0x6957ab9b",
+      "transactionHash": "0xc52ba50569d1c37adf60980de85908e941e05ebfe2225d99474dcc89029464ae",
+      "transactionIndex": 301,
+      "logIndex": 849,
+      "removed": false,
+      "timestamp": 1767353243
+    }
+  ],
+  "proposal": {
+    "state": 6,
+    "accessLevel": 1,
+    "creationTime": 1767352427,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 1767353243,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x67acac178fa108114611d99c85b9efda1928ccec8d836a1dda54dbb809d042cf",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 388
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmVKMQzzQW4Em2DtPcyFvkbHdLhX8aCttd8aaCJ9TPFqWn",
+    "description": "\n## Simple Summary\n\nReduce AAVE emissions for the legacy Safety Module **stkABPT** (stkAAVE/wstETH BPTv2) from **130 AAVE/day** to **40 AAVE/day**.\n\n## Motivation\n\nThis change follows the proposal’s direction to **phase out stkABPT incentives** (as emissions will trend to **0**) by reducing incentives on the legacy Safety Module. Reducing stkABPT emissions lowers ongoing incentive spend while supporting the transition towards the Umbrella Safety Modules and improved capital efficiency.\n\n**Note:** **stkAAVE is not being phased out**; it will be **repurposed** into a **no-risk staking (dividend yield) contract**.\n\n## Specification\n\n- **Target module:** Legacy Safety Module stake token **stkABPT** (`AaveSafetyModule.STK_AAVE_WSTETH_BPTV2`).\n- **Change:** Update AAVE rewards emission rate from **130 AAVE/day → 40 AAVE/day** by setting:\n  - `emissionPerSecond = 40 AAVE / day` (expressed as `uint128(40 ether) / 1 days`)\n- **Distribution end:** extend rewards distribution by **90 days**: `newDistributionEnd = distributionEnd + 90 days`.\n- **Allowance adjustment (funding):** Reset and set the AAVE allowance from the **Ecosystem Reserve** to the stake token to cover **already accrued** + **future emissions**:\n  - `allowance = currentAllowance + emissionPerSecond * (newDistributionEnd - block.timestamp)`\n- **No other changes:** This payload does **not** modify stkAAVE emissions, cooldown parameters, slashing parameters, or any Umbrella module emissions.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/13c05673080a9e1fe7becf8584cd74373745c27f/src/20251219_AaveV3Ethereum_EmissionUpdate/AaveV3Ethereum_EmissionUpdate_20251219.sol)\n- Tests: [AaveV3Ethereum](https://github.com/bgd-labs/aave-proposals-v3/blob/13c05673080a9e1fe7becf8584cd74373745c27f/src/20251219_AaveV3Ethereum_EmissionUpdate/AaveV3Ethereum_EmissionUpdate_20251219.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x6712b1677068d2d316af699757057a0c8c03e0ff0693c12aacc381d294c419a4)\n- [Discussion](https://governance.aave.com/t/arfc-safety-module-umbrella-emission-update/23103/9)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "stkABPT Emission Update",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-safety-module-umbrella-emission-update/23103/9"
+  }
+}
