@@ -1,0 +1,97 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "436",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x482c113f23f3eb0363c03b787e826d1c1402b18f67234ab8ba6ea0f475a0b70a"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001b4",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x482c113f23f3eb0363c03b787e826d1c1402b18f67234ab8ba6ea0f475a0b70a",
+      "blockHash": "0x16562cf1501d99706effc1d0527a89517b0078ad185e0299a6af1277c5efecf0",
+      "blockNumber": "24247373",
+      "blockTimestamp": "0x696a32d7",
+      "transactionHash": "0x66d76ef907ece785ea8996e502188c2f7ef1dd1d86d03a2c1dba98b1019b45ea",
+      "transactionIndex": 606,
+      "logIndex": 887,
+      "removed": false,
+      "timestamp": 1768567511
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1768567511,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x482c113f23f3eb0363c03b787e826d1c1402b18f67234ab8ba6ea0f475a0b70a",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 137
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 105
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 109
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 94
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 54
+      },
+      {
+        "chain": "59144",
+        "accessLevel": 1,
+        "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074",
+        "payloadId": 20
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 15
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTCP37LG7wLPuziKGq9rcy2JnKiJ9zURmVGG43bWELxbs",
+    "description": "\n## Simple Summary\n\nResubmission: Upgrade of the Aave protocol instances from v3.5 to v3.6 **Part 3**.\nDue to a expiry protection, the payloads on the following networks were not executed on part 2: **Plasma, Base, Arbitrum, Avalanche, Linea, BNB Chain, Polygon**.\n\n## Motivation\n\nAave v3.6 enhances isolation, via more fine-grained configurations and the decoupling of eMode and eMode0 settings. For a comprehensive overview of the changes, please refer to the [documentation](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/docs/3.6/Aave-v3.6-features.md).\n\n## Specification\n\nThe upgrade payload updates the implementations of the Pool, PoolConfigurator, AToken & VariableDebtToken on the second set of pools, namely **Plasma, Base, Arbitrum, Avalanche, Linea, BNB Chain, Polygon**.\n\n## Security procedures\n\nThe upgrade was extensively unit tested and fuzzed.\nCertora adapted its formal properties to ensure the upgrade's correctness.\nIn addition 5 audits by Independent Auditors were conducted.\n\n- [Blackthorn](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/audits/2025-11-16_Blackthorn_Aave-v3.6.pdf)\n- [Certora](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/audits/2025-11-18_Certora_Aave-v3.6.pdf)\n- [MixBytes](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/audits/2025-11-18_MixBytes_Aave-v3.6.pdf)\n- [Savant](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/audits/2025-11-18_Savant_Aave-v3.6.pdf)\n- [Pashov](https://github.com/bgd-labs/aave-v3-origin/blob/b3ce63440cacd4054c62d55c6282afd248215b28/audits/2025-11-29_Pashov_Aave-v3.6.pdf)\n\n## References\n\n- [Implementation](https://github.com/bgd-labs/protocol-v3.6-upgrade/blob/main/src/UpgradePayload.sol)\n- [Tests](https://github.com/bgd-labs/protocol-v3.6-upgrade/tree/main/test)\n- [Diffs](https://github.com/bgd-labs/protocol-v3.6-upgrade/tree/main/diffs/code)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x83ab94cea13da68fc9685dc2fa8ad738107bdbebd01fdf04122131d5de1d7847)\n- [Discussion](https://governance.aave.com/t/arfc-bgd-aave-v3-6/23172/8)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Upgrade Aave instances to v3.6 Part 3",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/arfc-bgd-aave-v3-6/23172/8",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x83ab94cea13da68fc9685dc2fa8ad738107bdbebd01fdf04122131d5de1d7847"
+  }
+}
