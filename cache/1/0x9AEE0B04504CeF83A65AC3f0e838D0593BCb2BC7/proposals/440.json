@@ -1,0 +1,103 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "440",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xa7fa3d6deffa0935b423da850dae3a435ebeea70c2098311d0d750bb7df24036"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001b8",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xa7fa3d6deffa0935b423da850dae3a435ebeea70c2098311d0d750bb7df24036",
+      "blockHash": "0x52d2c316f51b095a6435710681b4a55c97c594c2a6cf40ef39e47e37e3f7e5e3",
+      "blockNumber": "24301563",
+      "blockTimestamp": "0x6974297f",
+      "transactionHash": "0x74ba88372b8fac5e932722d234512744a56d4bd769b37626ab69d05f241f924a",
+      "transactionIndex": 321,
+      "logIndex": 897,
+      "removed": false,
+      "timestamp": 1769220479
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1769220479,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa7fa3d6deffa0935b423da850dae3a435ebeea70c2098311d0d750bb7df24036",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 0
+      },
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 397
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 110
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 96
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 106
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 70
+      },
+      {
+        "chain": "57073",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 3
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 16
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZeN7FRTKn2VtjexNe2S6X8Bz7ancYSLyWPaAHKq17HaD",
+    "description": "\n## Simple Summary\n\nThis AIP proposes deploying GHO on the Mantle blockchain. By deploying on Mantle, Aave can take advantage of Mantle’s integration with Bybit products, enabling seamless access to Bybit’s 30 million active users. This creates a significant opportunity to broaden GHO's user base and make the stablecoin more accessible to a wider audience.\n\n## Motivation\n\nConsidering the substantial amount of lending activity projected for the instance, the strategic placement of GHO in the list of initial assets paves the way to broader expansion and adoption of the stablecoin.\n\nGHO’s price performance has been strong on the Ethereum network, as empirically observed pricing data extracted from the GHO/USDC Uniswap v3 pool indicates high peg stability, with maximum dislocations of only 20 basis points compared to its anchor price of $1.\n\n## Specification\n\nThis AIP includes a series of actions required to launch GHO on Mantle:\n\n1. Configure new Chainlink CCIP lanes between Mantle and the chains where GHO is launched with a rate limit of 1.5M GHO capacity and 300 GHO per second rate.\n2. Configure GhoCcipSteward.\n3. Configure GhoBucketSteward\n\nThe table below lists the address of the new **Mantle** deployments\n\n| Contract           | Address                                                                                                                 |\n| :----------------- | :---------------------------------------------------------------------------------------------------------------------- |\n| GhoToken           | [0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73](https://mantlescan.xyz/address/0xb0e1c7830aa781362f79225559aa068e6bdaf1d1) |\n| GhoTokenPool       | [0xDe6539018B095353A40753Dc54C91C68c9487D4E](https://mantlescan.xyz/address/0xde6539018b095353a40753dc54c91c68c9487d4e) |\n| GhoBucketSteward   | [0x2Ce400703dAcc37b7edFA99D228b8E70a4d3831B](https://mantlescan.xyz/address/0x2ce400703dacc37b7edfa99d228b8e70a4d3831b) |\n| GhoCcipSteward     | [0x20fd5f3FCac8883a3A0A2bBcD658A2d2c6EFa6B6](https://mantlescan.xyz/address/0x20fd5f3FCac8883a3A0A2bBcD658A2d2c6EFa6B6) |\n| GhoAavecoreSteward | [0xA5Ba213867E175A182a5dd6A9193C6158738105A](https://mantlescan.xyz/address/0xA5Ba213867E175A182a5dd6A9193C6158738105A) |\n\n## References\n\n- Implementation: [AaveV3Mantle](https://github.com/bgd-labs/aave-proposals-v3/blob/dec0ac351c0e4825f69cc551462568c79cf18f12/src/20260105_AaveV3Mantle_GhoMantleActivation/AaveV3Mantle_GhoMantleActivation_20260105.sol)\n- Tests: [AaveV3Mantle](https://github.com/bgd-labs/aave-proposals-v3/blob/dec0ac351c0e4825f69cc551462568c79cf18f12/src/20260105_AaveV3Mantle_GhoMantleActivation/AaveV3Mantle_GhoMantleActivation_20260105.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0x2f9378770f1838f0ea8d483239af1530c9fbea98d648e0b11e4647dcb722d119)\n- [Discussion](https://governance.aave.com/t/arfc-deploy-aave-v3-on-mantle/20542/10)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Gho Mantle Activation",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-deploy-aave-v3-on-mantle/20542/10",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0x2f9378770f1838f0ea8d483239af1530c9fbea98d648e0b11e4647dcb722d119"
+  }
+}
