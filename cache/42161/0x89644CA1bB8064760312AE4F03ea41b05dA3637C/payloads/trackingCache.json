@@ -1,5 +1,5 @@
 {
-  "lastSeenBlock": "426297625",
+  "lastSeenBlock": "426317788",
   "isFinal": {
     "0": true,
     "1": true,
@@ -111,6 +111,6 @@
     "107": true,
     "108": true,
     "109": true,
-    "110": false
+    "110": true
   }
 }
