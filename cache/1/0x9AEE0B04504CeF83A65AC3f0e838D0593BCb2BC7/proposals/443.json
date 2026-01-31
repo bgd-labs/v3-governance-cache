@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "443",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x5fd9bc11bc15c390ad9873ef69dcdd4e329fb1f77b9b08db8464230f15a73aa8"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001bb",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x5fd9bc11bc15c390ad9873ef69dcdd4e329fb1f77b9b08db8464230f15a73aa8",
+      "blockHash": "0x6e7b4b388d1e02c7792cafc640999d3d75cc9df0b66300c3bbbbe262e6edbea4",
+      "blockNumber": "24355086",
+      "blockTimestamp": "0x697e002f",
+      "transactionHash": "0x5205321a96ad81029456ceb5c891c7efca2d5a5dc28b4da3afd1bf03f7dfe71c",
+      "transactionIndex": 285,
+      "logIndex": 581,
+      "removed": false,
+      "timestamp": 1769865263
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1769865263,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x5fd9bc11bc15c390ad9873ef69dcdd4e329fb1f77b9b08db8464230f15a73aa8",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 92
+      },
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 46
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 71
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 49
+      },
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 10
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmUnp1Kx2Ji2WwMhERRPopQUNfPFejZtcFyvsjYZPrEJud",
+    "description": "\n## Simple Summary\n\nThis proposal leverages the configurability improvements introduced in [Aave v3.6](https://governance.aave.com/t/arfc-bgd-aave-v3-6/23172/2) to strengthen risk isolation and improve parameter clarity. Specifically, it introduces:\n\n- LTV0 for assets not intended to serve as collateral outside of eModes.\n- Non-borrowable status for assets whose use cases are restricted to within their respective eModes.\n- Exclusive eMode participation, ensuring these assets are only active within targeted, high-correlation environments.\n\nThis aims to reduce systemic exposure, simplify risk management, and enable cleaner differentiation between general market assets and those intended for correlated or high-efficiency lending environments.\n\n**This AIP is split into 2 parts, this one will only cover instances only instances covered by Aave V3.6 part 1. A second AIP will cover the rest of the instances**\n\n## Motivation\n\n## Specification\n\nThe following asset got their status as collateral removed:\n\n| **Instance** | **Asset** |\n| ------------ | --------- |\n| Optimism     | LINK      |\n| Optimism     | AAVE      |\n| Optimism     | OP        |\n| Optimism     | rETH      |\n| Optimism     | USDC.e    |\n| Optimism     | sUDC      |\n| Gnosis       | sDAI      |\n| Metis        | mUSDC     |\n| Metis        | mUSDT     |\n\nThe following asset got their status as borrowable asset removed:\n\n| **Instance** | **Asset** |\n| ------------ | --------- |\n| Optimism     | USDC.e    |\n| Optimism     | wstETH    |\n| Optimism     | LINK      |\n| Optimism     | LUSD      |\n| Optimism     | OP        |\n| Optimism     | rETH      |\n| Gnosis       | wstETH    |\n| Gnosis       | WETH      |\n| Scroll       | wstETH    |\n| Scroll       | weETH     |\n| Scroll       | SCR       |\n| Celo         | Celo      |\n| Metis        | mDAI      |\n| Metis        | WETH      |\n\n## Disclaimer\n\nChaos Labs requested disabling Optimism sUSD as collateral, but it was already disabled.\n\n## References\n\n- Implementation: [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Optimism_EnhancingMarketGranularityInAaveV36_20260112.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Metis_EnhancingMarketGranularityInAaveV36_20260112.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Gnosis_EnhancingMarketGranularityInAaveV36_20260112.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Scroll_EnhancingMarketGranularityInAaveV36_20260112.sol), [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Celo_EnhancingMarketGranularityInAaveV36_20260112.sol)\n- Tests: [AaveV3Optimism](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Optimism_EnhancingMarketGranularityInAaveV36_20260112.t.sol), [AaveV3Metis](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Metis_EnhancingMarketGranularityInAaveV36_20260112.t.sol), [AaveV3Gnosis](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Gnosis_EnhancingMarketGranularityInAaveV36_20260112.t.sol), [AaveV3Scroll](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Scroll_EnhancingMarketGranularityInAaveV36_20260112.t.sol), [AaveV3Celo](https://github.com/bgd-labs/aave-proposals-v3/blob/e1ec0da5688382a5a4f480fab4b77e8e0ff2a422/src/20260112_Multi_EnhancingMarketGranularityInAaveV36/AaveV3Celo_EnhancingMarketGranularityInAaveV36_20260112.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-enhancing-market-granularity-in-aave-v3-6-restricting-borrowability-and-collateralization-outside-of-liquid-emodes/23592)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Enhancing Market Granularity in Aave v3.6: Part 1",
+    "author": "Chaos Labs (implemented by the ACI via Skyward)",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-enhancing-market-granularity-in-aave-v3-6-restricting-borrowability-and-collateralization-outside-of-liquid-emodes/23592"
+  }
+}
