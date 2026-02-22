@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "450",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x45f732e300bc75c5d41062e3454a06e2ad45306520685e4c3d5b4cfdfc99a3a7"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001c2",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x45f732e300bc75c5d41062e3454a06e2ad45306520685e4c3d5b4cfdfc99a3a7",
+      "blockHash": "0x2b6108e6bbb66906331daf197b4020467b6d0618371b73c7a799d3acc1a382c1",
+      "blockNumber": "24512712",
+      "blockTimestamp": "0x699b049b",
+      "transactionHash": "0xb442a9fc59378ffd1513774af5bc23855d0aed16b4f40e6b39f6d8374c466220",
+      "transactionIndex": 108,
+      "logIndex": 430,
+      "removed": false,
+      "timestamp": 1771766939
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1771766939,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x45f732e300bc75c5d41062e3454a06e2ad45306520685e4c3d5b4cfdfc99a3a7",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 405
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmT3mTtwrVGLTnUnqosSE3QWPM8BnbFjEJwcYrkrAWnN38",
+    "description": "\n## Simple Summary\n\nThis proposal creates an allowance of 1.5M aEthLidoGHO from the Aave Collector to the Aave Liquidity Committee (ALC) to support the launch of GHO on Mantle.\n\n## Motivation\n\nAs part of the [ARFC to deploy Aave V3 on Mantle](https://governance.aave.com/t/arfc-deploy-aave-v3-on-mantle/20542#p-51955-budget-15), GHO liquidity needs to be seeded on Mantle. The Aave Liquidity Committee (ALC) will manage the bridging and liquidity provisioning of GHO on Mantle using the approved aEthLidoGHO allowance from the Aave Collector.\n\n## Specification\n\nApprove the Aave Liquidity Committee (ALC) [`0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b`](https://etherscan.io/address/0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b) to spend 1,500,000 aEthLidoGHO [`0x18eFE565A5373f430e2F809b97De30335B3ad96A`](https://etherscan.io/address/0x18eFE565A5373f430e2F809b97De30335B3ad96A) from the Aave Collector on the Ethereum Lido instance.\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/acd0ebe60e61db3a3bf4a9b9b833415ec1c6b706/src/20260216_AaveV3EthereumLido_CreateAllowanceGHOMantle/AaveV3EthereumLido_CreateAllowanceGHOMantle_20260216.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/acd0ebe60e61db3a3bf4a9b9b833415ec1c6b706/src/20260216_AaveV3EthereumLido_CreateAllowanceGHOMantle/AaveV3EthereumLido_CreateAllowanceGHOMantle_20260216.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x2f9378770f1838f0ea8d483239af1530c9fbea98d648e0b11e4647dcb722d119)\n- [Discussion](https://governance.aave.com/t/arfc-deploy-aave-v3-on-mantle/20542#p-51955-budget-15)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Create Allowance GHO Mantle",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-deploy-aave-v3-on-mantle/20542#p-51955-budget-15",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x2f9378770f1838f0ea8d483239af1530c9fbea98d648e0b11e4647dcb722d119"
+  }
+}
