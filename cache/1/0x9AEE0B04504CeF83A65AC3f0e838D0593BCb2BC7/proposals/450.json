@@ -47,22 +47,91 @@
       "logIndex": 341,
       "removed": false,
       "timestamp": 1771853363
+    },
+    {
+      "eventName": "ProposalQueued",
+      "args": {
+        "proposalId": "450",
+        "votesFor": "903261141433692475962102",
+        "votesAgainst": "205907404140000000000"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xe39e7fc9f2013b8ab01110f66610f9fb8675d3126e69b3752f0084afc72be19a",
+        "0x00000000000000000000000000000000000000000000000000000000000001c2"
+      ],
+      "data": "0x00000000000000000000000000000000000000000000bf45e274b34f96a132f600000000000000000000000000000000000000000000000b298a0d1f037f3800",
+      "blockHash": "0x4c233b19a4d8b8392c8bc93887d0d785643dfc45f4bbf659d3d1c9dced166e21",
+      "blockNumber": "24541478",
+      "blockTimestamp": "0x69a04e8b",
+      "transactionHash": "0xbe98ef3216c381684ce3f426eea3ef04c0cfd31f52bab7b318b0a1dda8e5b32d",
+      "transactionIndex": 72,
+      "logIndex": 75,
+      "removed": false,
+      "timestamp": 1772113547
+    },
+    {
+      "eventName": "PayloadSent",
+      "args": {
+        "proposalId": "450",
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "chainId": "1",
+        "payloadId": 405,
+        "payloadNumberOnProposal": "0",
+        "numberOfPayloadsOnProposal": "1"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0x9c687134d572ff69f3e23f40470562650574c5c7cab9f535268763b2d00da65b",
+        "0x00000000000000000000000000000000000000000000000000000000000001c2",
+        "0x000000000000000000000000dabad81af85554e9ae636395611c58f7ec1aaec5",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x000000000000000000000000000000000000000000000000000000000000019500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "blockHash": "0x2ab840489479cb6f7366c0f1e724547f4b11395fbdc11c5b47fc2590cb20e6e3",
+      "blockNumber": "24541479",
+      "blockTimestamp": "0x69a04e97",
+      "transactionHash": "0xf44d25983d4d47ea386eda22199574911dfde925e68e9ac2f8f5f0f5d8b7b556",
+      "transactionIndex": 101,
+      "logIndex": 471,
+      "removed": false,
+      "timestamp": 1772113559
+    },
+    {
+      "eventName": "ProposalExecuted",
+      "args": {
+        "proposalId": "450"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0x712ae1383f79ac853f8d882153778e0260ef8f03b504e2866e0593e04d2b291f",
+        "0x00000000000000000000000000000000000000000000000000000000000001c2"
+      ],
+      "data": "0x",
+      "blockHash": "0x2ab840489479cb6f7366c0f1e724547f4b11395fbdc11c5b47fc2590cb20e6e3",
+      "blockNumber": "24541479",
+      "blockTimestamp": "0x69a04e97",
+      "transactionHash": "0xf44d25983d4d47ea386eda22199574911dfde925e68e9ac2f8f5f0f5d8b7b556",
+      "transactionIndex": 101,
+      "logIndex": 472,
+      "removed": false,
+      "timestamp": 1772113559
     }
   ],
   "proposal": {
-    "state": 2,
+    "state": 4,
     "accessLevel": 1,
     "creationTime": 1771766939,
     "votingDuration": 259200,
     "votingActivationTime": 1771853363,
-    "queuingTime": 0,
+    "queuingTime": 1772113547,
     "cancelTimestamp": 0,
     "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
     "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
     "snapshotBlockHash": "0x6a8207c6db44a0802dc487360fab96b145caa4090ef1b53fcf9549eaa3bc3f05",
     "ipfsHash": "0x45f732e300bc75c5d41062e3454a06e2ad45306520685e4c3d5b4cfdfc99a3a7",
-    "forVotes": "0",
-    "againstVotes": "0",
+    "forVotes": "903261141433692475962102",
+    "againstVotes": "205907404140000000000",
     "cancellationFee": "50000000000000000",
     "payloads": [
       {
