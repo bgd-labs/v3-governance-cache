@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "458",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x92ff1fa304a74fcbfcf5d5829bf18110f44ce187182bd9845a3951d371544a45"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ca",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x92ff1fa304a74fcbfcf5d5829bf18110f44ce187182bd9845a3951d371544a45",
+      "blockHash": "0xc2462216886a84ee1011eea01e3d7ce68fb2372b38abcd4e5b82beee176793d9",
+      "blockNumber": "24669083",
+      "blockTimestamp": "0x69b7c947",
+      "transactionHash": "0x8f53fd1790a98a4a8c3ad3f674fa9fec7fe75860efb0577333afca0f8544b1c0",
+      "transactionIndex": 179,
+      "logIndex": 764,
+      "removed": false,
+      "timestamp": 1773652295
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1773652295,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x92ff1fa304a74fcbfcf5d5829bf18110f44ce187182bd9845a3951d371544a45",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 413
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYETsBUYX9sJtf6LyAuQb8NpADSUSrrDBLYfXM6cbhigk",
+    "description": "\n## Simple Summary\n\nThis proposal refunds users who were erroneously liquidated during the wstETH CAPO oracle misconfiguration incident on Ethereum Core and Prime instances. The total refund amounts to 513.19 ETH, with a net cost to the DAO of 358.56 ETH after recoveries, a figure that should decrease as more recoveries are processed.\n\n## Motivation\n\nA configuration misalignment between the `snapshotRatio` and `snapshotTimestamp` parameters in the wstETH CAPO risk oracle caused the reported wstETH/stETH exchange rate cap to fall approximately 2.85% below the actual market rate. This triggered erroneous liquidations across 34 accounts on the Ethereum Core and Prime instances, totaling ~10,938 wstETH liquidated.\n\nAs detailed in the [Post-Mortem](https://governance.aave.com/t/post-mortem-exchange-rate-misallignment-on-wsteth-core-and-prime-instances/24269), the root cause was a mismatch between two interdependent Oracle parameters, `snapshotRatio` and `snapshotTimestamp`. The issue was promptly identified and resolved through Risk Steward intervention.\n\nThe affected users bear no responsibility for these liquidations, which were the direct result of a protocol-level configuration error. Making these users whole is a straightforward decision for the DAO and reinforces the trust that underpins Aave's position as the leading lending protocol.\n\n## Loss Breakdown\n\n| Category                          | ETH        |\n| --------------------------------- | ---------- |\n| Oracle profit (loss to users)     | 382.76     |\n| Liquidation bonus (loss to users) | 129.72     |\n| Goodwill allowance                | 1          |\n| **Total loss**                    | **513.19** |\n| Recovered from Titan Builder      | (141.60)   |\n| Recovered liquidation fees        | (13.32)    |\n| **Net cost to the DAO**           | **358.56** |\n\nRecovery efforts remain ongoing. The DAO is actively pursuing additional funds from builders involved in the incident.\n\n## Specification\n\nCreate allowance on the Aave Ethereum Collector for the AFC to distribute refunds to affected users:\n\n- **Method**: `approve()` on the Aave Ethereum Collector\n- **Spender**: [AFC](https://etherscan.io/address/0x22740deBa78d5a0c24C58C740e3715ec29de1bFa) `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n- **Amount**: 513.19 ETH\n- **Asset**: [WETH](https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`\n\nUpon AIP execution, the AFC will distribute the appropriate refund amount to each affected user address.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/a93ce7ec2ed3a2df946f6add33b9951bb022d9dc/src/20260312_AaveV3Ethereum_WstETHCAPOOracleIncidentUserReimbursement/AaveV3Ethereum_WstETHCAPOOracleIncidentUserReimbursement_20260312.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/a93ce7ec2ed3a2df946f6add33b9951bb022d9dc/src/20260312_AaveV3Ethereum_WstETHCAPOOracleIncidentUserReimbursement/AaveV3Ethereum_WstETHCAPOOracleIncidentUserReimbursement_20260312.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-wsteth-capo-oracle-incident-user-reimbursement/24275)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "wstETH CAPO Oracle Incident User Reimbursement",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-wsteth-capo-oracle-incident-user-reimbursement/24275"
+  }
+}
