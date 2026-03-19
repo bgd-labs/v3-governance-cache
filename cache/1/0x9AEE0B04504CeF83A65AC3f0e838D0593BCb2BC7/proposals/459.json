@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "459",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xd3906387c86728351e01c0017fee1b489ad4bd3e0f6dec26415b49fe86efb592"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001cb",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xd3906387c86728351e01c0017fee1b489ad4bd3e0f6dec26415b49fe86efb592",
+      "blockHash": "0x98def30a30003210a71de4b1b0c9429a0ea28827d20d0cf04dd060f1554a9ec4",
+      "blockNumber": "24691006",
+      "blockTimestamp": "0x69bbd30f",
+      "transactionHash": "0x89c00841d15de7ac9f6bf58c3e520d064bdf1a87c5d89eb63f3ebbde39a5e339",
+      "transactionIndex": 184,
+      "logIndex": 630,
+      "removed": false,
+      "timestamp": 1773916943
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1773916943,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd3906387c86728351e01c0017fee1b489ad4bd3e0f6dec26415b49fe86efb592",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 415
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmcaWS1K5LuV8jdHybtkFt8waJSS5nLZawcaydXSYqksYm",
+    "description": "\n## Simple Summary\n\nThis proposal reduces Safety Module emissions and adjusts parameters for stkAAVE and stkAAVE/wstETH BPTv2, saving a combined 29,200 AAVE/year (~0.18% of total supply, ~$3.6M) while transitioning stkAAVE/wstETH BPTv2 toward sunset in favour of Protocol-Owned Liquidity.\n\n## Motivation\n\nThe general theme over the last 6 months has been to reduce AAVE emissions by shifting towards direct AAVE/ETH provisioning and ensuring future emissions are more sustainably funded via the buyback program.\n\n**stkAAVE**: The current 260 AAVE/day yields 3.69% for stkAAVE holders. The module continues to demonstrate healthy participation at 16.78% of AAVE supply staked, with strong net inflows (+98,600 in January 2026, +60,100 in February 2026). The previous reduction from 315 to 260 AAVE/day did not trigger an exodus. Reducing to 220 AAVE/day results in a 3.12% APR, continuing the proven downtrend (385 → 360 → 315 → 260 → 220). The cooldown reduction from 7 to 2 days makes stkAAVE more liquid and suitable for integrations such as CEX Earn programs and futures markets.\n\n**stkAAVE/wstETH BPTv2**: With the Aave Finance Committee (AFC) receiving additional funding via [AIP 449](https://vote.onaave.com/proposal/?proposalId=449&ipfsHash=0xb0a156896cd0f4b24828145c34c36201d03241250aacc0c1c4e49174f427fff4), additional AAVE/wETH liquidity is to be deployed that allows stkAAVE/wstETH BPTv2 to be sunset, resulting in a cost savings of 14,600 AAVE/year. By replacing the inefficient full-range 80/20-weighted pool with concentrated liquidity, the Aave DAO can facilitate swaps more capital-efficiently. Umbrella rollout provides targeted, capital-efficient protocol protection, reducing the legacy need for stkAAVE/wstETH BPTv2 as a Safety Module mechanism.\n\n## Specification\n\n| Contract             | Parameter            | Current | Proposed |\n| -------------------- | -------------------- | ------- | -------- |\n| stkAAVE              | Emissions (AAVE/day) | 260     | 220      |\n| stkAAVE              | Cooldown Period      | 7 Days  | 2 Days   |\n| stkAAVE/wstETH BPTv2 | Emissions (AAVE/day) | 40      | 0        |\n| stkAAVE/wstETH BPTv2 | Cooldown Period      | 20 Days | 0 Days   |\n| stkAAVE/wstETH BPTv2 | Slashing             | 10%     | 0%       |\n\nCombined annual emission savings: **~29,200 AAVE (~0.18% of total supply, ~$3.6M)**.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/4ccf67880287701d393bb13015b73b1ad41db29c/src/20260224_AaveV3Ethereum_ReduceSafetyModuleEmissions/AaveV3Ethereum_ReduceSafetyModuleEmissions_20260224.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/4ccf67880287701d393bb13015b73b1ad41db29c/src/20260224_AaveV3Ethereum_ReduceSafetyModuleEmissions/AaveV3Ethereum_ReduceSafetyModuleEmissions_20260224.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0xe76461b0936fc892904c1696066b9fa3688e1042078d9c9f06c1a937736a100e)\n- [Discussion](https://governance.aave.com/t/arfc-safety-module-reduce-emissions/24203)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Reduce Safety Module Emissions",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-safety-module-reduce-emissions/24203",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0xe76461b0936fc892904c1696066b9fa3688e1042078d9c9f06c1a937736a100e"
+  }
+}
