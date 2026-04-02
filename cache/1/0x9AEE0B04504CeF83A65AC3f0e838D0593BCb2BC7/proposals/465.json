@@ -1,0 +1,78 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "465",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xe0e11faae136f1455f95c2e48a9f733227b259c26af9a59d546d2db74e1fda5a"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001d1",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xe0e11faae136f1455f95c2e48a9f733227b259c26af9a59d546d2db74e1fda5a",
+      "blockHash": "0xcff8b1b1f4f2372c224f508368012046e2e3546f0787865f59c864856da91db7",
+      "blockNumber": "24790543",
+      "blockTimestamp": "0x69ce1ffb",
+      "transactionHash": "0x918c7d060fb2df1e4d7a1af13f76f1e567781bee6a89f28db79332ee438ce13e",
+      "transactionIndex": 209,
+      "logIndex": 424,
+      "removed": false,
+      "timestamp": 1775116283
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1775116283,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xe0e11faae136f1455f95c2e48a9f733227b259c26af9a59d546d2db74e1fda5a",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 425
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 140
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 117
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 103
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmdUV8kJanUctJRDkvVapU7fx7mPQ9Cf9WPu3UYFEaquFo",
+    "description": "\n## Simple Summary\n\nThis publication presents the March Funding Update, consisting of the following key activities:\n\n- Acquire GHO to support runway;\n- Consolidate assets on Ethereum and,\n- Create Allowances to support Operations.\n\n## Motivation\n\nThis publication addresses near-term operational requirements, consolidates asset holdings, and facilitates enabling the MainnetSwapSteward to utilise ETH to acquire AAVE and/or GHO to support buyback and runway initiatives.\n\nThe MainnetSwapSteward will continue executing a rolling GHO acquisition strategy to maintain adequate runway and support AAVE buybacks, while preserving sufficient budget to fund ongoing growth initiatives.\n\nReimburse TokenLogic for costs incurred facilitating the audit of two PRs intended to support the sGHO upgrade. The first PR reviewed was sGHO developed by kpk, which received updates to address outstanding comments, and a follow-up order was issued. The second PR was sGhoSteward, developed by BGD Labs to manage the rate at which GHO interest accrues on the sGho contract. The total cost of Sherlock’s audit was 24,900 USDC.\n\n## Specification\n\n### Mainnet\n\nUpdate Aave Swapper Permission\nTo support continued AAVE and GHO Buybacks, extend the following permissions to the SwapStewardContract contract.\n\nSwap From Asset: `wETH`\nSwap To Asset: `GHO`, `AAVE`, `USDC`, `USDT`\nIncrease WETH budget by 3,000 WETH\nIncrease USDT budget by 2,000,000 USDT\n\nReimburse 24,900 GHO to TokenLogic for sGHO audit expenses incurred.\n\nAsset: GHO: `0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f`\nAmount: 24,900\nSpender: TokenLogic `0xAA088dfF3dcF619664094945028d44E779F19894`\n\nDeposit idle ETH on the Collector to aWETH on Aave V3.\n\n### Polygon\n\nWith EURS trading above the peg, EURS will be withdrawn from Aave on Polygon and bridged to mainnet.\n\nCreate an Allowance that enables the AFC to receive EURS, convert it to USDC, and bridge the proceeds to Ethereum.\n\nAmount: 79,000 aEURS `0x38d693cE1dF5AaDF7bC62595A37D667aD57922e5`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\nMethod: `approve()` above assets on the Aave Collector contract to the AFC address\n\nBridge all of the following via the AavePolygonEthereumBridge:\n\n- DAI\n- WBTC\n- USDC.e\n- WETH\n\nTo support bridging assets not supported by the above, an allowance will be created, enabling the AFC to bridge the following assets from Polygon to Ethereum.\n\nAmount: 125,000 aUSDCn `0xA4D94019934D8333Ef880ABFFbF2FDd611C762BD`\nAmount: 230,000 aUSDT0 (split between v2/v3) `0x6ab707Aca953eDAeFBc4fD23bA73294241490620`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\nMethod: `approve()` the above assets on the Aave Collector contract to the AFC address\n\n### Base\n\nTo support asset bridging, an Allowance will be created, enabling the AFC to bridge the following assets from Base to Ethereum.\n\nAmount: 1,300,000 aUSDC `0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\nMethod: `approve()` the above assets on the Aave Collector contract to the AFC address\n\n### Arbitrum\n\nTo support asset bridging, an Allowance will be created, enabling the AFC to bridge the following assets from Arbitrum to Ethereum.\n\nAmount: 3,300,000 aUSDCn `0x724dc807b04555b71ed48a6896b6F41593b8C637`\nAmount: 1,300,000 aUSDT0 `0x6ab707Aca953eDAeFBc4fD23bA73294241490620`\nAmount: 37 aWstETH `0x513c7E3a9c69cA3e22550eF58AC1C0088e918FFf`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\nMethod: `approve()` the above assets on the Aave Collector contract to the AFC address.\n\nBridge all of the following via the AaveArbitrumEthereumBridge:\n\n- DAI\n- LINK\n- USDC.e\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Ethereum_MarchFundingUpdate_20260311.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Polygon_MarchFundingUpdate_20260311.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Arbitrum_MarchFundingUpdate_20260311.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Base_MarchFundingUpdate_20260311.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Ethereum_MarchFundingUpdate_20260311.t.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Polygon_MarchFundingUpdate_20260311.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Arbitrum_MarchFundingUpdate_20260311.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/561e02666549e9ed071019bcf85f68d8f143a906/src/20260311_Multi_MarchFundingUpdate/AaveV3Base_MarchFundingUpdate_20260311.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-march-2026-funding-update/24225)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "March Funding Update",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-march-2026-funding-update/24225"
+  }
+}
