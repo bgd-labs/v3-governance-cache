@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "472",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0xa8e20e98a656582b6fe588cb99bc3e72fe76bc8810407b7d7ad14fbd2003cffd"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001d8",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xa8e20e98a656582b6fe588cb99bc3e72fe76bc8810407b7d7ad14fbd2003cffd",
+      "blockHash": "0x69f7e6ca9cf7819d11a67268f4ef45799a9d7b0adb342448e1080bc641cd60fc",
+      "blockNumber": "24877271",
+      "blockTimestamp": "0x69de0f0b",
+      "transactionHash": "0xe9ad0a09219b32df56541ecf6791b0bae4c5c6994a7c41da6b2b8e746a63ebd1",
+      "transactionIndex": 315,
+      "logIndex": 410,
+      "removed": false,
+      "timestamp": 1776160523
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1776160523,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xa8e20e98a656582b6fe588cb99bc3e72fe76bc8810407b7d7ad14fbd2003cffd",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 427
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmZhu8RK4QNVe21wv4vuKVy653KQvz7NQ3JGcNEkcaKY8C",
+    "description": "\n## Simple Summary\n\nThis AIP proposes to onboard PT-USDG-28MAY2026 to the Aave V3 Core Instance on Ethereum.\n\n## Motivation\n\nWe propose onboarding PT-USDG-28MAY2026 to the Aave V3 Core Instance.\n\nThis PT token is attractive because the underlying asset is USDG, issued by Paxos, a highly regulated financial institution. This gives the market a dollar-denominated base asset with a straightforward reference point. A listing would allow users holding this Pendle maturity to access borrowing liquidity on Aave against that position, extending the utility of an already live market on Ethereum.\n\nThe relevant Pendle market is already live, which allows the asset to be evaluated against observable market activity rather than hypothetical demand. Where demand scales, onboarding can allow Aave to capture additional collateral usage and related borrowing activity around this maturity.\n\nThe underlying yield of PT-USDG has three components: a NIM rate pass-through, Paxos-denominated incentives, and PENDLE incentives. As a GDN member, Paxos passes yield to Pendle, which distributes it to YT holders via the Pendle Dashboard. PT holders capture this yield implicitly through the fixed discount at which PT is acquired, redeemable at par upon maturity.\n\n## Specification\n\n**PT-USDG-28MAY2026**: https://etherscan.io/address/0x9db38D74a0D29380899aD354121DfB521aDb0548\n\nThe table below illustrates the configured risk parameters for **PT_USDG_28MAY2026**\n\n| Parameter                      |                                      Value |\n| ------------------------------ | -----------------------------------------: |\n| Isolation Mode                 |                                      false |\n| Borrowable                     |                                   DISABLED |\n| Collateral Enabled             |                                       true |\n| Supply Cap (PT_USDG_28MAY2026) |                                 80,000,000 |\n| Borrow Cap (PT_USDG_28MAY2026) |                                          1 |\n| Debt Ceiling                   |                                      USD 0 |\n| LTV                            |                                        0 % |\n| LT                             |                                        0 % |\n| Liquidation Bonus              |                                        0 % |\n| Liquidation Protocol Fee       |                                       10 % |\n| Reserve Factor                 |                                       45 % |\n| Base Variable Borrow Rate      |                                        0 % |\n| Variable Slope 1               |                                       10 % |\n| Variable Slope 2               |                                      300 % |\n| Uoptimal                       |                                       45 % |\n| Flashloanable                  |                                   DISABLED |\n| Siloed Borrowing               |                                   DISABLED |\n| Borrowable in Isolation        |                                   DISABLED |\n| Oracle                         | 0x90498d4334259FA769830ccA9114D8bcF3745F6c |\n\n**PT-USDG Stablecoins E-mode**\n\n| Asset             | PT-USDG-28MAY2026 | USDT | USDe | USDC | USDG |\n| ----------------- | ----------------- | ---- | ---- | ---- | ---- |\n| Collateral        | Yes               | No   | No   | No   | No   |\n| Borrowable        | No                | Yes  | Yes  | Yes  | Yes  |\n| LTV               | 93.5%             | -    | -    | -    | -    |\n| LT                | 95.5%             | -    | -    | -    | -    |\n| Liquidation Bonus | 2.0%              | -    | -    | -    | -    |\n\n**Linear Discount Rate Oracle**\n\n| Parameter                  | Value                                      |\n| -------------------------- | ------------------------------------------ |\n| initialDiscountRatePerYear | 5.12%                                      |\n| maxDiscountRatePerYear     | 18.82%                                     |\n| Oracle                     | 0x90498d4334259FA769830ccA9114D8bcF3745F6c |\n\nAdditionally [0xac140648435d03f784879cd789130F22Ef588Fcd](https://etherscan.io/address/0xac140648435d03f784879cd789130F22Ef588Fcd) has been set as the emission admin for PT_USDG_28MAY2026 and the corresponding aToken.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/3d14f188c0e02756dc2df5db6b3408f098819ec0/src/20260407_AaveV3Ethereum_OnboardPTUSDG28MAY2026OnV3Core/AaveV3Ethereum_OnboardPTUSDG28MAY2026OnV3Core_20260407.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/3d14f188c0e02756dc2df5db6b3408f098819ec0/src/20260407_AaveV3Ethereum_OnboardPTUSDG28MAY2026OnV3Core/AaveV3Ethereum_OnboardPTUSDG28MAY2026OnV3Core_20260407.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0xaa29094accbcccd70088fb77dfd2800a4488319a0942b226c5699ea35d1c9e19)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-pt-usdg-28may2026-to-aave-v3-core-instance/24345/4)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard PT-USDG 28MAY2026 on V3 Core",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-pt-usdg-28may2026-to-aave-v3-core-instance/24345/4",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0xaa29094accbcccd70088fb77dfd2800a4488319a0942b226c5699ea35d1c9e19"
+  }
+}

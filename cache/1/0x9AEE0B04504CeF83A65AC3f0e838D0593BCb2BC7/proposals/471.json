@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "471",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x9cb8ea1270bc549b397bb2e95afbe43d1c2c55f52cd026150966e303244959d3"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001d7",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x9cb8ea1270bc549b397bb2e95afbe43d1c2c55f52cd026150966e303244959d3",
+      "blockHash": "0x313b045b7524e18afe6bc2cbaf215249116f3836c0e6a98cc4fc935297a01d0b",
+      "blockNumber": "24877260",
+      "blockTimestamp": "0x69de0e87",
+      "transactionHash": "0x5d64cd57c659fa5d6edac0904c021452e9d762300cf5d60cb671f5104d3926e1",
+      "transactionIndex": 154,
+      "logIndex": 388,
+      "removed": false,
+      "timestamp": 1776160391
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1776160391,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9cb8ea1270bc549b397bb2e95afbe43d1c2c55f52cd026150966e303244959d3",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "4326",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 5
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYtRrEDHNWBc88n2yZYZ8d21qBkrPaKU7Fi4apq3qdere",
+    "description": "\n## Summary\n\nThis proposal seeks to onboard USDe to the Aave V3 MegaETH instance. The asset is already established across multiple Aave deployments, and on MegaETH it is expected to support stablecoin borrowing and yield-oriented usage with an initial onchain liquidity base already seeded for the market.\n\n## Motivation\n\nUSDe has clear user demand and strategic relevance for the MegaETH deployment. Listing it would expand the stablecoin and yield-oriented collateral set available on the instance, improve market completeness early in the market’s lifecycle, and align MegaETH more closely with assets already familiar to a broad segment of DeFi users. LlamaRisk also notes that the MegaETH setup is designed so supplied USDe offers yield passthrough, making the asset functionally similar to sUSDe exposure for looping strategies without requiring a separate sUSDe listing.\n\n## Technical Specifications\n\nThis proposal recommends onboarding the following asset to the Aave V3 MegaETH instance:\n\n- USDe\n\n### Asset Configuration\n\n| Parameter                 |             USDe |\n| ------------------------- | ---------------: |\n| Isolation Mode            |               No |\n| Borrowable                |              Yes |\n| Collateral Enabled        | No (E-Mode only) |\n| Supply Cap                |       50,000,000 |\n| Borrow Cap                |       40,000,000 |\n| Debt Ceiling              |              N/A |\n| LTV                       |                — |\n| Liquidation Threshold     |                — |\n| Liquidation Bonus         |                — |\n| Liquidation Protocol Fee  |              10% |\n| Reserve Factor            |              25% |\n| Base Variable Borrow Rate |               0% |\n| Variable Rate Slope 1     |               4% |\n| Variable Rate Slope 2     |              12% |\n| Optimal Utilization       |              85% |\n\n### USDe-Stablecoins E-Mode\n\n| Parameter             | USDe | USDm | USDT0 |\n| --------------------- | ---: | ---: | ----: |\n| Collateral            |  Yes |   No |    No |\n| Borrowable            |   No |  Yes |   Yes |\n| Max LTV               |  90% |    — |     — |\n| Liquidation Threshold |  93% |    — |     — |\n| Liquidation Bonus     | 2.0% |    — |     — |\n\n### Oracle\n\n| Parameter         | Value                                                                                                 |\n| ----------------- | ----------------------------------------------------------------------------------------------------- |\n| Contract          | [PriceCapAdapterStable](https://mega.etherscan.io/address/0x6B00ffb3852E87c13b7f56660a7dfF64191180B3) |\n| Underlying Oracle | [USDT / USD](https://mega.etherscan.io/address/0xA533f4164d8d9F8C3995FC83F2f022a622d1765D)            |\n| Capped Price      | 1.04 USD                                                                                              |\n\n## References\n\n- Implementation: [AaveV3MegaEth](https://github.com/aave-dao/aave-proposals-v3/blob/95402af495b9b33a5d7672f62c29d56fe8a41dd8/src/20260409_AaveV3MegaEth_OnboardUSDeToTheAaveV3MegaETHInstance/AaveV3MegaEth_OnboardUSDeToTheAaveV3MegaETHInstance_20260409.sol)\n- Tests: [AaveV3MegaEth](https://github.com/aave-dao/aave-proposals-v3/blob/95402af495b9b33a5d7672f62c29d56fe8a41dd8/src/20260409_AaveV3MegaEth_OnboardUSDeToTheAaveV3MegaETHInstance/AaveV3MegaEth_OnboardUSDeToTheAaveV3MegaETHInstance_20260409.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-usde-to-the-aave-v3-megaeth-instance/24389)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard USDe to the Aave V3 MegaETH Instance",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-usde-to-the-aave-v3-megaeth-instance/24389"
+  }
+}
