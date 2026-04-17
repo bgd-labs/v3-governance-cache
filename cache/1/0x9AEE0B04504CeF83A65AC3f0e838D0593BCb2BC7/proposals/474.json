@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "474",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0xee9efdbd8b477dade0fc71f4285558f64628c0f38943c2dfd21462a59e37f993"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001da",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xee9efdbd8b477dade0fc71f4285558f64628c0f38943c2dfd21462a59e37f993",
+      "blockHash": "0xeebb28d8ffaa1af10a93d251209acc2d60af7dd9d3a0d75b302f8b8b6095baf6",
+      "blockNumber": "24902410",
+      "blockTimestamp": "0x69e2acab",
+      "transactionHash": "0x22d0981fd0bd69f3426ea446901a590c3c61f66992ce97b3061cd308553d3a79",
+      "transactionIndex": 142,
+      "logIndex": 628,
+      "removed": false,
+      "timestamp": 1776463019
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1776463019,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xee9efdbd8b477dade0fc71f4285558f64628c0f38943c2dfd21462a59e37f993",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 23
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmeQ8MVoFkSDa4fiNi7CigtKyc7sYYD6HjeNv1ArzGVHai",
+    "description": "\n## Simple Summary\n\nChaos Labs proposed the following change to be implemented through AIP:\n\n- Include GHO within the PT asset E-modes on the Plasma Instance\n\nThe supply cap increases included in this proposal (PT-sUSDe-18JUN2026 on Plasma, PT-srUSDe-25JUN2026 on Ethereum Core, wrsETH and FBTC on Mantle) will be executed via Risk Stewards and are not part of this AIP.\n\n## Specification\n\nFollowing the listing of the assets, we recommend the addition of GHO as a borrowable asset in the PT-sUSDe-18JUN2026/Stablecoins E-mode and in the PT-USDe-18JUN2026/Stablecoins E-mode.\n\n**PT-sUSDe-18JUN2026/Stablecoins E-mode**\n\n| **Asset**         | GHO |\n| ----------------- | --- |\n| Collateral        | No  |\n| Borrowable        | Yes |\n| LTV               | -   |\n| LT                | -   |\n| Liquidation Bonus | -   |\n\n**PT-USDe-18JUN2026/Stablecoins E-mode**\n\n| **Asset**         | GHO |\n| ----------------- | --- |\n| Collateral        | No  |\n| Borrowable        | Yes |\n| LTV               | -   |\n| LT                | -   |\n| Liquidation Bonus | -   |\n\n## Disclosure\n\nChaos Labs has not been compensated by any third party for publishing this recommendation.\n\n## References\n\n- Implementation: [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/b71ecc8dadda5ad22b3edcd2b9ee3b45a0788d5f/src/20260410_Multi_ChangeOfSupplyCapsAndEModeAdjustments/AaveV3Plasma_ChangeOfSupplyCapsAndEModeAdjustments_20260410.sol)\n- Tests: [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/b71ecc8dadda5ad22b3edcd2b9ee3b45a0788d5f/src/20260410_Multi_ChangeOfSupplyCapsAndEModeAdjustments/AaveV3Plasma_ChangeOfSupplyCapsAndEModeAdjustments_20260410.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-change-of-supply-caps-and-adjustment-of-e-mode-assets-on-aave-v3-07-04-26/24396)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "GHO Inclusion into E-Modes on Aave V3 Plasma",
+    "author": "Chaos Labs (implemented by Aavechan Initiative @aci via Skyward)",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-change-of-supply-caps-and-adjustment-of-e-mode-assets-on-aave-v3-07-04-26/24396"
+  }
+}
