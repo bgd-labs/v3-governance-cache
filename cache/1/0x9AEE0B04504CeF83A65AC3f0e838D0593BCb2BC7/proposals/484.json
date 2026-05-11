@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "484",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0xd128a32c304f7a258b12cb167a58723c773dd5cec003298e8a2393b3f2a7c037"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e4",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xd128a32c304f7a258b12cb167a58723c773dd5cec003298e8a2393b3f2a7c037",
+      "blockHash": "0x6992efdc8eee93179ba818886164c477b699088b047844932ad06ac68cbc568f",
+      "blockNumber": "25073410",
+      "blockTimestamp": "0x6a02144b",
+      "transactionHash": "0x0ef64597f44c31cac3c9cd765d07e17a47c5fff9dca52c1ae085f180d1f2221a",
+      "transactionIndex": 200,
+      "logIndex": 547,
+      "removed": false,
+      "timestamp": 1778521163
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1778521163,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd128a32c304f7a258b12cb167a58723c773dd5cec003298e8a2393b3f2a7c037",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 435
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmcR7rjXcDTqhznb3ceox782kxefYDtrXkLa1HE34C4pW2",
+    "description": "\n## Simple Summary\n\nThis publication provides an overview of the new native on-chain yield-accruing sGHO savings product upgrade. Within, we define the initial parameter configuration, present the migration process from the current sGHO (stkGHO rebranded), and introduce the new sGHO admin steward role.\n\nThe proposal sets a fixed Aave Savings Rate (ASR) of `4.25% APR` (50 basis points above the Sky Savings Rate), refines the boost program from 8 boosts to 1 transitional boost, establishes the sGHO Steward as the rate governance mechanism, and defines an aggressive migration schedule from the legacy sGHO contract.\n\n## Motivation\n\nGHO has reached an all-time high circulating supply of 404.7M across eight chains, with sGHO deposits totalling 304.6M. This growth, driven primarily by the @ACI powered savings product, validates the demand for a yield-bearing GHO instrument. The Aave Team has done a tremendous job managing the Merit-based reward system that fuelled this trajectory.\n\nHowever, the current sGHO implementation presents structural limitations that constrain further growth:\n\nComposability unlock. The current Merit-based distribution, while highly effective for bootstrapping, relies on an off-chain reward model, making it difficult for external protocols to integrate natively. Moving to ERC-4626 means yield accrues directly in the share-to-asset conversion rate, making sGHO instantly composable across DeFi lending protocols, yield aggregators, and centralised exchanges.\n\nStreamlined yield story. The eight-boost system ACI designed was instrumental in driving targeted behaviours during the growth phase. With sGHO now at scale, consolidating seven of those boosts into the native rate creates a simpler, more legible value proposition for the next wave of integrators and depositors, while retaining one strategic boost to continue rewarding core Aave ecosystem alignment.\n\nFrictionless onboarding. The introduction of the GhoRouter contract eliminates multi-step conversion friction. Users can go from USDC to sGHO in a single transaction, dramatically lowering the barrier to entry for new depositors and enabling seamless integration paths for partners.\n\nMarket opportunity. With the Sky Savings Rate at 3.75% APR and broader DeFi yields compressed, a competitive fixed rate positions sGHO to absorb significant stablecoin demand. At the current sGHO deposit base of ~305M, incoming large allocations would compress the Merit-based yield from ~4.68% to approximately 3.70% at a deposit base of 385 M. Setting the native rate at 4.25% APR provides a clear premium over the competing sUSDS product while remaining sustainable within the DAO’s revenue framework and other yield products in this rate environment.\n\n## Specification\n\n| Parameter                    | Value                                             |\n| ---------------------------- | ------------------------------------------------- |\n| Target Rate (ASR)            | 4.25% APR (425 basis points)                      |\n| Rate Type                    | Fixed                                             |\n| Sky Savings Rate (reference) | 3.75% APR                                         |\n| Premium over SSR             | 50 basis points                                   |\n| Steward Formula              | amplification = 0, floatRate = 0, fixedRate = 425 |\n| Maximum Rate (contract cap)  | 50% APR (5,000 bps)                               |\n| Supply Cap                   | 400,000,000                                       |\n| Pause Guardian               | 0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30        |\n\nCreate a 10M Allowance of GHO from the Collector to the AFC SAFE in order to handle rewards distribution.\n\nGrant the sGho PAUSE_GUARDIAN_ROLE to the PROTOCOL_GUARDIAN SAFE.\nGrant the sGho YIELD_MANAGER_ROLE to the sGhoSteward contract.\n\nGrant the sGhoSteward FIXED_RATE_MANAGER_ROLE to the Governance LVL 1 Executor.\nGrant the sGhoSteward SUPPLY_CAP_MANAGER_ROLE to the Governance LVL 1 Executor.\nGrant the sGho TOKEN_RESCUER_ROLE to the Governance LVL 1 Executor.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/6c017b9eadccd099dfe4d9d8491833cb69305de9/src/20260427_AaveV3Ethereum_SGhoLaunch/AaveV3Ethereum_SGhoLaunch_20260427.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/6c017b9eadccd099dfe4d9d8491833cb69305de9/src/20260427_AaveV3Ethereum_SGhoLaunch/AaveV3Ethereum_SGhoLaunch_20260427.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0xb9e9b01efcf6151bade78546d0f51f11d7961939b649fb7717e82ea3d43d4f47)\n- [Discussion](https://governance.aave.com/t/arfc-sgho-launch-configuration/24346)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "sGho Launch",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-sgho-launch-configuration/24346",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0xb9e9b01efcf6151bade78546d0f51f11d7961939b649fb7717e82ea3d43d4f47"
+  }
+}

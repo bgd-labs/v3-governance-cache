@@ -1,0 +1,108 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "483",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0xc96375d0b7a0d7daa767f0c64c420e1a2e27b36baa56ad8b850d1e91ceba2504"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e3",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xc96375d0b7a0d7daa767f0c64c420e1a2e27b36baa56ad8b850d1e91ceba2504",
+      "blockHash": "0x3142e764e40a889b583a7187dd46cb22ea4f00b289da073a314c25d84f898e82",
+      "blockNumber": "25073405",
+      "blockTimestamp": "0x6a02140f",
+      "transactionHash": "0x717ced8b5fa3085e52da1000def40f329be42d8818b2406cad360530647eaf85",
+      "transactionIndex": 148,
+      "logIndex": 497,
+      "removed": false,
+      "timestamp": 1778521103
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1778521103,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xc96375d0b7a0d7daa767f0c64c420e1a2e27b36baa56ad8b850d1e91ceba2504",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 436
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 143
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 114
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 127
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 107
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 75
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 58
+      },
+      {
+        "chain": "59144",
+        "accessLevel": 1,
+        "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074",
+        "payloadId": 26
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 26
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmbtncucxeDrV7yWqDnwFPfaUYmWYe4URQbvmRRo9kuEuR",
+    "description": "\n## Simple Summary\n\nThis proposal seeks to register Aave Swap Adapter factories as approved flash borrowers across relevant Aave V3 instances, enabling them to access flash liquidity with zero flash loan fees.\n\nThis change improves execution quality for users interacting through Aave’s swap flows by removing an internal protocol fee that currently adds avoidable cost to adapter-based routing.\n\n## Motivation\n\nAave swap adapters support collateral swaps and related position management flows inside the Aave experience. When a route requires flash liquidity, the flash loan premium is embedded directly in execution. That reduces output on collateral and debt swaps, and prolongs the payback period of debt swaps, which weakens the Aave route against external alternatives.\n\nWhitelisting the CoW Swap Adapter factory removes that cost across the covered Aave V3 instances. CoW Swap Adapter routes that rely on flash liquidity will execute without a flash loan fee. Users will experience improved collateral and debt swap pricing on Aave V3. With better swap pricing, the Aave interface should retain more swap flow, especially debt swaps, within the Aave experience. Under the Aave Will Win Framework, the DAO is positioned to capture all revenue from that activity.\n\n## Specification\n\nThe Aave DAO would authorize the registration of the relevant Aave swap adapter contracts as approved flash borrowers through the ACLManager.addFlashBorrower function on the applicable Aave V3 deployments.\n\nOnce registered, these adapters would be exempt from flash loan fees when using flash liquidity through the approved path.\n\nThe proposal payload would:\n\nidentify the swap adapter factory contract addresses to be registered\n\ncall addFlashBorrower for each factory on the relevant markets\n\nCoW Swap Adapter Factory address\n\nThe CoW Swap Adapter Factory address to whitelist is: 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192\n\nAave V3 instances included in scope\n\nThe payload will register 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 as an approved flash borrower on the following Aave V3 instances:\n\n| Market        | Adapter Factory Address                    |\n| ------------- | ------------------------------------------ |\n| Ethereum Core | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Base          | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Arbitrum      | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Gnosis        | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Avalanche     | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| BNB Chain     | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Polygon       | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Linea         | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n| Plasma        | 0xdeCC46a4b09162F5369c5C80383AAa9159bCf192 |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Ethereum_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Polygon_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Avalanche_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Arbitrum_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Base_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Gnosis_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3BNB_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Linea](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Linea_AddCoWFactoriesToFlashBorrowers_20260506.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Plasma_AddCoWFactoriesToFlashBorrowers_20260506.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Ethereum_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Polygon_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Avalanche_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Arbitrum_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Base_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Gnosis_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3BNB_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Linea](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Linea_AddCoWFactoriesToFlashBorrowers_20260506.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/fbb90bac5436f5e69a03b605fd3465eb7182b133/src/20260506_Multi_AddCoWFactoriesToFlashBorrowers/AaveV3Plasma_AddCoWFactoriesToFlashBorrowers_20260506.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/direct-to-aip-whitelist-cow-protocol-adapters-as-flash-borrowers-on-aave-v3/24467)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Add CoW Swap Adapters to flashBorrowers",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-whitelist-cow-protocol-adapters-as-flash-borrowers-on-aave-v3/24467"
+  }
+}
