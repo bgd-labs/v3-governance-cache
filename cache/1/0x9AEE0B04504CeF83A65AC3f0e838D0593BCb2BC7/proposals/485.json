@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "485",
+        "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+        "accessLevel": 1,
+        "ipfsHash": "0x50a8e9d7fae094f46526db2ef3593ca6217ac7b16601463d2a188e7b588b735b"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e5",
+        "0x00000000000000000000000057ab7ee15ce5ecacb1ab84ee42d5a9d0d8112922",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x50a8e9d7fae094f46526db2ef3593ca6217ac7b16601463d2a188e7b588b735b",
+      "blockHash": "0xf48b5331c40361ad4dc1a606560d96c77781a19fa5eb20c49bfcb4f93fb8319d",
+      "blockNumber": "25095559",
+      "blockTimestamp": "0x6a0626a7",
+      "transactionHash": "0x9bf7f623cb3b397c53c77f5a98c467c0b2ef7417fb5d1b4beab85610e83297a0",
+      "transactionIndex": 192,
+      "logIndex": 395,
+      "removed": false,
+      "timestamp": 1778788007
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1778788007,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x57ab7ee15cE5ECacB1aB84EE42D5A9d0d8112922",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x50a8e9d7fae094f46526db2ef3593ca6217ac7b16601463d2a188e7b588b735b",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 439
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTmWiKhYGYy4nrzMzDJvMFpUxB6NY5ZjKX9y4hUeg3zMp",
+    "description": "\n## Simple Summary\n\nFollow-up payload to the orderly offboarding of Chaos Labs. This AIP cancels the outstanding payment stream `100073` on the Aave Prime collector. No other state is modified.\n\n## Context\n\nThe original offboarding payload (AIP-479) was unable to execute its mainnet portion in full, leaving stream `100073` active beyond the agreed offboarding window. Concurrently, the receiving address is no longer considered under Chaos Labs' operational control, and at Chaos Labs' request the offboarding is being completed via a direct stream cancellation rather than a continued transfer.\n\nThis AIP performs that single action so the offboarding can be closed out cleanly.\n\n## Specification\n\nCancel stream `100073` on the [Aave Prime collector](https://etherscan.io/address/0x464C71f6c2F760DdA6093dCB91C24c39e5d6e18c#writeProxyContract#F2) by calling `cancelStream(100073)`.\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/6a214860aac06928694f38045d18e48c0d444a31/src/20260507_AaveV3EthereumLido_OffboardingPlanForChaosLabsPart3CancelStream/AaveV3EthereumLido_OffboardingPlanForChaosLabsPart3CancelStream_20260513.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/6a214860aac06928694f38045d18e48c0d444a31/src/20260507_AaveV3EthereumLido_OffboardingPlanForChaosLabsPart3CancelStream/AaveV3EthereumLido_OffboardingPlanForChaosLabsPart3CancelStream_20260513.t.sol)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/orderly-transition-and-offboarding-plan-for-chaos-labs/24399)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Offboarding Plan for Chaos Labs part 3: Cancel stream 100073",
+    "author": "ChaosLabs (performed by Skyward)",
+    "discussions": "https://governance.aave.com/t/orderly-transition-and-offboarding-plan-for-chaos-labs/24399"
+  }
+}
