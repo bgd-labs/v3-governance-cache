@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "486",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0xc378d6152053431740328367b9a1cf8a141afa40797fef28ad8b2978592d3624"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e6",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xc378d6152053431740328367b9a1cf8a141afa40797fef28ad8b2978592d3624",
+      "blockHash": "0x723de17c29f5966d748e2d2fc31590df5f1ee16f6a9ed86223b1d479c3418adc",
+      "blockNumber": "25121703",
+      "blockTimestamp": "0x6a0af3cf",
+      "transactionHash": "0x3ce356cfc57b4b7b5c53f5fd247134a22c58681503f59423dfe4fcd1f323f846",
+      "transactionIndex": 226,
+      "logIndex": 811,
+      "removed": false,
+      "timestamp": 1779102671
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1779102671,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xc378d6152053431740328367b9a1cf8a141afa40797fef28ad8b2978592d3624",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 440
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmbVh5XLsh5wjHddYQeJPQztqjZVd9ep6kStERYhSJaEJX",
+    "description": "\n## Simple Summary\n\nIncrease the AAVE allowance for the Safety Module **stkAAVE** to extend rewards distribution by **90 days** while keeping the current emission rate unchanged.\n\n## Motivation\n\nThe current stkAAVE allowance from the Ecosystem Reserve is approaching depletion. This proposal renews the allowance to ensure uninterrupted reward distribution for stakers.\n\n**Note:** **stkAAVE is not being phased out**; it will be **repurposed** into a **no-risk staking (dividend yield) contract**.\n\n## Specification\n\n- **Target module:** Safety Module stake token **stkAAVE** (`AaveSafetyModule.STK_AAVE`).\n- **Emission rate:** Unchanged; the payload reads the current `emissionPerSecond` on-chain.\n- **Allowance adjustment (funding):** Reset and set the AAVE allowance from the **Ecosystem Reserve** to cover **remaining allowance** + **90 days** of future emissions:\n  - `allowance = currentAllowance + (emissionPerSecond * 90 days)`\n- **No other changes:** This payload does **not** modify stkAAVE emission rates, cooldown parameters, slashing parameters, or any other Safety Module settings.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/1ef919d00c1f8c86fcebfbe4d5878d6627a1bcb1/src/20260505_AaveV3Ethereum_ExtendStkAAVEEmissions/AaveV3Ethereum_ExtendStkAAVEEmissions_20260505.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/1ef919d00c1f8c86fcebfbe4d5878d6627a1bcb1/src/20260505_AaveV3Ethereum_ExtendStkAAVEEmissions/AaveV3Ethereum_ExtendStkAAVEEmissions_20260505.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x0f73500d0f65c72482d352080ea9aa0aa92264eb059b8f646cf6f0e86556bc3d)\n- [Discussion](https://governance.aave.com/t/arfc-amend-safety-module-emissions/16640/52)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Extend stkAAVE Emissions",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-amend-safety-module-emissions/16640/52",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x0f73500d0f65c72482d352080ea9aa0aa92264eb059b8f646cf6f0e86556bc3d"
+  }
+}
