@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "488",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x6d81dd9fc20a79167fa58571ee5738f5b745d21e4855cc42215e792fa537bef9"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e8",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x6d81dd9fc20a79167fa58571ee5738f5b745d21e4855cc42215e792fa537bef9",
+      "blockHash": "0x5f6a758ef6c9d526b41ddead003cb5f2537768abfc2d6a0c7ef1b0e9b4f5eb5a",
+      "blockNumber": "25150094",
+      "blockTimestamp": "0x6a102adb",
+      "transactionHash": "0x702f505580a60d2769479788a9a40ca5667af378a0dc9a2177148167d77e43ff",
+      "transactionIndex": 123,
+      "logIndex": 728,
+      "removed": false,
+      "timestamp": 1779444443
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1779444443,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x6d81dd9fc20a79167fa58571ee5738f5b745d21e4855cc42215e792fa537bef9",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 443
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmVi816eFnuiiQczAHjbyaT2aVYG2nyvQ5JJffXuHnHPaQ",
+    "description": "\n## Simple Summary\n\nThis AIP renews LlamaRisk as a Risk Service Provider for Aave for one year.\n\nAave’s risk layer recently lost critical infrastructure operated by a departing risk provider, including automated risk-oracle infrastructure, parameter automation pipelines, and Risk Steward coverage. LlamaRisk stepped in with Aave Labs to assume control of the Risk Steward and maintain operational continuity across Aave markets.\n\nThe immediate issue is continuity.\n\nThe structural issue is ensuring Aave does not depend on risk infrastructure the DAO cannot inspect, verify, or replace without disruption.\n\nThis renewal expands LlamaRisk’s scope across Aave V3, Aave V4, and Horizon, with a focus on protocol-owned risk infrastructure built on Chainlink CRE. This moves Aave’s risk layer toward infrastructure owned and controlled by the DAO, with off-chain logic independently verifiable through cryptographic workflow IDs.\n\nLlamaRisk will deliver:\n\n- Protocol-owned risk infrastructure on Chainlink CRE.\n- Risk-managed price feeds for Pendle PTs, CAPO assets, USDe, RWA NAV, and related integrations.\n- Dynamic parameter automation for supply caps, borrow caps, interest rates, Umbrella calibration, credit lines, risk premiums, and liquidation configuration.\n- Safety mechanisms including freeze guardians and V4 per-Spoke circuit breakers.\n- Risk Steward co-ownership and operational accountability.\n- AIP and governance payload review.\n- Guardian signer duties.\n- Monitoring, dashboards, escalation playbooks, and incident response support.\n- Continued Horizon cooperation and LlamaGuard NAV expansion.\n- R&D for V4-native risk systems, including RWA liquidation infrastructure and instant settlement infrastructure.\n- Legal and regulatory research covering stablecoins, custody, counterparty risk, DeFi lending compliance, and tokenized RWA structuring.\n\nLlamaRisk is currently a team of 16 contributors and expects to scale to 20+ contributors during this engagement. LlamaRisk also proposes to phase out remaining non-Aave work over six months and become Aave-exclusive by the midpoint of the engagement.\n\nThe approved compensation structure is:\n\n| Component        |        Amount | Payment Method              |\n| ---------------- | ------------: | --------------------------- |\n| Upfront payment  | 1,500,000 GHO | Immediate payment           |\n| Streamed payment | 1,500,000 GHO | Linear stream over one year |\n| Streamed payment |    5,000 AAVE | Linear stream over one year |\n\nThe current GHO stream with ID `100071` will be terminated.\n\n## Motivation\n\nThis proposal renews LlamaRisk as a Risk Service Provider for Aave following DAO discussion and Snapshot approval.\n\nLlamaRisk’s role has expanded beyond its original mandate and now covers risk work across Aave V3, Aave V4, Horizon, governance review, market monitoring, Guardian signer duties, and protocol-owned risk infrastructure.\n\nThe renewal also addresses a near-term continuity need. With a departing risk provider no longer covering critical risk infrastructure and operational processes, the DAO needs to maintain coverage across active markets while reducing reliance on closed systems that are difficult for the DAO to inspect, verify, or replace.\n\nUnder this engagement, LlamaRisk will continue supporting Aave risk operations and contribute to protocol-owned risk infrastructure, including Chainlink CRE-based risk oracles, dynamic parameter tooling, LlamaGuard expansion, V4-native risk systems, and Horizon-related risk work.\n\nThe full scope, rationale, and budget were discussed through the ARFC process and approved by Snapshot. This AIP implements the approved renewal terms.\n\n## Specification\n\nThe payload performs the following actions on Ethereum mainnet:\n\n- Cancel the existing GHO stream (ID `100071`) on `AaveV3EthereumLido.COLLECTOR`.\n- Transfer `1,500,000 aEthLidoGHO` from `AaveV3EthereumLido.COLLECTOR` to the LlamaRisk-controlled multisig at `0x9eE16dBDE572886342fc1e2Db8525DEFB007b27c`.\n- Create a new `aEthLidoGHO` stream of `1,500,000` over `365 days` to the same recipient, via `CollectorUtils.stream()` on `AaveV3EthereumLido.COLLECTOR`.\n- Create a new `AAVE` stream of `5,000` over `365 days` to the same recipient, via `AAVE_ECOSYSTEM_RESERVE_CONTROLLER.createStream()` on `MiscEthereum.ECOSYSTEM_RESERVE`. The stream amount is rounded down to the nearest multiple of the duration to avoid revert in the underlying controller.\n\n## References\n\n- Implementation: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/431d25eaf61d370e0781164e7174f32c2d9977b6/src/20260513_AaveV3EthereumLido_RenewLlamaRiskAsRiskServiceProviderEpoch4/AaveV3EthereumLido_RenewLlamaRiskAsRiskServiceProviderEpoch4_20260513.sol)\n- Tests: [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/431d25eaf61d370e0781164e7174f32c2d9977b6/src/20260513_AaveV3EthereumLido_RenewLlamaRiskAsRiskServiceProviderEpoch4/AaveV3EthereumLido_RenewLlamaRiskAsRiskServiceProviderEpoch4_20260513.t.sol)\n- Snapshot: https://snapshot.box/#/s:aavedao.eth/proposal/0x139144f55e87579003f5f9ed53fc4b87bd0c7312fc9c356e5e4e164baa3f8077\n- [Discussion](https://governance.aave.com/t/arfc-renew-llamarisk-as-risk-service-provider-epoch-4/24446)\n\n## Disclaimer\n\nLlamaRisk receives compensation from the Aave DAO for serving as a Risk Service Provider, as specified in this proposal.\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Renew LlamaRisk as Risk Service Provider - Epoch 4",
+    "author": "LlamaRisk",
+    "discussions": "https://governance.aave.com/t/arfc-renew-llamarisk-as-risk-service-provider-epoch-4/24446",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x139144f55e87579003f5f9ed53fc4b87bd0c7312fc9c356e5e4e164baa3f8077"
+  }
+}
