@@ -1,0 +1,151 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "489",
+        "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+        "accessLevel": 1,
+        "ipfsHash": "0x1771282791a2769a488791be8160020ac408bc74fa67ca7f107cab87a730b240"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001e9",
+        "0x000000000000000000000000f71fc92e2949ccf6a5fd369a0b402ba80bc61e02",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x1771282791a2769a488791be8160020ac408bc74fa67ca7f107cab87a730b240",
+      "blockHash": "0xc9575df613d651d7763bc685825d6a60d6d894888ab7c8a236d1c4ba7b37cabc",
+      "blockNumber": "25163952",
+      "blockTimestamp": "0x6a12b68f",
+      "transactionHash": "0xe9105ad53cdeed4589c6a3cb1c24480a9840626c9b009ba84c355eaff904aa8c",
+      "transactionIndex": 157,
+      "logIndex": 459,
+      "removed": false,
+      "timestamp": 1779611279
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1779611279,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0xf71fc92e2949ccF6A5Fd369a0b402ba80Bc61E02",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x1771282791a2769a488791be8160020ac408bc74fa67ca7f107cab87a730b240",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 442
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 145
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 116
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 129
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 95
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 109
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 59
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 53
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 77
+      },
+      {
+        "chain": "59144",
+        "accessLevel": 1,
+        "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074",
+        "payloadId": 29
+      },
+      {
+        "chain": "146",
+        "accessLevel": 1,
+        "payloadsController": "0x0846C28Dd54DEA4Fd7Fb31bcc5EB81673D68c695",
+        "payloadId": 14
+      },
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 12
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 28
+      },
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 7
+      },
+      {
+        "chain": "4326",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 7
+      },
+      {
+        "chain": "196",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 4
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmPvAAQro5vAvaTJmDXQMXMgyTbEPkncsyvb6hNd8mjqFd",
+    "description": "\n## Simple Summary\n\nUpgrade the Aave protocol instances from v3.6 to v3.7\n\n## Motivation\n\nAave v3.7 focused on non-invasive simplification of the protocol. It includes the following changes and features:\n\n- Simplification of eModes’ configuration, adding an isolated flag.\n- Removal of isolated collaterals and borrowable in isolation, features not useful anymore.\n- Removal of the L2 sequencer oracle.\n- Explicit removal of the flow to drop reserves, making the reserves list append-only.\n- Small improvements on liquidation calculations.\n\n## Specification\n\nBefore upgrading the implementations, the payload cleans up reserve configuration flags and settings that are removed in v3.7. For each reserve:\n\n- Reset `debtCeiling`: If a reserve has a non-zero debt ceiling, it is set to zero via `setDebtCeiling(reserve, 0)`. This also resets `isolationModeTotalDebt` to zero.\n- Disable `borrowableInIsolation`: If a reserve has `borrowableInIsolation` enabled, it is set to false via `setBorrowableInIsolation(reserve, false)`.\n- Additionally, if a sequencer uptime price oracle sentinel is configured, it is unset via `setPriceOracleSentinel(address(0))`, as this feature is removed in v3.7.\n\nAfter the cleanup, the payload upgrades the core protocol contracts:\n\n- Upgrade `Pool` implementation: The `Pool` contract proxy is updated to point to the new v3.7 implementation via POOL_ADDRESSES_PROVIDER.setPoolImpl(POOL_IMPL).\n- Upgrade `PoolConfigurator` implementation: The `PoolConfigurator contract proxy is updated to the new v3.7 implementation via POOL_ADDRESSES_PROVIDER.setPoolConfiguratorImpl(POOL_CONFIGURATOR_IMPL).\n\nPart 2 is applied on the following networks: **Ethereum (Core, Lido), Polygon, Avalanche, Arbitrum, Base, BNB, Linea, Plasma and Mantle**.\n\nAlongside the v3.7 implementation upgrade, this proposal also replaces the current RiskSteward with a newly deployed steward compatible with v3.7. As part of the transition, the existing stewards will have their RISK_ADMIN role revoked on the corresponding ACL_MANAGER, and the new stewards will be granted the role via:\n\n- `ACL_MANAGER.addRiskAdmin(NEW_RISK_STEWARD)`\n- `ACL_MANAGER.removeRiskAdmin(OLD_RISK_STEWARD)`\n\nThe new stewards are wired in across the following instances: **Ethereum (Core, Prime, EtherFi), Polygon, Avalanche, Arbitrum, Optimism, Base, BNB, Scroll, Gnosis, Linea, Sonic, Celo, Plasma, Mantle, MegaEth, XLayer**.\n\nAdditionally, on the instances where GHO is listed as a reserve, GHO is blacklisted on the new RiskSteward via `setAddressRestricted(GHO_UNDERLYING, true)`, since GHO is managed by its own dedicated stewards. The instances where this is applied are: **Ethereum Core, Ethereum Prime, Arbitrum, Avalanche, Base, Gnosis, Mantle, Plasma and XLayer**.\n\nThe original proposal has been reviewed by `Certora` at [be21f7354a7e378393515ffd4ebf2d60ca2fcea0](https://github.com/aave-dao/aave-proposals-v3/commit/be21f7354a7e378393515ffd4ebf2d60ca2fcea0).\nSince than it has been amended with the RiskSteward migration, which has been reviewed by `Certora` as well.\nThe proposal diff can be found [here](https://github.com/aave-dao/aave-proposals-v3/blob/0dbee921b36e1ea10ce8c43f4ee6e7971e6c9992/src/20260331_Multi_UpgradeAaveInstancesToV37Part2/git.diff).\n\n## References\n\n- [Implementation](https://github.com/bgd-labs/protocol-v3.7-upgrade/blob/main/src/UpgradePayload.sol)\n- [Tests](https://github.com/bgd-labs/protocol-v3.7-upgrade/tree/main/test)\n- [Diffs](https://github.com/bgd-labs/protocol-v3.7-upgrade/tree/main/diffs/code)\n- [Snapshot](https://snapshot.org/#/aavedao.eth/proposal/0x2cdd27eda22b36ddde2303c3d69859f74b330eb93661e632700d18c6095335a8)\n- [Discussion](https://governance.aave.com/t/arfc-bgd-aave-v3-7/24075)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Upgrade Aave instances to v3.7 Part 2",
+    "author": "BGD Labs @bgdlabs",
+    "discussions": "https://governance.aave.com/t/arfc-bgd-aave-v3-7/24075",
+    "snapshot": "https://snapshot.org/#/aavedao.eth/proposal/0x2cdd27eda22b36ddde2303c3d69859f74b330eb93661e632700d18c6095335a8"
+  }
+}
