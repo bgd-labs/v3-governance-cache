@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0 (2025-05-23)
+
+
+### Bug Fixes
+
+* bump version ([e6601e9](https://github.com/bgd-labs/v3-governance-cache/commit/e6601e9a38b7ef721231182fdd4a6bfad6b79243))
+* bump version ([4cd7d24](https://github.com/bgd-labs/v3-governance-cache/commit/4cd7d24d5a5153905457543b60c7bb989e94ec97))
+* update rpc-env ([604402a](https://github.com/bgd-labs/v3-governance-cache/commit/604402abe9a35839fb1d091579a48491c89efdcf))
+* update type ([3affe99](https://github.com/bgd-labs/v3-governance-cache/commit/3affe99ccff8e5fd159c60c46726c9ea16fc5a76))
+
 ## [1.0.10](https://github.com/bgd-labs/v3-governance-cache/compare/v1.0.9...v1.0.10) (2025-01-28)
 
 
