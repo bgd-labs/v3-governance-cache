@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "490",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x46e10e1e687d1ccaac0c671378f02cb8cdac18649fa0351d1ad428c8b69d1809"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ea",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x46e10e1e687d1ccaac0c671378f02cb8cdac18649fa0351d1ad428c8b69d1809",
+      "blockHash": "0x10f7d17ef461e86aaf149b2010b0c5c70046e8cc4002606d88078c032cb262f7",
+      "blockNumber": "25235727",
+      "blockTimestamp": "0x6a1fe877",
+      "transactionHash": "0x3e77b94aafb2f85b239af23a89daa495b4997ebc5ee0492114596f1788672df8",
+      "transactionIndex": 267,
+      "logIndex": 713,
+      "removed": false,
+      "timestamp": 1780476023
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1780476023,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x46e10e1e687d1ccaac0c671378f02cb8cdac18649fa0351d1ad428c8b69d1809",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 444
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmT7LHg63WfJS8bwjXzEepSq31vD9b9TeEGamVLumBr752",
+    "description": "\n## Simple Summary\n\nThis proposal grants the Aave Labs multisig the RETRY_GUARDIAN role on a.DI’s granular access controls.\n\nRecipient: 0x4Ab2Bed1d667260dB34244Ba412817651C2dD52b\n\n## Motivation\n\na.DI is the cross-chain delivery layer used by Aave governance to route approved governance actions from Ethereum to other networks.\n\nAs Aave governance expands across more networks, message delivery operations become more important. The RETRY_ROLE allows a technical operator to retry messages that were already sent through a.DI if a message does not arrive, or to route an already-sent message through another configured bridge adapter if one of the selected providers fails.\n\nGranting this role to Aave Labs improves operational coverage for governance message delivery while keeping control of governance actions with the DAO.\n\n## Specification\n\nIf approved, this proposal will grant the RETRY_ROLE on a.DI to the Aave Labs multisig:\n\nAave Labs multisig: 0x4Ab2Bed1d667260dB34244Ba412817651C2dD52b\n\nThe role will be used by Aave Labs as a technical service provider to support retry operations for already-sent a.DI messages when needed.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/054088a94887aace379859dd7e4cdf985e1dddbf/src/20260602_AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI_20260602.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/054088a94887aace379859dd7e4cdf985e1dddbf/src/20260602_AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI_20260602.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-grant-aave-labs-retry-role-on-a-di/25020)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Maintenance: Grant AL RETRY_ROLE on a.DI",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-grant-aave-labs-retry-role-on-a-di/25020"
+  }
+}
