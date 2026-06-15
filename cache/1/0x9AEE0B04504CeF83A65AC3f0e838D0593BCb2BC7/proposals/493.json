@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "493",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x34ff9f11fe33c0d09b4ed35dc48e17135d2997993e55bb147580c36df9540f05"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ed",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x34ff9f11fe33c0d09b4ed35dc48e17135d2997993e55bb147580c36df9540f05",
+      "blockHash": "0x9235befcc594cc1dfada56ba95a2ac1af2fcaafa51dedb3698d9583830b1639c",
+      "blockNumber": "25323224",
+      "blockTimestamp": "0x6a2fff0b",
+      "transactionHash": "0x86933e3b27e71d88e14e2bc2b773a65927995b63efa2c20b68e6c4e066e16372",
+      "transactionIndex": 10,
+      "logIndex": 107,
+      "removed": false,
+      "timestamp": 1781530379
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1781530379,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x34ff9f11fe33c0d09b4ed35dc48e17135d2997993e55bb147580c36df9540f05",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 30
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmRuXywuWCbyU1htAEBrsDTuJyFryMHModNBckVrdw8GS8",
+    "description": "\n## Simple Summary\n\nThis proposal seeks to onboard PT-sUSDe-22OCT2026 to the Aave V3 Plasma Instance.\n\n## Motivation\n\nGiven the established adoption of PT-sUSDe collateral on Aave and the upcoming expiry of PT-sUSDe-18JUN2026, this listing provides a natural rollover destination for existing users.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **PT-sUSDE-22OCT2026**\n\n| Parameter                       |                                      Value |\n| ------------------------------- | -----------------------------------------: |\n| Borrowable                      |                                   DISABLED |\n| Collateral Enabled              |                                       true |\n| Supply Cap (PT-sUSDE-22OCT2026) |                                150,000,000 |\n| Borrow Cap (PT-sUSDE-22OCT2026) |                                          1 |\n| LTV                             |                                        0 % |\n| LT                              |                                        0 % |\n| Liquidation Bonus               |                                        0 % |\n| Liquidation Protocol Fee        |                                       10 % |\n| Reserve Factor                  |                                       45 % |\n| Base Variable Borrow Rate       |                                        0 % |\n| Variable Slope 1                |                                       10 % |\n| Variable Slope 2                |                                      300 % |\n| Uoptimal                        |                                       45 % |\n| Flashloanable                   |                                   DISABLED |\n| Oracle                          | 0x9c823f4e19ef68347810a9c139619273b8282b7e |\n\n**PT-sUSDe Stablecoins E-Mode**\n\n| Asset             | PT-sUSDe-22OCT2026 | sUSDe  | USDT0 | USDe | GHO |\n| ----------------- | ------------------ | ------ | ----- | ---- | --- |\n| Collateral        | Yes                | Yes    | No    | No   | No  |\n| Borrowable        | No                 | No     | Yes   | Yes  | Yes |\n| LTV               | 87.71%             | 87.71% | -     | -    | -   |\n| LT                | 89.71%             | 89.71% | -     | -    | -   |\n| Liquidation Bonus | 4.87%              | 4.87%  | -     | -    | -   |\n\n**PT-sUSDe USDe E-Mode**\n\n| Asset             | PT-sUSDe-22OCT2026 | sUSDe  | USDe |\n| ----------------- | ------------------ | ------ | ---- |\n| Collateral        | Yes                | Yes    | No   |\n| Borrowable        | No                 | No     | Yes  |\n| LTV               | 90.35%             | 90.35% | -    |\n| LT                | 92.35%             | 92.35% | -    |\n| Liquidation Bonus | 1.87%              | 1.87%  | -    |\n\nPricing PT-sUSDe-22OCT2026 is done with the same dynamic linear discount rate oracle already used for the other sUSDe maturities on Plasma.\n\n**Linear Discount Rate Oracle**\n\n| Parameter                  | Value  |\n| -------------------------- | ------ |\n| initialDiscountRatePerYear | 4.37%  |\n| maxDiscountRatePerYear     | 12.27% |\n\n## References\n\n- Implementation: [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/dec5abfb09b459c15b6f08221895cad99e09129f/src/20260615_AaveV3Plasma_OnboardPTSUSDe22OCT2026ToAaveV3Plasma/AaveV3Plasma_OnboardPTSUSDe22OCT2026ToAaveV3Plasma_20260615.sol)\n- Tests: [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/dec5abfb09b459c15b6f08221895cad99e09129f/src/20260615_AaveV3Plasma_OnboardPTSUSDe22OCT2026ToAaveV3Plasma/AaveV3Plasma_OnboardPTSUSDe22OCT2026ToAaveV3Plasma_20260615.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-pt-susde-22oct2026-to-aave-v3-plasma/25129)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard PT-sUSDe-22OCT2026 to Aave v3 Plasma",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-pt-susde-22oct2026-to-aave-v3-plasma/25129"
+  }
+}
