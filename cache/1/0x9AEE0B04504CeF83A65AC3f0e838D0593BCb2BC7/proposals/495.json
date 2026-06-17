@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "495",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x8c0576af9e4f45178d42ddbd81293ecc5ed0aa1f738b9c0382594a65049af0c9"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ef",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x8c0576af9e4f45178d42ddbd81293ecc5ed0aa1f738b9c0382594a65049af0c9",
+      "blockHash": "0x69d8ed05b40f2f26fd47d2312f333996e5ec58a76248cf44ed427f5f26497068",
+      "blockNumber": "25338278",
+      "blockTimestamp": "0x6a32c26f",
+      "transactionHash": "0x16cca074023e33856ca2362df7a7ccf6e9a68c728fd7b34180da07e7ef5e5777",
+      "transactionIndex": 152,
+      "logIndex": 220,
+      "removed": false,
+      "timestamp": 1781711471
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1781711471,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x8c0576af9e4f45178d42ddbd81293ecc5ed0aa1f738b9c0382594a65049af0c9",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 448
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXmEcsVfYBubr9eiWQkhYskAfeBc6tN6Ubm4JDaQpvpnc",
+    "description": "\n## Simple Summary\n\nThis proposal seeks to onboard PT-srUSDe-22OCT2026 to the Aave V3 Core Instance on Ethereum.\n\n## Motivation\n\nGiven the established adoption of PT-srUSDe collateral on Aave and the upcoming expiry of PT-srUSDe-25JUN2026, this listing provides a natural rollover destination for existing users.\n\n## Specification\n\nThe table below illustrates the configured risk parameters for **PT_srUSDe_22OCT2026**\n\n| Parameter                        |                                      Value |\n| -------------------------------- | -----------------------------------------: |\n| Borrowable                       |                                   DISABLED |\n| Collateral Enabled               |                                       true |\n| Supply Cap (PT_srUSDe_22OCT2026) |                                 25,000,000 |\n| Borrow Cap (PT_srUSDe_22OCT2026) |                                          1 |\n| LTV                              |                                        0 % |\n| LT                               |                                        0 % |\n| Liquidation Bonus                |                                        0 % |\n| Liquidation Protocol Fee         |                                       10 % |\n| Reserve Factor                   |                                       45 % |\n| Base Variable Borrow Rate        |                                        0 % |\n| Variable Slope 1                 |                                       10 % |\n| Variable Slope 2                 |                                      300 % |\n| Uoptimal                         |                                       45 % |\n| Flashloanable                    |                                   DISABLED |\n| Oracle                           | 0xbd1bc41479d0b58167584980fe57fda913d4fb73 |\n\n**PT-srUSDe Stablecoins E-Mode**\n\n| Asset             | PT-srUSDe-22OCT2026 | sUSDe  | USDC | USDT | USDe |\n| ----------------- | ------------------- | ------ | ---- | ---- | ---- |\n| Collateral        | Yes                 | Yes    | No   | No   | No   |\n| Borrowable        | No                  | No     | Yes  | Yes  | Yes  |\n| LTV               | 88.42%              | 88.42% | -    | -    | -    |\n| LT                | 90.42%              | 90.42% | -    | -    | -    |\n| Liquidation Bonus | 5.68%               | 5.68%  | -    | -    | -    |\n\n**PT-srUSDe USDe E-Mode**\n\n| Asset             | PT-srUSDe-22OCT2026 | sUSDe  | USDe |\n| ----------------- | ------------------- | ------ | ---- |\n| Collateral        | Yes                 | Yes    | No   |\n| Borrowable        | No                  | No     | Yes  |\n| LTV               | 91.06%              | 91.06% | -    |\n| LT                | 93.06%              | 93.06% | -    |\n| Liquidation Bonus | 2.68%               | 2.68%  | -    |\n\nPricing PT-srUSDe-22OCT2026 is done with a dynamic linear discount rate oracle.\n\n**Linear Discount Rate Oracle**\n\n| Parameter                  | Value  |\n| -------------------------- | ------ |\n| initialDiscountRatePerYear | 5.31%  |\n| maxDiscountRatePerYear     | 10.22% |\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/34ca81d91f2aed368169132eec4f312b3c4a9d26/src/20260617_AaveV3Ethereum_OnBoardPTsrUSDe22Oct2026EthereumCore/AaveV3Ethereum_OnBoardPTsrUSDe22Oct2026EthereumCore_20260617.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/34ca81d91f2aed368169132eec4f312b3c4a9d26/src/20260617_AaveV3Ethereum_OnBoardPTsrUSDe22Oct2026EthereumCore/AaveV3Ethereum_OnBoardPTsrUSDe22Oct2026EthereumCore_20260617.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-strata-srusde-22oct2026-pt-tokens-to-v3-core-instance/25113)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard PT-srUSDe-22OCT2026 to Aave V3 Core",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-strata-srusde-22oct2026-pt-tokens-to-v3-core-instance/25113"
+  }
+}
