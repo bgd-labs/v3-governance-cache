@@ -1,0 +1,115 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "498",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x32b046d88008819529d14f8ba0aabc84c6e393d89b2eac04232e2f9feb5cdf9c"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001f2",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x32b046d88008819529d14f8ba0aabc84c6e393d89b2eac04232e2f9feb5cdf9c",
+      "blockHash": "0x987d4ba2d8d7a43fa597bf30e205efecd7d9824158006f29c7ee7dc39796e7cf",
+      "blockNumber": "25379020",
+      "blockTimestamp": "0x6a3a3eeb",
+      "transactionHash": "0x7544f5ee22679b96b755f250b7a5908442ec9489d2fb33f4b82b1cfab77d6086",
+      "transactionIndex": 34,
+      "logIndex": 100,
+      "removed": false,
+      "timestamp": 1782202091
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1782202091,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x32b046d88008819529d14f8ba0aabc84c6e393d89b2eac04232e2f9feb5cdf9c",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 451
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 117
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 130
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 110
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 78
+      },
+      {
+        "chain": "57073",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 5
+      },
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 8
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 31
+      },
+      {
+        "chain": "196",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 5
+      },
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 0
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmRkWzdeY3mSwhZKFiqT3QNqQpEgP68uBtVZmCVYJQrJbD",
+    "description": "\n## Simple Summary\n\nThis AIP proposes activating CCIP Lanes for GHO on the Monad blockchain.\n\n## Motivation\n\nMonad’s pipelined EVM architecture delivers fast, high-throughput performance while remaining fully compatible with Ethereum, making it ideal for real-time financial applications.\nThis directly supports the needs of neobanks and fintech platforms, which rely on quick transaction finality, scalability, and predictable costs.\n\nDeploying GHO concurrently with the Aave instance on Monad ensures that GHO has every chance of becoming foundational to DeFi and payments infrastructure on a chain optimized for performance.\n\nThe goal is to establish GHO as a key stablecoin within Monad’s ecosystem from inception, facilitating reward programs, liquidity incentives, and seamless integration with the upcoming Aave deployment.\n\n## Specification\n\nThis AIP includes a series of actions required to launch GHO on Monad:\n\n1. Configure new Chainlink CCIP lanes between Monad and the chains where GHO is launched with a rate limit of 1,500,000 GHO capacity and 300 GHO per second rate.\n2. Configure GhoCcipSteward.\n3. Configure GhoBucketSteward.\n\n   The table below lists the address of the new **Monad** deployments\n\n   | Contract           | Address                                                                                                                |\n   | :----------------- | :--------------------------------------------------------------------------------------------------------------------- |\n   | GhoToken           | [0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73](https://monadscan.com/address/0xfc421aD3C883Bf9E7C4f42dE845C4e4405799e73) |\n   | GhoTokenPool       | [0xA5AE05b71c3F170E12E7620Fdf7679721aec1EC8](https://monadscan.com/address/0xA5AE05b71c3F170E12E7620Fdf7679721aec1EC8) |\n   | GhoBucketSteward   | [0xDe6539018B095353A40753Dc54C91C68c9487D4E](https://monadscan.com/address/0xDe6539018B095353A40753Dc54C91C68c9487D4E) |\n   | GhoCcipSteward     | [0x360d8aa8F6b09B7BC57aF34db2Eb84dD87bf4d12](https://monadscan.com/address/0x360d8aa8F6b09B7BC57aF34db2Eb84dD87bf4d12) |\n   | GhoAaveCoreSteward | [0xA5Ba213867E175A182a5dd6A9193C6158738105A](https://monadscan.com/address/0xA5Ba213867E175A182a5dd6A9193C6158738105A) |\n\n   The initial CCIP Facilitator Bucket Capacity will be 100,000,000 units.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Ethereum_GhoMonadActivation_20260518.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Avalanche_GhoMonadActivation_20260518.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Arbitrum_GhoMonadActivation_20260518.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Base_GhoMonadActivation_20260518.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Gnosis_GhoMonadActivation_20260518.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Plasma_GhoMonadActivation_20260518.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3XLayer_GhoMonadActivation_20260518.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Ink_GhoMonadActivation_20260518.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/remote-lanes/AaveV3Mantle_GhoMonadActivation_20260518.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/AaveV3Monad_GhoMonadActivation_20260518.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Ethereum_GhoMonadActivation_20260518.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Avalanche_GhoMonadActivation_20260518.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Arbitrum_GhoMonadActivation_20260518.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Base_GhoMonadActivation_20260518.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Gnosis_GhoMonadActivation_20260518.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Plasma_GhoMonadActivation_20260518.t.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3XLayer_GhoMonadActivation_20260518.t.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Ink_GhoMonadActivation_20260518.t.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/remote-lanes/AaveV3Mantle_GhoMonadActivation_20260518.t.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/bb3cc7571fd226efdd9d74567f66b0191e618c88/src/20260518_Multi_GhoMonadActivation/tests/AaveV3Monad_GhoMonadActivation_20260518.t.sol)\n- [Snapshot](https://snapshot.box/#/s:aavedao.eth/proposal/0x24f105bd023c476a9b85fa87ff795bfeec769fa799ce6ada8e2724c9738049f6)\n- [Discussion](https://governance.aave.com/t/arfc-deploy-aave-protocol-on-monad/24943)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Gho Monad Activation",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-deploy-aave-protocol-on-monad/24943",
+    "snapshot": "https://snapshot.box/#/s:aavedao.eth/proposal/0x24f105bd023c476a9b85fa87ff795bfeec769fa799ce6ada8e2724c9738049f6"
+  }
+}
