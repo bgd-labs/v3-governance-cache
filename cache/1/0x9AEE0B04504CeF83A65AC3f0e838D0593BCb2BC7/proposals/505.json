@@ -1,0 +1,127 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "505",
+        "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+        "accessLevel": 1,
+        "ipfsHash": "0xeaacf387e3ff269cbad703f33592df21f2dab8c0832db93ec70d668ac0a38bc3"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001f9",
+        "0x0000000000000000000000002cc1ade245020fc5aae66ad443e1f66e01c54df1",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xeaacf387e3ff269cbad703f33592df21f2dab8c0832db93ec70d668ac0a38bc3",
+      "blockHash": "0xe7aaa13eb231bbea1d9544893d42819d30da9faf89bc06005f12d3bc644c7c90",
+      "blockNumber": "25525136",
+      "blockTimestamp": "0x6a551d2b",
+      "transactionHash": "0x423099c8651201e88a2f5d1e14a832e4a111c6fa5474168574f463cf1b8f6c0d",
+      "transactionIndex": 53,
+      "logIndex": 163,
+      "removed": false,
+      "timestamp": 1783962923
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1783962923,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xeaacf387e3ff269cbad703f33592df21f2dab8c0832db93ec70d668ac0a38bc3",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 455
+      },
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 456
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 131
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 132
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 119
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 111
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 79
+      },
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 9
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 32
+      },
+      {
+        "chain": "196",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 7
+      },
+      {
+        "chain": "57073",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 6
+      },
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 3
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "Qme8j5177uKZZfXEMYNMGxpYvMFZwQ1zKdmjcWKA1ShG82",
+    "description": "\n## Simple Summary\n\nLaunch GHO GSM on Arbitrum (stataUSDC) using the new RemoteGSM architecture. The proposal mints 50M GHO via a dedicated `GhoDirectFacilitator` on Ethereum, bridges it to Arbitrum over CCIP to seed the local `GhoReserve`, wires up the Arbitrum GSM, and normalizes the GHO CCIP lane capacity across every supported network to a uniform 5M GHO max transfer with a 1,000 GHO/sec refill rate.\n\n## Motivation\n\nThe RemoteGSM upgrade refactors GHO's stability mechanism into a three-layer design (`GhoDirectFacilitator` → `GhoReserve` → `GSM`), removing the prior requirement that each GSM be its own GHO facilitator and unlocking GSM deployment on L2s, where GHO cannot be minted directly. Arbitrum is the first L2 target: deploying USDC GSM there extends GHO's stability surface to where a large share of L2 stablecoin liquidity sits, while keeping mint and bridge control under DAO governance.\n\n## Specification\n\n### Fund the Arbitrum GHO Reserve\n\nOn Ethereum:\n\n- Temporarily raise the Arbitrum-lane outbound rate limiter to fit a one-off 50M GHO transfer.\n- Register an Arbitrum-scoped `GhoDirectFacilitator` on the GHO token with a 50M bucket capacity.\n- Mint 50M GHO into the payload and bridge it to Arbitrum via `AaveGhoCcipBridge` (configuring the Arbitrum destination lane first).\n- Increase bridge limit by 50M.\n\nOn Arbitrum:\n\n- Raise the CCIP token-pool facilitator bucket capacity by 50M.\n- Temporarily raise the Ethereum-lane inbound rate limiter to receive the 50M GHO.\n- On receipt, the `Collector` forwards the 50M GHO to the `GhoReserve`.\n\n### Wire up Arbitrum GSM (stataUSDC)\n\n- Point it at the `GhoReserve`, enroll it as an entity with a 25M GHO reserve limit.\n- Grant `SWAP_FREEZER_ROLE` to the asset's `OracleSwapFreezer` and to the Arbitrum executor.\n- Register it in the `GsmRegistry` and grant `CONFIGURATOR_ROLE` to the `GhoGsmSteward`.\n- Set the initial exposure cap to 20M of the underlying (6 decimals) and attach the 0% mint / 0.10% burn fee strategy.\n\n`LIMIT_MANAGER_ROLE` on the Arbitrum `GhoReserve` is granted to the Arbitrum Risk Council.\n\n### Normalize GHO CCIP lane capacity across networks\n\nOn both ends of every GHO lane touched by this proposal — Arbitrum, Avalanche, Base, Gnosis, Mantle, Plasma, X-Layer, Ink and Monad — set inbound and outbound CCIP rate-limit configs to canonical defaults: **capacity 5,000,000 GHO max transfer, refill 1,000 GHO/sec**. The temporary boosts on the Arbitrum lane used for the 50M seed transfer are restored to these defaults in the same payloads. All L2 facilitator bucket capacity limits are increased by 50M.\n\n- Increase bridge capacity by 50M across all networks.\n\n### Execution Order\n\nExecution order (same pattern as the Plasma launch, #879):\n\n- Ethereum Part 1 — raises the bridge limit and the Eth→Arb outbound rate limiter.\n- Ethereum Part 2 — mints 50M GHO via the new GhoDirectFacilitator and bridges it. Reverts if executed within the same second as Part 1 (the outbound bucket needs ~1s to refill).\n- Arbitrum Part 1 must execute before the CCIP message arrives, otherwise the inbound rate limit / facilitator bucket rejects the mint and the delivery has to be manually retried on https://ccip.chain.link/.\n- Arbitrum Part 2 — reverts until the bridged GHO reaches the Collector.\n- The remaining network payloads (Avalanche, Base, Gnosis, Ink, Mantle, Monad, Plasma, X-Layer) are independent and can execute any time.\n- Manually register OracleSwapFreezer via SAFE post execution.\n\n## References\n\n- Implementation: [AaveV3Ethereum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ethereum_RemoteGSMLaunchArbitrum_20260512_Part1.sol), [AaveV3Ethereum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ethereum_RemoteGSMLaunchArbitrum_20260512_Part2.sol), [AaveV3Arbitrum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Arbitrum_RemoteGSMLaunchArbitrum_20260512_Part1.sol), [AaveV3Arbitrum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Arbitrum_RemoteGSMLaunchArbitrum_20260512_Part2.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Avalanche_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Base_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Gnosis_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Mantle_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ink_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Plasma_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3XLayer_RemoteGSMLaunchArbitrum_20260512.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Monad_RemoteGSMLaunchArbitrum_20260512.sol)\n- Tests: [AaveV3Ethereum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ethereum_RemoteGSMLaunchArbitrum_20260512_Part1.t.sol), [AaveV3Ethereum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ethereum_RemoteGSMLaunchArbitrum_20260512_Part2.t.sol), [AaveV3Arbitrum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Arbitrum_RemoteGSMLaunchArbitrum_20260512_Part1.t.sol), [AaveV3Arbitrum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Arbitrum_RemoteGSMLaunchArbitrum_20260512_Part2.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Avalanche_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Base_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Gnosis_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Mantle_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Ink_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Plasma_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3XLayer_RemoteGSMLaunchArbitrum_20260512.t.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/27cb6948f818712371dfb203afd30733fca50c65/src/20260512_Multi_RemoteGSMLaunchArbitrum/AaveV3Monad_RemoteGSMLaunchArbitrum_20260512.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0xf24321514fb593af9e5082d26a1358819ec0f648db8fdb5c2b083f53ef785793)\n- [Discussion](https://governance.aave.com/t/arfc-launch-remotegsm-on-arbitrum/24986)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Remote GSM Launch: Arbitrum",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-launch-remotegsm-on-arbitrum/24986",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0xf24321514fb593af9e5082d26a1358819ec0f648db8fdb5c2b083f53ef785793"
+  }
+}
