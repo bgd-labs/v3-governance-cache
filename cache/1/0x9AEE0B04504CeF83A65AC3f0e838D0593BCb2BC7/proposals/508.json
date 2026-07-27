@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "508",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x9481f78c3d1809cff590bc861e58a10b6ec2199bcd6c273ee16a822d63f6e3b5"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001fc",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x9481f78c3d1809cff590bc861e58a10b6ec2199bcd6c273ee16a822d63f6e3b5",
+      "blockHash": "0x5cf0092c48f84d81b92a4ee71478aaef74ccbc0f236205ecedabaa5377ef0866",
+      "blockNumber": "25626295",
+      "blockTimestamp": "0x6a67b40f",
+      "transactionHash": "0x38bbb7c47e766a785fa9442ecf709c3c5f504ad55ff75dcd6b2acb1742cceff6",
+      "transactionIndex": 200,
+      "logIndex": 554,
+      "removed": false,
+      "timestamp": 1785181199
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1785181199,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9481f78c3d1809cff590bc861e58a10b6ec2199bcd6c273ee16a822d63f6e3b5",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 459
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYLMzWEatp68jUm81ouWy8ex7TpTq7XR4SFRZmzZ2Cwqv",
+    "description": "\n## Simple Summary\n\nThis proposal deploys a dedicated Maple Spoke on the Aave V4 Global Dollar Hub and onboards syrupUSDG, a yield-bearing token from Maple Finance, as collateral. The listing follows the parameters recommended by the Risk Service Providers engaged with the DAO on the governance forum.\n\n## Motivation\n\nsyrupUSDG is a yield-bearing token issued by [Maple Finance](https://docs.maple.finance/syrupusdc-usdt-usdg-for-lenders/introduction), launched on 2 July 2026. Users deposit USDG and receive syrupUSDG, a liquid and transferable token that accrues returns from Maple's institutional lending operations. The token operates through a segregated legal entity with verifiable onchain reserves.\n\nOnboarding syrupUSDG to the Global Dollar Hub:\n\n- It adds a yield-bearing USDG asset to the Global Dollar Hub, letting users to borrow against syrupUSDG while the underlying position continues to accrue yield from Maple's institutional lending.\n- It deepens the utility of USDG within Aave, extending the Global Dollar Hub beyond the base stablecoin to its productive representations.\n- It strengthens Aave's position as the primary onchain venue for Global Dollar Network assets and supports demand from institutional participants entering DeFi.\n- It expands the asset-base on an already existing Aave V4 Liquidity Hub, purpose-made for USDG-related assets.\n\n## Specification\n\nThis proposal deploys a dedicated Maple Spoke on the Aave V4 Global Dollar Hub and lists syrupUSDG as a collateral asset on it.\n\n**syrupUSDG**: [https://etherscan.io/address/0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A](https://etherscan.io/address/0x87b65C4aAFFA76881f9E96F3e7ED945ddFC3Cd7A)\n\n**USDG Maple Spoke configuration**\n\n| Parameter             | syrupUSDG |  USDG |\n| --------------------- | --------: | ----: |\n| Collateral Factor     |    92.00% | 0.00% |\n| Max Liquidation Bonus |     4.00% | 0.00% |\n| Liquidation Fee       |    10.00% | 0.00% |\n| Collateral Risk       |     0.00% | 0.00% |\n| Borrowable            |     FALSE |  TRUE |\n\n**Dynamic liquidation configuration**\n\n| Parameter                   |   Value |\n| --------------------------- | ------: |\n| Target Health Factor        |  1.0277 |\n| Health Factor for Max Bonus |    0.99 |\n| Liquidation Bonus Factor    | 100.00% |\n\n**Caps**\n\n| Hub               | Spoke              | Reserve   | Add Cap | Draw Cap |\n| ----------------- | ------------------ | --------- | ------- | -------- |\n| Global Dollar Hub | USDG Maple Spoke   | syrupUSDG | 10M     | 0        |\n| Global Dollar Hub | USDG Maple Spoke   | USDG      | 10M     | 9.5M     |\n| Global Dollar Hub | Tokenization Spoke | USDG      | 1M      | 0        |\n\n**USDG interest rate configuration**\n\n| Parameter     | Value  |\n| ------------- | ------ |\n| Base          | 0.00%  |\n| Slope 1       | 4.00%  |\n| Slope 2       | 35.00% |\n| Uoptimal      | 90.00% |\n| Liquidity Fee | 20.00  |\n\n**Oracle configuration**\n\nsyrupUSDG is priced through two stacked capped adapters, each applying its own cap.\n\n_USDG / USD_\n\nThe USDG leg is a `PriceCapAdapterStable` over the Chainlink USDG/USD feed, so an upward USDG depeg is not passed through to the protocol. This adapter is also the price source of the USDG reserve on the USDG Maple Spoke.\n\n| Parameter       |                                                                                                                                        Value |\n| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------: |\n| Contract        |                                                                                                   0x83D20dEEdcd4aC1313496c8CBcAad0fa298c0CE4 |\n| Underlying feed | Chainlink USDG / USD ([0x14f0737d6b705259e521EA6E9E3506AC78dBd311](https://etherscan.io/address/0x14f0737d6b705259e521EA6E9E3506AC78dBd311)) |\n| `priceCap`      |                                                                                                                                     1.04 USD |\n\n_syrupUSDG / USDG / USD_\n\nThe syrupUSDG leg is a CAPO adapter combining the Maple syrupUSDG/USDG internal exchange rate (`convertToExitAssets`) with the capped USDG/USD price above, capping the yearly growth of that ratio.\n\n| Parameter                     |                                      Value |\n| ----------------------------- | -----------------------------------------: |\n| Contract                      | 0x5A6FcB0ebc018b6FD94Fc5f5A9F0948d0D40f040 |\n| `MINIMUM_SNAPSHOT_DELAY`      |                                     7 days |\n| `maxYearlyRatioGrowthPercent` |                                      8.45% |\n\n## Disclaimer\n\nAave Labs has no direct financial relationship with Maple Finance, Global Dollar, or any of their affiliates and has not received compensation from either party in connection with this proposal.\n\n## References\n\n- Implementation: [AaveV4Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/c8f27eed59d4f279fcc60b045af684268a9a54db/src/20260723_AaveV4Ethereum_OnboardMapleSpokeSyrupUSDGEthereum/AaveV4Ethereum_OnboardMapleSpokeSyrupUSDGEthereum_20260723.sol)\n- Tests: [AaveV4Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/c8f27eed59d4f279fcc60b045af684268a9a54db/src/20260723_AaveV4Ethereum_OnboardMapleSpokeSyrupUSDGEthereum/AaveV4Ethereum_OnboardMapleSpokeSyrupUSDGEthereum_20260723.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-onboard-syrupusdg-on-aave-v4-global-dollar-hub/25281)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "[Direct to AIP] Onboard syrupUSDG on Aave V4 Global Dollar Hub",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-onboard-syrupusdg-on-aave-v4-global-dollar-hub/25281"
+  }
+}
