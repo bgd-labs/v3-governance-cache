@@ -1,0 +1,127 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "509",
+        "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+        "accessLevel": 1,
+        "ipfsHash": "0x9920cefbc4ba45192811c987c45e000b1817505e44e8f767737a42ac633192db"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001fd",
+        "0x0000000000000000000000002cc1ade245020fc5aae66ad443e1f66e01c54df1",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x9920cefbc4ba45192811c987c45e000b1817505e44e8f767737a42ac633192db",
+      "blockHash": "0xba5637b0f39ac906baf4bac13b6b18e6dabd633df6a160a6f68cdc835eb7af3f",
+      "blockNumber": "25654933",
+      "blockTimestamp": "0x6a6cf74b",
+      "transactionHash": "0x80b77a88467f8eae6c79ca28437dfab10c52838e5075f0bdcc1976ba607c6d8d",
+      "transactionIndex": 156,
+      "logIndex": 265,
+      "removed": false,
+      "timestamp": 1785526091
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1785526091,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x9920cefbc4ba45192811c987c45e000b1817505e44e8f767737a42ac633192db",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 460
+      },
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 461
+      },
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 4
+      },
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 5
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 121
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 112
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 81
+      },
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 11
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 33
+      },
+      {
+        "chain": "196",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 8
+      },
+      {
+        "chain": "57073",
+        "accessLevel": 1,
+        "payloadsController": "0x44D73D7C4b2f98F426Bf8B5e87628d9eE38ef0Cf",
+        "payloadId": 7
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 133
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYeQ6wqZWK9cLPJeyTB6yWRZ16E1PfXbci8EuFUc1DUt2",
+    "description": "\n## Simple Summary\n\nLaunch a GHO GSM on Monad (USDC) using the RemoteGSM architecture. The proposal mints 50M GHO via a dedicated `GhoDirectFacilitator` on Ethereum, bridges it to Monad over CCIP to seed the local `GhoReserve`, and wires up the Monad USDC GSM.\n\n## Motivation\n\nThe RemoteGSM upgrade refactors GHO's stability mechanism into a three-layer design (`GhoDirectFacilitator` → `GhoReserve` → `GSM`), removing the prior requirement that each GSM be its own GHO facilitator and unlocking GSM deployment on L2s, where GHO cannot be minted directly. Deploying a USDC GSM on Monad extends GHO's stability surface to a new network while keeping mint and bridge control under DAO governance.\n\n## Specification\n\n### Fund the Monad GHO Reserve\n\nOn Ethereum:\n\n- Raise the GHO CCIP bridge limit by 50M (permanent: the bridged 50M becomes part of the locked supply) and temporarily widen the Monad-lane outbound rate limiter to fit the one-off 50M GHO transfer.\n- Register a Monad-scoped `GhoDirectFacilitator` on the GHO token with a 50M bucket capacity.\n- Mint 50M GHO into the payload and bridge it to Monad via `AaveGhoCcipBridge` (configuring the Monad destination lane first).\n- After bridging, restore the Ethereum ↔ Monad lane rate-limit config to its prior value. No other lane is modified.\n\nOn Monad:\n\n- Raise the CCIP token-pool facilitator bucket capacity by 50M.\n- Temporarily raise the Ethereum-lane inbound rate limiter to receive the 50M GHO.\n- On receipt, the `Collector` forwards the 50M GHO to the `GhoReserve`.\n- After bridging, restore the Monad ↔ Ethereum lane rate-limit config to its prior value.\n\n### Wire up Monad GSM (USDC)\n\nFor the GSM:\n\n- Point it at the `GhoReserve`, enroll it as an entity with a 25M GHO reserve limit.\n- Grant `SWAP_FREEZER_ROLE` to the asset's `OracleSwapFreezer` and to the Monad executor.\n- Register it in the `GsmRegistry` and grant `CONFIGURATOR_ROLE` to the `GhoGsmSteward`.\n- Set the initial exposure cap to 40M of the underlying (6 decimals) and attach the 0% sell / 0.10% buy fee strategy (selling the underlying for GHO is free; buying it back with GHO costs 0.10%).\n\n`LIMIT_MANAGER_ROLE` on the Monad `GhoReserve` is granted to the Monad Risk Council.\n\n### GHO CCIP lane capacity\n\nGHO CCIP lane rate-limit capacities are kept the same as before execution. The proposal only widens the Ethereum ↔ Monad lane temporarily to move the 50M seed, then restores it. The remaining networks (Arbitrum, Avalanche, Base, Gnosis, Mantle, Plasma, X-Layer, Ink) only increase their CCIP token-pool facilitator bucket capacity by 50M to account for the newly minted supply; their lane rate limits are not touched.\n\n### Execution Order\n\nExecution order:\n\n- Ethereum Part 1 — raises the bridge limit and the Eth→Monad outbound rate limiter.\n- Ethereum Part 2 — mints 50M GHO via the new GhoDirectFacilitator and bridges it. Reverts if executed within the same second as Part 1 (the outbound bucket needs ~1s to refill).\n- Monad Part 1 must execute before the CCIP message arrives, otherwise the inbound rate limit / facilitator bucket rejects the mint and the delivery has to be manually retried on https://ccip.chain.link/.\n- Monad Part 2 — reverts until the bridged GHO reaches the Collector.\n- The remaining network payloads (Arbitrum, Avalanche, Base, Gnosis, Ink, Mantle, Plasma, X-Layer) are independent and can execute any time.\n- Manually register OracleSwapFreezer via SAFE post execution.\n\n## References\n\n- Implementation: [AaveV3Ethereum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ethereum_RemoteGSMLaunchMonad_20260701_Part1.sol), [AaveV3Ethereum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ethereum_RemoteGSMLaunchMonad_20260701_Part2.sol), [AaveV3Monad_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Monad_RemoteGSMLaunchMonad_20260701_Part1.sol), [AaveV3Monad_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Monad_RemoteGSMLaunchMonad_20260701_Part2.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Arbitrum_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Avalanche_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Base_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Gnosis_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Mantle_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ink_RemoteGSMLaunchMonad_20260701.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Plasma_RemoteGSMLaunchMonad_20260701.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3XLayer_RemoteGSMLaunchMonad_20260701.sol)\n- Tests: [AaveV3Ethereum_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ethereum_RemoteGSMLaunchMonad_20260701_Part1.t.sol), [AaveV3Ethereum_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ethereum_RemoteGSMLaunchMonad_20260701_Part2.t.sol), [AaveV3Monad_Part 1](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Monad_RemoteGSMLaunchMonad_20260701_Part1.t.sol), [AaveV3Monad_Part 2](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Monad_RemoteGSMLaunchMonad_20260701_Part2.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Arbitrum_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Avalanche_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Base_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Gnosis_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Mantle_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Ink](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Ink_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3Plasma_RemoteGSMLaunchMonad_20260701.t.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/038b37d509e0cccc34f51ed71b6442b5d0f61172/src/20260701_Multi_RemoteGSMLaunchMonad/AaveV3XLayer_RemoteGSMLaunchMonad_20260701.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0x24f105bd023c476a9b85fa87ff795bfeec769fa799ce6ada8e2724c9738049f6)\n- [Discussion](https://governance.aave.com/t/arfc-deploy-aave-protocol-v3-7-on-monad/24943)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Remote GSM Launch: Monad",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-deploy-aave-protocol-v3-7-on-monad/24943",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0x24f105bd023c476a9b85fa87ff795bfeec769fa799ce6ada8e2724c9738049f6"
+  }
+}
