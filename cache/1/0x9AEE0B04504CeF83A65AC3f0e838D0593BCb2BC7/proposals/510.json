@@ -1,0 +1,114 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "510",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x930389ba890be55ab5df4f1cacb495f736761518aec465769ebd2cd99fb9a7a0"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001fe",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x930389ba890be55ab5df4f1cacb495f736761518aec465769ebd2cd99fb9a7a0",
+      "blockHash": "0xf87b5e0a0d43d0dd4449c806e437d610bfa2c12e2a192ff6bd29520dab2131fa",
+      "blockNumber": "25803533",
+      "blockTimestamp": "0x6a88457b",
+      "transactionHash": "0x00f3176f291c6f841f43d954f0f57579075e5cb839486742122c1b8c447f0fbf",
+      "transactionIndex": 207,
+      "logIndex": 340,
+      "removed": false,
+      "timestamp": 1787315579
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1787315579,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x930389ba890be55ab5df4f1cacb495f736761518aec465769ebd2cd99fb9a7a0",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 463
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 147
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 123
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 97
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 135
+      },
+      {
+        "chain": "1088",
+        "accessLevel": 1,
+        "payloadsController": "0x2233F8A66A728FBa6E1dC95570B25360D07D5524",
+        "payloadId": 48
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 114
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 83
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 55
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 61
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmYEXmczSuFh7UdPxt2TUVyctvKAVM69MCxUStNU7ovyxb",
+    "description": "\n## Simple Summary\n\nThis proposal grants the Aave Labs multisig the RETRY_ROLE on a.DI’s granular access controls.\n\nRecipient: 0x2B99790c35a401be873FA7Eb514D9220736BB1cA\n\nThis is Part 1 of 2. It covers Ethereum, Polygon, Avalanche, Optimism, Arbitrum, Metis, Base, Gnosis, Scroll and BNB. Part 2 covers Linea, Celo, Sonic, Soneium, Plasma, Mantle, MegaEth, XLayer and Ink.\n\n## Motivation\n\na.DI is the cross-chain delivery layer used by Aave governance to route approved governance actions from Ethereum to other networks.\n\nAs Aave governance expands across more networks, message delivery operations become more important. The RETRY_ROLE allows a technical operator to retry messages that were already sent through a.DI if a message does not arrive, or to route an already-sent message through another configured bridge adapter if one of the selected providers fails.\n\nGranting this role to Aave Labs improves operational coverage for governance message delivery while keeping control of governance actions with the DAO.\n\n## Specification\n\nIf approved, this proposal will grant the RETRY_ROLE on a.DI to the Aave Labs multisig:\n\nAave Labs multisig: 0x2B99790c35a401be873FA7Eb514D9220736BB1cA\n\nThe role will be used by Aave Labs as a technical service provider to support retry operations for already-sent a.DI messages when needed.\n\nThe role grant covers the nineteen networks: Ethereum, Polygon, Avalanche, Optimism, Arbitrum, Metis, Base, Gnosis, Scroll, BNB, Linea, Celo, Sonic, Soneium, Plasma, Mantle, MegaEth, XLayer and Ink. Forwarding that many payloads through a.DI in a single proposal execution would risk running out of gas, so it is split across two proposals. This proposal covers Ethereum, Polygon, Avalanche, Optimism, Arbitrum, Metis, Base, Gnosis, Scroll and BNB; the remaining nine are covered by Part 2. The two proposals are otherwise identical in intent and grant the same role to the same multisig.\n\nOn Scroll and Metis the payload also sets the GranularGuardian as guardian of the CrossChainController, a role currently held by an external multisig on those two networks. The GranularGuardian can only forward retry calls to the CrossChainController while it holds that role, so without this change the RETRY_ROLE grant would have no effect on Scroll and Metis. All other a.DI networks already have the GranularGuardian set as CrossChainController guardian, so this brings both networks in line with the default a.DI configuration.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Polygon_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Avalanche_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Optimism](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Optimism_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Arbitrum_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Metis](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Metis_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Base_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Gnosis_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3Scroll](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Scroll_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3BNB_MaintenanceGrantALRETRY_ROLEOnADI_20260603.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Ethereum_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Polygon_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Avalanche_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Optimism](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Optimism_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Arbitrum_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Metis](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Metis_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Base_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Gnosis_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3Scroll](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3Scroll_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/fb9f03ac9320fe6fa59de59065e833aa8e1da402/src/20260603_Multi_MaintenanceGrantALRETRY_ROLEOnADI/AaveV3BNB_MaintenanceGrantALRETRY_ROLEOnADI_20260603.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-grant-aave-labs-retry-role-on-a-di/25020)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Maintenance: Grant AL RETRY_ROLE on a.DI (Part 1)",
+    "author": "Aave Labs",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-grant-aave-labs-retry-role-on-a-di/25020"
+  }
+}
