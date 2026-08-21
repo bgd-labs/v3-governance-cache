@@ -1,0 +1,157 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "511",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x489606b509d5440dcd3684903b8edeadb90a1e9669113b8c8a470c57ae2f836d"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x00000000000000000000000000000000000000000000000000000000000001ff",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x489606b509d5440dcd3684903b8edeadb90a1e9669113b8c8a470c57ae2f836d",
+      "blockHash": "0x9991dd6e0b3a19a202912f62fe2c63bb79677550df8b7d1dbc7711b869b3b578",
+      "blockNumber": "25804210",
+      "blockTimestamp": "0x6a88655b",
+      "transactionHash": "0x9a4ecac73419d34d42849c8c2887c223bf02305110426161ee36f814092fa5fe",
+      "transactionIndex": 85,
+      "logIndex": 289,
+      "removed": false,
+      "timestamp": 1787323739
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1787323739,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x489606b509d5440dcd3684903b8edeadb90a1e9669113b8c8a470c57ae2f836d",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 462
+      },
+      {
+        "chain": "137",
+        "accessLevel": 1,
+        "payloadsController": "0x401B5D0294E23637c18fcc38b1Bca814CDa2637C",
+        "payloadId": 146
+      },
+      {
+        "chain": "43114",
+        "accessLevel": 1,
+        "payloadsController": "0x1140CB7CAfAcC745771C2Ea31e7B5C653c5d0B80",
+        "payloadId": 122
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 134
+      },
+      {
+        "chain": "10",
+        "accessLevel": 1,
+        "payloadsController": "0x0E1a3Af1f9cC76A62eD31eDedca291E63632e7c4",
+        "payloadId": 96
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 113
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 82
+      },
+      {
+        "chain": "56",
+        "accessLevel": 1,
+        "payloadsController": "0xE5EF2Dd06755A97e975f7E282f828224F2C3e627",
+        "payloadId": 60
+      },
+      {
+        "chain": "534352",
+        "accessLevel": 1,
+        "payloadsController": "0x6b6B41c0f8C223715f712BE83ceC3c37bbfDC3fE",
+        "payloadId": 54
+      },
+      {
+        "chain": "59144",
+        "accessLevel": 1,
+        "payloadsController": "0x3BcE23a1363728091bc57A58a226CF2940C2e074",
+        "payloadId": 30
+      },
+      {
+        "chain": "146",
+        "accessLevel": 1,
+        "payloadsController": "0x0846C28Dd54DEA4Fd7Fb31bcc5EB81673D68c695",
+        "payloadId": 15
+      },
+      {
+        "chain": "42220",
+        "accessLevel": 1,
+        "payloadsController": "0xE48E10834C04E394A04BF22a565D063D40b9FA42",
+        "payloadId": 13
+      },
+      {
+        "chain": "5000",
+        "accessLevel": 1,
+        "payloadsController": "0xF089f77173A3009A98c45f49D547BF714A7B1e01",
+        "payloadId": 12
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 34
+      },
+      {
+        "chain": "4326",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 9
+      },
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 6
+      },
+      {
+        "chain": "196",
+        "accessLevel": 1,
+        "payloadsController": "0x80e11cB895a23C901a990239E5534054C66476B5",
+        "payloadId": 9
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmTDzkKYXZUcXN7REihELPViUs6BMTQKFnSKjLdyZDGFFr",
+    "description": "\n## Simple Summary\n\nThis ARFC operationalises two changes surfaced after the active incident response management over the past months. First, the Risk Steward `minDelay` is reduced from 72 hours to 36 hours on six cap and IRM parameters where the conservative cap posture meaningfully constrains response speed. Second, the pause role on Aave Umbrella stkTokens is reassigned to the Aave Protocol Guardian, the standing Aave-wide emergency multisig that already holds pause and freeze authority across Aave deployments, with all other Umbrella governance action permissions remaining with the Aave Governance Executor.\n\nThe cooldown change addresses a friction surfaced over the past month as LlamaRisk has tightened supply and borrow caps on listed assets closer to their current utilisation. This conservative cap posture is the principal lever Aave has used to bound exposure. It has, however, a structural side effect: when caps sit close to organic demand, the 72-hour Risk Steward cooldown becomes a binding constraint on the next cap raise after the demand suddenly increases, turning the defensive posture into a blocker on healthy growth. Reducing `minDelay` to 36 hours on the six cap and IRM parameters relieves this constraint without weakening any `maxPercentChange` bound.\n\nIn parallel, Umbrella pause reassignment addresses the operational friction observed when stkwaWETH had to be paused during the rsETH incident response. The `PAUSE_GUARDIAN_ROLE` on Umbrella (which governs both pause and unpause) currently sits behind the Aave Governance Executor rather than behind Aave's standing emergency body, which meant the action had to be routed through a full AIP cycle. Reassigning `PAUSE_GUARDIAN_ROLE` to the Aave Protocol Guardian, the multisig that already holds emergency pause authority across the rest of the protocol, restores the role assignment originally specified at Umbrella's activation and ensures that future stkToken pauses can be executed at incident response speed. Configuration authority on Umbrella (token creation, parameter changes, role management under `DEFAULT_ADMIN_ROLE`) remains solely with the Aave Governance Executor.\n\n## Motivation\n\nOn the Risk Stewards, the more conservative cap posture taken over the past month limits the operational levers available to balance the protocol's needs and safety. When caps are sized closer to current utilisation, legitimate organic growth on a healthy asset more frequently bumps into the 72-hour Risk Steward cooldown. The defensive posture, intended to keep collateral exposure under control, turns into a cap on legitimate organic flow.\n\nOn Umbrella, the [\\[Direct-to-AIP\\] Pause stkwaWETH Umbrella Staked Token on Ethereum V3](https://governance.aave.com/t/direct-to-aip-pause-stkwaweth-umbrella-staked-token-on-ethereum-v3/24595) had to be proposed through a full governance vote because pause authority on Umbrella currently sits behind the Aave Governance Executor, rather than Aave's standing emergency pause body. This is a direct departure from the role assignment specified in the [\\[ARFC\\] Aave Umbrella - activation](https://governance.aave.com/t/arfc-aave-umbrella-activation/21521) proposal, which explicitly stated that emergency pause and unpause authority would belong to the Aave Protocol Guardian.\n\n### Part 1: Risk Stewards Cooldown Reduction\n\n#### Background\n\nThe current Risk Steward [`RiskConfig`](https://etherscan.io/address/0x13a9CC64344b02bACC5AD9Cf38B5711F1B9ec3d4) enforces per-parameter constraints, where:\n\n- `minDelay` is the minimum time between consecutive changes to the same parameter on the same reserve.\n- `maxPercentChange` is the largest single-step change accepted, with semantics that vary by parameter: collateral and rate parameters use absolute difference bounds, cap parameters use relative difference of the current cap.\n\nThe proposed change reduces `minDelay` from 72 hours to 36 hours on the six cap and IRM parameters where the defensive cap posture meaningfully constrains response speed. The higher-impact collateral and E-Mode parameters (base LTV, LT, LB and their E-Mode equivalents, both price caps) stay at the 72-hour minimum because changes there have a larger downstream effect on existing positions. The Pendle discount rate stays at its existing 48-hour minimum, already tighter than the cap and IRM cadence proposed here. `maxPercentChange` bounds are unchanged across every parameter under this proposal.\n\nThe intent is symmetric with the previewed Cap Oracle defensive automation: a faster downward path on caps through the oracle automatization, and a faster upward path on caps and rates through tighter manual cadence, so that the defensive cap posture does not turn into a soft cap on legitimate organic growth.\n\n#### Proposed Configuration Change\n\n| Parameter                    | Current `minDelay` | Current `maxPercentChange` | Proposed `minDelay` |\n| :--------------------------- | :----------------- | :------------------------- | :------------------ |\n| `ltv`                        | 72h                | 50 bps (0.50% absolute)    | -                   |\n| `liquidationThreshold`       | 72h                | 50 bps (0.50% absolute)    | -                   |\n| `liquidationBonus`           | 72h                | 50 bps (0.50% absolute)    | -                   |\n| `eMode ltv`                  | 72h                | 50 bps (0.50% absolute)    | -                   |\n| `eMode liquidationThreshold` | 72h                | 10 bps (0.10% absolute)    | -                   |\n| `eMode liquidationBonus`     | 72h                | 50 bps (0.50% absolute)    | -                   |\n| `baseVariableBorrowRate`     | 72h                | 100 bps (1.00% absolute)   | 36h                 |\n| `variableRateSlope1`         | 72h                | 100 bps (1.00% absolute)   | 36h                 |\n| `variableRateSlope2`         | 72h                | 2000 bps (20.00% absolute) | 36h                 |\n| `optimalUsageRatio`          | 72h                | 300 bps (3.00% absolute)   | 36h                 |\n| `supplyCap`                  | 72h                | 10000 bps (100% relative)  | 36h                 |\n| `borrowCap`                  | 72h                | 10000 bps (100% relative)  | 36h                 |\n| `priceCapLst`                | 72h                | 500 bps (5.00% relative)   | -                   |\n| `priceCapStable`             | 72h                | 50 bps (0.50% relative)    | -                   |\n| `discountRatePendle`         | 48h                | 2.50% absolute             | -                   |\n\n### Part 2: Umbrella Pause Guardian Reassignment\n\n#### Background\n\nUmbrella was deployed with pause and configuration changes routed through the `UmbrellaEthereum PERMISSIONED_PAYLOADS_CONTROLLER` (`0xF86F77F7531B3374274E3f725E0A81D60bC4bB67`) and its executor (`0x2759de67aD133C747C9f41d56F1b8A343cE679a1`). In practice this means any pause action on an Umbrella stkToken requires a full AIP cycle, which is what happened during the rsETH response when stkwaWETH had to be paused.\n\nThe original role specification in the [\\[ARFC\\] Aave Umbrella - activation](https://governance.aave.com/t/arfc-aave-umbrella-activation/21521) proposal assigned StakeToken pause to the Aave Protocol Guardian, listing under \"Permissioned actions & roles\" the explicit line \"Emergency pause and unpause: Aave Protocol Guardian.\" The current Umbrella deployment does not reflect that assignment.\n\nThe Aave Protocol Guardian on Ethereum Core is Aave's standing emergency multisig. It is a [community-elected 4-of-7 multisig](https://governance.aave.com/t/aave-emergency-guardian-protocol-signer-rotation/24944), and it already holds emergency authority on Aave's other safety surfaces, including market pause and reserve freeze across Aave deployments and emergency-mode actions on cross-chain messaging. Reassigning Umbrella pause to this multisig consolidates Aave's emergency authority under the body that exists for exactly this purpose, restores the role assignment originally specified at Umbrella's activation, and removes the AIP-cycle bottleneck observed during the rsETH response.\n\n#### Proposed Reassignment\n\nThe role separation in this proposal runs along the emergency vs. configuration axis rather than along pause vs. unpause. The Umbrella contract uses OpenZeppelin AccessControl, and `pauseStk` and `unpauseStk` on `UmbrellaStkManager` are both protected by a single `PAUSE_GUARDIAN_ROLE` that cannot be split between two holders. Pause and unpause therefore move together, and the question is which body should hold that combined emergency role.\n\n`PAUSE_GUARDIAN_ROLE` is assigned to the Aave Protocol Guardian, the standing 4-of-7 Aave-wide emergency multisig described above. This adheres the assignment specified in the activation ARFC, removes the AIP-cycle bottleneck on pause action, and aligns Umbrella with the body that already holds emergency authority on Aave's other safety surfaces. Because pause and unpause are bound to the same role, the Protocol Guardian also holds unpause: reversing an precautious pause does not require a governance vote, which is consistent with how emergency pause and unpause work on other Aave surfaces today.\n\n`DEFAULT_ADMIN_ROLE` and the remaining configuration roles on Umbrella stay with the Aave Governance Executor. This covers token creation, parameter changes, asset onboarding to Umbrella, modification of coverage scope, role grants and revocations, and any other deliberate configuration action. These remain on the AIP cadence, where they belong.\n\n#### Stake Tokens in Scope\n\n`PAUSE_GUARDIAN_ROLE` is held on the Umbrella controller and is used to pause and unpause individual stkTokens via the `pauseStk(address)` and `unpauseStk(address)` entry points. Granting the role at the controller is sufficient to cover all current and future stkTokens managed by the controller. The currently deployed Ethereum stkTokens are:\n\n| Stake token | Address                                      |\n| :---------- | :------------------------------------------- |\n| stkwaUSDC   | `0x6bf183243FdD1e306ad2C4450BC7dcf6f0bf8Aa6` |\n| stkwaUSDT   | `0xA484Ab92fe32B143AEE7019fC1502b1dAA522D31` |\n| stkwaWETH   | `0xaAFD07D53A7365D3e9fb6F3a3B09EC19676B73Ce` |\n| stkGHO      | `0x4f827A63755855cDf3e8f3bcD20265C833f15033` |\n\n## Specification\n\n- Grant `PAUSE_GUARDIAN_ROLE` on the Umbrella controller (`0xD400fc38ED4732893174325693a63C30ee3881a8`) to the Aave Protocol Guardian (`0x2CFe3ec4d5a6811f4B8067F0DE7e47DfA938Aa30`) on Ethereum Mainnet. This authorises the Protocol Guardian to call `pauseStk(stkToken)` and `unpauseStk(stkToken)` on every stkToken currently managed by the controller and any future stkToken added under it.\n- On the Risk Steward [`RiskConfig`](https://etherscan.io/address/0x13a9CC64344b02bACC5AD9Cf38B5711F1B9ec3d4), set `minDelay` to 36 hours on `baseVariableBorrowRate`, `variableRateSlope1`, `variableRateSlope2`, `optimalUsageRatio`, `supplyCap`, and `borrowCap` (reduced from 72 hours).\n\n### Amendment\n\nFor the purpose of clarity at the AIP implementation phase, the following list of market deployments are to be affected by this change:\n\n- Ethereum (Core, Lido, and EtherFi deployments)\n- Polygon\n- Avalanche\n- Arbitrum\n- Optimism\n- Base\n- Gnosis\n- BNB Chain\n- Scroll\n- Linea\n- Sonic\n- Celo\n- Mantle\n- Plasma\n- MegaETH\n- Monad\n- X Layer\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Ethereum_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3EthereumLido_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3EthereumEtherFi](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3EthereumEtherFi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Polygon_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Avalanche_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Arbitrum_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Optimism](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Optimism_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Base_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Gnosis_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3BNB_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Scroll](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Scroll_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Linea](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Linea_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Sonic](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Sonic_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Celo](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Celo_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Mantle_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Plasma_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3MegaEth](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3MegaEth_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Monad_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3XLayer_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Ethereum_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3EthereumLido](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3EthereumLido_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3EthereumEtherFi](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3EthereumEtherFi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Polygon](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Polygon_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Avalanche](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Avalanche_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Arbitrum_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Optimism](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Optimism_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Base_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Gnosis_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3BNB](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3BNB_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Scroll](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Scroll_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Linea](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Linea_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Sonic](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Sonic_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Celo](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Celo_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Mantle](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Mantle_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Plasma_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3MegaEth](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3MegaEth_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3Monad_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol), [AaveV3XLayer](https://github.com/aave-dao/aave-proposals-v3/blob/81474886a4e3db16ae09b51bd231ab6a9b2fb07d/src/20260720_Multi_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment/AaveV3XLayer_RiskStewardsCooldownReductionAndUmbrellaPauserRoleReassignment_20260720.t.sol)\n- [Snapshot](https://snapshot.org/#/aavedao.eth/proposal/0x7083921f2f549ffa2cdc294c8ff60fdc82af0becbb7b2f20f4f296c34694aaf2)\n- [Discussion](https://governance.aave.com/t/arfc-risk-stewards-cooldown-reduction-umbrella-pauser-role-reassignment/25068)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Risk Stewards Cooldown Reduction & Umbrella Pauser Role Reassignment",
+    "author": "Llama Risk (implemented by Aave Labs)",
+    "discussions": "https://governance.aave.com/t/arfc-risk-stewards-cooldown-reduction-umbrella-pauser-role-reassignment/25068",
+    "snapshot": "https://snapshot.org/#/aavedao.eth/proposal/0x7083921f2f549ffa2cdc294c8ff60fdc82af0becbb7b2f20f4f296c34694aaf2"
+  }
+}
