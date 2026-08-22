@@ -1,0 +1,90 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "512",
+        "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+        "accessLevel": 1,
+        "ipfsHash": "0xd5576176d6058da221ef47e5e4900af23212c2d5d5f032c8393a722bb0ddba3d"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000200",
+        "0x0000000000000000000000002cc1ade245020fc5aae66ad443e1f66e01c54df1",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0xd5576176d6058da221ef47e5e4900af23212c2d5d5f032c8393a722bb0ddba3d",
+      "blockHash": "0x8aca2da3247f66f13592e2198975c00adf821a82e7dfa2c99fc4f027d0aef835",
+      "blockNumber": "25806735",
+      "blockTimestamp": "0x6a88dc0b",
+      "transactionHash": "0xa8c24cd55ff5f8b72f87ee91b111fc765597f02f7f1c28a2f7af7b8776bc5d41",
+      "transactionIndex": 196,
+      "logIndex": 1200,
+      "removed": false,
+      "timestamp": 1787354123
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1787354123,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0xd5576176d6058da221ef47e5e4900af23212c2d5d5f032c8393a722bb0ddba3d",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 464
+      },
+      {
+        "chain": "42161",
+        "accessLevel": 1,
+        "payloadsController": "0x89644CA1bB8064760312AE4F03ea41b05dA3637C",
+        "payloadId": 136
+      },
+      {
+        "chain": "8453",
+        "accessLevel": 1,
+        "payloadsController": "0x2DC219E716793fb4b21548C0f009Ba3Af753ab01",
+        "payloadId": 115
+      },
+      {
+        "chain": "100",
+        "accessLevel": 1,
+        "payloadsController": "0x9A1F491B86D09fC1484b5fab10041B189B60756b",
+        "payloadId": 84
+      },
+      {
+        "chain": "146",
+        "accessLevel": 1,
+        "payloadsController": "0x0846C28Dd54DEA4Fd7Fb31bcc5EB81673D68c695",
+        "payloadId": 16
+      },
+      {
+        "chain": "9745",
+        "accessLevel": 1,
+        "payloadsController": "0xe76EB348E65eF163d85ce282125FF5a7F5712A1d",
+        "payloadId": 35
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmchSq3PQbgn4xarLY3UfEmoomzxmj529uGfaCgprTJ9gY",
+    "description": "\n## Simple Summary\n\nThis publication presents the July Funding Update, consisting of the following key activities:\n\n- Acquire GHO to support the runway; and\n- Create Allowances to support Operations.\n- Increase Swap Steward allowances\n- Pay back audit costs\n\n## Motivation\n\nThis publication addresses near-term operational requirements, consolidates asset holdings, and refreshes the MainnetSwapSteward’s Allowances to support operations and future growth opportunities.\n\nThe MainnetSwapSteward and Aave Finance Committee (AFC) will continue executing a rolling GHO acquisition strategy to maintain adequate runway and preserve sufficient budget to fund ongoing growth initiatives.\n\n### Reimburse Audit Costs\n\nReimburse TokenLogic for costs incurred in facilitating the audit of one Chainlink PR that was modified to accommodate the GHO ↔ sGHO two-way swap layer. The value of the Audit performed by Trail of Bits was 50,000 aEthLidoGHO.\n\n## Specification\n\n### Ethereum\n\n#### Runway\n\nDeposit idle ETH on the Collector into the Aave v3 Core instance on Arbitrum, Base and Ethereum.\n\nUse the MainnetSwapSteward to acquire 8M GHO for deposit into the Prime instance.\n\n#### Refresh MainnetSwapSteward Allowances\n\nTo support the acquisition of GHO, wETH and AAVE, add missing token swap paths.\n\n| Token | Acquirable Assets |\n| ----- | ----------------- |\n| ETH   | GHO, AAVE         |\n| USDC  | GHO, AAVE, wETH   |\n| USDT  | GHO, AAVE, wETH   |\n| USDe  | GHO, AAVE, wETH   |\n| USDS  | GHO, AAVE, wETH   |\n| DAI   | GHO, AAVE, wETH   |\n| rlUSD | GHO, AAVE, wETH   |\n| pyUSD | GHO, AAVE, wETH   |\n\nWhere the path is not configured (i.e., pyUSD → GHO), we’ll add this path as a swappable pair with its respective oracle.\nAdditionally, increase the pyUSD token budget by 500,000 units.\n\n#### Monad Incentives\n\nTo support the launch of GHO on Monad, this publication grants the AFC permission to use GHO and USDC to provide liquidity on DEXs. For the avoidance of doubt, the AFC may use collateral and debt to fund DEX liquidity.\n\nFollowing through on the Deploy Aave Protocol v3.7 on Monad proposal, create the following Allowance to support the growth and adoption of GHO on the Monad Network.\n\nAsset: aEthLidoGHO `0x18eFE565A5373f430e2F809b97De30335B3ad96A`\nAmount: 0.5M\nSpender: ALC `0xA1c93D2687f7014Aaf588c764E3Ce80aF016229b`\n\nMethod: `approve()` aEthLidoGHO on the Aave Collector contract to the Aave Liquidity Committee (ALC) address.\n\nNote: The destination address of the Allowance has been changed from the Aave Finance Committee to the Aave Liquidity Committee.\n\n#### GHO:USDC DEX Liquidity\n\nTo support the launch of GHO on Monad, this publication includes an Allowance to deploy GHO DEX Liquidity on the Monad Network using the Uniswap Protocol.\n\nNetwork: Ethereum\nAsset: aEthWBTC `0x5Ee5bf7ae06D1Be5997A1A72006FE6C607eC6DE8`\nAmount: 72\nSpender: Ahab `0xAA2461f0f0A3dE5fEAF3273eAe16DEF861cf594e`\n\nNote: This aEthWBTC and other assets held on the Ahab are to be used as Collateral to facilitate providing liquidity on the Monad Network.\n\n#### Hedging\n\nWith the treasury holding a large AAVE position and having recently donated to the DeFi United cause, this proposal grants the AFC the ability to participate in the AAVE, ETH and BTC derivative markets to earn yield and/or manage asset exposure throughout the market cycle.\n\nHedging strategies are to be implemented via the CEX Earn Safe, with the administration performed by TokenLogic and Aave Labs.\n\n### Plasma\n\nAdd the following Allowances to facilitate the removal of small balances and the conversion of assets to USDT0.\n\nAsset: aPlaPT_sUSDE_9APR2026 `0x53349cBeD7A3F851f0722Bf3Fa8f1b93fA939BeF`\nAsset: aPlaPT_USDe_15JAN2026 `0xEa601A9FECF80bFC529F08A51bD8Cb0d72fc862A`\nAsset: aPlaPT_sUSDE_18JUN2026 `0x68ab954Dc705c66506d499963dD1fbB8aFa23d7d`\nAsset: aPlaPT_sUSDE_15JAN2026 `0x0b9A412c94f07223752031f75a20DDe542D63d5C`\nAsset: aPlaPT_USDe_9APR2026 `0x9326fA5a71C93D5De313c91C3b80D74d0c3a0F5A`\nAsset: aPlaPT_USDe_18JUN2026 `0xDEdFF537fCBa1169E673F78EE23D109885741016`\nAsset: aPlaWETH `0xf1aB7f60128924d69f6d7dE25A20eF70bBd43d07`\nAsset: aPlaweETH `0xAf1a7a488c8348b41d5860C04162af7d3D38A996`\nAsset: aPlasUSDe `0xC1A318493fF07a68fE438Cee60a7AD0d0DBa300E`\nAmount: Balance at time of execution, plus a 0.10% buffer to cover interest accrued between execution and transfer\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\n### Refresh the Following Allowances\n\nNetwork: Plasma\nAsset: aPlaUSDT0 `0x5D72a9d9A9510Cd8cBdBA12aC62593A58930a948`\nAmount: 3M\nSpender: Ahab `0xAA2461f0f0A3dE5fEAF3273eAe16DEF861cf594e`\n\nNetwork: Arbitrum\nAsset: aArbWETH `0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8`\nAmount: 160\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\nNetwork: Arbitrum\nAsset: aArbUSDCn `0x724dc807b04555b71ed48a6896b6F41593b8C637`\nAmount: 150,000\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\nNetwork: Arbitrum\nAsset: aArbUSDT `0x6ab707Aca953eDAeFBc4fD23bA73294241490620`\nAmount: 50,000\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\nNetwork: Arbitrum\nAsset: aArbGHO `0xeBe517846d0F36eCEd99C735cbF6131e1fEB775D`\nAmount: 55,000\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\n### Cancel/Remove the Following Allowances\n\nNetwork: Plasma\nAsset: aPlaUSDT0 `0x5D72a9d9A9510Cd8cBdBA12aC62593A58930a948`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\nNetwork: Arbitrum\nAsset: aArbweETH `0x8437d7C167dFB82ED4Cb79CD44B7a32A1dd95c77`\nSpender: AFC `0x22740deBa78d5a0c24C58C740e3715ec29de1bFa`\n\nNetwork: Sonic\nAsset: aSonwS `0x6C5E14A212c1C3e4Baf6f871ac9B1a969918c131`\nSpender: ACI Incentives `0x565B80842eCEDad88A2564Ea375CE875Ed3bAdeC`\n\nNetwork: Ethereum\nAsset: aEthUSDC `0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c`\nSpender: Merit `0xdeadD8aB03075b7FBA81864202a2f59EE25B312b`\n\nNetwork: Gnosis\nAsset: aGnoEURe `0xEdBC7449a9b594CA4E053D9737EC5Dc4CbCcBfb2`\nSpender: ACI MASiv SAFE `0xdef1FA4CEfe67365ba046a7C630D6B885298E210`\n\n### Reimbursements\n\nReimburse 50,000 aEthLidoGHO to TokenLogic for GHO ↔ sGHO two-way swap layer audit expenses incurred.\n\nAsset: aEthLidoGHO `0x18eFE565A5373f430e2F809b97De30335B3ad96A`\nAmount: 50,000\nSpender: TokenLogic `0xAA088dfF3dcF619664094945028d44E779F19894`\n\n### Stable Vaults\n\nAdd the following allowances to a new dedicated Stable Vault incentives SAFE as discussed in the launch [proposal](https://governance.aave.com/t/arfc-aave-app-launch/25307). The Snapshot for it can be found [here](https://snapshot.box/#/s:aavedao.eth/proposal/0x2f86020fc038694a5c4738e3982e4fa92eb315aaa4d3ce2fa2be2a5808a9280b).\n\nNetwork: Mainnet\nAsset: aEthLidoGHO `0x18eFE565A5373f430e2F809b97De30335B3ad96A`\nAmount: 300,000\nSpender: Stable Vault Incentives `0x4cc755fBFAE135933b64865E7D7Ea6ae778A4D43`\n\nNetwork: Mainnet\nAsset: aEthUSDC `0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c`\nAmount: 100,000\nSpender: Stable Vault Incentives `0x4cc755fBFAE135933b64865E7D7Ea6ae778A4D43`\n\nNetwork: Mainnet\nAsset: aEthUSDT `0x23878914EFE38d27C4D67Ab83ed1b93A74D4086a`\nAmount: 100,000\nSpender: Stable Vault Incentives `0x4cc755fBFAE135933b64865E7D7Ea6ae778A4D43`\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Ethereum_July2026FundingUpdate_20260715.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Arbitrum_July2026FundingUpdate_20260715.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Base_July2026FundingUpdate_20260715.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Gnosis_July2026FundingUpdate_20260715.sol),[AaveV3Sonic](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Sonic_July2026FundingUpdate_20260715.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Plasma_July2026FundingUpdate_20260715.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Ethereum_July2026FundingUpdate_20260715.t.sol), [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Arbitrum_July2026FundingUpdate_20260715.t.sol), [AaveV3Base](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Base_July2026FundingUpdate_20260715.t.sol), [AaveV3Gnosis](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Gnosis_July2026FundingUpdate_20260715.t.sol),[AaveV3Sonic](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Sonic_July2026FundingUpdate_20260715.t.sol), [AaveV3Plasma](https://github.com/aave-dao/aave-proposals-v3/blob/50d3b7b583e4a1f1a366e91dd6133f510a203852/src/20260715_Multi_July2026FundingUpdate/AaveV3Plasma_July2026FundingUpdate_20260715.t.sol)\n- [Discussion](https://governance.aave.com/t/direct-to-aip-july-2026-funding-update/25277)\n- Snapshot: Direct-to-AIP\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "July 2026 Funding Update",
+    "author": "TokenLogic",
+    "discussions": "https://governance.aave.com/t/direct-to-aip-july-2026-funding-update/25277"
+  }
+}

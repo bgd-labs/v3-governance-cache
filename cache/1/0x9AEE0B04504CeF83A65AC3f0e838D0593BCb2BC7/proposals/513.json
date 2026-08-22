@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "513",
+        "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+        "accessLevel": 1,
+        "ipfsHash": "0x8490d22bb1d57bcd96f3721d66065a96a83897787899434739920f2430af26be"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000201",
+        "0x0000000000000000000000002cc1ade245020fc5aae66ad443e1f66e01c54df1",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x8490d22bb1d57bcd96f3721d66065a96a83897787899434739920f2430af26be",
+      "blockHash": "0xd163db8fe74199ff09c51550f82a90591a2e4b80e171d5c46f83386a5675558b",
+      "blockNumber": "25806782",
+      "blockTimestamp": "0x6a88de3f",
+      "transactionHash": "0x435d909e33570f84106d8ce6997f748bd80fbea5e9c70e4681113703df649688",
+      "transactionIndex": 294,
+      "logIndex": 716,
+      "removed": false,
+      "timestamp": 1787354687
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1787354687,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x2cc1ADE245020FC5AAE66Ad443e1F66e01c54Df1",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x8490d22bb1d57bcd96f3721d66065a96a83897787899434739920f2430af26be",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "143",
+        "accessLevel": 1,
+        "payloadsController": "0x442CA936e5E6Db875357d0A16481145c96dd9a82",
+        "payloadId": 7
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmXG8c71NWspjvQ2H6MQdHiY3WjTzEStvG1RRE35YGkmC9",
+    "description": "\n## Simple Summary\n\nThis AIP lists PT-AUSD-8OCT2026, the Pendle Principal Token for AUSD maturing on 8 October 2026, on the Aave V3 Monad instance as a non-borrowable asset, usable as collateral exclusively within a dedicated PT-AUSD/stablecoin eMode.\n\n## Motivation\n\nAUSD is already a live reserve on Aave V3 Monad and Pendle operates a liquid PT-AUSD market on the network. Listing the PT enables fixed-yield AUSD positions as collateral against stablecoin debt, mirroring the treatment of Pendle PT stablecoin assets on other Aave instances.\n\nThe proposal was approved via ARFC and Snapshot (99.99% For), with final risk parameters provided by LlamaRisk, including the linear discount oracle rates: `initialDiscountRatePerYear` 6.661% and `maxDiscountRatePerYear` 8.829%. The PT is priced via the deployed linear discount oracle [0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127](https://monadscan.com/address/0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127) (`PT Capped AUSD AUSD/USD linear discount 8OCT2026`).\n\n## Specification\n\n| Field             | Value                                                                                                                  |\n| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |\n| Asset             | PT-AUSD-8OCT2026                                                                                                       |\n| PT token          | [0x9FC74f8Ed616B5BaF52a170caa97d6d3898602d1](https://monadscan.com/address/0x9FC74f8Ed616B5BaF52a170caa97d6d3898602d1) |\n| Pendle market     | [0x6f99CF00ee7290aE78a072Bb6910eF72D1129fE7](https://monadscan.com/address/0x6f99CF00ee7290aE78a072Bb6910eF72D1129fE7) |\n| SY token          | [0xBA3d60f5000f472aef947FB8020a3E6319F9a0B7](https://monadscan.com/address/0xBA3d60f5000f472aef947FB8020a3E6319F9a0B7) |\n| YT token          | [0xEdDeE9C0B56248d70A9BFdD103f8bD97C35DfD89](https://monadscan.com/address/0xEdDeE9C0B56248d70A9BFdD103f8bD97C35DfD89) |\n| Underlying (AUSD) | [0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a](https://monadscan.com/address/0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a) |\n| Maturity          | 8 October 2026                                                                                                         |\n\n**New eMode** (per LlamaRisk's final recommendation):\n\n| eMode                   | Collateral       | Borrowable             | LTV | LT  | Liq. Bonus | Isolated |\n| ----------------------- | ---------------- | ---------------------- | --- | --- | ---------- | -------- |\n| PT_Agora\\_\\_Stablecoins | PT-AUSD-8OCT2026 | USDT0, USDC, GHO, USDe | 93% | 95% | 2.44%      | Yes      |\n\nThe table below illustrates the configured risk parameters for **PT_AUSD_8OCT2026**\n\n| Parameter                 |                                                                                                       PT-AUSD-8OCT2026 |\n| ------------------------- | ---------------------------------------------------------------------------------------------------------------------: |\n| Isolation Mode            |                                                                                                                     No |\n| Borrowable                |                                                                                                                     No |\n| Collateral Enabled        |                                                                                                       No (E-Mode only) |\n| Supply Cap                |                                                                                                             20,000,000 |\n| Borrow Cap                |                                                                                                                      1 |\n| Debt Ceiling              |                                                                                                                    N/A |\n| LTV                       |                                                                                                                     0% |\n| Liquidation Threshold     |                                                                                                                     0% |\n| Liquidation Bonus         |                                                                                                                     0% |\n| Liquidation Protocol Fee  |                                                                                                                    10% |\n| Reserve Factor            |                                                                                                                    20% |\n| Base Variable Borrow Rate |                                                                                                                     0% |\n| Variable Rate Slope 1     |                                                                                                                    10% |\n| Variable Rate Slope 2     |                                                                                                                   300% |\n| Optimal Utilization       |                                                                                                                    45% |\n| Flashloanable             |                                                                                                                    Yes |\n| Oracle                    | [0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127](https://monadscan.com/address/0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127) |\n\n**Linear Discount Rate Oracle**\n\n| Parameter                  | Value                                                                                                                  |\n| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |\n| initialDiscountRatePerYear | 6.661%                                                                                                                 |\n| maxDiscountRatePerYear     | 8.829%                                                                                                                 |\n| Oracle                     | [0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127](https://monadscan.com/address/0x6D8f31268E94Bec0b0E07bc06b561b8B749F3127) |\n\n## References\n\n- Implementation: [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/d7730f38ffd9b19b5a05c96b5a12e731148b627f/src/20260811_AaveV3Monad_AssetListingPendlePTAUSDMonad/AaveV3Monad_AssetListingPendlePTAUSDMonad_20260811.sol)\n- Tests: [AaveV3Monad](https://github.com/aave-dao/aave-proposals-v3/blob/d7730f38ffd9b19b5a05c96b5a12e731148b627f/src/20260811_AaveV3Monad_AssetListingPendlePTAUSDMonad/AaveV3Monad_AssetListingPendlePTAUSDMonad_20260811.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0x1d5029f1b99b62843590e28d027a1a5aa21f4fe19f175284197c58779db14027)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-pt-ausd-8oct2026-to-aave-v3-monad-instance/25331)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Asset Listing - Pendle PT-AUSD Monad",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-pt-ausd-8oct2026-to-aave-v3-monad-instance/25331",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0x1d5029f1b99b62843590e28d027a1a5aa21f4fe19f175284197c58779db14027"
+  }
+}
