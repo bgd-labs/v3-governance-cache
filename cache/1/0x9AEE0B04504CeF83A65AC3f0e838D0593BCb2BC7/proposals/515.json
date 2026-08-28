@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "515",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x8fb0c3df2032d96a4be3b6630ae308ab0575588d4d29376930ac83efbea6c1ac"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000203",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x8fb0c3df2032d96a4be3b6630ae308ab0575588d4d29376930ac83efbea6c1ac",
+      "blockHash": "0x52d66235ac560700478662c331d8d36892d03bb08b5ec6b04bcb32e8f9a34d37",
+      "blockNumber": "25855801",
+      "blockTimestamp": "0x6a91e007",
+      "transactionHash": "0xdec1a404810f28293ccb05bf1413943d2efa4a4183095b21b05cd299cd3377fc",
+      "transactionIndex": 41,
+      "logIndex": 108,
+      "removed": false,
+      "timestamp": 1787944967
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1787944967,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x8fb0c3df2032d96a4be3b6630ae308ab0575588d4d29376930ac83efbea6c1ac",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 465
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmY1ZLoiKQUDeMsQC2XgvgjwRp3EBZGkC9bgoiEHojD7K1",
+    "description": "\n## Simple Summary\n\nRegisters two predeployed risk agents on the Aave-owned AgentHub so that discount rate and eMode risk parameters for PT-srUSDe-22OCT2026 on Aave V3 Ethereum Core can be maintained automatically from the LlamaRisk PT Risk Oracle, within bounds this proposal sets.\n\n## Motivation\n\nPT-srUSDe-22OCT2026 is a Pendle principal token listed on Ethereum Core as reserve 66 and collateral in eMode categories 47 and 48. Its fair value depends on an implied discount rate that decays to zero at maturity, so a static discount rate is wrong almost everywhere: too high early, and increasingly too low as maturity approaches. The same drift affects the liquidation threshold and bonus that should apply to it.\n\nLlamaRisk operates an offchain pipeline on Chainlink CRE that tracks the Pendle market, maintains an EMA of the implied rate, and derives both the discount rate and the eMode parameters from it. This proposal is the last link in that chain: it grants the two agent contracts permission to apply those values, and bounds how far each application may move a parameter.\n\nThe pipeline publishes to a RiskOracle that only LlamaRisk's router can write to, and the router only accepts reports from the Chainlink CRE forwarder for a workflow owned by the Aave CRE organisation multisig. Governance retains the ability to disable either agent at any time.\n\n## Specification\n\nThe payload performs three groups of actions.\n\n**1. Register the discount rate agent.** The payload registers the predeployed `AaveDiscountRateAgent` from `MiscEthereum.LLAMARISK_PT_DISCOUNT_RATE_AGENT` on `MiscEthereum.AGENT_HUB`, consuming `PendleDiscountRateUpdate` records from the LlamaRisk RiskOracle and allowed to act only on PT-srUSDe-22OCT2026. Minimum delay 2 days, expiration period 2 days.\n\n**2. Register the eMode agent.** The predeployed `AaveEModeAgent` from `MiscEthereum.LLAMARISK_PT_EMODE_AGENT` is registered for the same oracle, consuming `EModeCategoryUpdate` and allowed to act only on eMode categories 47 and 48. Minimum delay 3 days, expiration period 3 days. Its agent context encodes `AaveV3Ethereum.CONFIG_ENGINE`, which it delegatecalls to apply category updates.\n\nBoth are registered with `admin` set to `MiscEthereum.PROTOCOL_GUARDIAN`, so a misbehaving agent can be disabled without a governance cycle. Registration stays governance-only: `registerAgent` and `setAgentAdmin` are `onlyOwner`, and the AgentHub is owned by `GovernanceV3Ethereum.EXECUTOR_LVL_1`. Both `isAgentPermissioned` and `isMarketsFromAgentEnabled` are left at their defaults.\n\nBoth agent addresses and the RiskOracle are imported from `MiscEthereum`. Neither agent is registered with a suffixed update type: the LlamaRisk RiskOracle serves this stack alone, so the base types are unambiguous.\n\n**3. Grant `RISK_ADMIN` and bound the ranges.** `addRiskAdmin` on `AaveV3Ethereum.ACL_MANAGER` for both predeployed agents, then `setDefaultRangeConfig` on `MiscEthereum.RANGE_VALIDATION_MODULE` for each parameter each agent can move.\n\nThe role is required because of how the agents write. The discount rate agent resolves the PT price source through the Aave oracle and calls `setDiscountRatePerYear` on the `PendlePriceCapAdapter`, which gates that call on `isRiskAdmin || isPoolAdmin`. The eMode agent delegatecalls the config engine, and because delegatecall preserves the caller, the PoolConfigurator sees the agent rather than the engine, so the role has to sit on the agent there as well.\n\n### Bounds and timelocks\n\nEvery bound is absolute rather than relative. A relative cap is measured against the last value the agent injected, which does not exist on a freshly assigned agent id, so a relative configuration would leave the first injection unbounded. The minimum delay is the timelock the hub enforces between injections per agent and market, and the expiration period is how long a published update remains applicable.\n\n| Agent         | Parameter                   | Maximum move per injection | Minimum delay | Expiration period |\n| ------------- | --------------------------- | -------------------------- | ------------- | ----------------- |\n| Discount rate | `PendleDiscountRateUpdate`  | 100 bps (`1e16`)           | 2 days        | 2 days            |\n| eMode         | `EModeLTV`                  | 50 bps                     | 3 days        | 3 days            |\n| eMode         | `EModeLiquidationThreshold` | 50 bps                     | 3 days        | 3 days            |\n| eMode         | `EModeLiquidationBonus`     | 50 bps                     | 3 days        | 3 days            |\n\nThese configurations are not optional. A fresh agent id inherits no default range config, and the module reads a missing config as a zero bound, which rejects every injection. Omitting them would produce a registered but permanently inert agent.\n\nTwo further limits apply outside this payload. The minimum delays above are enforced by the hub per agent and market. And the LlamaRisk router applies its own 48 hour minimum delay and 100 bps step cap to the discount rate route, so that value is bounded twice, independently.\n\n### Affected eMode categories\n\n| Id  | Label                 |\n| --- | --------------------- |\n| 47  | PT-srUSDe Stablecoins |\n| 48  | PT-srUSDe USDe        |\n\nNo reserve configuration is changed by this payload. The snapshot diff is empty by design.\n\n## Deployed Contracts\n\n- `MiscEthereum.LLAMARISK_RISK_ORACLE`: [0x683d1A91599F971252Ef171eF1F987172be8369A](https://etherscan.io/address/0x683d1A91599F971252Ef171eF1F987172be8369A)\n- `MiscEthereum.LLAMARISK_RISK_ORACLE_ROUTER`: [0x1D85000D54ea1185C43E4f2b32833524d3cF3507](https://etherscan.io/address/0x1D85000D54ea1185C43E4f2b32833524d3cF3507)\n- `MiscEthereum.LLAMARISK_PT_DISCOUNT_RATE_AGENT`: [0x529e2374afB38AC465D71979E7540ad93C05F6c5](https://etherscan.io/address/0x529e2374afB38AC465D71979E7540ad93C05F6c5)\n- `MiscEthereum.LLAMARISK_PT_EMODE_AGENT`: [0xbe2840440d4f77CD98CEC2de09913e6851907744](https://etherscan.io/address/0xbe2840440d4f77CD98CEC2de09913e6851907744)\n- `CHAINLINK_CRE_FORWARDER`: [0x0b93082D9b3C7C97fAcd250082899BAcf3af3885](https://etherscan.io/address/0x0b93082D9b3C7C97fAcd250082899BAcf3af3885)\n\nThe payload references the RiskOracle and both agents directly. The Router and CRE Forwarder are included above to make the complete write path easier to review.\n\nExisting Aave contracts referenced, all from the address book:\n\n- AgentHub: `MiscEthereum.AGENT_HUB`\n- RangeValidationModule: `MiscEthereum.RANGE_VALIDATION_MODULE`\n- ACL manager: `AaveV3Ethereum.ACL_MANAGER`\n- Config engine: `AaveV3Ethereum.CONFIG_ENGINE`\n- Agent admin: `MiscEthereum.PROTOCOL_GUARDIAN`\n- AgentHub owner: `GovernanceV3Ethereum.EXECUTOR_LVL_1`\n\n### Agent source\n\nBoth predeployed agents are verified deployments of the stock BGD implementations from [aave-dao/aave-risk-agents](https://github.com/aave-dao/aave-risk-agents). The tests verify their bytecode is present and their immutable AgentHub, RangeValidationModule, pool, oracle and update-type wiring matches the configuration registered by this payload.\n\n## References\n\n- Implementation: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/e6cdc83c1bc71e1bcda7234f602b4fdd91ed2862/src/20260817_AaveV3Ethereum_Onboard_PTsrUSDe22OCT2026_Oracle/AaveV3Ethereum_Onboard_PTsrUSDe22OCT2026_Oracle_20260817.sol)\n- Tests: [AaveV3Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/e6cdc83c1bc71e1bcda7234f602b4fdd91ed2862/src/20260817_AaveV3Ethereum_Onboard_PTsrUSDe22OCT2026_Oracle/AaveV3Ethereum_Onboard_PTsrUSDe22OCT2026_Oracle_20260817.t.sol)\n- Agent implementations: [aave-dao/aave-risk-agents](https://github.com/aave-dao/aave-risk-agents)\n- Snapshot: Direct-to-AIP\n- [Discussion](https://governance.aave.com/t/arfc-upgrade-pt-risk-oracle-to-protocol-owned-infrastructure-on-cre/25119)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "Onboard PT-srUSDe-22OCT2026 to the LlamaRisk PT Risk Oracle",
+    "author": "LlamaRisk",
+    "discussions": "https://governance.aave.com/t/arfc-upgrade-pt-risk-oracle-to-protocol-owned-infrastructure-on-cre/25119"
+  }
+}
