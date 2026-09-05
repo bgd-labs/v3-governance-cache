@@ -1,0 +1,62 @@
+{
+  "events": [
+    {
+      "eventName": "ProposalCreated",
+      "args": {
+        "proposalId": "516",
+        "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+        "accessLevel": 1,
+        "ipfsHash": "0x7d2d76956ce7409cdd82fe3fa730c6fdaec12d2e76bc17709ae9d595e68b27de"
+      },
+      "address": "0x9aee0b04504cef83a65ac3f0e838d0593bcb2bc7",
+      "topics": [
+        "0xcc914becfa276bbc067049bf8db2d34ebbdc1bafa851e4d4936aaed376c08dbe",
+        "0x0000000000000000000000000000000000000000000000000000000000000204",
+        "0x00000000000000000000000066a28531e6f390a8cd44ab0c57a0f1aeb7e673ff",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "data": "0x7d2d76956ce7409cdd82fe3fa730c6fdaec12d2e76bc17709ae9d595e68b27de",
+      "blockHash": "0x08ba96633cecd07cba9021468a80c9a5d6024352c4dab1770bdc5a4da2b34552",
+      "blockNumber": "25908438",
+      "blockTimestamp": "0x6a9b8c3f",
+      "transactionHash": "0x255d7db753647af28077b23aef6f6383b83988b6cfc337cf54cde30627b8946b",
+      "transactionIndex": 319,
+      "logIndex": 963,
+      "removed": false,
+      "timestamp": 1788578879
+    }
+  ],
+  "proposal": {
+    "state": 1,
+    "accessLevel": 1,
+    "creationTime": 1788578879,
+    "votingDuration": 0,
+    "votingActivationTime": 0,
+    "queuingTime": 0,
+    "cancelTimestamp": 0,
+    "creator": "0x66a28531E6f390A8CD44aB0C57a0F1aeb7E673FF",
+    "votingPortal": "0x9Ded9406f088C10621BE628EEFf40c1DF396c172",
+    "snapshotBlockHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "ipfsHash": "0x7d2d76956ce7409cdd82fe3fa730c6fdaec12d2e76bc17709ae9d595e68b27de",
+    "forVotes": "0",
+    "againstVotes": "0",
+    "cancellationFee": "50000000000000000",
+    "payloads": [
+      {
+        "chain": "1",
+        "accessLevel": 1,
+        "payloadsController": "0xdAbad81aF85554E9ae636395611C58F7eC1aAEc5",
+        "payloadId": 466
+      }
+    ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmWmHsyRVPvuLtubKFDxbsbYczK95hXHq4HMMCxKakAi77",
+    "description": "\n## Simple Summary\n\nThis proposal onboards Pax Gold (PAXG) to the Aave V4 Global Dollar Hub on Ethereum. It deploys and configures the PAXG Gold Spoke, where PAXG is collateral only and USDG is borrowable, and enables native USDG as a borrowable reserve on the Pendle Spoke with a 4,000,000 USDG Draw Cap.\n\n## Motivation\n\nPAXG is an ERC-20 token issued by Paxos Trust Company. Each unit represents one fine troy ounce of a London Good Delivery gold bar held in professional vaults. Redemption and custody are administered by the regulated issuer, and holdings are subject to periodic third party attestations.\n\nOnboarding PAXG to the Global Dollar Hub:\n\n- Introduces an asset backed by gold to the Aave V4 Ethereum instance, broadening the range of collateral and liquidity beyond dollar denominated exposures.\n- Gives users access to a regulated representation of physical gold within the Aave ecosystem, supporting demand from institutional participants and DeFi protocols seeking commodity exposure.\n- Complements the Global Dollar Hub's existing composition by adding an asset with limited correlation for diversified liquidity strategies.\n\n## Specification\n\nThis proposal adds PAXG to the Aave V4 Global Dollar Hub on Ethereum, configures PAXG and USDG reserves on the PAXG Gold Spoke, and enables USDG on the Pendle Spoke.\n\n**PAXG**: [`0x45804880De22913dAFE09f4980848ECE6EcbAf78`](https://etherscan.io/address/0x45804880De22913dAFE09f4980848ECE6EcbAf78)\n\nThe PAXG Gold Spoke is deployed at [`0xAD75cE6354f87F3135cE10621d385d8D1e2562C2`](https://etherscan.io/address/0xAD75cE6354f87F3135cE10621d385d8D1e2562C2#code). The payload wires this deployment to the Ethereum AccessManager and configures it with the PAXG and USDG reserves below.\n\n**Spoke configuration**\n\n| Hub               | Spoke           | Reserve | Collateral Factor | Max Liquidation Bonus | Borrowable | Collateral Risk | Liquidation Fee | riskPremiumThreshold | receiveShares |\n| ----------------- | --------------- | ------- | ----------------: | --------------------: | ---------- | --------------: | --------------: | -------------------: | ------------- |\n| Global Dollar Hub | PAXG Gold Spoke | PAXG    |            75.00% |                 6.50% | FALSE      |               0 |          10.00% |                    0 | TRUE          |\n| Global Dollar Hub | PAXG Gold Spoke | USDG    |             0.00% |                     - | TRUE       |               - |               - |                    0 | TRUE          |\n| Global Dollar Hub | Pendle Spoke    | USDG    |             0.00% |                     - | TRUE       |               - |               - |                    0 | TRUE          |\n\n`riskPremiumThreshold` is set to 0 for all reserves, in line with other assets across V4, as risk premiums are not currently in use. `receiveShares` is enabled for all reserves. For required onchain fields, the dash values in the table resolve to zero.\n\n**Dynamic liquidation configuration**\n\n| Parameter               | Value |\n| ----------------------- | ----: |\n| targetHealthFactor      |  1.20 |\n| healthFactorForMaxBonus |  0.90 |\n| liquidationBonusFactor  |  0.80 |\n\nAs a noncrypto open market spoke, the PAXG Gold Spoke uses more conservative liquidation restoration parameters. Draw Caps are set conservatively to reflect the PAXG Gold Spoke's developing liquidity for borrowing.\n\n**Caps**\n\n| Hub               | Spoke           | Reserve |   Add Cap |  Draw Cap |\n| ----------------- | --------------- | ------- | --------: | --------: |\n| Global Dollar Hub | PAXG Gold Spoke | PAXG    |      2500 |         0 |\n| Global Dollar Hub | PAXG Gold Spoke | USDG    | 5,000,000 | 9,500,000 |\n| Global Dollar Hub | Pendle Spoke    | USDG    |         - | 4,000,000 |\n\nPAXG is also registered with the Tokenization Spoke with an Add Cap of 0.\n\n**Oracle configuration**\n\nPAXG is listed against the Chainlink [XAU/USD price feed](https://etherscan.io/address/0x214eD9Da11D2fbe465a6fc601a91E62EbEc1a0D6), pricing the token at underlying gold spot with no CAPO growth ceiling wrapper. PAXG carries no monotonic exchange rate growth for a cap to bound, so a CAPO adapter is not recommended. The accepted risks are a sustained dislocation in the token price, priced at full gold spot, and the feed's weekend staleness. The liquidation parameters set when collateral is enabled in a future phase must absorb that envelope rather than assume a continuously updating reference.\n\n## Disclaimer\n\nThis proposal was prepared by Aave Labs in its capacity as a contributor to the Aave ecosystem. Aave Labs has no financial relationship with Paxos Trust Company or any of its affiliates and has not received compensation from Paxos in connection with this proposal.\n\n## References\n\n- Implementation: [AaveV4Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/042f37598ae862b054b632e518e37b432ef643ca/src/20260824_AaveV4Ethereum_OnboardPAXGGlobalDollarHub/AaveV4Ethereum_OnboardPAXGGlobalDollarHub_20260824.sol)\n- Tests: [AaveV4Ethereum](https://github.com/aave-dao/aave-proposals-v3/blob/042f37598ae862b054b632e518e37b432ef643ca/src/20260824_AaveV4Ethereum_OnboardPAXGGlobalDollarHub/AaveV4Ethereum_OnboardPAXGGlobalDollarHub_20260824.t.sol)\n- [Discussion](https://governance.aave.com/t/arfc-onboard-paxg-to-the-global-dollar-hub-in-aave-v4-ethereum/25340)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0x65be5cb5922bc73d14ba16b13d4e7ee5eaae2c6d9518c27b7ab9721fd2f637b1)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "[AIP] Onboard PAXG to Aave V4 Global Dollar Hub",
+    "author": "@AaveLabs",
+    "date": "2026-09-04",
+    "discussions": "https://governance.aave.com/t/arfc-onboard-paxg-to-the-global-dollar-hub-in-aave-v4-ethereum/25340",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0x65be5cb5922bc73d14ba16b13d4e7ee5eaae2c6d9518c27b7ab9721fd2f637b1"
+  }
+}
