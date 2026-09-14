@@ -72,5 +72,13 @@
         "payloadId": 137
       }
     ]
+  },
+  "ipfs": {
+    "ipfsHash": "QmUrBXamJDyJrGtd2w8PYQxAw6CbAnvAS71QuKXU9z82MD",
+    "description": "\n## Simple Summary\n\nReplace existing GSM with underlying USDC.e with new GSM with underlying USDCn on Arbitrum.\n\n## Motivation\n\nWith USDC.e related assets soon to be deprecated as can be seen on this forum [post](https://governance.aave.com/t/arfc-low-adoption-asset-deprecation-on-aave-v3/25401), replace USDC.e GSM with USDCn GSM on Arbitrum.\n\n## Specification\n\n### Wire up Arbitrum GSM (stataUSDCn)\n\n- Point it at the `GhoReserve`, enroll it as an entity with a 25M GHO reserve limit.\n- Grant `SWAP_FREEZER_ROLE` to the asset's `OracleSwapFreezer` and to the Arbitrum executor.\n- Register it in the `GsmRegistry` and grant `CONFIGURATOR_ROLE` to the `GhoGsmSteward`.\n- Initial values set at deploy time equal to current USDC.e where applicable\n- Set fee strategy at execution time to be equal to USDC.e GSM fee strategy\n- Seize previous USDC.e GSM, revoke roles, remove as entity and remove from GSM Registry\n\nNew GSM address: [0x1aEe7A618B0CC687cCED9aB796e464062f1508CA](https://arbiscan.io/address/0x1aEe7A618B0CC687cCED9aB796e464062f1508CA)\nNew Oracle Swap Freezer address: [0x4daF7FCe9EfcA48e9274b35b5A7B4639b0DdFCCa](https://arbiscan.io/address/0x4daF7FCe9EfcA48e9274b35b5A7B4639b0DdFCCa)\n\n## References\n\n- Implementation: [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/f1d30da5b8d69b740a920bd398695413349a7a96/src/20260806_AaveV3Arbitrum_USDCGSMArbitrum/AaveV3Arbitrum_USDCGSMArbitrum_20260806.sol)\n- Tests: [AaveV3Arbitrum](https://github.com/aave-dao/aave-proposals-v3/blob/f1d30da5b8d69b740a920bd398695413349a7a96/src/20260806_AaveV3Arbitrum_USDCGSMArbitrum/AaveV3Arbitrum_USDCGSMArbitrum_20260806.t.sol)\n- [Snapshot](https://snapshot.org/#/s:aavedao.eth/proposal/0xf24321514fb593af9e5082d26a1358819ec0f648db8fdb5c2b083f53ef785793)\n- [Discussion](https://governance.aave.com/t/arfc-launch-remotegsm-on-arbitrum/24986/5)\n\n## Copyright\n\nCopyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+    "title": "USDC GSM Arbitrum",
+    "author": "@TokenLogic",
+    "discussions": "https://governance.aave.com/t/arfc-launch-remotegsm-on-arbitrum/24986/5",
+    "snapshot": "https://snapshot.org/#/s:aavedao.eth/proposal/0xf24321514fb593af9e5082d26a1358819ec0f648db8fdb5c2b083f53ef785793"
   }
 }
