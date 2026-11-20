@@ -37,7 +37,7 @@
   "payload": {
     "creator": "0x0315d353045f8FBCDd8CAcEbA40b019d094B670E",
     "maximumAccessLevelRequired": 1,
-    "state": 1,
+    "state": 5,
     "createdAt": 1792163647,
     "queuedAt": 0,
     "executedAt": 0,
